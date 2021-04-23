@@ -42,11 +42,19 @@ public class Login extends AppCompatActivity {
                 {
                     chack.setTextColor(0xff00ff00);
                     chack.append(" Seleccionado");
+                    SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Login.this);
+
+                    String nombreLo = myPreferences.getString("nombreUser", "");
+                    String contr = myPreferences.getString("contra", "");
+                    login.setText(nombreLo);
+                    contra.setText(contr);
                 }
                 else
                 {
                     chack.setText("Recordar Contraseña");
                     chack.setTextColor(0xffffffff);
+                    login.setText("");
+                    contra.setText("");
                 }
             }
         });
@@ -88,6 +96,7 @@ public class Login extends AppCompatActivity {
                         myEditor.putString("apellido", apeSQ);
                         myEditor.putString("apellido2", ape2SQ);
                         myEditor.putString("email", emailSQ);
+                        myEditor.putString("contra", compararC);
 
                         myEditor.commit();
 

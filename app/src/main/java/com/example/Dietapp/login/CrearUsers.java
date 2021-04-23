@@ -1,6 +1,7 @@
 package com.example.Dietapp.login;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -75,6 +76,8 @@ public class CrearUsers extends AppCompatActivity {
 
             Toast.makeText(this, "SE HA CREADO EL USUARIO CORRECTAMENTE",
                     Toast.LENGTH_SHORT).show();
+            Intent ifds = new Intent(this, Login.class);
+            startActivity(ifds);
         }
     }
 

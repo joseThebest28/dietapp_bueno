@@ -138,4 +138,5 @@
     <string name="extras">VER MAS</string>
     <string name="retos">RETOS</string>
     <string name="recuCo">Recordar Contraseña</string>
+    <string name="cerrarS">Cerrar Sesion</string>
 </resources>

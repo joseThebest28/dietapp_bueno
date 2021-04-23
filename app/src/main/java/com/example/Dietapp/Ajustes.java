@@ -23,7 +23,7 @@ import java.security.AccessController;
 public class Ajustes extends AppCompatActivity {
     TextView texto,nombreED,apellidoED,apellido2ED,emailED;
     ImageView imagen;
-    Button boton,boton2;
+    Button boton,botonVerMAs;
     private static final int COD_Selecciona=10;
     private static final int COD_Foto=20;
     @Override
@@ -38,8 +38,9 @@ public class Ajustes extends AppCompatActivity {
         emailED = findViewById(R.id.textView38);
         imagen=findViewById(R.id.imageView29);
         boton=findViewById(R.id.button43);
-        boton2=findViewById(R.id.bRetos);
-        boton2.setVisibility(View.INVISIBLE);
+
+        botonVerMAs=findViewById(R.id.bRetos);
+        botonVerMAs.setVisibility(View.INVISIBLE);
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Ajustes.this);
 
        String nombreUser = myPreferences.getString("nombreUser", "");
@@ -54,43 +55,72 @@ public class Ajustes extends AppCompatActivity {
         emailED.setText("Email -------------------->  "+emal);
 
         //para cambiar la imagen
-        boton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                subirFoto();
-            }
-        });
+
 
     }
 
-    private void subirFoto() {//cambiar variable opciones,builder
-        final CharSequence [] opciones={"Tomar Foto", "Elegir de Galeria", "Cancelar"};
-        final AlertDialog.Builder builder=new AlertDialog.Builder(this);
-        builder.setTitle("Elige una opción");
-        builder.setItems(opciones, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int i) {
-                if(opciones[i].equals("Tomar Foto"))
-                {
 
-                }else{
-                    if(opciones[i].equals("elegir de Galeria"))
-                    {
 
-                    }
-                }
-            }
-        });
 
-    }
 
     public void verMAs(View view) {
-        boton2.setVisibility(View.VISIBLE);
+        botonVerMAs.setVisibility(View.VISIBLE);
     }
 
 
     public void iraRetos(View view) {
         Intent ifds = new Intent(this, Pagina_reto.class);
         startActivity(ifds);
+    }
+
+    public void cerrarSesio(View view) {
+        final Intent ifds = new Intent(this, Login.class);
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+        builder1.setMessage("¿Estas seguro de cerrar sesión?");
+        builder1.setCancelable(true);
+
+        builder1.setPositiveButton(
+                "Yes",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Ajustes.this);
+
+                        String nombreLo = myPreferences.getString("nombreUser", "");
+                        String nombre = myPreferences.getString("nombre", "");
+                        String apellido = myPreferences.getString("apellido", "");
+                        String apellido2 = myPreferences.getString("apellido2", "");
+                        String email = myPreferences.getString("email", "");
+                        String contra = myPreferences.getString("contra", "");
+
+                        nombreLo="";
+                        nombre=""; apellido=""; email=""; apellido2=""; contra="";
+
+                        SharedPreferences.Editor myEditor = myPreferences.edit();
+                        myEditor.putString("nombreUser", nombreLo);
+                        myEditor.putString("nombre", nombre);
+                        myEditor.putString("apellido", apellido);
+                        myEditor.putString("apellido2", apellido2);
+                        myEditor.putString("email", email);
+                        myEditor.putString("contra", contra);
+
+                        myEditor.commit();
+
+                        startActivity(ifds);
+                    }
+                });
+
+        builder1.setNegativeButton(
+                "No",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+
+
+
     }
 }
