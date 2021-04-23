@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="guuardar">#3949AB</color>
+    <color name="ayuda">#F1E5E5</color>
+    <color name="total">#FFEB3B</color>
+    <color name="explica4">#25CBDF</color>
+    <color name="explica5">#E6BD9D</color>
+    <color name="hora">#FFD81B60</color>
+    <color name="fondoLogs">#1E88E5</color>
+
+</resources>

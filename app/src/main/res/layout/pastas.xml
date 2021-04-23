@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#6438A3"
+    tools:context="com.example.Dietapp.categorias.Pastas">
+
+    <TextView
+        android:id="@+id/ayuda3"
+        android:layout_width="83dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/boton_ayuda"
+        android:onClick="ayudapasta"
+        android:text="@string/ayuda"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/ayuda"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.888"
+        app:layout_constraintTop_toBottomOf="@+id/ttoatalPasta" />
+
+    <TextView
+        android:id="@+id/textView46"
+        android:layout_width="217dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="26dp"
+        android:text="@string/indicapasta"
+        android:textColor="#C0CA33"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numPasta" />
+
+    <TextView
+        android:id="@+id/textView45"
+        android:layout_width="313dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/indicapasta2"
+        android:textColor="#C0CA33"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <Button
+        android:id="@+id/button22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:background="@drawable/boton_guardar"
+        android:onClick="guadarDatosPasta"
+        android:text="@string/guardar"
+        android:textColor="@color/guuardar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ttoatalPasta" />
+
+    <EditText
+        android:id="@+id/numPasta"
+        android:layout_width="77dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="26dp"
+        android:background="#EDE6E6"
+        android:backgroundTint="#F4EFEF"
+        android:inputType="phone"
+        android:maxLength="2"
+        android:textColor="#101010"
+        android:textColorHighlight="#7cff88"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView45"
+        android:importantForAutofill="no"
+        tools:ignore="LabelFor"/>
+
+    <Button
+        android:id="@+id/button16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/boton_volver"
+        android:onClick="volverMenu"
+        android:text="@string/volverMenu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.784"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button17"
+        app:layout_constraintVertical_bias="0.414" />
+
+    <Button
+        android:id="@+id/button17"
+        android:layout_width="133dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="64dp"
+        android:background="@drawable/boton_volver"
+        android:onClick="volverCategorias"
+        android:text="@string/volverCatego"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/button22"
+        app:layout_constraintTop_toBottomOf="@+id/ayuda3" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="272dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/pastas"
+        android:textColor="#FDD835"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.014"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="138dp"
+        android:layout_height="108dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.938"
+        app:layout_constraintStart_toStartOf="@+id/textView13"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pasta2"
+        android:contentDescription="@string/imagenpasta2"/>
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="140dp"
+        android:layout_height="101dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button16"
+        app:layout_constraintHorizontal_bias="0.222"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button22"
+        app:layout_constraintVertical_bias="0.475"
+        app:srcCompat="@drawable/pasta2"
+        android:contentDescription="@string/imagenpasta"/>
+
+    <Spinner
+        android:id="@+id/spiPasta"
+        android:layout_width="214dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="19dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView46" />
+
+    <TextView
+        android:id="@+id/ttoatalPasta"
+        android:layout_width="352dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spiPasta" />
+
+
+
+</android.support.constraint.ConstraintLayout>

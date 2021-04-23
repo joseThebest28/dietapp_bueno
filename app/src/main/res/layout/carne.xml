@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/carne"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D81B60"
+    tools:context="com.example.Dietapp.categorias.Carne">
+
+    <Button
+        android:id="@+id/button20"
+        android:layout_width="149dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/boton_guardar"
+        android:onClick="enviar"
+        android:text="@string/guardar2"
+        android:textColor="@color/guuardar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.225"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button25" />
+
+    <Spinner
+        android:id="@+id/espi"
+        android:layout_width="176dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.885"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <Spinner
+        android:id="@+id/spiC3"
+        android:layout_width="176dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.885"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone6" />
+
+    <Spinner
+        android:id="@+id/spiC2"
+        android:layout_width="176dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.885"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numC1" />
+
+    <EditText
+        android:id="@+id/numC1"
+        android:layout_width="77dp"
+        android:layout_height="28dp"
+        android:background="#EDE6E6"
+        android:backgroundTint="#F4EFEF"
+        android:inputType="phone"
+        android:maxLength="4"
+        android:textColor="#101010"
+        android:textColorHighlight="#7cff88"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toEndOf="@+id/textView14"
+        app:layout_constraintTop_toBottomOf="@+id/espi"
+        android:importantForAutofill="no"
+        tools:ignore="LabelFor"/>
+
+    <EditText
+        android:id="@+id/phone6"
+        android:layout_width="77dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="76dp"
+        android:background="#EDE6E6"
+        android:backgroundTint="#F4EFEF"
+        android:inputType="phone"
+        android:maxLength="2"
+        android:textColor="#101010"
+        android:textColorHighlight="#7cff88"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toEndOf="@+id/textView27"
+        app:layout_constraintTop_toBottomOf="@+id/spiC2"
+        android:importantForAutofill="no"
+        tools:ignore="LabelFor" />
+
+    <EditText
+        android:id="@+id/phone10"
+        android:layout_width="77dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="12dp"
+        android:background="#EDE6E6"
+        android:backgroundTint="#F4EFEF"
+        android:importantForAutofill="no"
+        android:inputType="phone"
+        android:maxLength="2"
+        android:textColor="#101010"
+        android:textColorHighlight="#7cff88"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toEndOf="@+id/textView28"
+        app:layout_constraintTop_toBottomOf="@+id/spiC3"
+        tools:ignore="LabelFor" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/carneblanca"
+        android:textColor="#FDD835"
+        app:layout_constraintEnd_toStartOf="@+id/spiC2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView26" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/embutido"
+        android:textColor="#FDD835"
+        app:layout_constraintEnd_toStartOf="@+id/spiC3"
+        app:layout_constraintHorizontal_bias="0.007"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+    <Button
+        android:id="@+id/button16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/boton_volver"
+        android:onClick="volverMenu"
+        android:text="@string/volverMenu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.962"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ayuda"
+        app:layout_constraintVertical_bias="0.535" />
+
+    <Button
+        android:id="@+id/button17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/boton_volver"
+        android:onClick="volverCategorias"
+        android:text="@string/volverCatego"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button16"
+        app:layout_constraintHorizontal_bias="0.335"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button20"
+        app:layout_constraintVertical_bias="0.544" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="273dp"
+        android:layout_height="109dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/carnes"
+        android:textColor="#FDD835"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.007"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:text="@string/carneroja"
+        android:textColor="#FDD835"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="221dp"
+        android:layout_height="83dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.973"
+        app:layout_constraintStart_toStartOf="@+id/textView13"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/descarga"
+        android:contentDescription="@string/imagencarne"/>
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/cantidadcarne"
+        android:textColor="#FDD835"
+        app:layout_constraintEnd_toStartOf="@+id/numC1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="183dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/cantidadcarne2"
+        android:textColor="#FDD835"
+        app:layout_constraintEnd_toStartOf="@+id/spiC2"
+        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/cantidadembutido"
+        android:textColor="#FDD835"
+        app:layout_constraintEnd_toStartOf="@+id/phone10"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+    <TextView
+        android:id="@+id/totalP"
+        android:layout_width="143dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="40dp"
+        android:textColor="#FB8C00"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.866"
+        app:layout_constraintStart_toEndOf="@+id/button25"
+        app:layout_constraintTop_toBottomOf="@+id/phone10" />
+
+    <Button
+        android:id="@+id/button25"
+        android:layout_width="208dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="40dp"
+        android:onClick="ver"
+        android:background="@drawable/boton_totales"
+        android:textColor="@color/total"
+        android:text="@string/totalcarne"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.024"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView35" />
+
+    <TextView
+        android:id="@+id/ayuda"
+        android:layout_width="83dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="68dp"
+        android:background="@drawable/boton_ayuda"
+        android:onClick="ayuda"
+        android:text="@string/ayuda"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/ayuda"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/button20"
+        app:layout_constraintTop_toBottomOf="@+id/totalP" />
+</android.support.constraint.ConstraintLayout>

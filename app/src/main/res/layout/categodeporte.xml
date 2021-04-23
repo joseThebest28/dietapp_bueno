@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.Dietapp.categorias.CategoDeporte">
+
+    <Button
+        android:id="@+id/cardio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:onClick="irCardio"
+        android:text="Cardio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Abdominales"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:onClick="iraabdo"
+        android:text="Abdominales"
+        app:layout_constraintEnd_toEndOf="@+id/cardio"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/cardio"
+        app:layout_constraintTop_toBottomOf="@+id/cardio" />
+
+    <Button
+        android:id="@+id/total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:onClick="irEspalda"
+        android:text="Espalda"
+        app:layout_constraintEnd_toEndOf="@+id/total4"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toEndOf="@+id/Pecho"
+        app:layout_constraintTop_toBottomOf="@+id/total4" />
+
+    <Button
+        android:id="@+id/pecho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="Pierna"
+        android:onClick="irPierna"
+        app:layout_constraintEnd_toEndOf="@+id/Pecho"
+        app:layout_constraintStart_toStartOf="@+id/Pecho"
+        app:layout_constraintTop_toBottomOf="@+id/Pecho" />
+
+    <Button
+        android:id="@+id/pecho3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="Gluteos"
+        android:onClick="irGluteos"
+        app:layout_constraintEnd_toEndOf="@+id/total"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/pecho"
+        app:layout_constraintTop_toBottomOf="@+id/total" />
+
+    <Button
+        android:id="@+id/Pecho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="Pecho"
+        android:onClick="irPecho"
+        app:layout_constraintEnd_toEndOf="@+id/total3"
+        app:layout_constraintHorizontal_bias="0.548"
+        app:layout_constraintStart_toStartOf="@+id/total2"
+        app:layout_constraintTop_toBottomOf="@+id/total2" />
+
+    <Button
+        android:id="@+id/total2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="140dp"
+        android:onClick="irBiceps"
+        android:text="Biceps"
+        app:layout_constraintEnd_toEndOf="@+id/Abdominales"
+        app:layout_constraintTop_toBottomOf="@+id/Abdominales" />
+
+    <Button
+        android:id="@+id/total3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:onClick="irTriceps"
+        android:text="Triceps"
+        app:layout_constraintEnd_toStartOf="@+id/total4"
+        app:layout_constraintHorizontal_bias="0.376"
+        app:layout_constraintStart_toEndOf="@+id/total2"
+        app:layout_constraintTop_toBottomOf="@+id/Abdominales" />
+
+    <Button
+        android:id="@+id/total4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="64dp"
+        android:onClick="irHombro"
+        android:text="Hombro"
+        app:layout_constraintStart_toEndOf="@+id/Abdominales"
+        app:layout_constraintTop_toBottomOf="@+id/Abdominales" />
+
+    <Button
+        android:id="@+id/button34"
+        android:layout_width="128dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/boton_volver"
+        android:onClick="volverMenu"
+        android:text="@string/volverCatego"
+        app:layout_constraintEnd_toEndOf="@+id/pecho3"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/pecho"
+        app:layout_constraintTop_toBottomOf="@+id/pecho3" />
+
+    <Button
+        android:id="@+id/button40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="60dp"
+        android:text="total"
+        android:onClick="lanzarActiDepor"
+        app:layout_constraintEnd_toStartOf="@+id/button34"
+        app:layout_constraintTop_toBottomOf="@+id/pecho" />
+
+</android.support.constraint.ConstraintLayout>

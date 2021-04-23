@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00897B"
+    tools:context="com.example.Dietapp.categorias.Pescado">
+
+    <TextView
+        android:id="@+id/ayuda4"
+        android:layout_width="83dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="64dp"
+        android:background="@drawable/boton_ayuda"
+        android:onClick="ayudapez"
+        android:text="@string/ayuda"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/ayuda"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.888"
+        app:layout_constraintStart_toEndOf="@+id/button26"
+        app:layout_constraintTop_toBottomOf="@+id/totalP" />
+
+    <TextView
+        android:id="@+id/totalP"
+        android:layout_width="151dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toEndOf="@+id/button26"
+        app:layout_constraintTop_toBottomOf="@+id/numP2" />
+
+    <Button
+        android:id="@+id/button26"
+        android:layout_width="208dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="56dp"
+        android:onClick="ver"
+        android:background="@drawable/boton_totales"
+        android:textColor="@color/total"
+        android:text="@string/pescado1"
+        app:layout_constraintBottom_toTopOf="@+id/imageView12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.004"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numP2"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="@string/cantidadpescado1"
+        android:textColor="#FDD835"
+        app:layout_constraintBottom_toTopOf="@+id/spP2"
+        app:layout_constraintEnd_toStartOf="@+id/numP1"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        app:layout_constraintVertical_bias="0.916" />
+
+    <TextView
+        android:id="@+id/textView49"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="50dp"
+        android:text="@string/cantidadpescado1"
+        android:textColor="#FDD835"
+        app:layout_constraintBottom_toTopOf="@+id/totalP"
+        app:layout_constraintEnd_toStartOf="@+id/numP1"
+        app:layout_constraintHorizontal_bias="0.398"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView48" />
+
+    <Button
+        android:id="@+id/button23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="63dp"
+        android:layout_marginEnd="144dp"
+        android:background="@drawable/boton_guardar"
+        android:onClick="enviar"
+        android:text="@string/guardar"
+        android:textColor="@color/guuardar"
+        app:layout_constraintEnd_toEndOf="@+id/button17"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button26" />
+
+    <EditText
+        android:id="@+id/numP1"
+        android:layout_width="77dp"
+        android:layout_height="28dp"
+
+        android:layout_marginTop="16dp"
+        android:background="#EDE6E6"
+        android:backgroundTint="#F4EFEF"
+        android:inputType="phone"
+        android:maxLength="2"
+        android:textColor="#101010"
+        android:textColorHighlight="#7cff88"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.651"
+        app:layout_constraintStart_toEndOf="@+id/textView14"
+        app:layout_constraintTop_toBottomOf="@+id/Sp1"
+        android:importantForAutofill="no"
+        tools:ignore="LabelFor"/>
+
+    <EditText
+        android:id="@+id/numP2"
+        android:layout_width="77dp"
+        android:layout_height="28dp"
+
+        android:layout_marginTop="8dp"
+        android:background="#EDE6E6"
+        android:backgroundTint="#F4EFEF"
+        android:inputType="phone"
+        android:maxLength="2"
+        android:textColor="#101010"
+        android:textColorHighlight="#7cff88"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.651"
+        app:layout_constraintStart_toEndOf="@+id/textView14"
+        app:layout_constraintTop_toBottomOf="@+id/spP2"
+        android:importantForAutofill="no"
+        tools:ignore="LabelFor" />
+
+    <Spinner
+        android:id="@+id/Sp1"
+        android:layout_width="176dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.604"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <Spinner
+        android:id="@+id/spP2"
+        android:layout_width="176dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.638"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numP1" />
+
+    <Button
+        android:id="@+id/button16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/boton_volver"
+        android:onClick="volverMenu"
+        android:text="@string/volverMenu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button23" />
+
+    <Button
+        android:id="@+id/button17"
+        android:layout_width="127dp"
+        android:layout_height="78dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/boton_volver"
+        android:onClick="volverCategorias"
+        android:text="@string/volverCatego"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button23" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="273dp"
+        android:layout_height="109dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/pescados"
+        android:textColor="#FDD835"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.007"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/crustaceos"
+        android:textColor="#FDD835"
+        app:layout_constraintBottom_toTopOf="@+id/numP1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <TextView
+        android:id="@+id/textView48"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="@string/moluscos"
+        android:textColor="#FDD835"
+        app:layout_constraintBottom_toTopOf="@+id/numP2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView29"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="184dp"
+        android:layout_height="81dp"
+        android:src="@drawable/peca"
+        app:layout_constraintBottom_toTopOf="@+id/numP1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/textView13"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.192"
+        android:contentDescription="@string/imagenpescado1"/>
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="114dp"
+        android:layout_height="113dp"
+        android:layout_marginStart="4dp"
+        android:src="@drawable/pecao2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button23"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView49"
+        app:layout_constraintVertical_bias="0.787"
+        android:contentDescription="@string/imagenpescado2"/>
+
+</android.support.constraint.ConstraintLayout>

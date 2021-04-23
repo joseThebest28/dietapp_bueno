@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#43A047"
+    tools:context="com.example.Dietapp.categorias.VerdurayLegumbres">
+
+    <TextView
+        android:id="@+id/ayuda5"
+        android:layout_width="83dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/boton_ayuda"
+        android:onClick="ayudaver"
+        android:text="@string/ayuda"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/ayuda"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.888"
+        app:layout_constraintTop_toTopOf="@+id/verTOtalLechuguita" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="321dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/verdura1"
+        android:textColor="#C0CA33"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/meterVerduria" />
+
+    <TextView
+        android:id="@+id/verTOtalLechuguita"
+        android:layout_width="295dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.396"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/espinerverdu" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="310dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="172dp"
+        android:text="@string/verdura2"
+        android:textColor="#C0CA33"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.376"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView13" />
+
+    <Spinner
+        android:id="@+id/espinerverdu"
+        android:layout_width="229dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.351"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    <EditText
+        android:id="@+id/meterVerduria"
+        android:layout_width="77dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="20dp"
+        android:background="#EDE6E6"
+        android:backgroundTint="#F4EFEF"
+        android:inputType="phone"
+        android:maxLength="2"
+        android:textColor="#101010"
+        android:textColorHighlight="#7cff88"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.446"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView18"
+        android:importantForAutofill="no"
+        tools:ignore="LabelFor"/>
+
+    <Button
+        android:id="@+id/button24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:background="@drawable/boton_guardar"
+        android:onClick="envairlegumbre"
+        android:text="@string/guardar"
+        android:textColor="@color/guuardar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/verTOtalLechuguita" />
+
+    <Button
+        android:id="@+id/button16"
+        android:layout_width="163dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="84dp"
+        android:background="@drawable/boton_volver"
+        android:onClick="volverMenu"
+        android:text="@string/volverMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button24" />
+
+    <Button
+        android:id="@+id/button17"
+        android:layout_width="119dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/boton_volver"
+        android:onClick="volverCategorias"
+        android:text="@string/volverCatego"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.843"
+        app:layout_constraintStart_toEndOf="@+id/button16"
+        app:layout_constraintTop_toTopOf="@+id/ayuda5" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="271dp"
+        android:layout_height="111dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/verduras"
+        android:textColor="#FDD835"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.007"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="118dp"
+        android:layout_height="119dp"
+        android:layout_marginStart="292dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView13"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/serdura"
+        android:contentDescription="@string/imagenverdur"/>
+
+</android.support.constraint.ConstraintLayout>

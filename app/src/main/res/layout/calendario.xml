@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
+    tools:context="com.example.Dietapp.Micalendarrrrio">
+
+    <TextView
+        android:id="@+id/myDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="105sp"
+        android:layout_marginTop="4dp"
+        android:text="@string/fechayhora"
+        android:textAlignment="center"
+        android:textColor="#FFF"
+        android:textSize="23sp" />
+    <TextView
+        android:id="@+id/hora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/horaactual"
+        android:textAlignment="center"
+        android:textColor="#FFF"
+        android:textSize="23sp" />
+
+
+    <CalendarView
+        android:id="@+id/calendario"
+        android:layout_width="298dp"
+        android:layout_height="235dp"
+        android:layout_marginStart="42dp"
+        android:background="@drawable/bg_calendario">
+
+    </CalendarView>
+
+
+    <TextView
+        android:id="@+id/textn"
+        android:layout_width="356dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/comentariocalendar"
+
+
+        android:textColor="@color/total" />
+
+    <EditText
+        android:id="@+id/textComentario"
+        android:layout_width="223dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="100dp"
+        android:background="@drawable/bg_calendario"
+        android:text=""
+        android:textColor="#0B0B0A"
+        android:importantForAutofill="no"
+        tools:ignore="LabelFor"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/textDAtosTotal"
+        android:layout_width="289dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/bg_calendario"
+        android:textColor="#0C0C0C" />
+
+    <Button
+        android:id="@+id/evento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/bg_boton_calendario"
+        android:onClick="guardarCalendario"
+        android:paddingStart="2dp"
+        android:paddingEnd="20dp"
+        android:text="@string/salvarcalendar"
+        android:textColor="#FFF" />
+
+
+</LinearLayout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondoLogs"
+    tools:context="com.example.Dietapp.login.CrearUsers">
+
+    <EditText
+        android:id="@+id/editNombre"
+        android:layout_width="247dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="48dp"
+        android:background="@color/ayuda"
+        android:hint="@string/hintnombreCrear"
+        android:textColor="#0C0C0C"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editApe1"
+        android:layout_width="247dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/ayuda"
+        android:hint="@string/hintCrearApellido1"
+        app:layout_constraintEnd_toEndOf="@+id/editNombre"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/editNombre"
+        app:layout_constraintTop_toBottomOf="@+id/editNombre" />
+
+    <EditText
+        android:id="@+id/editApe2"
+        android:layout_width="247dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/ayuda"
+        android:hint="@string/hintCrearApellido2"
+        app:layout_constraintEnd_toEndOf="@+id/editApe1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editApe1"
+        app:layout_constraintTop_toBottomOf="@+id/editApe1" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="247dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/ayuda"
+        android:hint="@string/hintCrearNombreUser"
+        app:layout_constraintEnd_toEndOf="@+id/editApe2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editApe2"
+        app:layout_constraintTop_toBottomOf="@+id/editApe2" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="247dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/ayuda"
+        android:hint="@string/hintCrearEmaikl"
+        app:layout_constraintEnd_toEndOf="@+id/editText4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editText4"
+        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+
+    <EditText
+        android:id="@+id/editContra1"
+        android:layout_width="247dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/ayuda"
+        android:hint="@string/hintCrearContra"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/email"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/email"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
+
+    <EditText
+        android:id="@+id/editContra2"
+        android:layout_width="247dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/ayuda"
+        android:hint="@string/hintCrearContra2"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/editContra1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editContra1"
+        app:layout_constraintTop_toBottomOf="@+id/editContra1" />
+
+    <Button
+        android:id="@+id/button42"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:background="@drawable/boton_seguimiento"
+        android:onClick="alta"
+        android:text="Crear usuario"
+        android:textColor="@color/total"
+        app:layout_constraintEnd_toEndOf="@+id/editContra2"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/editContra2"
+        app:layout_constraintTop_toBottomOf="@+id/editContra2" />
+
+</android.support.constraint.ConstraintLayout>

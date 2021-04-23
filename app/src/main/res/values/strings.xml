@@ -1,0 +1,138 @@
+<resources>
+    <string name="app_name">Dietapp</string>
+    <string name="inicio">Inicio</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="tutorial">Tutorial</string>
+    <string name="seguimiento">Seguimiento</string>
+    <string name="categorias">CATEGORÍAS</string>
+    <string name="deporte">DEPORTE</string>
+    <string name="volverMenu">Volver Al Menu</string>
+    <string name="volverCatego">Volver A CATEGORÍAS</string>
+    <string name="volverCategoD">Volver A CATEGORÍAS DEPORTIVAS</string>
+    <string name="pescados">PESCADOS</string>
+    <string name="carnes">CARNES</string>
+    <string name="verduras">VERDURAS y LEGUMBRES</string>
+    <string name="pastas">PASTAS</string>
+    <string name="salsas">SALSAS y OTROS</string>
+    <string name="fruta">FRUTAS</string>
+    <string name="dietapp">DIETAPP</string>
+    <string name="reto">Retos</string>
+    <string name="deporteex">DEPORTE EXTREMO</string>
+    <string name="guardar">GUARDAR DATOS</string>
+    <string name="welcome">BIENVENIDO</string>
+    <string name="a">a</string>
+    <string name="guardar2">Guardar</string>
+    <string name="indicarDeprorte">Indica que deporte has practicado</string>
+    <string name="animo">Sabemos que ha sido un duro trabajo, pero lo mejor de esta vida cuesta.  ÁNIMO Y SIGUE ASÍ</string>
+    <string name="timepodeporte">Indica aqui el tiempo en horas y minutos:</string>
+    <string name="horasdepor">Horas</string>
+    <string name="minutosdepor">Minutos</string>
+    <string name="imagendepor">imagen</string>
+    <string name="imagen2depor">imagen2</string>
+    <string name="ayudadepor">El resultado es una aproximación, ya que no es exacto, depende de cada persona. </string>
+    <string name="carneblanca">carne blanca</string>
+    <string name="embutido">Embutidos</string>
+    <string name="carneroja">carne roja:</string>
+    <string name="imagencarne">imagencarne</string>
+    <string name="cantidadcarne">Indica cantidad de filetes: </string>
+    <string name="cantidadcarne2">Indica cantidad de filetes: </string>
+    <string name="cantidadembutido">Indica cantidad de embutido:  </string>
+    <string name="totalcarne">Ver total calorias consumidas de carne:  </string>
+    <string name="ayuda">ayuda</string>
+    <string name="fechayhora">fecha y hora actuales</string>
+    <string name="horaactual">hora actuales</string>
+    <string name="comentariocalendar">Añade comentario a continuación para guardar con los datos si lo deseas: </string>
+    <string name="salvarcalendar">salvar datos en calendario</string>
+    <string name="imageninicio">imageninicio</string>
+    <string name="imagenexpli1">imagen explica 1</string>
+    <string name="imagenexpli2">imagen explica 2</string>
+    <string name="imagenexpli3">imagen explica 3</string>
+    <string name="imagenexpli4">imagen explica 4</string>
+    <string name="imagenexpli5">imagen explica 5</string>
+    <string name="imagenexpli6">imagen explica 6</string>
+    <string name="imagenfru">imagen fruta</string>
+    <string name="indicafru">Indica cuantas piezas de fruta has comido.(se puede poner que has comido media pieza:0.5)</string>
+    <string name="indicafru2">Indica que fruta has comido</string>
+    <string name="indicapasta">Indica que pasta has comido</string>
+    <string name="indicapasta2">Indica cuantos platos de pasta has comido</string>
+    <string name="imagenpasta">imagen pasta</string>
+    <string name="imagenpasta2">imagen pasta 2</string>
+    <string name="pescado1">Ver total calorias consumidas</string>
+    <string name="cantidadpescado1">Indica cuantidad:</string>
+    <string name="crustaceos">Crustaceos:</string>
+    <string name="moluscos">Moluscos:</string>
+    <string name="imagenpescado1">imagen pescado 1</string>
+    <string name="imagenpescado2">imagen pescado 2</string>
+    <string name="imagenpopcarne">imagen popcarne </string>
+    <string name="imagenpoppasta">imagen poppasta </string>
+    <string name="imagenpoppescado">imagen poppescado </string>
+    <string name="imagenpopverdura">imagen verdura </string>
+    <string name="imagensalsa">imagen salsa </string>
+    <string name="imagendeporte1">imagen deporte 1 </string>
+    <string name="imagendeporte2">imagen deporte 2 </string>
+    <string name="imagenverdur">imagen verdura </string>
+    <string name="vertotal">ver total </string>
+    <string name="calendario">calendario </string>
+    <string name="textpopcarne">Filete de ternera=150 calorias
+        Filete de caballo=120 calorias   Filete de buey=160 calorias
+        Filete de vaca=140 calorias      Filete de pollo=40 calorias
+        Filete de pavo=30 calorias   Filete de cerdo=60 calorias   1_Longaniza=130 calorias
+        1_Chorizo=170 calorias    1_Morcilla=150 calorias</string>
+    <string name="textpoppasta">1_Plato_de_arroz=150cal
+        1_Plato_de_Boloñesa=360cal
+        1_Plato_de_Carbonara=400cal
+        1_Plato_de_Arroz_con_Frijoles=250cal </string>
+    <string name="textpoppescado">Cigala=85,4 Kcalorias
+        Cangrejo=101 Kcalorias
+        Bogavante=83 Kcalorias
+        Percebes=6, 6 Kcalorias
+        Caracol=7,8 Kcalorias
+        Calamar=175 Kcalorias
+        Pulpo=69 Kcalorias
+        Almeja=74 Kcalorias      </string>
+    <string name="textpopverdura1">  1 Ensalda completa lleva: - 3 hojas de lechuga
+        -10_aceitunas
+        -media_cebolla_blanca
+        -3_tomates </string>
+    <string name="textpopverdura2">
+        1_Plato_de_ensalda_completa=361cal
+        1_Zanahoria=32cal
+        1_Plato_de_lentejas(solo lentejas)=84cal
+        1_Plato_de_Judias(solo judias)=160cal
+        1_plato_de_guisantes=63cal</string>
+    <string name="salsas1">Indica cuantos chorros de salsa has echado </string>
+    <string name="salsas2">Indica que salsa has comido </string>
+    <string name="salsas3">1_chorro_de_ketchup=200cal
+        1_cuchara_de_mayonesa=160cal
+        1_chorro_de_barbacoa =200cal
+        1_cuchara_huancaina=220cal
+        1_chorro_de_mostaza=110cal
+        1_cuchara_de_guacamole=10cal </string>
+    <string name="verdura1">Indica que verdura y/o legumbre has comido </string>
+    <string name="verdura2">Indica cuanta verdura y/o legumbre has comido </string>
+    <string name="hintnombreCrear">Nombre </string>
+    <string name="hintCrearApellido1">Primer Apellido</string>
+    <string name="hintCrearApellido2">Segundo Apellido </string>
+    <string name="hintCrearNombreUser">Nombre Usuario </string>
+    <string name="hintCrearContra">Contraseña </string>
+    <string name="hintCrearEmaikl">E-mail </string>
+    <string name="hintCrearContra2">Repetir Contraseña </string>
+    <string name="textCompletado">Ejercicio Completo </string>
+    <string name="textMedioCompletado">Medio Ejercicio </string>
+    <string name="imagenAbdo1">imagenAbdo1</string>
+    <string name="imagenAbdo2">imagenAbdo2</string>
+    <string name="imagenAbdo3">imagenAbdo3</string>
+    <string name="imagenAbdo4">imagenAbdo4</string>
+    <string name="imagenAbdo5">imagenAbdo5</string>
+    <string name="hintRecuperaConta">Introduce aqui tu Nombre Usuario </string>
+    <string name="btSoliConta">Recupar contraseña </string>
+    <string name="bmodificarContra">Cambiar contraseña </string>
+    <string name="hintUser"> Usuario </string>
+    <string name="bCrearUser">Crear Usuario </string>
+    <string name="hintLog">Login </string>
+    <string name="hintCambioContra">Introduce tu Contraseña Actual </string>
+    <string name="hintCambioContraV">Repite tu Contraseña Nueva </string>
+    <string name="hintCambioContraV2">Introduce tu Contraseña Nueva </string>
+    <string name="bCambioC">Cambiar Contraseña  </string>
+    <string name="imagenajustes">imagenajustes</string>
+</resources>

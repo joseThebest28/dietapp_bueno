@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondoLogs"
+    tools:context="com.example.Dietapp.login.Login">
+
+    <Button
+        android:id="@+id/button37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        android:background="@drawable/boton_seguimiento"
+        android:onClick="lanzarinicio"
+        android:text="@string/hintLog"
+        app:layout_constraintEnd_toEndOf="@+id/textView15"
+        app:layout_constraintStart_toStartOf="@+id/textView15"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <EditText
+        android:id="@+id/textView15"
+        android:layout_width="159dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="44dp"
+        android:background="@color/ayuda"
+        android:hint="@string/hintCrearContra"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/textView125"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="@+id/textView125"
+        app:layout_constraintTop_toBottomOf="@+id/textView125"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/textView125"
+        android:layout_width="159dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/ayuda"
+        android:hint="@string/hintUser"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:inputType="text"
+        android:autofillHints="" />
+
+    <Button
+        android:id="@+id/button38"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/boton_seguimiento"
+        android:onClick="lanzarCrearUser"
+        android:text="@string/bCrearUser"
+        app:layout_constraintEnd_toEndOf="@+id/button37"
+        app:layout_constraintStart_toStartOf="@+id/button37"
+        app:layout_constraintTop_toBottomOf="@+id/button37" />
+
+    <Button
+        android:id="@+id/button39"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/boton_seguimiento"
+        android:onClick="lanzarRecu"
+        android:text="@string/btSoliConta"
+        app:layout_constraintEnd_toEndOf="@+id/button38"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/button38"
+        app:layout_constraintTop_toBottomOf="@+id/button38" />
+
+</android.support.constraint.ConstraintLayout>

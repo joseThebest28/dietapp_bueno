@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4CAF50"
+    tools:context="com.example.Dietapp.Seguimiento">
+
+    <Button
+        android:id="@+id/button27"
+        android:layout_width="171dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/boton_volver"
+        android:onClick="volverCategorias"
+        android:text="@string/volverCatego"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.966"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button28"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="207dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="16dp"
+        android:background="#4CAF50"
+        android:fontFamily="@font/abril_fatface"
+        android:text="@string/dietapp"
+        android:textColor="#536DFE"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="307dp"
+        android:layout_height="76dp"
+        android:background="#4CAF50"
+        android:fontFamily="@font/abril_fatface"
+        android:text="@string/seguimiento"
+        android:textColor="#FFFF00"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="54dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/boton_volver"
+        android:onClick="volverMenu"
+        android:text="@string/volverMenu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.426" />
+
+    <TextView
+        android:id="@+id/textCarne"
+        android:layout_width="154dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="100dp"
+        android:textColor="@color/total"
+        app:layout_constraintEnd_toStartOf="@+id/textPez"
+        app:layout_constraintHorizontal_bias="0.239"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/textPez"
+        android:layout_width="151dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="40dp"
+        android:textColor="@color/total"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <TextView
+        android:id="@+id/textD"
+        android:layout_width="145dp"
+        android:layout_height="48dp"
+
+        android:layout_marginTop="36dp"
+        android:textColor="#D81B60"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.552"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textVerdura" />
+
+    <TextView
+        android:id="@+id/textFr"
+        android:layout_width="158dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="60dp"
+        android:textColor="@color/total"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textoparapastas"
+        app:layout_constraintTop_toTopOf="@+id/textPez" />
+
+    <TextView
+        android:id="@+id/textoparapastas"
+        android:layout_width="145dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="167dp"
+        android:layout_marginBottom="14dp"
+        android:textColor="@color/total"
+        app:layout_constraintBottom_toTopOf="@+id/recibirSalsa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.156"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView12"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/recibirSalsa"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+
+        android:layout_marginTop="11dp"
+        android:textColor="@color/total"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textVerdura"
+        app:layout_constraintTop_toBottomOf="@+id/textFr" />
+
+    <TextView
+        android:id="@+id/textVerdura"
+        android:layout_width="156dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/total"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.133"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textoparapastas" />
+
+    <TextView
+        android:id="@+id/totalcaloriasHoy"
+        android:layout_width="287dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="164dp"
+        android:textColor="@color/total"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textD"
+        app:layout_constraintVertical_bias="0.786" />
+
+    <Button
+        android:id="@+id/button28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:onClick="recuperar"
+        android:text="@string/vertotal"
+        android:background="@drawable/boton_totales"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/totalcaloriasHoy" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="166dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="23dp"
+        android:textColor="@color/hora"
+        app:layout_constraintBottom_toTopOf="@+id/textView12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.643"
+        app:layout_constraintStart_toEndOf="@+id/textView11"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/bgrsagfas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/bg_boton_calendario"
+        android:onClick="enviarDatosCalendario"
+        android:text="@string/calendario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/button28"
+        app:layout_constraintTop_toBottomOf="@+id/totalcaloriasHoy" />
+
+</android.support.constraint.ConstraintLayout>

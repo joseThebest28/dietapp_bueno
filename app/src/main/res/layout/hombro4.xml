@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.Dietapp.DeporteEjercicios.hombro.Hombro4">
+
+    <Button
+        android:id="@+id/button35"
+        android:layout_width="133dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="108dp"
+        android:background="@drawable/boton_volver"
+        android:onClick="volverCategorias"
+        android:text="@string/volverCategoD"
+        app:layout_constraintEnd_toEndOf="@+id/completado"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/completado"
+        app:layout_constraintTop_toBottomOf="@+id/completado" />
+
+    <Button
+        android:id="@+id/completado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="412dp"
+        android:layout_marginEnd="44dp"
+        android:onClick="completad"
+        android:text="Completado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/medioej"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:onClick="mediocompletad"
+        android:text="Medio Ejercicio"
+        app:layout_constraintEnd_toStartOf="@+id/completado"
+        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>
