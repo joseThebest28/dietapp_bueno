@@ -65,7 +65,29 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="30dp">
 
+                <Button
+                    android:id="@+id/bextras"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:onClick="verMAs"
+                    android:text="@string/extras"
+                    android:visibility="visible" />
+
+                <Button
+                    android:id="@+id/bRetos"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:onClick="iraRetos"
+                    android:text="@string/retos" />
+
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </android.widget.ScrollView>

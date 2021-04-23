@@ -135,4 +135,7 @@
     <string name="hintCambioContraV2">Introduce tu Contraseña Nueva </string>
     <string name="bCambioC">Cambiar Contraseña  </string>
     <string name="imagenajustes">imagenajustes</string>
+    <string name="extras">VER MAS</string>
+    <string name="retos">RETOS</string>
+    <string name="recuCo">Recordar Contraseña</string>
 </resources>

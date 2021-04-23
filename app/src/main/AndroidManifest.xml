@@ -91,7 +91,7 @@
         <activity android:name="com.example.Dietapp.DeporteEjercicios.gluteos.Gluteos3" />
         <activity android:name="com.example.Dietapp.login.CrearUsers" />
         <activity android:name="com.example.Dietapp.Ajustes" />
-
+        <activity android:name="com.example.Dietapp.extras.Pagina_reto" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

@@ -52,17 +52,6 @@
         app:srcCompat="@drawable/salida"
         android:contentDescription="@string/imageninicio"/>
 
-    <Button
-        android:id="@+id/button41"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:text="@string/reto"
-        android:onClick="lanzarReto"
-        app:layout_constraintEnd_toEndOf="@+id/button6"
-        app:layout_constraintStart_toStartOf="@+id/button6"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
-
     <ImageView
         android:id="@+id/imageView28"
         android:layout_width="69dp"

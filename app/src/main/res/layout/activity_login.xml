@@ -11,27 +11,28 @@
         android:id="@+id/button37"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="64dp"
         android:background="@drawable/boton_seguimiento"
         android:onClick="lanzarinicio"
         android:text="@string/hintLog"
-        app:layout_constraintEnd_toEndOf="@+id/textView15"
-        app:layout_constraintStart_toStartOf="@+id/textView15"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+        app:layout_constraintEnd_toEndOf="@+id/checkBox"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/checkBox"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
 
     <EditText
         android:id="@+id/textView15"
         android:layout_width="159dp"
         android:layout_height="43dp"
         android:layout_marginTop="44dp"
+        android:autofillHints=""
         android:background="@color/ayuda"
         android:hint="@string/hintCrearContra"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="@+id/textView125"
         app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="@+id/textView125"
-        app:layout_constraintTop_toBottomOf="@+id/textView125"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/textView125" />
 
     <EditText
         android:id="@+id/textView125"
@@ -66,9 +67,23 @@
         android:background="@drawable/boton_seguimiento"
         android:onClick="lanzarRecu"
         android:text="@string/btSoliConta"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/button38"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/button38"
-        app:layout_constraintTop_toBottomOf="@+id/button38" />
+        app:layout_constraintTop_toBottomOf="@+id/button38"
+        app:layout_constraintVertical_bias="0.107" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="209dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/recuCo"
+        android:textColor="@color/ayuda"
+        app:layout_constraintEnd_toEndOf="@+id/textView15"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView15"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
 </android.support.constraint.ConstraintLayout>

@@ -12,6 +12,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.Dietapp.categorias.Deporte;
+import com.example.Dietapp.extras.Pagina_reto;
+import com.example.Dietapp.login.Login;
 import com.example.myapplicationfinal.R;
 
 import java.security.AccessController;
@@ -19,7 +23,7 @@ import java.security.AccessController;
 public class Ajustes extends AppCompatActivity {
     TextView texto,nombreED,apellidoED,apellido2ED,emailED;
     ImageView imagen;
-    Button boton;
+    Button boton,boton2;
     private static final int COD_Selecciona=10;
     private static final int COD_Foto=20;
     @Override
@@ -32,10 +36,10 @@ public class Ajustes extends AppCompatActivity {
         apellidoED = findViewById(R.id.textView39);
         apellido2ED = findViewById(R.id.textView40);
         emailED = findViewById(R.id.textView38);
-imagen=findViewById(R.id.imageView29);
-boton=findViewById(R.id.button43);
-
-
+        imagen=findViewById(R.id.imageView29);
+        boton=findViewById(R.id.button43);
+        boton2=findViewById(R.id.bRetos);
+        boton2.setVisibility(View.INVISIBLE);
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Ajustes.this);
 
        String nombreUser = myPreferences.getString("nombreUser", "");
@@ -72,13 +76,21 @@ boton=findViewById(R.id.button43);
                 }else{
                     if(opciones[i].equals("elegir de Galeria"))
                     {
-                        Intent intent=new Intent(Intent.ACTION_GET_CONTENT, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-                        intent.setType("image/");
-                        //startActivityForResult(intent, PHOTO_SELECTED);
+
                     }
                 }
             }
         });
 
+    }
+
+    public void verMAs(View view) {
+        boton2.setVisibility(View.VISIBLE);
+    }
+
+
+    public void iraRetos(View view) {
+        Intent ifds = new Intent(this, Pagina_reto.class);
+        startActivity(ifds);
     }
 }

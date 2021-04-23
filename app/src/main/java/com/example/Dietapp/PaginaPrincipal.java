@@ -50,13 +50,12 @@ public class PaginaPrincipal extends AppCompatActivity {
 
     }
 
-    public void lanzarReto(View view) {
-        Intent ir= new Intent(this, Pagina_reto.class );
-        startActivity(ir);
-    }
+
 
     public void irAjustes(View view) {
         Intent ij= new Intent(this, Ajustes.class );
         startActivity(ij);
     }
+
+
 }

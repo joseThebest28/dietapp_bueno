@@ -39,7 +39,7 @@ public class PaginaInicio extends AppCompatActivity {
     }
     public void lanzarapp(View view) {
        // Intent i = new Intent(this, Login.class );
-        Intent i = new Intent(this, PaginaPrincipal.class );
+        Intent i = new Intent(this, Login.class );
         startActivity(i);
     }
     public void lanzartuto(View view) {

@@ -9,6 +9,8 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -22,6 +24,7 @@ public class Login extends AppCompatActivity {
     private Toast toast1;
     private EditText login, contra;
     private String loginT, contraT;
+    CheckBox chack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,23 @@ public class Login extends AppCompatActivity {
 //prueba
         login = findViewById(R.id.textView125);
         contra = findViewById(R.id.textView15);
+        chack=findViewById(R.id.checkBox);
+        chack.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked)
+                {
+                    chack.setTextColor(0xff00ff00);
+                    chack.append(" Seleccionado");
+                }
+                else
+                {
+                    chack.setText("Recordar Contraseña");
+                    chack.setTextColor(0xffffffff);
+                }
+            }
+        });
     }
 
     public void lanzarinicio(View view) {
