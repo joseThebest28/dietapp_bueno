@@ -27,7 +27,7 @@ import java.util.Calendar;
 public class Ajustes extends AppCompatActivity {
     TextView texto,nombreED,apellidoED,apellido2ED,emailED,retos;
     ImageView imagen;
-    Button boton,botonVerMAs;
+    Button boton,botonRetos,botonAgua;
     private static final int COD_Selecciona=10;
     private static final int COD_Foto=20;
     @Override
@@ -46,8 +46,11 @@ public class Ajustes extends AppCompatActivity {
 
         boton=findViewById(R.id.button43);
 
-        botonVerMAs=findViewById(R.id.bRetos);
-        botonVerMAs.setVisibility(View.INVISIBLE);
+        botonRetos=findViewById(R.id.bRetos);
+        botonRetos.setVisibility(View.INVISIBLE);
+
+        botonAgua=findViewById(R.id.bcontadorAgua);
+        botonAgua.setVisibility(View.INVISIBLE);
 
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Ajustes.this);
          String nombreUser = myPreferences.getString("nombreUser", "");
@@ -83,7 +86,7 @@ public class Ajustes extends AppCompatActivity {
 
 
     public void verMAs(View view) {
-        botonVerMAs.setVisibility(View.VISIBLE);
+        botonRetos.setVisibility(View.VISIBLE);  botonAgua.setVisibility(View.VISIBLE);
     }
 
 
