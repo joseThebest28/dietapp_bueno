@@ -1,5 +1,6 @@
 package com.example.Dietapp;
 
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -28,32 +29,33 @@ public class PaginaInicio extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-       TextView texto = (TextView) findViewById(R.id.textView);
-        Animation animacion = AnimationUtils.loadAnimation(this,R.anim.animacion);
-       Animation animacionb = AnimationUtils.loadAnimation(this,R.anim.animacionb);
-        Button b1=findViewById(R.id.button);
-        Button b2=findViewById(R.id.button3);
+        TextView texto = (TextView) findViewById(R.id.textView);
+        Animation animacion = AnimationUtils.loadAnimation(this, R.anim.animacion);
+        Animation animacionb = AnimationUtils.loadAnimation(this, R.anim.animacionb);
+        Button b1 = findViewById(R.id.button);
+        Button b2 = findViewById(R.id.button3);
         TextView texto2 = (TextView) findViewById(R.id.textView3);
         TextView texto3 = (TextView) findViewById(R.id.textView4);
 
         texto.startAnimation(animacionb);
         texto2.startAnimation(animacionb);
         texto3.startAnimation(animacionb);
-       b1.startAnimation(animacion);
+        b1.startAnimation(animacion);
         b2.startAnimation(animacion);
 
 
+        //si son las doce borrar todos los datos introducidos por el usuario, ya que han sido los datos del dia anterior.
 
-        //si son las doce borrar todos los datos introducidos por el usuario, ya que han sido los datos del dia anterior
-
-        //comparar fechas
-        Calendar cal = Calendar.getInstance();
-        long hoy = cal.getTimeInMillis();
-        cal.add(Calendar.DAY_OF_WEEK,1);
-        long despues = cal.getTimeInMillis();
-
-        if(despues > hoy){
-            //borrar registrocunado llega el dia siguiente
+        //obtener la hora actual
+        Calendar calendario = Calendar.getInstance();
+        int hora, minutos, segundos;
+        hora =calendario.get(Calendar.HOUR_OF_DAY);
+        minutos = calendario.get(Calendar.MINUTE);
+        segundos = calendario.get(Calendar.SECOND);
+        //comparar los minutos segundo y horas a las 00 que son las doce de la noche, en caso de que le dispositivo tenga la hora en formato de 12 horas, se borraran cada vez que sean las doce
+        while((hora==23 && minutos==00&&segundos==00))
+        {
+            //borrar registrocunado llegadas las doce de la noche
 
             SharedPreferences myPreferencesPA = PreferenceManager.getDefaultSharedPreferences(PaginaInicio.this);
             SharedPreferences.Editor myEditorPA = myPreferencesPA.edit();
@@ -66,10 +68,10 @@ public class PaginaInicio extends AppCompatActivity {
             myEditorPA.putInt("salsa", 0);
             myEditorPA.putInt("erdura", 0);
             myEditorPA.commit();
-
         }
-        Log.i("FECHA RESULTADO",new SimpleDateFormat("dd/MM/yyyy").format(hoy));
-        Log.i("FECHA RESULTADO", new SimpleDateFormat("dd/MM/yyyy").format(despues));
+
+        Log.i("taf", ""+hora);
+        Log.i("taf", ""+minutos);
 
     }
     public void lanzarapp(View view) {
