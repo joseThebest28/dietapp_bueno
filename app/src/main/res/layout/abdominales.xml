@@ -11,13 +11,12 @@
         android:id="@+id/completado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="576dp"
         android:onClick="completad"
         android:text="@string/textCompletado"
-        app:layout_constraintEnd_toEndOf="@+id/imageView24"
-        app:layout_constraintHorizontal_bias="0.85"
-        app:layout_constraintStart_toStartOf="@+id/imageView24"
-        app:layout_constraintTop_toTopOf="@+id/imageView24" />
+        app:layout_constraintBottom_toBottomOf="@+id/medioej"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/medioej"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/medioej"
@@ -26,6 +25,7 @@
         android:layout_marginTop="576dp"
         android:onClick="mediocompletad"
         android:text="@string/textMedioCompletado"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/completado"
         app:layout_constraintHorizontal_bias="0.641"
         app:layout_constraintStart_toStartOf="@+id/imageView24"
