@@ -21,7 +21,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="com.example.Dietapp.extras.ContadroVasosAgua"></activity>
-        <activity android:name="com.example.Dietapp.RecuperarContrase" />
         <activity android:name="com.example.Dietapp.login.Login" />
         <activity android:name="com.example.Dietapp.PaginaInicio">
             <intent-filter>

@@ -14,10 +14,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.Dietapp.Ajustes;
-import com.example.Dietapp.PaginaInicio;
 import com.example.Dietapp.PaginaPrincipal;
-import com.example.Dietapp.RecuperarContrase;
 import com.example.myapplicationfinal.R;
 
 public class Login extends AppCompatActivity {
