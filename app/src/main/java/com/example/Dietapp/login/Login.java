@@ -95,6 +95,7 @@ public class Login extends AppCompatActivity {
                         myEditor.putString("email", emailSQ);
                         myEditor.putString("contra", compararC);
 
+
                         myEditor.commit();
 
                         Intent i = new Intent(this, PaginaPrincipal.class);

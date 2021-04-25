@@ -48,21 +48,25 @@ public class Ajustes extends AppCompatActivity {
 
         botonVerMAs=findViewById(R.id.bRetos);
         botonVerMAs.setVisibility(View.INVISIBLE);
-        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Ajustes.this);
 
-       String nombreUser = myPreferences.getString("nombreUser", "");
+        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Ajustes.this);
+         String nombreUser = myPreferences.getString("nombreUser", "");
         String nombre = myPreferences.getString("nombre", "");
         String apellido = myPreferences.getString("apellido", "");
         String apellido2 = myPreferences.getString("apellido2", "");
         String emal = myPreferences.getString("email", "");
         String agua = myPreferences.getString("agua", "");
+
         texto.setText("Nombre usuario-----> "+nombreUser);
         nombreED.setText("Nombre ---------------->  "+nombre);
         apellidoED.setText("Apellido ---------------->  "+apellido);
         apellido2ED.setText("Apellido2 -------------->  "+apellido2);
         emailED.setText("Email -------------------->  "+emal);
         if(!agua.isEmpty())
-        {retos.setText(""+agua);}
+        {retos.setText(""+agua);
+
+
+        }
 
         //falta cambiar iamgen de galeria a Imegenview
 
@@ -100,25 +104,15 @@ public class Ajustes extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int id) {
                         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Ajustes.this);
 
-                        String nombreLo = myPreferences.getString("nombreUser", "");
-                        String nombre = myPreferences.getString("nombre", "");
-                        String apellido = myPreferences.getString("apellido", "");
-                        String apellido2 = myPreferences.getString("apellido2", "");
-                        String email = myPreferences.getString("email", "");
-                        String contra = myPreferences.getString("contra", "");
-                        String agua = myPreferences.getString("agua", "");
-                        nombreLo="";
-                        nombre=""; apellido=""; email=""; apellido2=""; contra="";agua="";
 
                         SharedPreferences.Editor myEditor = myPreferences.edit();
-                        myEditor.putString("nombreUser", nombreLo);
-                        myEditor.putString("nombre", nombre);
-                        myEditor.putString("apellido", apellido);
-                        myEditor.putString("apellido2", apellido2);
-                        myEditor.putString("email", email);
-                        myEditor.putString("contra", contra);
-
-                        myEditor.putString("agua", agua);
+                        myEditor.putString("nombreUser", "");
+                        myEditor.putString("nombre", "");
+                        myEditor.putString("apellido", "");
+                        myEditor.putString("apellido2", "");
+                        myEditor.putString("email", "");
+                        myEditor.putString("contra", "");
+                        myEditor.putString("agua", "");
 
                         myEditor.commit();
 

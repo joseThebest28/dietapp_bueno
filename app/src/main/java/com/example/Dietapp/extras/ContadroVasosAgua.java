@@ -62,6 +62,8 @@ public class ContadroVasosAgua extends AppCompatActivity {
                 {
                     SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(ContadroVasosAgua.this);
                     SharedPreferences.Editor myEditor = myPreferences.edit();
+                    String nombreUser = myPreferences.getString("nombreUser", "");
+                    String nombreUserCOmparar="";
                     myEditor.putString("agua", "Se ha completado el objetivo de hoy de  agua");
                     myEditor.commit();
 
