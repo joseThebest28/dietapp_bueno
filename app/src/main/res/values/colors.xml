@@ -10,5 +10,6 @@
     <color name="explica5">#E6BD9D</color>
     <color name="hora">#FFD81B60</color>
     <color name="fondoLogs">#1E88E5</color>
-
+    <color name="verdeClaro">#84E388</color>
+    <color name="dietappPrincipal">#FFC107</color>
 </resources>

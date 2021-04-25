@@ -123,10 +123,13 @@ public class Seguimiento extends AppCompatActivity {
 
         String texto1 = "Hoy has obtenido Kcalorias.";
         String texto2 = " Felicidades, vas por buen camino";
-        total.setText(texto1 +suma+ texto2);
+        if(suma>0)
+        {total.setText(texto1 +suma+ texto2);
+       }else{
+            total.setText(texto1 +suma);
+        }
+
         texcv.setText(strDate);
-
-
 
     }
 

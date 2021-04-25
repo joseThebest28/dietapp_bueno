@@ -8,20 +8,24 @@ import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.Dietapp.categorias.Deporte;
+import com.example.Dietapp.extras.ContadroVasosAgua;
 import com.example.Dietapp.extras.Pagina_reto;
 import com.example.Dietapp.login.Login;
 import com.example.myapplicationfinal.R;
 
 import java.security.AccessController;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class Ajustes extends AppCompatActivity {
-    TextView texto,nombreED,apellidoED,apellido2ED,emailED;
+    TextView texto,nombreED,apellidoED,apellido2ED,emailED,retos;
     ImageView imagen;
     Button boton,botonVerMAs;
     private static final int COD_Selecciona=10;
@@ -36,7 +40,10 @@ public class Ajustes extends AppCompatActivity {
         apellidoED = findViewById(R.id.textView39);
         apellido2ED = findViewById(R.id.textView40);
         emailED = findViewById(R.id.textView38);
+        retos = findViewById(R.id.textView395);
+
         imagen=findViewById(R.id.imageView29);
+
         boton=findViewById(R.id.button43);
 
         botonVerMAs=findViewById(R.id.bRetos);
@@ -48,13 +55,21 @@ public class Ajustes extends AppCompatActivity {
         String apellido = myPreferences.getString("apellido", "");
         String apellido2 = myPreferences.getString("apellido2", "");
         String emal = myPreferences.getString("email", "");
+        String agua = myPreferences.getString("agua", "");
         texto.setText("Nombre usuario-----> "+nombreUser);
         nombreED.setText("Nombre ---------------->  "+nombre);
         apellidoED.setText("Apellido ---------------->  "+apellido);
         apellido2ED.setText("Apellido2 -------------->  "+apellido2);
         emailED.setText("Email -------------------->  "+emal);
+        if(!agua.isEmpty())
+        {retos.setText(""+agua);}
 
-        //para cambiar la imagen
+        //falta cambiar iamgen de galeria a Imegenview
+
+
+
+
+
 
 
     }
@@ -91,9 +106,9 @@ public class Ajustes extends AppCompatActivity {
                         String apellido2 = myPreferences.getString("apellido2", "");
                         String email = myPreferences.getString("email", "");
                         String contra = myPreferences.getString("contra", "");
-
+                        String agua = myPreferences.getString("agua", "");
                         nombreLo="";
-                        nombre=""; apellido=""; email=""; apellido2=""; contra="";
+                        nombre=""; apellido=""; email=""; apellido2=""; contra="";agua="";
 
                         SharedPreferences.Editor myEditor = myPreferences.edit();
                         myEditor.putString("nombreUser", nombreLo);
@@ -103,7 +118,10 @@ public class Ajustes extends AppCompatActivity {
                         myEditor.putString("email", email);
                         myEditor.putString("contra", contra);
 
+                        myEditor.putString("agua", agua);
+
                         myEditor.commit();
+
 
                         startActivity(ifds);
                     }
@@ -122,5 +140,10 @@ public class Ajustes extends AppCompatActivity {
 
 
 
+    }
+
+    public void iraContadorAgua(View view) {
+        Intent ifds = new Intent(this, ContadroVasosAgua.class);
+        startActivity(ifds);
     }
 }

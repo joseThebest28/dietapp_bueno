@@ -56,11 +56,12 @@
         android:layout_height="73dp"
         android:layout_marginStart="100dp"
         android:background="@drawable/bg_calendario"
+        android:importantForAutofill="no"
+        android:inputType="text"
         android:text=""
         android:textColor="#0B0B0A"
-        android:importantForAutofill="no"
-        tools:ignore="LabelFor"
-        android:inputType="text" />
+        android:textSize="10sp"
+        tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/textDAtosTotal"

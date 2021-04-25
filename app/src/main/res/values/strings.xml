@@ -139,4 +139,16 @@
     <string name="retos">RETOS</string>
     <string name="recuCo">Recordar Contraseña</string>
     <string name="cerrarS">Cerrar Sesion</string>
+    <string name="contarAgua">Contador Vasos Agua</string>
+    <string name="tituloContador">CONTADOR VASOS DE AGUA</string>
+    <string name="textoContador">Pulse el mas para sumar un vaso de agua, pulse menos para quitar un vaso de agua tomado.</string>
+    <string name="textoContador4">Cada vaso de agua equivale a 250 ml.</string>
+
+
+    <string name="textoContador2">El objetivo diario es llegar a 2 litros de agua, es decir  8 vasos de agua,                                                   aunque puedes llegar a mas .</string>
+    <string name="textoContador3">Mucho animo.</string>
+    <string name="volAjustes">VOLVER AJUSTES</string>
+    <string name="imagenMenos">Imagen Menos</string>
+    <string name="imagenMAS">Imagen Mas</string>
+
 </resources>

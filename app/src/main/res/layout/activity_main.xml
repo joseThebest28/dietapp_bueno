@@ -32,7 +32,7 @@
         android:background="#4CAF50"
         android:fontFamily="@font/abril_fatface"
         android:text="@string/dietapp"
-        android:textColor="#FFC107"
+        android:textColor="@color/dietappPrincipal"
         android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

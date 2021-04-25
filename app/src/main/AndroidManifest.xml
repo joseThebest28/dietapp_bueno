@@ -3,12 +3,13 @@
     package="com.example.myapplicationfinal">
 
     <uses-permission android:name="android.permission.READ_CALENDAR" />
-    <uses-permission android:name="android.permission.WRITE_CALENDAR" /><!--para poder escribir ne le calendario-->
-    <uses-permission android:name="android.permission.CAMERA" />  <!--para usar la camara-->
-    <uses-permission android:name="android.hardware.Camera" android:required="true" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /><!--para meter datos en  el amacanamiento del movil-->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /><!--para leer datos  del amacanamiento del movil-->
-
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" /> <!-- para poder escribir ne le calendario -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- para usar la camara -->
+    <uses-permission
+        android:name="android.hardware.Camera"
+        android:required="true" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- para meter datos en  el amacanamiento del movil -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -19,6 +20,7 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name="com.example.Dietapp.extras.ContadroVasosAgua"></activity>
         <activity android:name="com.example.Dietapp.RecuperarContrase" />
         <activity android:name="com.example.Dietapp.login.Login" />
         <activity android:name="com.example.Dietapp.PaginaInicio">
@@ -92,11 +94,10 @@
         <activity android:name="com.example.Dietapp.login.CrearUsers" />
         <activity android:name="com.example.Dietapp.Ajustes" />
         <activity android:name="com.example.Dietapp.extras.Pagina_reto" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
-
-    <!--Realizado por: Jose Lago Ruiz -->

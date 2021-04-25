@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/verdeClaro"
+    tools:context="com.example.Dietapp.extras.ContadroVasosAgua">
+
+    <TextView
+        android:id="@+id/textView41"
+        android:layout_width="184dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="28dp"
+        android:background="@color/ayuda"
+        android:textAlignment="center"
+        android:textColor="@color/fondoLogs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textCOntador4" />
+
+    <TextView
+        android:id="@+id/textView50"
+        android:layout_width="135dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/ayuda"
+        android:textAlignment="center"
+        android:textColor="@color/fondoLogs"
+        app:layout_constraintEnd_toEndOf="@+id/textView41"
+        app:layout_constraintStart_toStartOf="@+id/textView41"
+        app:layout_constraintTop_toBottomOf="@+id/textView41" />
+
+    <ImageView
+        android:id="@+id/imageView30"
+        android:layout_width="92dp"
+        android:layout_height="95dp"
+        android:layout_marginEnd="4dp"
+        android:contentDescription="@string/imagenMAS"
+        app:layout_constraintBottom_toBottomOf="@+id/textView41"
+        app:layout_constraintEnd_toStartOf="@+id/textView41"
+        app:layout_constraintTop_toTopOf="@+id/textView41"
+        app:layout_constraintVertical_bias="0.191"
+        app:srcCompat="@drawable/miselector" />
+
+    <ImageView
+        android:id="@+id/imageView31"
+        android:layout_width="91dp"
+        android:layout_height="102dp"
+        android:layout_marginStart="4dp"
+        android:contentDescription="@string/imagenMenos"
+        app:layout_constraintBottom_toBottomOf="@+id/textView41"
+        app:layout_constraintStart_toEndOf="@+id/textView41"
+        app:layout_constraintTop_toTopOf="@+id/textView41"
+        app:layout_constraintVertical_bias="0.266"
+        app:srcCompat="@drawable/miselector2" />
+
+    <TextView
+        android:id="@+id/textView42"
+        android:layout_width="406dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/tituloContador"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/ayuda"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView422"
+        android:layout_width="415dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="32dp"
+        android:textSize="18sp"
+       android:text="@string/textoContador"
+        app:layout_constraintEnd_toEndOf="@+id/textView42"
+        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintStart_toStartOf="@+id/textView42"
+        app:layout_constraintTop_toBottomOf="@+id/textView42" />
+
+    <TextView
+        android:id="@+id/textCOntador2"
+        android:layout_width="313dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="60dp"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:text="@string/textoContador2"
+        app:layout_constraintEnd_toStartOf="@+id/imageView31"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toEndOf="@+id/imageView30"
+        app:layout_constraintTop_toBottomOf="@+id/textView41" />
+
+    <TextView
+        android:id="@+id/textCOntador3"
+        android:layout_width="115dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"
+        android:text="@string/textoContador3"
+        app:layout_constraintEnd_toEndOf="@+id/textCOntador2"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="@+id/textCOntador2"
+        app:layout_constraintTop_toBottomOf="@+id/textCOntador2" />
+
+    <TextView
+        android:id="@+id/textCOntador4"
+        android:layout_width="405dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="36dp"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        android:text="@string/textoContador4"
+        app:layout_constraintEnd_toEndOf="@+id/textView422"
+        app:layout_constraintStart_toStartOf="@+id/textView422"
+        app:layout_constraintTop_toBottomOf="@+id/textView422" />
+
+    <Button
+        android:id="@+id/button41"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/volAjustes"
+        android:onClick="volverAjuest"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textCOntador2"
+        app:layout_constraintHorizontal_bias="0.893"
+        app:layout_constraintStart_toEndOf="@+id/textCOntador3"
+        app:layout_constraintTop_toBottomOf="@+id/textCOntador3"
+        app:layout_constraintVertical_bias="0.495" />
+
+    <Button
+        android:id="@+id/button44"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="52dp"
+        android:text="@string/volverMenu"
+        android:onClick="volverMenu"
+        app:layout_constraintBottom_toBottomOf="@+id/button41"
+        app:layout_constraintEnd_toStartOf="@+id/button41"
+        app:layout_constraintTop_toTopOf="@+id/button41"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/llegada2litrosdegua" />
+
+</android.support.constraint.ConstraintLayout>
