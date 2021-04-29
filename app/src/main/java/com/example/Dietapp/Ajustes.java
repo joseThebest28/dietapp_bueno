@@ -61,7 +61,6 @@ public class Ajustes extends AppCompatActivity {
         String apellido = myPreferences.getString("apellido", "");
         String apellido2 = myPreferences.getString("apellido2", "");
         String emal = myPreferences.getString("email", "");
-        String aguaT = myPreferences.getString("aguaT", "");
         String agua = myPreferences.getString("agua", "");
 
 
@@ -72,8 +71,8 @@ public class Ajustes extends AppCompatActivity {
         emailED.setText("Email -------------------->  "+emal);
 
 
-        if(agua.equals("si"))
-        retos.setText(""+aguaT);
+
+        retos.setText(agua);
 
 
 

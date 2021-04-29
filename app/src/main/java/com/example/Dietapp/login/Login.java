@@ -63,7 +63,7 @@ public class Login extends AppCompatActivity {
             contraT = String.valueOf(contra.getText());
             if (condiciones()) {
                 AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,
-                        "registro_user", null, 9);
+                        "registro_user", null, 10);
                 SQLiteDatabase bd = admin.getWritableDatabase(); //Create and/or open a database that will be used for reading and writing.
 
                 Cursor curso = bd.rawQuery("select *  from usuarios ", null);

@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.Dietapp.Ajustes;
+import com.example.Dietapp.PaginaInicio;
 import com.example.Dietapp.PaginaPrincipal;
 import com.example.Dietapp.login.AdminSQLiteOpenHelper;
 import com.example.Dietapp.login.Login;
@@ -68,8 +69,7 @@ public class ContadroVasosAgua extends AppCompatActivity {
                     SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(ContadroVasosAgua.this);
                     SharedPreferences.Editor myEditor = myPreferences.edit();
                     nombreUser = myPreferences.getString("nombreUser", "");
-                    myEditor.putString("aguaT", "Se ha completado el objetivo de hoy de  agua");
-                    myEditor.putString("agua", "si");
+                    myEditor.putString("agua", "Se ha completado el objetivo de hoy de  agua");
                     myEditor.commit();
 
                     retocompletado();
@@ -117,15 +117,16 @@ public class ContadroVasosAgua extends AppCompatActivity {
     }
 
     private void retocompletado() {
+        SharedPreferences myPreferencesPA = PreferenceManager.getDefaultSharedPreferences(ContadroVasosAgua.this);
+        String nombreUser = myPreferencesPA.getString("nombreUser", "");
 
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 9);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 10);
         SQLiteDatabase bd = admin.getWritableDatabase();
-        String completao="si";
-        ContentValues registro = new ContentValues();  //es una clase para guardar datos
-        registro.put("retoagua", completao);
-        String campoactualizar="retoagua=?";
-        String[] argumentosParaActualizar = {nombreUser};
-        bd.update("usuarios", registro, campoactualizar, argumentosParaActualizar);
+
+        String sql = "UPDATE usuarios SET retoagua='Se ha completado el objetivo de hoy de  agua' where login='joseprueba'";
+bd.execSQL(sql);
+bd.close();
+        Log.i("tag", "user"+nombreUser);
     }
 
 
@@ -143,17 +144,19 @@ public class ContadroVasosAgua extends AppCompatActivity {
 
     public void verlog(View view) {
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,
-                "registro_user", null, 9);
+                "registro_user", null, 10);
         SQLiteDatabase bd = admin.getWritableDatabase(); //Create and/or open a database that will be used for reading and writing.
 
         Cursor curso = bd.rawQuery("select *  from usuarios ", null);
 
         curso.moveToFirst();
-        while (curso.isAfterLast() == false) {
+
 
             String retoAgua = curso.getString(6);
+            String user = curso.getString(0);
 
             Log.i("tag", "agua"+retoAgua);
+            Log.i("tag", "user"+user);
             bd.close();
-    }}
+    }
 }

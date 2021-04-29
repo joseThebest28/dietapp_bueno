@@ -3,6 +3,7 @@ package com.example.Dietapp;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.Dietapp.login.AdminSQLiteOpenHelper;
 import com.example.Dietapp.login.Login;
 import com.example.Dietapp.tutorial.Explica1;
 import com.example.myapplicationfinal.R;
@@ -59,7 +61,6 @@ public class PaginaInicio extends AppCompatActivity {
 
             SharedPreferences myPreferencesPA = PreferenceManager.getDefaultSharedPreferences(PaginaInicio.this);
             SharedPreferences.Editor myEditorPA = myPreferencesPA.edit();
-            myEditorPA.putString("agua", "");
             myEditorPA.putInt("pasta", 0);
             myEditorPA.putInt("carne", 0);
             myEditorPA.putInt("fru", 0);
@@ -68,6 +69,12 @@ public class PaginaInicio extends AppCompatActivity {
             myEditorPA.putInt("salsa", 0);
             myEditorPA.putInt("erdura", 0);
             myEditorPA.commit();
+
+            AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 10);
+            SQLiteDatabase bd = admin.getWritableDatabase();
+            String sql = "UPDATE usuarios SET retoagua='no'";
+            bd.execSQL(sql);
+            bd.close();
         }
 
         Log.i("taf", ""+hora);
