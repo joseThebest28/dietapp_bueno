@@ -20,10 +20,7 @@ public class PaginaPrincipal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
     }
-    public void lanzarDeporte(View view) {
-        Intent iD = new Intent(this, Deporte.class );
-        startActivity(iD);
-    }
+
     public void lanzarSeguimiento(View view) {
         Intent iS = new Intent(this, Seguimiento.class );
         startActivity(iS);

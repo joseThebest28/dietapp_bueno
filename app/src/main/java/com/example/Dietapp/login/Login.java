@@ -63,7 +63,7 @@ public class Login extends AppCompatActivity {
             contraT = String.valueOf(contra.getText());
             if (condiciones()) {
                 AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,
-                        "registro_user", null, 6);
+                        "registro_user", null, 9);
                 SQLiteDatabase bd = admin.getWritableDatabase(); //Create and/or open a database that will be used for reading and writing.
 
                 Cursor curso = bd.rawQuery("select *  from usuarios ", null);
@@ -76,10 +76,11 @@ public class Login extends AppCompatActivity {
                     String ape2SQ = curso.getString(3);
                     String compararC = curso.getString(4);
                     String emailSQ = curso.getString(5);
-                     Log.i("tag",""+compararU);
-                    Log.i("tag",""+loginT);
-                     Log.i("tag","contraSQ"+compararC);
-                     Log.i("tag","ContraEDI"+contraT);
+                    String retoAgua = curso.getString(6);
+
+                    Log.i("tag", "agua"+retoAgua);
+
+
                     if (compararU.equals(loginT) && compararC.equals(contraT)) {
                         Log.i("tag", "dentro if");
 
@@ -94,6 +95,7 @@ public class Login extends AppCompatActivity {
                         myEditor.putString("apellido2", ape2SQ);
                         myEditor.putString("email", emailSQ);
                         myEditor.putString("contra", compararC);
+                        myEditor.putString("agua", retoAgua);
 
 
                         myEditor.commit();

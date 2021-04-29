@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.myapplicationfinal.R;
@@ -13,13 +14,15 @@ import com.example.myapplicationfinal.R;
 public class Abdominales3 extends AppCompatActivity {
     private Toast toast1;
     private Toast toast2;
+    ImageView imagen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.abdominales3);
-
+        setContentView(R.layout.abdominales);
+        imagen=findViewById(R.id.imageView24);
         toast1 = Toast.makeText(getApplicationContext(), "Eleccion  de medio ejercicio guardada con exito", Toast.LENGTH_SHORT);
         toast2 = Toast.makeText(getApplicationContext(), "Eleccion  de ejercicio completo guardada con exito", Toast.LENGTH_SHORT);
+        imagen.setImageDrawable(getResources().getDrawable(R.drawable.bdominales3));
     }
 
     public void completad(View view) {
@@ -31,7 +34,7 @@ public class Abdominales3 extends AppCompatActivity {
         SharedPreferences.Editor myEditor = myPreferences.edit();
         myEditor.putInt("depor", (int) num);
         myEditor.commit();
-        Intent i = new Intent(this, Abdominales4.class );
+        Intent i = new Intent(this, Abdominales5.class );
         startActivity(i);toast2.show();
     }
 
@@ -44,7 +47,7 @@ public class Abdominales3 extends AppCompatActivity {
         SharedPreferences.Editor myEditor = myPreferences.edit();
         myEditor.putInt("depor", (int) num);
         myEditor.commit();
-        Intent i = new Intent(this, Abdominales4.class );
+        Intent i = new Intent(this, Abdominales5.class );
         startActivity(i);toast1.show();
     }
 

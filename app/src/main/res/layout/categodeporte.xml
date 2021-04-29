@@ -5,15 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo"
     tools:context="com.example.Dietapp.categorias.CategoDeporte">
 
     <Button
         android:id="@+id/cardio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="40dp"
         android:onClick="irCardio"
-        android:text="Cardio"
+        android:text="@string/cardio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
         android:onClick="iraabdo"
-        android:text="Abdominales"
+        android:text="@string/abdomina"
         app:layout_constraintEnd_toEndOf="@+id/cardio"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/cardio"
@@ -37,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
         android:onClick="irEspalda"
-        android:text="Espalda"
+        android:text="@string/espalda"
         app:layout_constraintEnd_toEndOf="@+id/total4"
         app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toEndOf="@+id/Pecho"
@@ -48,8 +49,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
-        android:text="Pierna"
         android:onClick="irPierna"
+        android:text="@string/pierna"
+        app:layout_constraintBottom_toBottomOf="@+id/pecho3"
         app:layout_constraintEnd_toEndOf="@+id/Pecho"
         app:layout_constraintStart_toStartOf="@+id/Pecho"
         app:layout_constraintTop_toBottomOf="@+id/Pecho" />
@@ -59,7 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
-        android:text="Gluteos"
+        android:text="@string/gluteos"
         android:onClick="irGluteos"
         app:layout_constraintEnd_toEndOf="@+id/total"
         app:layout_constraintHorizontal_bias="1.0"
@@ -70,34 +72,36 @@
         android:id="@+id/Pecho"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="Pecho"
+        android:layout_marginEnd="72dp"
         android:onClick="irPecho"
+        android:text="@string/pecho"
+        app:layout_constraintBottom_toBottomOf="@+id/total"
         app:layout_constraintEnd_toEndOf="@+id/total3"
-        app:layout_constraintHorizontal_bias="0.548"
-        app:layout_constraintStart_toStartOf="@+id/total2"
-        app:layout_constraintTop_toBottomOf="@+id/total2" />
+        app:layout_constraintTop_toBottomOf="@+id/total3"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/total2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
-        android:layout_marginEnd="140dp"
+        android:layout_marginEnd="160dp"
         android:onClick="irBiceps"
-        android:text="Biceps"
+        android:text="@string/biceps"
+        app:layout_constraintBottom_toBottomOf="@+id/total3"
         app:layout_constraintEnd_toEndOf="@+id/Abdominales"
-        app:layout_constraintTop_toBottomOf="@+id/Abdominales" />
+        app:layout_constraintTop_toTopOf="@+id/total3"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/total3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="60dp"
         android:onClick="irTriceps"
-        android:text="Triceps"
+        android:text="@string/trice"
         app:layout_constraintEnd_toStartOf="@+id/total4"
-        app:layout_constraintHorizontal_bias="0.376"
+        app:layout_constraintHorizontal_bias="0.654"
         app:layout_constraintStart_toEndOf="@+id/total2"
         app:layout_constraintTop_toBottomOf="@+id/Abdominales" />
 
@@ -105,25 +109,28 @@
         android:id="@+id/total4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="64dp"
         android:onClick="irHombro"
-        android:text="Hombro"
+        android:text="@string/hombro"
+        app:layout_constraintBottom_toBottomOf="@+id/total3"
         app:layout_constraintStart_toEndOf="@+id/Abdominales"
-        app:layout_constraintTop_toBottomOf="@+id/Abdominales" />
+        app:layout_constraintTop_toTopOf="@+id/total3"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/button34"
         android:layout_width="128dp"
         android:layout_height="57dp"
+        android:layout_marginStart="52dp"
         android:layout_marginTop="60dp"
         android:background="@drawable/boton_volver"
         android:onClick="volverMenu"
         android:text="@string/volverCatego"
-        app:layout_constraintEnd_toEndOf="@+id/pecho3"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintBottom_toBottomOf="@+id/button40"
         app:layout_constraintStart_toEndOf="@+id/pecho"
-        app:layout_constraintTop_toBottomOf="@+id/pecho3" />
+        app:layout_constraintTop_toTopOf="@+id/button40"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/button40"
@@ -131,9 +138,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
         android:layout_marginEnd="60dp"
-        android:text="total"
         android:onClick="lanzarActiDepor"
+        android:text="@string/vertotal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button34"
-        app:layout_constraintTop_toBottomOf="@+id/pecho" />
+        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintStart_toStartOf="@+id/pecho"
+        app:layout_constraintTop_toBottomOf="@+id/pecho"
+        app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>

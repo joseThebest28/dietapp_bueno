@@ -12,4 +12,19 @@
     <color name="fondoLogs">#1E88E5</color>
     <color name="verdeClaro">#84E388</color>
     <color name="dietappPrincipal">#FFC107</color>
+    <color name="textoEdit">#0C0C0C</color>
+    <color name="bCSalsa">#D80000</color>
+    <color name="bCVerdura">#27F62F</color>
+    <color name="bCPastas">#7D3BE8</color>
+    <color name="bCPesacdo">#536DFE</color>
+    <color name="bCCarne">#FF4081</color>
+    <color name="bCFruta">#FB8C00</color>
+    <color name="textoDeporte">#4DA0F4</color>
+    <color name="textoeditDepo">#2196F3</color>
+    <color name="fondoRutina2">#CE93D8</color>
+    <color name="colorHigt">#7cff88</color>
+    <color name="verdeExplica">#4CAF50</color>
+    <color name="activiFruta">#F4511E</color>
+    <color name="actipescado">#00897B</color>
+    <color name="actiSegui">#4CAF50</color>
 </resources>

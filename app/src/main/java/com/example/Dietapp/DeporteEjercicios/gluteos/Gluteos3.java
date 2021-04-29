@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.Dietapp.categorias.CategoDeporte;
@@ -13,13 +14,16 @@ import com.example.myapplicationfinal.R;
 
 public class Gluteos3 extends AppCompatActivity {
     private Toast toast1;
+    ImageView imagen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.gluteos3);
-        toast1 =
-                Toast.makeText(getApplicationContext(),
-                        "Eleccion guardada con exito", Toast.LENGTH_SHORT);
+        setContentView(R.layout.abdominales5);
+        imagen=findViewById(R.id.imageView27);
+        toast1 = Toast.makeText(getApplicationContext(), "Eleccion  de medio ejercicio guardada con exito", Toast.LENGTH_SHORT);
+
+        imagen.setImageDrawable(getResources().getDrawable(R.drawable.gluteos3));
+
     }
 
     public void completad(View view) {
@@ -30,7 +34,8 @@ public class Gluteos3 extends AppCompatActivity {
 
         SharedPreferences.Editor myEditor = myPreferences.edit();
         myEditor.putInt("depor", (int) num);
-        myEditor.commit();toast1.show();
+        myEditor.commit();toast1.show();Intent i = new Intent(this, CategoDeporte.class );
+        startActivity(i);
 
     }
 
@@ -42,13 +47,11 @@ public class Gluteos3 extends AppCompatActivity {
 
         SharedPreferences.Editor myEditor = myPreferences.edit();
         myEditor.putInt("depor", (int) num);
-        myEditor.commit();toast1.show();
-
-    }
-
-
-    public void volverCategorias(View view) {
-        Intent i = new Intent(this, CategoDeporte.class );
+        myEditor.commit();toast1.show();Intent i = new Intent(this, CategoDeporte.class );
         startActivity(i);
+
     }
+
+
+
 }

@@ -20,7 +20,8 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.Dietapp.extras.ContadroVasosAgua"></activity>
+
+
         <activity android:name="com.example.Dietapp.login.Login" />
         <activity android:name="com.example.Dietapp.PaginaInicio">
             <intent-filter>
@@ -72,6 +73,7 @@
         <activity android:name="com.example.Dietapp.DeporteEjercicios.hombro.Hombro2" />
         <activity android:name="com.example.Dietapp.DeporteEjercicios.hombro.Hombro3" />
         <activity android:name="com.example.Dietapp.DeporteEjercicios.hombro.Hombro4" />
+        <activity android:name="com.example.Dietapp.DeporteEjercicios.hombro.Hombro5" />
         <activity android:name="com.example.Dietapp.DeporteEjercicios.Pecho.Pecho" />
         <activity android:name="com.example.Dietapp.DeporteEjercicios.Pecho.Pecho2" />
         <activity android:name="com.example.Dietapp.DeporteEjercicios.Pecho.Pecho3" />
@@ -82,6 +84,8 @@
         <activity android:name="com.example.Dietapp.DeporteEjercicios.EspaldaEj.Espalda3" />
         <activity android:name="com.example.Dietapp.DeporteEjercicios.EspaldaEj.Espalda4" />
         <activity android:name="com.example.Dietapp.DeporteEjercicios.EspaldaEj.Espalda5" />
+        <activity android:name="com.example.Dietapp.DeporteEjercicios.EspaldaEj.Espalda6" />
+        <activity android:name="com.example.Dietapp.DeporteEjercicios.EspaldaEj.Espalda7" />
         <activity android:name="com.example.Dietapp.DeporteEjercicios.pierna.Pierna" />
         <activity android:name="com.example.Dietapp.DeporteEjercicios.pierna.Pierna2" />
         <activity android:name="com.example.Dietapp.DeporteEjercicios.pierna.Pierna3" />
@@ -90,10 +94,22 @@
         <activity android:name="com.example.Dietapp.DeporteEjercicios.gluteos.Gluteos" />
         <activity android:name="com.example.Dietapp.DeporteEjercicios.gluteos.Gluteos2" />
         <activity android:name="com.example.Dietapp.DeporteEjercicios.gluteos.Gluteos3" />
+        <activity android:name="com.example.Dietapp.DeporteEjercicios.gluteos.Gluteos4" />
+        <activity android:name="com.example.Dietapp.DeporteEjercicios.gluteos.Gluteos5" />
         <activity android:name="com.example.Dietapp.login.CrearUsers" />
+        <activity android:name="com.example.Dietapp.login.RecuperarContrase" />
         <activity android:name="com.example.Dietapp.Ajustes" />
-        <activity android:name="com.example.Dietapp.extras.Pagina_reto" />
+        <activity android:name="com.example.Dietapp.extras.ContadroVasosAgua" />
 
+        <activity android:name="com.example.Dietapp.extras.Pagina_reto" />
+        <activity android:name="com.example.Dietapp.DeporteEjercicios.AbdominalesEj.ElegirRutinaAbs" />
+        <activity android:name="com.example.Dietapp.DeporteEjercicios.BicepsEj.ElegirBi" />
+        <activity android:name="com.example.Dietapp.DeporteEjercicios.EspaldaEj.ElegirRutinaEs" />
+        <activity android:name="com.example.Dietapp.DeporteEjercicios.gluteos.ElegirRutinaGlu" />
+        <activity android:name="com.example.Dietapp.DeporteEjercicios.hombro.ElegirRutinahom" />
+        <activity android:name="com.example.Dietapp.DeporteEjercicios.Pecho.ElegirRutinaPe" />
+        <activity android:name="com.example.Dietapp.DeporteEjercicios.pierna.ElegirRutinaPi" />
+        <activity android:name="com.example.Dietapp.DeporteEjercicios.triceps.ElegirRutinaTri" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

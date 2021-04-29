@@ -8,41 +8,28 @@
     tools:context="com.example.Dietapp.DeporteEjercicios.AbdominalesEj.Abdominales5">
 
     <Button
-        android:id="@+id/button33"
-        android:layout_width="133dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="60dp"
-        android:background="@drawable/boton_volver"
-        android:onClick="volverCategorias"
-        android:text="@string/volverCategoD"
-        app:layout_constraintEnd_toEndOf="@+id/completado"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/completado"
-        app:layout_constraintTop_toBottomOf="@+id/completado" />
-
-    <Button
         android:id="@+id/medioej"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="544dp"
+        android:layout_marginStart="16dp"
         android:onClick="mediocompletad"
         android:text="@string/textMedioCompletado"
-        app:layout_constraintEnd_toStartOf="@+id/completado"
-        app:layout_constraintHorizontal_bias="0.43"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView27" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.865" />
 
     <Button
         android:id="@+id/completado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="544dp"
+        android:layout_marginStart="84dp"
         android:onClick="completad"
         android:text="@string/textCompletado"
-        app:layout_constraintEnd_toEndOf="@+id/imageView27"
-        app:layout_constraintHorizontal_bias="0.871"
-        app:layout_constraintStart_toStartOf="@+id/imageView27"
-        app:layout_constraintTop_toTopOf="@+id/imageView27" />
+        app:layout_constraintBottom_toBottomOf="@+id/medioej"
+        app:layout_constraintStart_toEndOf="@+id/medioej"
+        app:layout_constraintTop_toTopOf="@+id/medioej"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/imageView27"
@@ -50,6 +37,7 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/imagenAbdo5"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bdominales5" />

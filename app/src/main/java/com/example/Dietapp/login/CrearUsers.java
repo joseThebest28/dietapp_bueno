@@ -42,7 +42,7 @@ public class CrearUsers extends AppCompatActivity {
     }
 
     public void alta(View v) {
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 6);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 9);
         SQLiteDatabase bd = admin.getWritableDatabase();
 
         nombreLoginT = String.valueOf(nombreLogin.getText());
@@ -62,6 +62,7 @@ public class CrearUsers extends AppCompatActivity {
             registro.put("apellido2", apellido2T);
             registro.put("contra", contraseT);
             registro.put("email", emailT);
+            registro.put("retoagua", "no");
 
             bd.insert("usuarios", null, registro);
             bd.close();
@@ -177,7 +178,7 @@ public class CrearUsers extends AppCompatActivity {
 
 
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,
-                "registro_user", null, 6);
+                "registro_user", null, 9);
         SQLiteDatabase bd = admin.getWritableDatabase(); //Create and/or open a database that will be used for reading and writing.
 
         Cursor curso = bd.rawQuery("select *  from usuarios ", null);

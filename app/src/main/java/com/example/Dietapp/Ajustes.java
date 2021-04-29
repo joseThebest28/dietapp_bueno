@@ -1,8 +1,10 @@
 package com.example.Dietapp;
 
+import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
@@ -17,6 +19,7 @@ import android.widget.TextView;
 import com.example.Dietapp.categorias.Deporte;
 import com.example.Dietapp.extras.ContadroVasosAgua;
 import com.example.Dietapp.extras.Pagina_reto;
+import com.example.Dietapp.login.AdminSQLiteOpenHelper;
 import com.example.Dietapp.login.Login;
 import com.example.myapplicationfinal.R;
 
@@ -58,18 +61,22 @@ public class Ajustes extends AppCompatActivity {
         String apellido = myPreferences.getString("apellido", "");
         String apellido2 = myPreferences.getString("apellido2", "");
         String emal = myPreferences.getString("email", "");
+        String aguaT = myPreferences.getString("aguaT", "");
         String agua = myPreferences.getString("agua", "");
+
 
         texto.setText("Nombre usuario-----> "+nombreUser);
         nombreED.setText("Nombre ---------------->  "+nombre);
         apellidoED.setText("Apellido ---------------->  "+apellido);
         apellido2ED.setText("Apellido2 -------------->  "+apellido2);
         emailED.setText("Email -------------------->  "+emal);
-        if(!agua.isEmpty())
-        {retos.setText(""+agua);
 
 
-        }
+        if(agua.equals("si"))
+        retos.setText(""+aguaT);
+
+
+
 
         //falta cambiar iamgen de galeria a Imegenview
 
@@ -115,7 +122,7 @@ public class Ajustes extends AppCompatActivity {
                         myEditor.putString("apellido2", "");
                         myEditor.putString("email", "");
                         myEditor.putString("contra", "");
-                        myEditor.putString("agua", "");
+                        myEditor.putString("aguaT", "");
 
                         myEditor.commit();
 

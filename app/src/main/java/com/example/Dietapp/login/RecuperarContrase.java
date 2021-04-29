@@ -18,58 +18,64 @@ public class RecuperarContrase extends AppCompatActivity {
 
     private EditText nombreUserContai;
     private String nombreUserContaiT;
-private  Intent iD;
+    private Intent iD;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recuperar_contrase);
+
 
         nombreUserContai = findViewById(R.id.editNombreUser);
         iD = new Intent(this, Login.class);
     }
 
     public void lnazarRecuCOn(View view) {
-        try{
-            nombreUserContaiT=String.valueOf(nombreUserContai.getText());
+        try {
 
+            nombreUserContaiT = String.valueOf(nombreUserContai.getText());
 
             AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,
                     "registro_user", null, 6);
             SQLiteDatabase bd = admin.getWritableDatabase(); //Create and/or open a database that will be used for reading and writing.
 
             Cursor curso = bd.rawQuery("select *  from usuarios ", null);
-
+boolean dentro= Boolean.parseBoolean(null);
             curso.moveToFirst();
             while (!curso.isAfterLast()) {
-                String compararU=curso.getString(0);
+                String compararEmail = curso.getString(5);
+                String compararus = curso.getString(0);
                 String compararC = curso.getString(4);
+                Log.i("tag", compararEmail);
+                Log.i("tag", compararus);
+                if (compararEmail.equals(nombreUserContaiT)) {
+                    Toast.makeText(this, "Email correcto", Toast.LENGTH_SHORT).show();
+                    Log.i("tag", "dentro if");
+dentro=true;
+                        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                        builder.setTitle("Contraseña ");
+                        builder.setMessage("TU CONTRASEÑA ES: " + compararC);
+                        builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
 
-                if(compararU.equals(nombreUserContaiT) )
-                {
-                    Log.i("tag","dentro if");
-
-                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                    builder.setTitle("Contraseña ");
-                    builder.setMessage("TU CONTRASEÑA ES: "+ compararC);
-                    builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-
-                            startActivity(iD);
-                        }
-                    });
-                    builder.setNegativeButton("Cancelar", null);
-
-                    AlertDialog dialog = builder.create();
-                    dialog.show();
-
+                                startActivity(iD);
+                            }
+                        });
+                        builder.setNegativeButton("Cancelar", null);
+                        AlertDialog dialog = builder.create();
+                        dialog.show();
 
                 }
 
-                else{
-                    Toast.makeText(this, "Usuario o contraseña incorrecto", Toast.LENGTH_SHORT).show();
-                }curso.moveToNext();
+
+                curso.moveToNext();
+
             }
+            if(dentro)
+                Toast.makeText(this, "Email correcto", Toast.LENGTH_SHORT).show();
+            else
+                Toast.makeText(this, "Email incorrecto", Toast.LENGTH_SHORT).show();
             bd.close();
 
         } catch (Exception e) {

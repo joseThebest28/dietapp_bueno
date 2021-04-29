@@ -16,7 +16,7 @@
         android:layout_marginTop="4dp"
         android:text="@string/fechayhora"
         android:textAlignment="center"
-        android:textColor="#FFF"
+        android:textColor="@color/dietappPrincipal"
         android:textSize="23sp" />
     <TextView
         android:id="@+id/hora"
@@ -59,7 +59,7 @@
         android:importantForAutofill="no"
         android:inputType="text"
         android:text=""
-        android:textColor="#0B0B0A"
+        android:textColor="@color/textoEdit"
         android:textSize="10sp"
         tools:ignore="LabelFor" />
 
@@ -70,7 +70,7 @@
         android:layout_marginStart="55dp"
         android:layout_marginTop="36dp"
         android:background="@drawable/bg_calendario"
-        android:textColor="#0C0C0C" />
+        android:textColor="@color/textoEdit" />
 
     <Button
         android:id="@+id/evento"
@@ -83,7 +83,7 @@
         android:paddingStart="2dp"
         android:paddingEnd="20dp"
         android:text="@string/salvarcalendar"
-        android:textColor="#FFF" />
+        android:textColor="@color/ayuda" />
 
 
 </LinearLayout>

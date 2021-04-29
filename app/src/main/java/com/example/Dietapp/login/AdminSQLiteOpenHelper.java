@@ -14,13 +14,13 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
     //creamos la tabla
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table usuarios(login text primary key, nombre text, apellido text, apellido2 text, contra text, email text)");
+        db.execSQL("create table usuarios(login text primary key, nombre text, apellido text, apellido2 text, contra text, email text, retoagua text)");
     }
 
     //borrar la tabla y crear la nueva tabla
     @Override
     public void onUpgrade(SQLiteDatabase db, int versionAnte, int versionNue) {
         db.execSQL("drop table if exists usuarios");
-        db.execSQL("create table usuarios(login text primary key, nombre text, apellido text, apellido2 text, contra text, email text)");
+        db.execSQL("create table usuarios(login text primary key, nombre text, apellido text, apellido2 text, contra text, email text, retoagua text)");
     }
 }

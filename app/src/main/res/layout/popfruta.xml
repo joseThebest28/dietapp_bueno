@@ -11,7 +11,7 @@
         android:layout_width="159dp"
         android:layout_height="150dp"
         android:layout_marginTop="32dp"
-        android:text='1 Manzana=20cal    1Pera=16cal         1Paraguaya=30cal             1 Banana=25cal       1Fresa=11cal   1Melocotón=10cal"         '
+        android:text="@string/popupFru"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,5 +24,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/info2" />
+        app:srcCompat="@drawable/info2"
+        android:contentDescription="@string/imagenPopfru" />
 </android.support.constraint.ConstraintLayout>

@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.Dietapp.RecuperarContrase">
+    android:background="@color/fondoLogs"
+    tools:context="com.example.Dietapp.login.RecuperarContrase">
 
     <Button
         android:id="@+id/btSoliciConta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:text="@string/btSoliConta"
+        android:layout_marginTop="152dp"
         android:onClick="lnazarRecuCOn"
+        android:text="@string/btSoliConta"
         app:layout_constraintEnd_toEndOf="@+id/editNombreUser"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/editNombreUser"
         app:layout_constraintTop_toBottomOf="@+id/editNombreUser" />
 
@@ -22,9 +22,13 @@
         android:id="@+id/editNombreUser"
         android:layout_width="319dp"
         android:layout_height="63dp"
-        android:layout_marginTop="168dp"
+        android:layout_marginTop="232dp"
+        android:background="@color/ayuda"
         android:hint="@string/hintRecuperaConta"
+        android:textColor="@color/textoEdit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
 </android.support.constraint.ConstraintLayout>

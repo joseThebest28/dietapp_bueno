@@ -15,8 +15,9 @@
             android:layout_width="156dp"
             android:layout_height="137dp"
             android:layout_marginTop="15dp"
-            android:layout_marginRight="10dp"
-            app:srcCompat="@drawable/chocolate" />
+            android:layout_marginEnd="10dp"
+            app:srcCompat="@drawable/chocolate"
+            android:contentDescription="@string/imagenRecycle" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -28,7 +29,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="@string/textview"
                 android:textSize="25sp"
                 android:textStyle="bold"/>
 
@@ -36,9 +37,9 @@
                 android:id="@+id/reto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="@string/textview"
                 android:layout_marginBottom="15dp"
-                android:layout_marginRight="10dp"/>
+                android:layout_marginEnd="10dp"/>
 
         </LinearLayout>
 
@@ -49,6 +50,5 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/ayuda"
-        android:layout_below="@+id/iamgen"
         android:layout_marginTop="11dp"/>
 </LinearLayout>

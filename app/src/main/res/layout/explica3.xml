@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4CAF50"
-    android:backgroundTint="#4CAF50"
+    android:background="@color/verdeExplica"
+
     tools:context="com.example.Dietapp.tutorial.Explica3">
 
     <Button
