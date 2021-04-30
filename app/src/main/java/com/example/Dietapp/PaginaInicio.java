@@ -22,6 +22,8 @@ import com.example.myapplicationfinal.R;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import static java.util.Calendar.*;
+
 
 public class PaginaInicio extends AppCompatActivity {
 
@@ -45,40 +47,6 @@ public class PaginaInicio extends AppCompatActivity {
         b1.startAnimation(animacion);
         b2.startAnimation(animacion);
 
-
-        //si son las doce borrar todos los datos introducidos por el usuario, ya que han sido los datos del dia anterior.
-
-        //obtener la hora actual
-        Calendar calendario = Calendar.getInstance();
-        int hora, minutos, segundos;
-        hora =calendario.get(Calendar.HOUR_OF_DAY);
-        minutos = calendario.get(Calendar.MINUTE);
-        segundos = calendario.get(Calendar.SECOND);
-        //comparar los minutos segundo y horas a las 00 que son las doce de la noche, en caso de que le dispositivo tenga la hora en formato de 12 horas, se borraran cada vez que sean las doce
-        while((hora==23 && minutos==00&&segundos==00))
-        {
-            //borrar registrocunado llegadas las doce de la noche
-
-            SharedPreferences myPreferencesPA = PreferenceManager.getDefaultSharedPreferences(PaginaInicio.this);
-            SharedPreferences.Editor myEditorPA = myPreferencesPA.edit();
-            myEditorPA.putInt("pasta", 0);
-            myEditorPA.putInt("carne", 0);
-            myEditorPA.putInt("fru", 0);
-            myEditorPA.putInt("depor", 0);
-            myEditorPA.putInt("pescado", 0);
-            myEditorPA.putInt("salsa", 0);
-            myEditorPA.putInt("erdura", 0);
-            myEditorPA.commit();
-
-            AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 10);
-            SQLiteDatabase bd = admin.getWritableDatabase();
-            String sql = "UPDATE usuarios SET retoagua='no'";
-            bd.execSQL(sql);
-            bd.close();
-        }
-
-        Log.i("taf", ""+hora);
-        Log.i("taf", ""+minutos);
 
     }
     public void lanzarapp(View view) {

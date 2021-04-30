@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
@@ -14,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.Dietapp.categorias.Deporte;
@@ -27,10 +29,15 @@ import java.security.AccessController;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import static java.util.Calendar.HOUR_OF_DAY;
+import static java.util.Calendar.MINUTE;
+import static java.util.Calendar.SECOND;
+import static java.util.Calendar.getInstance;
+
 public class Ajustes extends AppCompatActivity {
     TextView texto,nombreED,apellidoED,apellido2ED,emailED,retos;
     ImageView imagen;
-    Button boton,botonRetos,botonAgua;
+    Button boton,botonRetos,botonAgua, botonColor;
     private static final int COD_Selecciona=10;
     private static final int COD_Foto=20;
     @Override
@@ -55,6 +62,9 @@ public class Ajustes extends AppCompatActivity {
         botonAgua=findViewById(R.id.bcontadorAgua);
         botonAgua.setVisibility(View.INVISIBLE);
 
+        botonColor=findViewById(R.id.bcolor);
+        botonColor.setVisibility(View.INVISIBLE);
+
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Ajustes.this);
          String nombreUser = myPreferences.getString("nombreUser", "");
         String nombre = myPreferences.getString("nombre", "");
@@ -69,15 +79,52 @@ public class Ajustes extends AppCompatActivity {
         apellidoED.setText("Apellido ---------------->  "+apellido);
         apellido2ED.setText("Apellido2 -------------->  "+apellido2);
         emailED.setText("Email -------------------->  "+emal);
-
-
-
         retos.setText(agua);
 
 
 
 
-        //falta cambiar iamgen de galeria a Imegenview
+
+        //si son las 23 borrar todos los datos introducidos por el usuario, ya que han sido los datos del dia anterior.
+
+        //obtener la hora actual
+        Calendar calendario = getInstance();
+        int hora, minutos, segundos;
+        hora =calendario.get(HOUR_OF_DAY);
+        minutos = calendario.get(MINUTE);
+        segundos = calendario.get(SECOND);
+
+
+
+
+        //comparar los minutos segundo y horas a las 23  se reseten los datos
+        while((hora==23 && minutos==00&&segundos==00))
+        {
+            //borrar registrocunado llegadas las doce de la noche
+
+            SharedPreferences myPreferencesPA = PreferenceManager.getDefaultSharedPreferences(Ajustes.this);
+            SharedPreferences.Editor myEditorPA = myPreferencesPA.edit();
+            myEditorPA.putInt("pasta", 0);
+            myEditorPA.putInt("carne", 0);
+            myEditorPA.putInt("fru", 0);
+            myEditorPA.putInt("depor", 0);
+            myEditorPA.putInt("pescado", 0);
+            myEditorPA.putInt("salsa", 0);
+            myEditorPA.putInt("erdura", 0);
+            myEditorPA.putInt("valoragua",0);
+            myEditorPA.putFloat("valoragua2",0);
+            myEditorPA.commit();
+//cambio el valor actual del reto, y lo pongo vacio, ya que el reto se debe cumplir una vez ald ia, por lo que a las once se pone vacio
+            AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 10);
+            SQLiteDatabase bd = admin.getWritableDatabase();
+            String sql = "UPDATE usuarios SET retoagua=''";
+            bd.execSQL(sql);
+            bd.close();
+        }
+
+        Log.i("taf", ""+hora);
+        Log.i("taf", ""+minutos);
+
 
 
 
@@ -92,7 +139,9 @@ public class Ajustes extends AppCompatActivity {
 
 
     public void verMAs(View view) {
-        botonRetos.setVisibility(View.VISIBLE);  botonAgua.setVisibility(View.VISIBLE);
+        botonRetos.setVisibility(View.VISIBLE);
+        botonAgua.setVisibility(View.VISIBLE);
+        botonColor.setVisibility(View.VISIBLE);
     }
 
 
@@ -121,7 +170,8 @@ public class Ajustes extends AppCompatActivity {
                         myEditor.putString("apellido2", "");
                         myEditor.putString("email", "");
                         myEditor.putString("contra", "");
-                        myEditor.putString("aguaT", "");
+                        myEditor.putInt("valoragua",0);
+                        myEditor.putFloat("valoragua2",0);
 
                         myEditor.commit();
 
@@ -148,5 +198,11 @@ public class Ajustes extends AppCompatActivity {
     public void iraContadorAgua(View view) {
         Intent ifds = new Intent(this, ContadroVasosAgua.class);
         startActivity(ifds);
+    }
+
+    public void cambiarCo(View view) {
+
+        LinearLayout ll=findViewById(R.id.linearLayout);
+        ll.setBackgroundColor(Color.RED);
     }
 }

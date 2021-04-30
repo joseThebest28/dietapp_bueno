@@ -62,7 +62,7 @@ public class CrearUsers extends AppCompatActivity {
             registro.put("apellido2", apellido2T);
             registro.put("contra", contraseT);
             registro.put("email", emailT);
-            registro.put("retoagua", "no");
+            registro.put("retoagua", "");
 
             bd.insert("usuarios", null, registro);
             bd.close();

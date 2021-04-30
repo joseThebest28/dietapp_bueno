@@ -28,23 +28,45 @@ import static com.example.myapplicationfinal.R.drawable.cargando;
 public class ContadroVasosAgua extends AppCompatActivity {
     TextView textoMostrar, textoMostrarvasos;
     ImageView imagenmas, imagenMwnos,imagenLLegada;
-    int recuento = 0;
-    int vasos = 0;
-    double recuentoLitors = 0.75;
+    float recuento ;
+    int vasos ;
+
     String nombreUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contadro_vasos_agua);
+        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(ContadroVasosAgua.this);
+        String agua = myPreferences.getString("agua", "");
+
         imagenLLegada = findViewById(R.id.imageView32);
         imagenLLegada.setVisibility(View.INVISIBLE);
+
         final Animation animacion = AnimationUtils.loadAnimation(this, R.anim.animacionagua);
 
         textoMostrar = findViewById(R.id.textView41);
-        textoMostrar.setText("Total de agua= " + 0 + "" + "mililitros");
+
 
         textoMostrarvasos = findViewById(R.id.textView50);
-        textoMostrarvasos.setText("Total de vasos= " + 0);
+
+
+
+
+            SharedPreferences myPreferencesV = PreferenceManager.getDefaultSharedPreferences(ContadroVasosAgua.this);
+            int vasosGuardados=myPreferencesV.getInt("valoragua",0);
+            float recuentoM=myPreferencesV.getFloat("valoragua2",0);
+
+            vasos=vasosGuardados;
+            recuento=recuentoM;
+
+
+        Log.i("valor", String.valueOf(recuento));
+
+
+        textoMostrarvasos.setText("Total de vasos= " + vasos);
+
+        textoMostrar.setText("Total de agua= " + recuento+ "" + "litros");
+
 
         imagenmas = findViewById(R.id.imageView30);
         imagenmas.setOnClickListener(new View.OnClickListener() {
@@ -52,23 +74,17 @@ public class ContadroVasosAgua extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (recuento >= 750) {
-                    recuento = recuento + 250;
-                    recuentoLitors = recuentoLitors + 0.25;
+
+                    recuento = (float) (recuento + 0.25);
                     vasos = vasos + 1;
-                    textoMostrar.setText("Total de agua= " + recuentoLitors + "" + "litros");
+                    textoMostrar.setText("Total de agua= " + recuento + "" + "litros");
                     textoMostrarvasos.setText("Total de vasos= " + vasos);
-                } else {
-                    recuento = recuento + 250;
-                    vasos = vasos + 1;
-                    textoMostrar.setText("Total de agua= " + recuento + "" + "mililitros");
-                    textoMostrarvasos.setText("Total de vasos= " + vasos);
-                }
+
+
                 if (vasos == 8) {
 
                     SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(ContadroVasosAgua.this);
                     SharedPreferences.Editor myEditor = myPreferences.edit();
-                    nombreUser = myPreferences.getString("nombreUser", "");
                     myEditor.putString("agua", "Se ha completado el objetivo de hoy de  agua");
                     myEditor.commit();
 
@@ -92,27 +108,21 @@ public class ContadroVasosAgua extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (recuento <= 0) {
+                if (recuento <= 0 && vasos<=0) {
                     Toast.makeText(getApplicationContext(), "no puedes haber tomado menos de 0 vasos de agua", Toast.LENGTH_SHORT).show();
                 } else {
 
-                    if (recuento >= 1000) {
-                        recuento = recuento - 250;
-                        recuentoLitors = recuentoLitors - 0.25;
-                        vasos = vasos - 1;
-                        textoMostrar.setText("Total de agua= " + recuentoLitors + "" + "litros");
-                        textoMostrarvasos.setText("Total de vasos= " + vasos);
-                    } else if (recuento <= 750) {
-                        recuento = recuento - 250;
-                        vasos = vasos - 1;
-                        textoMostrar.setText("Total de agua= " + recuento + "" + "mililitros");
-                        textoMostrarvasos.setText("Total de vasos= " + vasos);
-                    }
+
+                            recuento = (float) (recuento - 0.25);
+                            vasos = vasos - 1;
+                            textoMostrar.setText("Total de agua= " + recuento + "" + "litros");
+                            textoMostrarvasos.setText("Total de vasos= " + vasos);
 
 
-                }
+                    }}
 
-            }
+
+
         });
     }
 
@@ -134,29 +144,25 @@ bd.close();
 
         Intent ifds = new Intent(this, Ajustes.class);
         startActivity(ifds);
+        SharedPreferences myPreferencesVG = PreferenceManager.getDefaultSharedPreferences(ContadroVasosAgua.this);
+        SharedPreferences.Editor myEditorVG = myPreferencesVG.edit();
+        myEditorVG.putInt("valoragua",vasos);
+        myEditorVG.putFloat("valoragua2", recuento);
+
+
+        myEditorVG.apply();
     }
 
     public void volverMenu(View view) {
         Intent ifds = new Intent(this, PaginaPrincipal.class);
         startActivity(ifds);
+        SharedPreferences myPreferencesVG = PreferenceManager.getDefaultSharedPreferences(ContadroVasosAgua.this);
+        SharedPreferences.Editor myEditorVG = myPreferencesVG.edit();
+        myEditorVG.putInt("valoragua",vasos);
+        myEditorVG.putFloat("valoragua2",recuento);
+        myEditorVG.apply();
     }
 
 
-    public void verlog(View view) {
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,
-                "registro_user", null, 10);
-        SQLiteDatabase bd = admin.getWritableDatabase(); //Create and/or open a database that will be used for reading and writing.
 
-        Cursor curso = bd.rawQuery("select *  from usuarios ", null);
-
-        curso.moveToFirst();
-
-
-            String retoAgua = curso.getString(6);
-            String user = curso.getString(0);
-
-            Log.i("tag", "agua"+retoAgua);
-            Log.i("tag", "user"+user);
-            bd.close();
-    }
 }

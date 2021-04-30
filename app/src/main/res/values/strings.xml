@@ -167,5 +167,7 @@
     <string name="imagenPopfru">imagenPopfru</string>
     <string name="rutina1">Rutina 1</string>
     <string name="rutina3">"Rutina 2 "</string>
+    <string name="continuarCon">Continuar sin registrarse</string>
+    <string name="colorFondo">Cambiar Color Fondo</string>
 
 </resources>

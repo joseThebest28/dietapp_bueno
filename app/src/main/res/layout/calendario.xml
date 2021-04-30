@@ -57,7 +57,7 @@
         android:layout_marginStart="100dp"
         android:background="@drawable/bg_calendario"
         android:importantForAutofill="no"
-        android:inputType="text"
+        android:inputType="textMultiLine"
         android:text=""
         android:textColor="@color/textoEdit"
         android:textSize="10sp"

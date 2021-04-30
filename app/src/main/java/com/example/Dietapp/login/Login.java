@@ -8,10 +8,12 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.Dietapp.PaginaPrincipal;
@@ -22,6 +24,7 @@ public class Login extends AppCompatActivity {
     private EditText login, contra;
     private String loginT, contraT;
     CheckBox chack;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -154,6 +157,7 @@ public class Login extends AppCompatActivity {
         Intent iD = new Intent(this, RecuperarContrase.class);
         startActivity(iD);
     }
+
 
 
 }

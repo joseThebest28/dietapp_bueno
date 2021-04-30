@@ -4,6 +4,7 @@ package com.example.Dietapp;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -55,4 +56,11 @@ public class PaginaPrincipal extends AppCompatActivity {
     }
 
 
+    public void irAyuda(View view) {
+        String url="https://developer.android.com/jetpack?gclid=Cj0KCQjw1a6EBhC0ARIsAOiTkrEPool70Ip_4_UB06jjNcg80erT4ciaz0wzxeX-0djyI7Z5gXsnJK4aAu2yEALw_wcB&gclsrc=aw.ds";
+        Uri ur= Uri.parse(url);
+        Intent intent=new Intent(Intent.ACTION_VIEW, ur);
+        startActivity(intent);
+
+    }
 }

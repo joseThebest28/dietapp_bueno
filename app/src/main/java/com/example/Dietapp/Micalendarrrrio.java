@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.Dietapp.extras.ContadroVasosAgua;
 import com.example.myapplicationfinal.R;
 
 import java.text.SimpleDateFormat;
@@ -39,6 +40,12 @@ public class Micalendarrrrio extends AppCompatActivity {
 
         textComentario = findViewById(R.id.textComentario);
         textComentario.setText(textoObjetivo);
+        SharedPreferences myPreferencesPA = PreferenceManager.getDefaultSharedPreferences(Micalendarrrrio.this);
+        String agua = myPreferencesPA.getString("agua", "");
+        int vasosGuardados=myPreferencesPA.getInt("valoragua",0);
+        int recuentomilitros=myPreferencesPA.getInt("valoragua2",0);
+
+        textComentario.setText("NOTA1: "+agua+"con "+vasosGuardados+"vasos de agua"+recuentomilitros+"litros de agua"+".  NOTA 2: ");
 
 
         Calendar c = Calendar.getInstance();
@@ -76,6 +83,9 @@ public class Micalendarrrrio extends AppCompatActivity {
             myEditorPA.putInt("pescado", 0);
             myEditorPA.putInt("salsa", 0);
             myEditorPA.putInt("erdura", 0);
+            myEditorPA.putInt("valoragua",0);
+            myEditorPA.putInt("valoragua2",0);
+
             myEditorPA.commit();
 
         } else {

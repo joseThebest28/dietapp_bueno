@@ -110,7 +110,20 @@
                     android:onClick="iraContadorAgua"
                     android:text="@string/contarAgua" />
 
+
+
+
+
             </LinearLayout>
+            <Button
+                android:id="@+id/bcolor"
+                android:layout_width="194dp"
+                android:layout_height="36dp"
+                android:onClick="cambiarCo"
+                android:text="@string/colorFondo" />
+
+
         </LinearLayout>
+
     </LinearLayout>
 </android.widget.ScrollView>
