@@ -10,8 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.example.Dietapp.categorias.Categorias;
-import com.example.Dietapp.categorias.Deporte;
-import com.example.Dietapp.extras.Pagina_reto;
 import com.example.myapplicationfinal.R;
 
 public class PaginaPrincipal extends AppCompatActivity {

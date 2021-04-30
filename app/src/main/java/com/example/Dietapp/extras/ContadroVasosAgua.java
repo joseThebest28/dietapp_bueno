@@ -1,9 +1,7 @@
 package com.example.Dietapp.extras;
 
-import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -17,13 +15,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.Dietapp.Ajustes;
-import com.example.Dietapp.PaginaInicio;
 import com.example.Dietapp.PaginaPrincipal;
 import com.example.Dietapp.login.AdminSQLiteOpenHelper;
-import com.example.Dietapp.login.Login;
 import com.example.myapplicationfinal.R;
-
-import static com.example.myapplicationfinal.R.drawable.cargando;
 
 public class ContadroVasosAgua extends AppCompatActivity {
     TextView textoMostrar, textoMostrarvasos;

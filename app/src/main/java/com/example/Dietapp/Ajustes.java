@@ -1,6 +1,5 @@
 package com.example.Dietapp;
 
-import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,7 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.provider.MediaStore;
+import android.support.constraint.ConstraintLayout;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -16,18 +16,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.example.Dietapp.categorias.Deporte;
 import com.example.Dietapp.extras.ContadroVasosAgua;
 import com.example.Dietapp.extras.Pagina_reto;
 import com.example.Dietapp.login.AdminSQLiteOpenHelper;
 import com.example.Dietapp.login.Login;
 import com.example.myapplicationfinal.R;
 
-import java.security.AccessController;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
+
+import yuku.ambilwarna.AmbilWarnaDialog;
 
 import static java.util.Calendar.HOUR_OF_DAY;
 import static java.util.Calendar.MINUTE;
@@ -38,8 +38,9 @@ public class Ajustes extends AppCompatActivity {
     TextView texto,nombreED,apellidoED,apellido2ED,emailED,retos;
     ImageView imagen;
     Button boton,botonRetos,botonAgua, botonColor;
-    private static final int COD_Selecciona=10;
-    private static final int COD_Foto=20;
+    ScrollView mlay;
+int mDefaultColor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,8 +63,13 @@ public class Ajustes extends AppCompatActivity {
         botonAgua=findViewById(R.id.bcontadorAgua);
         botonAgua.setVisibility(View.INVISIBLE);
 
+        mlay=findViewById(R.id.layoutAjustes);
+        mDefaultColor= ContextCompat.getColor(com.example.Dietapp.Ajustes.this,R.color.colorPrimary);
         botonColor=findViewById(R.id.bcolor);
         botonColor.setVisibility(View.INVISIBLE);
+
+
+
 
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Ajustes.this);
          String nombreUser = myPreferences.getString("nombreUser", "");
@@ -85,54 +91,13 @@ public class Ajustes extends AppCompatActivity {
 
 
 
-        //si son las 23 borrar todos los datos introducidos por el usuario, ya que han sido los datos del dia anterior.
-
-        //obtener la hora actual
-        Calendar calendario = getInstance();
-        int hora, minutos, segundos;
-        hora =calendario.get(HOUR_OF_DAY);
-        minutos = calendario.get(MINUTE);
-        segundos = calendario.get(SECOND);
-
-
-
-
-        //comparar los minutos segundo y horas a las 23  se reseten los datos
-        while((hora==23 && minutos==00&&segundos==00))
-        {
-            //borrar registrocunado llegadas las doce de la noche
-
-            SharedPreferences myPreferencesPA = PreferenceManager.getDefaultSharedPreferences(Ajustes.this);
-            SharedPreferences.Editor myEditorPA = myPreferencesPA.edit();
-            myEditorPA.putInt("pasta", 0);
-            myEditorPA.putInt("carne", 0);
-            myEditorPA.putInt("fru", 0);
-            myEditorPA.putInt("depor", 0);
-            myEditorPA.putInt("pescado", 0);
-            myEditorPA.putInt("salsa", 0);
-            myEditorPA.putInt("erdura", 0);
-            myEditorPA.putInt("valoragua",0);
-            myEditorPA.putFloat("valoragua2",0);
-            myEditorPA.commit();
-//cambio el valor actual del reto, y lo pongo vacio, ya que el reto se debe cumplir una vez ald ia, por lo que a las once se pone vacio
-            AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 10);
-            SQLiteDatabase bd = admin.getWritableDatabase();
-            String sql = "UPDATE usuarios SET retoagua=''";
-            bd.execSQL(sql);
-            bd.close();
-        }
-
-        Log.i("taf", ""+hora);
-        Log.i("taf", ""+minutos);
-
-
-
-
-
-
+this.borrarDAtosDiario();
 
 
     }
+
+
+
 
 
 
@@ -200,9 +165,67 @@ public class Ajustes extends AppCompatActivity {
         startActivity(ifds);
     }
 
-    public void cambiarCo(View view) {
+    public void borrarDAtosDiario()
+    {
+        //si son las 23 borrar todos los datos introducidos por el usuario, ya que han sido los datos del dia anterior.
 
-        LinearLayout ll=findViewById(R.id.linearLayout);
-        ll.setBackgroundColor(Color.RED);
+        //obtener la hora actual
+        Calendar calendario = getInstance();
+        int hora, minutos, segundos;
+        hora =calendario.get(HOUR_OF_DAY);
+        minutos = calendario.get(MINUTE);
+        segundos = calendario.get(SECOND);
+
+
+        //comparar los minutos segundo y horas a las 23  se reseten los datos
+        while((hora==23 && minutos==00&&segundos==00))
+        {
+            //borrar registrocunado llegadas las doce de la noche
+
+            SharedPreferences myPreferencesPA = PreferenceManager.getDefaultSharedPreferences(Ajustes.this);
+            SharedPreferences.Editor myEditorPA = myPreferencesPA.edit();
+            myEditorPA.putInt("pasta", 0);
+            myEditorPA.putInt("carne", 0);
+            myEditorPA.putInt("fru", 0);
+            myEditorPA.putInt("depor", 0);
+            myEditorPA.putInt("pescado", 0);
+            myEditorPA.putInt("salsa", 0);
+            myEditorPA.putInt("erdura", 0);
+            myEditorPA.putInt("valoragua",0);
+            myEditorPA.putFloat("valoragua2",0);
+            myEditorPA.commit();
+//cambio el valor actual del reto, y lo pongo vacio, ya que el reto se debe cumplir una vez ald ia, por lo que a las once se pone vacio
+            AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 10);
+            SQLiteDatabase bd = admin.getWritableDatabase();
+            String sql = "UPDATE usuarios SET retoagua=''";
+            bd.execSQL(sql);
+            bd.close();
+        }
+
+        Log.i("taf", ""+hora);
+        Log.i("taf", ""+minutos);
+
+    }
+
+
+    public void iraColor(View view) {
+        Intent ifds = new Intent(this, Color.class);
+        startActivity(ifds);
+    }
+
+
+    public void openColorPicker(View view) {
+        AmbilWarnaDialog coloPicker= new AmbilWarnaDialog(this, mDefaultColor, new AmbilWarnaDialog.OnAmbilWarnaListener() {
+            @Override
+            public void onCancel(AmbilWarnaDialog dialog) {
+
+            }
+
+            @Override
+            public void onOk(AmbilWarnaDialog dialog, int color) {
+                mDefaultColor=color;
+                mlay.setBackgroundColor(mDefaultColor);
+            }
+        });coloPicker.show();
     }
 }

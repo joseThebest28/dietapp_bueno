@@ -2,10 +2,11 @@
 <android.widget.ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutAjustes"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
     android:background="@color/verdeClaro"
+    android:fillViewport="true"
     tools:context="com.example.Dietapp.Ajustes">
 
     <LinearLayout
@@ -20,8 +21,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/foro_galeria"
-            android:contentDescription="@string/ajustesCambiarI" />
+            android:contentDescription="@string/ajustesCambiarI"
+            app:srcCompat="@drawable/foro_galeria" />
 
         <Button
             android:id="@+id/button43"
@@ -41,26 +42,25 @@
                 android:id="@+id/textView23"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="4dp"
-               />
+                android:paddingBottom="4dp" />
 
             <TextView
                 android:id="@+id/textView24"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="4dp"/>
+                android:paddingBottom="4dp" />
 
             <TextView
                 android:id="@+id/textView39"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="4dp"/>
+                android:paddingBottom="4dp" />
 
             <TextView
                 android:id="@+id/textView40"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="4dp"/>
+                android:paddingBottom="4dp" />
 
             <TextView
                 android:id="@+id/textView38"
@@ -71,6 +71,7 @@
                 android:id="@+id/textView395"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
             <Button
                 android:id="@+id/bcerrar"
                 android:layout_width="150dp"
@@ -78,6 +79,7 @@
                 android:onClick="cerrarSesio"
                 android:text="@string/cerrarS"
                 android:visibility="visible" />
+
             <Button
                 android:id="@+id/bextras"
                 android:layout_width="150dp"
@@ -94,16 +96,18 @@
                 android:paddingTop="30dp">
 
 
-                <Button style="@style/TextAppearance.AppCompat"
+                <Button
                     android:id="@+id/bRetos"
+                    style="@style/TextAppearance.AppCompat"
                     android:layout_width="194dp"
                     android:layout_height="38dp"
                     android:onClick="iraRetos"
                     android:text="@string/retos"
                     tools:ignore="ButtonStyle" />
 
-                <Button style="@style/TextAppearance.AppCompat"
+                <Button
                     android:id="@+id/bcontadorAgua"
+                    style="@style/TextAppearance.AppCompat"
                     android:layout_width="200dp"
                     android:layout_height="34dp"
                     android:layout_gravity="end"
@@ -111,15 +115,13 @@
                     android:text="@string/contarAgua" />
 
 
-
-
-
             </LinearLayout>
+
             <Button
                 android:id="@+id/bcolor"
                 android:layout_width="194dp"
                 android:layout_height="36dp"
-                android:onClick="cambiarCo"
+                android:onClick="openColorPicker"
                 android:text="@string/colorFondo" />
 
 

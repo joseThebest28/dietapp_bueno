@@ -20,8 +20,7 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-
+        <activity android:name="com.example.Dietapp.extras.Color"></activity>
         <activity android:name="com.example.Dietapp.login.Login" />
         <activity android:name="com.example.Dietapp.PaginaInicio">
             <intent-filter>
@@ -100,7 +99,6 @@
         <activity android:name="com.example.Dietapp.login.RecuperarContrase" />
         <activity android:name="com.example.Dietapp.Ajustes" />
         <activity android:name="com.example.Dietapp.extras.ContadroVasosAgua" />
-
         <activity android:name="com.example.Dietapp.extras.Pagina_reto" />
         <activity android:name="com.example.Dietapp.DeporteEjercicios.AbdominalesEj.ElegirRutinaAbs" />
         <activity android:name="com.example.Dietapp.DeporteEjercicios.BicepsEj.ElegirBi" />
@@ -110,6 +108,7 @@
         <activity android:name="com.example.Dietapp.DeporteEjercicios.Pecho.ElegirRutinaPe" />
         <activity android:name="com.example.Dietapp.DeporteEjercicios.pierna.ElegirRutinaPi" />
         <activity android:name="com.example.Dietapp.DeporteEjercicios.triceps.ElegirRutinaTri" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
