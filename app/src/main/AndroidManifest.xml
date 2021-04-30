@@ -20,7 +20,6 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.Dietapp.extras.Color"></activity>
         <activity android:name="com.example.Dietapp.login.Login" />
         <activity android:name="com.example.Dietapp.PaginaInicio">
             <intent-filter>
