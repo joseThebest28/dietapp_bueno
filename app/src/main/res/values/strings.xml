@@ -169,5 +169,11 @@
     <string name="rutina3">"Rutina 2 "</string>
     <string name="continuarCon">Continuar sin registrarse</string>
     <string name="colorFondo">Cambiar Color Fondo</string>
+    <string name="textoReetas">Selecciona los alimentos de tu receta</string>
+    <string name="introducereceta">Introduce nombre de tu receta</string>
+    <string name="crearReceta">Crear Receta</string>
+    <string name="ejemoloBusqueda">Ej: buey</string>
+    <string name="realizarBusqueda">Buscar</string>
+    <string name="recetas">Recetas</string>
 
 </resources>

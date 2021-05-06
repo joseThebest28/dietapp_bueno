@@ -9,54 +9,68 @@
 
     <Button
         android:id="@+id/button14"
-        android:layout_width="match_parent"
-        android:layout_height="51dp"
-        android:layout_marginTop="64dp"
+        android:layout_width="138dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="28dp"
         android:background="@color/bCSalsa"
         android:onClick="irASalsas"
         android:text="@string/salsas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button15" />
+        app:layout_constraintTop_toBottomOf="@+id/button13" />
 
     <Button
         android:id="@+id/button30"
         android:layout_width="403dp"
         android:layout_height="39dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="180dp"
         android:background="@color/fondoLogs"
         android:onClick="irDeporte"
         android:text="@string/deporte"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/button14" />
 
     <Button
         android:id="@+id/button15"
-        android:layout_width="match_parent"
-        android:layout_height="51dp"
-        android:layout_marginTop="60dp"
+        android:layout_width="196dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="56dp"
         android:background="@color/bCVerdura"
         android:onClick="irAVerduras"
         android:text="@string/verduras"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button13" />
+        app:layout_constraintTop_toBottomOf="@+id/button12" />
+
+    <Button
+        android:id="@+id/bReeftas"
+        android:layout_width="196dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/bCVerdura"
+        android:onClick="iraRecetas"
+        android:text="@string/recetas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.013"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button15" />
 
     <Button
         android:id="@+id/button13"
-        android:layout_width="match_parent"
-        android:layout_height="51dp"
-        android:layout_marginTop="56dp"
+        android:layout_width="138dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="32dp"
         android:background="@color/bCPastas"
         android:onClick="irAPastas"
         android:text="@string/pastas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button12" />
+        app:layout_constraintTop_toBottomOf="@+id/button10" />
 
     <TextView
         android:id="@+id/textDietap"
@@ -91,8 +105,8 @@
 
     <Button
         android:id="@+id/button10"
-        android:layout_width="match_parent"
-        android:layout_height="51dp"
+        android:layout_width="138dp"
+        android:layout_height="65dp"
         android:layout_marginTop="33dp"
         android:background="@color/bCPesacdo"
         android:onClick="irAPescado"
@@ -104,27 +118,28 @@
 
     <Button
         android:id="@+id/button11"
-        android:layout_width="match_parent"
-        android:layout_height="51dp"
-        android:layout_marginTop="64dp"
+        android:layout_width="193dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="32dp"
         android:background="@color/bCCarne"
         android:onClick="irACarne"
         android:text="@string/carnes"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button10"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button10" />
+        app:layout_constraintStart_toEndOf="@+id/textDietap"
+        app:layout_constraintStart_toStartOf="@+id/textDietap"
+        app:layout_constraintTop_toBottomOf="@+id/textDietap" />
 
     <Button
         android:id="@+id/button12"
-        android:layout_width="match_parent"
-        android:layout_height="51dp"
-        android:layout_marginTop="68dp"
+        android:layout_width="203dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="88dp"
         android:background="@color/bCFruta"
         android:onClick="irAFruta"
         android:text="@string/fruta"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/button11" />
 </android.support.constraint.ConstraintLayout>

@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.constraint.ConstraintLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -15,7 +14,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -38,8 +36,8 @@ public class Ajustes extends AppCompatActivity {
     TextView texto,nombreED,apellidoED,apellido2ED,emailED,retos;
     ImageView imagen;
     Button boton,botonRetos,botonAgua, botonColor;
-    ScrollView mlay;
-int mDefaultColor;
+    ScrollView xml;
+int colorDefecto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,8 +61,8 @@ int mDefaultColor;
         botonAgua=findViewById(R.id.bcontadorAgua);
         botonAgua.setVisibility(View.INVISIBLE);
 
-        mlay=findViewById(R.id.layoutAjustes);
-        mDefaultColor= ContextCompat.getColor(com.example.Dietapp.Ajustes.this,R.color.colorPrimary);
+        xml=findViewById(R.id.layoutAjustes);
+        colorDefecto= ContextCompat.getColor(com.example.Dietapp.Ajustes.this,R.color.colorPrimary);
         botonColor=findViewById(R.id.bcolor);
         botonColor.setVisibility(View.INVISIBLE);
 
@@ -214,8 +212,8 @@ this.borrarDAtosDiario();
     }
 
 
-    public void openColorPicker(View view) {
-        AmbilWarnaDialog coloPicker= new AmbilWarnaDialog(this, mDefaultColor, new AmbilWarnaDialog.OnAmbilWarnaListener() {
+    public void abrirColorPicker(View view) {
+        AmbilWarnaDialog coloPicker= new AmbilWarnaDialog(this, colorDefecto, new AmbilWarnaDialog.OnAmbilWarnaListener() {
             @Override
             public void onCancel(AmbilWarnaDialog dialog) {
 
@@ -223,8 +221,8 @@ this.borrarDAtosDiario();
 
             @Override
             public void onOk(AmbilWarnaDialog dialog, int color) {
-                mDefaultColor=color;
-                mlay.setBackgroundColor(mDefaultColor);
+                colorDefecto=color;
+                xml.setBackgroundColor(colorDefecto);
             }
         });coloPicker.show();
     }

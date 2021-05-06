@@ -42,7 +42,7 @@ public class CrearUsers extends AppCompatActivity {
     }
 
     public void alta(View v) {
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 10);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 11);
         SQLiteDatabase bd = admin.getWritableDatabase();
 
         nombreLoginT = String.valueOf(nombreLogin.getText());
@@ -177,8 +177,7 @@ public class CrearUsers extends AppCompatActivity {
 
 
 
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,
-                "registro_user", null, 10);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 11);
         SQLiteDatabase bd = admin.getWritableDatabase(); //Create and/or open a database that will be used for reading and writing.
 
         Cursor curso = bd.rawQuery("select *  from usuarios ", null);

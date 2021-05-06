@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.Dietapp.extras.Recetas.Recetas">
+<LinearLayout
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="30dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textoReetas"
+        android:textColor="@color/verdeClaro"
+        android:textSize="20sp"/>
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="285dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.253"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <Spinner
+        android:id="@+id/spinner4"
+        android:layout_width="285dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="@+id/spinner3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/spinner3"
+        app:layout_constraintTop_toBottomOf="@+id/spinner3" />
+
+
+
+    <Spinner
+        android:id="@+id/spinner10"
+        android:layout_width="285dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintEnd_toEndOf="@+id/spinner4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/spinner4"
+        app:layout_constraintTop_toBottomOf="@+id/spinner4" />
+
+    <Spinner
+        android:id="@+id/spinner7"
+        android:layout_width="285dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/spinner10"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/spinner10"
+        app:layout_constraintTop_toBottomOf="@+id/spinner10" />
+
+    <Spinner
+        android:id="@+id/spinner8"
+        android:layout_width="394dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/spinner9"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/spinner9"
+        app:layout_constraintTop_toBottomOf="@+id/spinner9" />
+
+    <Spinner
+        android:id="@+id/spinner9"
+        android:layout_width="285dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="@+id/spinner6"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/spinner6"
+        app:layout_constraintTop_toBottomOf="@+id/spinner6" />
+
+    <Spinner
+        android:id="@+id/spinner6"
+        android:layout_width="285dp"
+        android:layout_height="39dp"
+
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/spinner7"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/spinner7"
+        app:layout_constraintTop_toBottomOf="@+id/spinner7" />
+    <Spinner
+        android:id="@+id/spinner5"
+        android:layout_width="285dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/spinner6"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/spinner6"
+        app:layout_constraintTop_toBottomOf="@+id/spinner6" />
+
+    <Spinner
+        android:id="@+id/spinnerLegumbres"
+        android:layout_width="285dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/spinner6"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/spinner6"
+        app:layout_constraintTop_toBottomOf="@+id/spinner6" />
+
+    <Spinner
+        android:id="@+id/spinnerConservas"
+        android:layout_width="285dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/spinnerLegumbres"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/spinnerLegumbres"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerLegumbres" />
+    <EditText
+        android:id="@+id/textoNombreReceta"
+        android:layout_width="223dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="100dp"
+        android:background="@drawable/bg_calendario"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:hint="@string/introducereceta"
+        android:textColor="@color/textoEdit"
+        android:textSize="10sp"
+        tools:ignore="LabelFor" />
+
+
+        <Button
+            android:id="@+id/btoatal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="84dp"
+            android:text="@string/vertotal"
+            android:textColor="@color/guuardar"
+            android:onClick="verTotal"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/totalCalorias"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/verdeClaro"
+            android:textSize="20sp"
+            />
+    <Button
+        android:id="@+id/bCrearRecetaR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:background="@drawable/boton_guardar"
+        android:text="@string/crearReceta"
+        android:onClick="crerReceta"
+        android:textColor="@color/guuardar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ttoatalPasta" />
+</LinearLayout>
+
+</android.widget.ScrollView>

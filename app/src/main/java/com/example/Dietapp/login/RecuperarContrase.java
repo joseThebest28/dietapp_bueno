@@ -36,7 +36,7 @@ public class RecuperarContrase extends AppCompatActivity {
             nombreUserContaiT = String.valueOf(nombreUserContai.getText());
 
             AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,
-                    "registro_user", null, 6);
+                    "registro_user", null, 11);
             SQLiteDatabase bd = admin.getWritableDatabase(); //Create and/or open a database that will be used for reading and writing.
 
             Cursor curso = bd.rawQuery("select *  from usuarios ", null);

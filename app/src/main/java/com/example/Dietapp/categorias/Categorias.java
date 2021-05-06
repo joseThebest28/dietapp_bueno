@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.example.Dietapp.PaginaPrincipal;
+import com.example.Dietapp.extras.ElegirReceta;
 import com.example.myapplicationfinal.R;
 
 public class Categorias extends AppCompatActivity {
@@ -47,5 +48,11 @@ public class Categorias extends AppCompatActivity {
     public void irDeporte(View view) {
         Intent i = new Intent(this, CategoDeporte.class );
         startActivity(i);
+    }
+
+    public void iraRecetas(View view) {
+        Intent i = new Intent(this, ElegirReceta.class );
+        startActivity(i);
+
     }
 }

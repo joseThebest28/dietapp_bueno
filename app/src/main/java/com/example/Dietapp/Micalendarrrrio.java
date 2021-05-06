@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.Dietapp.extras.ContadroVasosAgua;
 import com.example.myapplicationfinal.R;
 
 import java.text.SimpleDateFormat;
@@ -35,7 +34,7 @@ public class Micalendarrrrio extends AppCompatActivity {
         totalacalendario = myPreferences.getInt("totalacalendario", 0);
         textoObjetivo = myPreferences.getString("agua", "");
         textDAtosTotal = findViewById(R.id.textDAtosTotal);
-        textDAtosTotal.setText("total de calorias consumidas hoy: " + totalacalendario + "");
+        textDAtosTotal.setText("total de Kcalorias consumidas hoy: " + totalacalendario + "");
 
 
         textComentario = findViewById(R.id.textComentario);

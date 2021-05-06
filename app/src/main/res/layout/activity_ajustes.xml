@@ -121,7 +121,7 @@
                 android:id="@+id/bcolor"
                 android:layout_width="194dp"
                 android:layout_height="36dp"
-                android:onClick="openColorPicker"
+                android:onClick="abrirColorPicker"
                 android:text="@string/colorFondo" />
 
 
