@@ -42,6 +42,7 @@ public class VerdurayLegumbres extends AppCompatActivity {
         elementos.add("Plato de lentejas");
         elementos.add("Plato de Judias");
         elementos.add("Plato de Guisantes");
+        elementos.add("Ensalada de pollo");
 
 
 
@@ -92,6 +93,12 @@ public class VerdurayLegumbres extends AppCompatActivity {
                     if (position == 5) {
 
                         resultado5 = num * 11;
+                        toast1.show();
+                        edi.setText("");
+                    }
+                    if (position == 6) {
+
+                        resultado5 = num * 81;
                         toast1.show();
                         edi.setText("");
                     }

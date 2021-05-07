@@ -38,6 +38,7 @@
         <activity android:name="com.example.Dietapp.extras.Recetas.listas.ListasPezRio"/>
         <activity android:name="com.example.Dietapp.extras.Recetas.listas.ListasFruta"/>
         <activity android:name="com.example.Dietapp.extras.Recetas.listas.ListsLacteos"/>
+        <activity android:name="com.example.Dietapp.extras.Recetas.listas.ListasEmbutidos"/>
         <activity android:name="com.example.Dietapp.extras.Recetas.listas.ListsSalsas"/>
         <activity android:name="com.example.Dietapp.extras.Recetas.listas.ListsCereals"/>
         <activity android:name="com.example.Dietapp.extras.Recetas.listas.ListasPescadosOtro"/>

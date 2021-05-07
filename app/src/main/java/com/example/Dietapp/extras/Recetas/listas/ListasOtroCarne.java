@@ -28,8 +28,8 @@ ListView lista;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listas_recetas);
         lista=findViewById(R.id.lista);
-        String[] valoresPescadoOt= new String[]{ "selecciona Otros", "grasa de pato", "morcilla de arroz", "morcilla de sangra", "longaniza",
-                                "chorizo", "pate de pato", "pate de higado"};
+        String[] valoresPescadoOt= new String[]{ "selecciona Embutidos", "grasa de pato:783kcal", "morcilla de arroz:256kcal", "morcilla de sangre:379kcal", "longaniza: 346kcal"
+                , "pate de pato: 325lcal", "pate de higado:61kcal"};
         ArrayAdapter<String> adaptador=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,valoresPescadoOt);
         lista.setAdapter(adaptador);
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -42,12 +42,12 @@ ListView lista;
                 if (position != 0) {
                     Toast.makeText(getApplicationContext(), "has pulsado " + nombreV, Toast.LENGTH_SHORT).show();
                 }
-                if (position == 1) { suma = suma +11; }
-                if (position == 2) { suma = suma +43; }
-                if (position == 3) { suma = suma +109; }
-                if (position == 4) { suma = suma +217; }
-                if (position == 5) { suma = suma +214; }
-                if (position == 6) { suma = suma +113; }
+                if (position == 1) { suma = suma +783; }
+                if (position == 2) { suma = suma +256; }
+                if (position == 3) { suma = suma +379; }
+                if (position == 4) { suma = suma +346; }
+                if (position == 5) { suma = suma +325; }
+                if (position == 6) { suma = suma +61; }
 
 
 

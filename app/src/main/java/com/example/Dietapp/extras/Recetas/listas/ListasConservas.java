@@ -28,12 +28,8 @@ ListView lista;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listas_recetas);
         lista=findViewById(R.id.lista);
-        String[] valoresConservas= new String[]{ "selecciona tipo conservas","tomate frito: 87.6kcal",
-                "tomates en conserva: 18.23kcal","latas de atún","maiz dulce","sardina en aceite de oliva",
-                "mejillones fritos en escabeche","pimientos de piquillo","ventresca en aceite d eoliva",
-                "anchoas en aceite de oliva","ostras en vinagreta","navajas en aceite de oliva","melva canutera",
-                "filetes de caballa en aceite de girasol","huevas de bacalao en aceite",
-        "lulas de caldeirada","berberechos al natural","chipirones en su tinta","caviar de erizo",""};
+        String[] valoresConservas= new String[]{ "selecciona tipo conservas","atún en aceite: 286kcal",
+                "jureles en aceite: 285kcal","caballa en aceite: 286kcal","sardinas en aceite: 210kcal","calamares en aceite: 184kcal","pulpo en aceite: 174kcal","anchoas en aceite: 135kcal"};
         ArrayAdapter<String> adaptador=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,valoresConservas);
         lista.setAdapter(adaptador);
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -46,13 +42,13 @@ ListView lista;
                 if (position != 0) {
                     Toast.makeText(getApplicationContext(), "has pulsado " + nombreV, Toast.LENGTH_SHORT).show();
                 }
-                if (position == 1) { suma = suma +87.6f; }
-                if (position == 2) { suma = suma +18.23f; }
-                if (position == 3) { suma = suma +109; }
-                if (position == 4) { suma = suma +217; }
-                if (position == 5) { suma = suma +214; }
-                if (position == 6) { suma = suma +113; }
-
+                if (position == 1) { suma = suma +286; }
+                if (position == 2) { suma = suma +285; }
+                if (position == 3) { suma = suma +283; }
+                if (position == 4) { suma = suma +210; }
+                if (position == 5) { suma = suma +184; }
+                if (position == 6) { suma = suma +174; }
+                if (position == 7) { suma = suma +135; }
 
 
 

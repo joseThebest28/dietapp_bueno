@@ -17,6 +17,8 @@ public class FichaAdapter extends RecyclerView.Adapter<FichaAdapter.FichaViewHol
 
     private ArrayList<Ficha> listaFichas;
 
+
+
     public class FichaViewHolder extends RecyclerView.ViewHolder{
 
         public ImageView imagen;
@@ -52,5 +54,10 @@ public class FichaAdapter extends RecyclerView.Adapter<FichaAdapter.FichaViewHol
     @Override
     public int getItemCount() {
         return listaFichas.size();
+    }
+
+    public interface  RecyclerViewOnItemClickListener {
+
+        void onClick(View v, int position);
     }
 }

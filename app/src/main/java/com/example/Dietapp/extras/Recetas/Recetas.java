@@ -25,6 +25,7 @@ import com.example.Dietapp.extras.Recetas.listas.ListasConejo;
 import com.example.Dietapp.extras.Recetas.listas.ListasConservas;
 import com.example.Dietapp.extras.Recetas.listas.ListasCordero;
 import com.example.Dietapp.extras.Recetas.listas.ListasCorderoCaRoja;
+import com.example.Dietapp.extras.Recetas.listas.ListasEmbutidos;
 import com.example.Dietapp.extras.Recetas.listas.ListasFruta;
 import com.example.Dietapp.extras.Recetas.listas.ListasLegumbres;
 import com.example.Dietapp.extras.Recetas.listas.ListasOtroCarne;
@@ -98,6 +99,7 @@ public class Recetas extends AppCompatActivity {
         final Intent myIntent22= new Intent(this, ListasLegumbres.class);
         final Intent myIntent23= new Intent(this, ListsCereals.class);
         final Intent myIntent24= new Intent(this, ListsLacteos.class);
+        final Intent myIntent25= new Intent(this, ListasEmbutidos.class);
 
 
         volverPaginaElegir = new Intent(this, Recetas.class);
@@ -176,7 +178,7 @@ public class Recetas extends AppCompatActivity {
             }
         });
 
-        String[] valores8 = new String[]{"selecciona Carne Roja ", "ternera/Vaca", "carne de toro", "carne de buey", "pato", "carne de cabra", "carne de cordero"};
+        String[] valores8 = new String[]{"selecciona Carne Roja ", "ternera/Vaca",  "carne de buey", "pato", "carne de cabra", "carne de cordero"};
 
         spi8.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, valores8));
         spi8.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -274,7 +276,7 @@ public class Recetas extends AppCompatActivity {
         });
 
 
-        String[] valores7 = new String[]{"selecciona Otros", "otro tipo de carne","cereales","lacteos"};
+        String[] valores7 = new String[]{"selecciona Otros", "otros","cereales","lacteos","embutidos"};
 
         spi7.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, valores7));
         spi7.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -282,12 +284,14 @@ public class Recetas extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
                 String nombreOtros = (String) adapterView.getItemAtPosition(position);
-                if (nombreOtros.equals("otro tipo de carne"))
+                if (nombreOtros.equals("otros"))
                     startActivity(myIntent21);
                 if (nombreOtros.equals("cereales"))
                     startActivity(myIntent23);
                 if (nombreOtros.equals("lacteos"))
                     startActivity(myIntent24);
+                if (nombreOtros.equals("embutidos"))
+                    startActivity(myIntent25);
 
 
 
