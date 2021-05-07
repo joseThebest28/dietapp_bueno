@@ -21,8 +21,8 @@ import com.example.myapplicationfinal.R;
 import java.util.ArrayList;
 
 public class VerdurayLegumbres extends AppCompatActivity {
-    double resultado,resultado2,resultado3,resultado4,resultado5;
-    double total;
+    float resultado,resultado2,resultado3,resultado4,resultado5;
+    float total;
     private Spinner sp;
     private EditText edi;
     TextView text;
@@ -141,7 +141,7 @@ public class VerdurayLegumbres extends AppCompatActivity {
             toastNada3.show();
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(VerdurayLegumbres.this);
         SharedPreferences.Editor myEditor = myPreferences.edit();
-        myEditor.putInt("erdura", (int) total);
+        myEditor.putFloat("erdura",  total);
         myEditor.commit();
     }
 

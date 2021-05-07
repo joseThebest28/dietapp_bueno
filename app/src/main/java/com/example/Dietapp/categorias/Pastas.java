@@ -21,8 +21,8 @@ import com.example.myapplicationfinal.R;
 import java.util.ArrayList;
 
 public class Pastas extends AppCompatActivity {
-    double resultado,resultado2,resultado3,resultado4,resultado5;
-    double total;
+    float resultado,resultado2,resultado3,resultado4,resultado5;
+    float total;
     private Spinner sp;
     private EditText edi;
     TextView text;
@@ -126,7 +126,7 @@ public class Pastas extends AppCompatActivity {
         toastNada3.show();
         SharedPreferences myPreferencesPA = PreferenceManager.getDefaultSharedPreferences(Pastas.this);
         SharedPreferences.Editor myEditorPA = myPreferencesPA.edit();
-        myEditorPA.putInt("pasta", (int) total);
+        myEditorPA.putFloat("pasta", (int) total);
         myEditorPA.commit();
 
 

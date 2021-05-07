@@ -22,15 +22,17 @@ public class Seguimiento extends AppCompatActivity {
     private TextView aPasta;
     private TextView salsa;
     private TextView erdura;
+    private TextView lista;
     private TextView total;
-    private double suma;
-    static double recuperamosCar;
-    static double recuperamosFruta;
-   static  double recuperamosPez;
-    static double recuperamosDepor;
-   static  double recuperamosPasta;
-    static double recuperamosSalsa;
-    static double recuperamosVerdur;
+    private float suma;
+    static float recuperamosCar;
+    static float recuperamosFruta;
+   static  float recuperamosPez;
+    static float recuperamosDepor;
+   static  float recuperamosPasta;
+    static float recuperamosSalsa;
+    static float recuperamosVerdur;
+    static float recuperarLista;
     TextView texcv;
     String strDate;
 
@@ -47,30 +49,30 @@ public class Seguimiento extends AppCompatActivity {
         texcv.setText(strDate);
         try {
             Bundle datos = this.getIntent().getExtras();
-            recuperamosCar = datos.getInt("calorias carne");
+            recuperamosCar = datos.getFloat("calorias carne");
             texC = findViewById(R.id.textCarne);
             texC.setText("calorias carne" + recuperamosCar);
 
 
             Bundle datosP = this.getIntent().getExtras();
-            recuperamosPez = datosP.getDouble("calorias pescado");
+            recuperamosPez = datosP.getFloat("calorias pescado");
             texP = findViewById(R.id.textPez);
             texP.setText("calorias pescado" + recuperamosPez);
 
 
             Bundle datosD = this.getIntent().getExtras();
-            recuperamosDepor = datosD.getDouble("calorias deporte");
+            recuperamosDepor = datosD.getFloat("calorias deporte");
             texD = findViewById(R.id.textD);
             texD.setText(" deporte" + recuperamosDepor);
 
             Bundle Frutas = this.getIntent().getExtras();
-            recuperamosFruta = Frutas.getDouble("calorias fruta");
+            recuperamosFruta = Frutas.getFloat("calorias fruta");
             texFru = findViewById(R.id.textFr);
             texFru.setText(" fruta:" + recuperamosFruta);
 
 
             Bundle Pastas = this.getIntent().getExtras();
-            recuperamosPasta = Pastas.getDouble("pasta");
+            recuperamosPasta = Pastas.getFloat("pasta");
             aPasta = findViewById(R.id.textoparapastas);
             aPasta.setText(" pasta:" + recuperamosPasta);
 
@@ -78,15 +80,20 @@ public class Seguimiento extends AppCompatActivity {
 
 
             Bundle Salsas = this.getIntent().getExtras();
-            recuperamosSalsa = Salsas.getDouble("salsa");
+            recuperamosSalsa = Salsas.getFloat("salsa");
             salsa = findViewById(R.id.recibirSalsa);
             salsa.setText(" salsa:" + recuperamosSalsa);
 
 
             Bundle Erdura = this.getIntent().getExtras();
-            recuperamosVerdur = Erdura.getDouble("erdura");
+            recuperamosVerdur = Erdura.getFloat("erdura");
             erdura = findViewById(R.id.textVerdura);
             erdura.setText(" verdura:" + recuperamosVerdur);
+
+            Bundle Lista = this.getIntent().getExtras();
+            recuperarLista = Lista.getFloat("calorias listaReceta");
+            lista = findViewById(R.id.recibirlistaReceta);
+            lista.setText(" recetas:" + recuperarLista);
 
             //guaradr datos y mostrar el total
 
@@ -111,14 +118,15 @@ public class Seguimiento extends AppCompatActivity {
     public void recuperar(View view) {
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Seguimiento.this);
 
-        double carne = myPreferences.getInt("carne", 0);
-        double fruta = myPreferences.getInt("fru", 0);
-        double deporte = myPreferences.getInt("depor", 0);
-        double pasta = myPreferences.getInt("pasta", 0);
-        double pescado = myPreferences.getInt("pescado", 0);
-        double salsa = myPreferences.getInt("salsa", 0);
-        double verdura = myPreferences.getInt("erdura", 0);
-        suma=carne-deporte+fruta+pasta+pescado+salsa+verdura;
+        float carne = myPreferences.getFloat("carne", 0);
+        float fruta = myPreferences.getFloat("fru", 0);
+        float deporte = myPreferences.getFloat("depor", 0);
+        float pasta = myPreferences.getFloat("pasta", 0);
+        float pescado = myPreferences.getFloat("pescado", 0);
+        float salsa = myPreferences.getFloat("salsa", 0);
+        float verdura = myPreferences.getFloat("erdura", 0);
+        float receta = myPreferences.getFloat("receta", 0);
+        suma=carne-deporte+fruta+pasta+pescado+salsa+verdura+receta;
         total = findViewById(R.id.totalcaloriasHoy);
 
         String texto1 = "Hoy has obtenido Kcalorias.";
@@ -138,7 +146,7 @@ public class Seguimiento extends AppCompatActivity {
 
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Seguimiento.this);
         SharedPreferences.Editor myEditor = myPreferences.edit();
-        myEditor.putInt("totalacalendario", (int) suma);
+        myEditor.putFloat("totalacalendario", suma);
         myEditor.commit();
         startActivity(i);
 

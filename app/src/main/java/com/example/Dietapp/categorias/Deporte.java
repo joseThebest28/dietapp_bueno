@@ -22,7 +22,7 @@ public class Deporte extends AppCompatActivity {
         setContentView(R.layout.deporte);
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Deporte.this);
 
-        carne = myPreferences.getInt("depor", 0);
+        carne = myPreferences.getFloat("depor", 0);
         total = findViewById(R.id.textR);
         total.setText(""+carne);
 
@@ -47,7 +47,7 @@ public class Deporte extends AppCompatActivity {
 
        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Deporte.this);
        SharedPreferences.Editor myEditor = myPreferences.edit();
-       myEditor.putInt("depor", (int) carne);
+       myEditor.putFloat("depor", (float) carne);
        myEditor.commit();
     }
 }

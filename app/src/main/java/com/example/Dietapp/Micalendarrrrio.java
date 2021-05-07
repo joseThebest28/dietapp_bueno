@@ -17,7 +17,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class Micalendarrrrio extends AppCompatActivity {
-    double totalacalendario;
+    float totalacalendario;
     TextView textDAtosTotal;
     TextView texHora;
     EditText textComentario;
@@ -31,7 +31,7 @@ public class Micalendarrrrio extends AppCompatActivity {
 
 
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Micalendarrrrio.this);
-        totalacalendario = myPreferences.getInt("totalacalendario", 0);
+        totalacalendario = myPreferences.getFloat("totalacalendario", 0);
         textoObjetivo = myPreferences.getString("agua", "");
         textDAtosTotal = findViewById(R.id.textDAtosTotal);
         textDAtosTotal.setText("total de Kcalorias consumidas hoy: " + totalacalendario + "");
@@ -40,11 +40,11 @@ public class Micalendarrrrio extends AppCompatActivity {
         textComentario = findViewById(R.id.textComentario);
         textComentario.setText(textoObjetivo);
         SharedPreferences myPreferencesPA = PreferenceManager.getDefaultSharedPreferences(Micalendarrrrio.this);
-        String agua = myPreferencesPA.getString("agua", "");
-        int vasosGuardados=myPreferencesPA.getInt("valoragua",0);
-        int recuentomilitros=myPreferencesPA.getInt("valoragua2",0);
 
-        textComentario.setText("NOTA1: "+agua+"con "+vasosGuardados+"vasos de agua"+recuentomilitros+"litros de agua"+".  NOTA 2: ");
+        int vasosGuardados=myPreferencesPA.getInt("valoragua",0);
+        float recuentomilitros=myPreferencesPA.getFloat("valoragua2",0);
+
+        textComentario.setText("NOTA1: has conseguido  "+vasosGuardados+"vasos de agua"+recuentomilitros+"litros de agua"+".  NOTA 2: ");
 
 
         Calendar c = Calendar.getInstance();
@@ -75,15 +75,16 @@ public class Micalendarrrrio extends AppCompatActivity {
             SharedPreferences myPreferencesPA = PreferenceManager.getDefaultSharedPreferences(Micalendarrrrio.this);
             SharedPreferences.Editor myEditorPA = myPreferencesPA.edit();
             //ponemos a cero todos los datos realizados.
-            myEditorPA.putInt("pasta", 0);
-            myEditorPA.putInt("carne", 0);
-            myEditorPA.putInt("fru", 0);
-            myEditorPA.putInt("depor", 0);
-            myEditorPA.putInt("pescado", 0);
-            myEditorPA.putInt("salsa", 0);
-            myEditorPA.putInt("erdura", 0);
-            myEditorPA.putInt("valoragua",0);
-            myEditorPA.putInt("valoragua2",0);
+            myEditorPA.putFloat("pasta", 0);
+            myEditorPA.putFloat("carne", 0);
+            myEditorPA.putFloat("fru", 0);
+            myEditorPA.putFloat("depor", 0);
+            myEditorPA.putFloat("pescado", 0);
+            myEditorPA.putFloat("salsa", 0);
+            myEditorPA.putFloat("erdura", 0);
+            myEditorPA.putFloat("valoragua",0);
+            myEditorPA.putFloat("valoragua2",0);
+            myEditorPA.putFloat("receta",0);
 
             myEditorPA.commit();
 

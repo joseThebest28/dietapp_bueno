@@ -22,8 +22,8 @@ import com.example.myapplicationfinal.R;
 public class ContadroVasosAgua extends AppCompatActivity {
     TextView textoMostrar, textoMostrarvasos;
     ImageView imagenmas, imagenMwnos,imagenLLegada;
-    float recuento ;
-    int vasos ;
+    float recuento =0.0f;
+    int vasos;
 
     String nombreUser;
     @Override
@@ -43,15 +43,16 @@ public class ContadroVasosAgua extends AppCompatActivity {
 
         textoMostrarvasos = findViewById(R.id.textView50);
 
+        SharedPreferences myPreferencesV = PreferenceManager.getDefaultSharedPreferences(ContadroVasosAgua.this);
+        int vasosGuardados=myPreferencesV.getInt("valoragua",0);
+        float recuentoM=myPreferencesV.getFloat("valoragua2",0);
 
-
-
-            SharedPreferences myPreferencesV = PreferenceManager.getDefaultSharedPreferences(ContadroVasosAgua.this);
-            int vasosGuardados=myPreferencesV.getInt("valoragua",0);
-            float recuentoM=myPreferencesV.getFloat("valoragua2",0);
-
+        if(vasosGuardados!=0){
             vasos=vasosGuardados;
-            recuento=recuentoM;
+            recuento=recuentoM;}
+        else {
+            vasos=0;
+        }
 
 
         Log.i("valor", String.valueOf(recuento));
@@ -76,11 +77,13 @@ public class ContadroVasosAgua extends AppCompatActivity {
 
 
                 if (vasos == 8) {
+                    SharedPreferences myPreferencesVG = PreferenceManager.getDefaultSharedPreferences(ContadroVasosAgua.this);
+                    SharedPreferences.Editor myEditorVG = myPreferencesVG.edit();
+                    myEditorVG.putString("agua","se ha completado el reto de agua");
 
-                    SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(ContadroVasosAgua.this);
-                    SharedPreferences.Editor myEditor = myPreferences.edit();
-                    myEditor.putString("agua", "Se ha completado el objetivo de hoy de  agua");
-                    myEditor.commit();
+
+                    myEditorVG.apply();
+
 
                     retocompletado();
                     imagenLLegada.setVisibility(View.VISIBLE);
@@ -124,10 +127,10 @@ public class ContadroVasosAgua extends AppCompatActivity {
         SharedPreferences myPreferencesPA = PreferenceManager.getDefaultSharedPreferences(ContadroVasosAgua.this);
         String nombreUser = myPreferencesPA.getString("nombreUser", "");
 
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 10);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 11);
         SQLiteDatabase bd = admin.getWritableDatabase();
 
-        String sql = "UPDATE usuarios SET retoagua='Se ha completado el objetivo de hoy de  agua' where login='joseprueba'";
+        String sql = "UPDATE usuarios SET retoagua='Se ha completado el objetivo de hoy de  agua' where login='"+nombreUser+"'";
 bd.execSQL(sql);
 bd.close();
         Log.i("tag", "user"+nombreUser);
@@ -141,7 +144,9 @@ bd.close();
         SharedPreferences myPreferencesVG = PreferenceManager.getDefaultSharedPreferences(ContadroVasosAgua.this);
         SharedPreferences.Editor myEditorVG = myPreferencesVG.edit();
         myEditorVG.putInt("valoragua",vasos);
-        myEditorVG.putFloat("valoragua2", recuento);
+        myEditorVG.putFloat("valoragua2", recuento); SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(ContadroVasosAgua.this);
+
+
 
 
         myEditorVG.apply();

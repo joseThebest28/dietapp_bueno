@@ -20,8 +20,8 @@ import com.example.myapplicationfinal.R;
 import java.util.ArrayList;
 
 public class Salsas extends AppCompatActivity {
-    double resultado,resultado2,resultado3,resultado4,resultado5,resultado6;
-    double total;
+    float resultado,resultado2,resultado3,resultado4,resultado5,resultado6;
+    float total;
     private Spinner sp;
     private EditText edi;
     TextView text;
@@ -135,7 +135,7 @@ public class Salsas extends AppCompatActivity {
         toastNada3.show();
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Salsas.this);
         SharedPreferences.Editor myEditor = myPreferences.edit();
-        myEditor.putInt("salsa", (int) total);
+        myEditor.putFloat("salsa",  total);
         myEditor.commit();
     }
 }

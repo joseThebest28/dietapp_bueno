@@ -206,10 +206,6 @@ this.borrarDAtosDiario();
     }
 
 
-    public void iraColor(View view) {
-        Intent ifds = new Intent(this, Color.class);
-        startActivity(ifds);
-    }
 
 
     public void abrirColorPicker(View view) {

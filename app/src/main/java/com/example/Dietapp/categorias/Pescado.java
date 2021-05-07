@@ -28,8 +28,8 @@ public class Pescado extends AppCompatActivity {
     private EditText edi2;
 
     private TextView fina;
-    private double resultado;
-    private double resultado2;
+    private float resultado;
+    private float resultado2;
 
 
     @Override
@@ -63,7 +63,7 @@ public class Pescado extends AppCompatActivity {
 
 
                     if(position==1) {//Cigala
-                        resultado= num*85.4; toast1.show();}
+                        resultado= num*85.4f; toast1.show();}
 
                     if(position==2) {//Cangrejo
                         resultado=num*101; toast1.show();}
@@ -72,7 +72,7 @@ public class Pescado extends AppCompatActivity {
                         resultado=num*83; toast1.show();}
 
                     if(position==4){//Percebe
-                        resultado=num*6.6; toast1.show();}
+                        resultado=num*6.6f; toast1.show();}
 
                 }}
             @Override
@@ -112,7 +112,7 @@ public class Pescado extends AppCompatActivity {
                         resultado2=num2*74; toastMP.show();}
                     if(position==2) {
                         //Caracol
-                        resultado2=num2*7.8; toastMP.show();}
+                        resultado2=num2*7.8f; toastMP.show();}
                     if(position==3){
                         //Calamar
                         resultado2=num2*175; toastMP.show();}
@@ -140,7 +140,7 @@ public class Pescado extends AppCompatActivity {
         startActivity(i);
 
     }
-    double totalSuma;
+    float totalSuma;
 
     public void enviar(View view) {
         Intent intent = new Intent(this, Seguimiento.class);
@@ -152,7 +152,7 @@ public class Pescado extends AppCompatActivity {
         toastNada3.show();
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Pescado.this);
         SharedPreferences.Editor myEditor = myPreferences.edit();
-        myEditor.putInt("pescado", (int) totalSuma);
+        myEditor.putFloat("pescado",  totalSuma);
         myEditor.commit();
     }
 

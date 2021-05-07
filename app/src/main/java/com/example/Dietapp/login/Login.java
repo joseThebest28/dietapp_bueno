@@ -81,6 +81,7 @@ public class Login extends AppCompatActivity {
                     String emailSQ = curso.getString(5);
                     String retoAgua = curso.getString(6);
 
+
                     Log.i("tag", "agua"+retoAgua);
 
 

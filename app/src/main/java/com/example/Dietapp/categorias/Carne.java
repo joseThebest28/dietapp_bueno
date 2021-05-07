@@ -29,9 +29,9 @@ public class Carne extends AppCompatActivity {
     private EditText edi2;
     private EditText edi3;
     private TextView fina;
-    private int resultado;
-    private int resultado2;
-    private int resultado3;
+    private float resultado;
+    private float resultado2;
+    private float resultado3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -186,7 +186,7 @@ public class Carne extends AppCompatActivity {
             startActivity(i);
 
         }
-private int total;
+private float total;
 
     public void enviar(View view) {
         Intent intent = new Intent(this, Seguimiento.class);
@@ -198,7 +198,7 @@ private int total;
         toastNada3.show();
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Carne.this);
         SharedPreferences.Editor myEditor = myPreferences.edit();
-        myEditor.putInt("carne", (int) total);
+        myEditor.putFloat("carne", total);
         myEditor.commit();
     }
 

@@ -17,6 +17,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.Dietapp.PaginaPrincipal;
+import com.example.Dietapp.categorias.Categorias;
 import com.example.Dietapp.extras.Recetas.listas.ListasBuey;
 import com.example.Dietapp.extras.Recetas.listas.ListasCabra;
 import com.example.Dietapp.extras.Recetas.listas.ListasCasqueria;
@@ -356,19 +358,27 @@ public class Recetas extends AppCompatActivity {
     }
 
     public void crerReceta(View view) {
-        nombreRecetaT = String.valueOf(nombreReceta.getText());
-        this.verTotal(view);
-        float meter_calorias = caloriasListaTotal;
-        //metemos datos en base de datos
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 11);
-        SQLiteDatabase bd = admin.getWritableDatabase();
-        ContentValues registro = new ContentValues();  //es una clase para guardar datos
-        registro.put("nombreReceta", nombreRecetaT);
-        registro.put("calorias", meter_calorias);
-        bd.insert("recetas", null, registro);
-        bd.close();
-        Toast.makeText(getApplicationContext(), "Receta creada", Toast.LENGTH_SHORT).show();
+        try {
+            nombreRecetaT = String.valueOf(nombreReceta.getText());
+            this.verTotal(view);
+            float meter_calorias = caloriasListaTotal;
+            //metemos datos en base de datos
+            AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 11);
+            SQLiteDatabase bd = admin.getWritableDatabase();
+            ContentValues registro = new ContentValues();  //es una clase para guardar datos
+            registro.put("nombreReceta", nombreRecetaT);
+            registro.put("calorias", meter_calorias);
+            bd.insert("recetas", null, registro);
+            bd.close();
 
+            Intent i = new Intent(this, Categorias.class);
+            startActivity(i);
+        }
+        catch(Exception e)
+
+        {
+
+        }
 
     }
 }
