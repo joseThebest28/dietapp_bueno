@@ -1,5 +1,6 @@
 package com.example.Dietapp.extras.Recetas.listas;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -12,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.Dietapp.extras.Recetas.Recetas;
 import com.example.myapplicationfinal.R;
 
 import java.util.ArrayList;
@@ -45,7 +47,7 @@ ListView lista;
 
         ArrayAdapter<String> adaptador=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,valoresSalsa);
         lista.setAdapter(adaptador);
-
+        final Intent iD = new Intent(this, Recetas.class);
 
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -110,6 +112,7 @@ ListView lista;
                 myEditor.commit();
                 Log.i("tag","calorias final"+total);
                 suma=0;
+                startActivity(iD);
             }});
 
     }

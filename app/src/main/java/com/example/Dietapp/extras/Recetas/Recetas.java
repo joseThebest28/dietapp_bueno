@@ -360,19 +360,26 @@ public class Recetas extends AppCompatActivity {
     public void crerReceta(View view) {
         try {
             nombreRecetaT = String.valueOf(nombreReceta.getText());
-            this.verTotal(view);
-            float meter_calorias = caloriasListaTotal;
-            //metemos datos en base de datos
-            AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 11);
-            SQLiteDatabase bd = admin.getWritableDatabase();
-            ContentValues registro = new ContentValues();  //es una clase para guardar datos
-            registro.put("nombreReceta", nombreRecetaT);
-            registro.put("calorias", meter_calorias);
-            bd.insert("recetas", null, registro);
-            bd.close();
+            if(nombreRecetaT.equals(""))
+            {
+                Toast.makeText(getApplicationContext(), "Debes introducir nombre de receta", Toast.LENGTH_SHORT).show();
+            }
+            else{
+                this.verTotal(view);
+                float meter_calorias = caloriasListaTotal;
+                //metemos datos en base de datos
+                AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 11);
+                SQLiteDatabase bd = admin.getWritableDatabase();
+                ContentValues registro = new ContentValues();  //es una clase para guardar datos
+                registro.put("nombreReceta", nombreRecetaT);
+                registro.put("calorias", meter_calorias);
+                bd.insert("recetas", null, registro);
+                bd.close();
 
-            Intent i = new Intent(this, Categorias.class);
-            startActivity(i);
+                Intent i = new Intent(this, Categorias.class);
+                startActivity(i);
+            }
+
         }
         catch(Exception e)
 

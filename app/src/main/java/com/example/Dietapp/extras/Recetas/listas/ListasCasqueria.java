@@ -40,15 +40,5 @@ String textoEditT;
         ArrayAdapter<String> adaptador=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,valoresCasuqe);
         lista.setAdapter(adaptador);
     }
-    public void realizarBusqueda(View view) {
-        ArrayList <String> listaBusca=new ArrayList<>();
-        textoEditT=String.valueOf(textoEdit.getText());
-        for(int i=0;i<valoresCasuqe.length;i++)
-        if(valoresCasuqe[i].contains(textoEditT))
-        {
-            listaBusca.add(valoresCasuqe[i]);
-        }
-        ArrayAdapter<String> adaptador2=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,listaBusca);
-        lista.setAdapter(adaptador2);
-    }
+
 }

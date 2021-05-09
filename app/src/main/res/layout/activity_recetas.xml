@@ -131,7 +131,7 @@
         android:inputType="text"
         android:hint="@string/introducereceta"
         android:textColor="@color/textoEdit"
-        android:textSize="10sp"
+        android:textSize="20sp"
         tools:ignore="LabelFor" />
 
 

@@ -46,7 +46,7 @@ Log.i("tag","calorias inicio"+total);
         ArrayAdapter<String> adaptador=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,valoresBuey);
         lista.setAdapter(adaptador);
 
-
+        final Intent iD = new Intent(this, Recetas.class);
 
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -94,6 +94,7 @@ Log.i("tag","calorias inicio"+total);
         myEditor.commit();
         Log.i("tag","calorias final"+total);
             suma=0;
+            startActivity(iD);
         }});
 
 

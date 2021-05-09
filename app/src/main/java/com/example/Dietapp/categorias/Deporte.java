@@ -14,7 +14,7 @@ import com.example.myapplicationfinal.R;
 
 public class Deporte extends AppCompatActivity {
     private TextView total;
-    double carne;
+    float carne;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,9 +22,9 @@ public class Deporte extends AppCompatActivity {
         setContentView(R.layout.deporte);
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Deporte.this);
 
-        carne = myPreferences.getFloat("depor", 0);
+        carne = (float) myPreferences.getInt("depor", 0);
         total = findViewById(R.id.textR);
-        total.setText(""+carne);
+        total.setText("Total de calorias quemadas hoy"+carne);
 
     }
     public void volverMenu(View view) {
@@ -47,7 +47,7 @@ public class Deporte extends AppCompatActivity {
 
        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Deporte.this);
        SharedPreferences.Editor myEditor = myPreferences.edit();
-       myEditor.putFloat("depor", (float) carne);
+       myEditor.putFloat("depor",carne);
        myEditor.commit();
     }
 }

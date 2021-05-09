@@ -1,5 +1,6 @@
 package com.example.Dietapp.extras.Recetas.listas;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -12,6 +13,10 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.Dietapp.extras.ElegirReceta;
+import com.example.Dietapp.extras.Recetas.ListasRecetas;
+import com.example.Dietapp.extras.Recetas.Recetas;
+import com.example.Dietapp.login.CrearUsers;
 import com.example.myapplicationfinal.R;
 
 import java.util.ArrayList;
@@ -32,6 +37,7 @@ ListView lista;
                 "jureles en aceite: 285kcal","caballa en aceite: 286kcal","sardinas en aceite: 210kcal","calamares en aceite: 184kcal","pulpo en aceite: 174kcal","anchoas en aceite: 135kcal"};
         ArrayAdapter<String> adaptador=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,valoresConservas);
         lista.setAdapter(adaptador);
+        final Intent iD = new Intent(this, Recetas.class);
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -61,6 +67,8 @@ ListView lista;
                 myEditor.commit();
                 Log.i("tag","calorias final"+total);
                 suma=0;
+
+                startActivity(iD);
             }});
 
     }

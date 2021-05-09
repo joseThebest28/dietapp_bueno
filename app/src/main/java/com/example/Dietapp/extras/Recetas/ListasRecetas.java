@@ -30,6 +30,7 @@ public class ListasRecetas extends AppCompatActivity {
     ListView lista;
     EditText hint;
   float amount=0;
+  float numeroGuardar=0;
     ArrayList<String> valoresRecetas = new ArrayList<>();
     ArrayList<String> valoresRecetas2 = new ArrayList<>();
     String calorias;
@@ -59,6 +60,7 @@ public class ListasRecetas extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String nombreV = (String) lista.getItemAtPosition(position);
+
                 String[] parts = nombreV.split(":");
                 String part2 = parts[1]; // me quedo con el numeor apra guardarlo y sumarlo al total
                 String numero=String.valueOf(part2);
@@ -67,8 +69,9 @@ public class ListasRecetas extends AppCompatActivity {
                 amount=Float.parseFloat(numero);
                 Log.i("tag","numeroBien"+amount);
 
+                numeroGuardar=numeroGuardar+amount;
 
-                intent.putExtra("calorias listaReceta", amount);
+                intent.putExtra("calorias listaReceta", numeroGuardar);
 
                 startActivity(intent);
                 Toast toastNada3 = Toast.makeText(getApplicationContext(), "Se han guardado los datos de carne correctamente", Toast.LENGTH_SHORT);
@@ -76,7 +79,7 @@ public class ListasRecetas extends AppCompatActivity {
                 toastNada3.show();
                 SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(ListasRecetas.this);
                 SharedPreferences.Editor myEditor = myPreferences.edit();
-                myEditor.putFloat("receta", amount);
+                myEditor.putFloat("receta", numeroGuardar);
                 myEditor.commit();
 
         }});

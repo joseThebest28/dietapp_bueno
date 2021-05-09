@@ -8,11 +8,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.Dietapp.extras.Pagina_reto;
 import com.example.myapplicationfinal.R;
 
 public class Abdominales extends AppCompatActivity {
     private Toast toast1;
     private Toast toast2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +27,7 @@ public class Abdominales extends AppCompatActivity {
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Abdominales.this);
 
         double num = myPreferences.getInt("depor", 0);
-       num=num+35;
+        num=num+35;
 
         SharedPreferences.Editor myEditor = myPreferences.edit();
         myEditor.putInt("depor", (int) num);
@@ -38,13 +40,13 @@ public class Abdominales extends AppCompatActivity {
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Abdominales.this);
 
         double num = myPreferences.getInt("depor", 0);
-        num=num+17;
+        num=num+27;
 
         SharedPreferences.Editor myEditor = myPreferences.edit();
         myEditor.putInt("depor", (int) num);
         myEditor.commit();
         Intent i = new Intent(this, Abdominales2.class );
-        startActivity(i);toast1.show();
+        startActivity(i);toast2.show();
     }
 
 

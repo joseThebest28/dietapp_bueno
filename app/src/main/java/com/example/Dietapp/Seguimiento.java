@@ -120,13 +120,20 @@ public class Seguimiento extends AppCompatActivity {
 
         float carne = myPreferences.getFloat("carne", 0);
         float fruta = myPreferences.getFloat("fru", 0);
-        float deporte = myPreferences.getFloat("depor", 0);
+     float deporte = myPreferences.getFloat("depor", 0);
         float pasta = myPreferences.getFloat("pasta", 0);
         float pescado = myPreferences.getFloat("pescado", 0);
         float salsa = myPreferences.getFloat("salsa", 0);
         float verdura = myPreferences.getFloat("erdura", 0);
         float receta = myPreferences.getFloat("receta", 0);
-        suma=carne-deporte+fruta+pasta+pescado+salsa+verdura+receta;
+        if(deporte!=0)
+        {
+
+        }
+        else{
+            suma=carne+fruta+pasta+pescado+salsa+verdura+receta;
+        }
+
         total = findViewById(R.id.totalcaloriasHoy);
 
         String texto1 = "Hoy has obtenido Kcalorias.";
