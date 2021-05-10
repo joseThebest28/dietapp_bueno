@@ -26,7 +26,6 @@
         <activity android:name="com.example.Dietapp.extras.Recetas.listas.ListasCerdo"/>
         <activity android:name="com.example.Dietapp.extras.Recetas.listas.ListasCordero"/>
         <activity android:name="com.example.Dietapp.extras.Recetas.listas.ListasTernera"/>
-        <activity android:name="com.example.Dietapp.extras.Recetas.listas.ListasBuey"/>
         <activity android:name="com.example.Dietapp.extras.Recetas.listas.ListasPavo"/>
         <activity android:name="com.example.Dietapp.extras.Recetas.listas.ListasPato"/>
         <activity android:name="com.example.Dietapp.extras.Recetas.listas.ListasCabra"/>

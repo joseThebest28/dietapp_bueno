@@ -126,13 +126,14 @@ public class Seguimiento extends AppCompatActivity {
         float salsa = myPreferences.getFloat("salsa", 0);
         float verdura = myPreferences.getFloat("erdura", 0);
         float receta = myPreferences.getFloat("receta", 0);
-        if(deporte!=0)
+        if(deporte!=0)//si deporte es 0 sale un erro, por ello si es ceroq ue no reste nada
         {
-
+            suma=carne+fruta+pasta+pescado+salsa+verdura+receta-deporte;
         }
         else{
             suma=carne+fruta+pasta+pescado+salsa+verdura+receta;
         }
+
 
         total = findViewById(R.id.totalcaloriasHoy);
 
@@ -140,8 +141,8 @@ public class Seguimiento extends AppCompatActivity {
         String texto2 = " Felicidades, vas por buen camino";
         if(suma>0)
         {total.setText(texto1 +suma+ texto2);
-       }else{
-            total.setText(texto1 +suma);
+       } if(suma<=0){//en caso de salgan por alguna razón datos negativos, que al usuario no le aparezcan datos negativos, le salga 0
+            total.setText(texto1 +0.0);
         }
 
         texcv.setText(strDate);

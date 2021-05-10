@@ -31,7 +31,8 @@ ListView lista;
         setContentView(R.layout.activity_listas_recetas);
         lista=findViewById(R.id.lista);
         String[] valoresPescadoOt= new String[]{ "selecciona Embutidos", "grasa de pato:783kcal", "morcilla de arroz:256kcal", "morcilla de sangre:379kcal", "longaniza: 346kcal"
-                , "pate de pato: 325lcal", "pate de higado:61kcal"};
+                , "pate de pato: 325lcal", "pate de higado:61kcal","carne de caballo: 133kcal", "codornices: 116kcal","ciervo: 118kcal",
+        "carne de corzo: 103kcal","jabalí: 114kcal","paloma: 294kcal"};
         ArrayAdapter<String> adaptador=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,valoresPescadoOt);
         lista.setAdapter(adaptador);
         final Intent iD = new Intent(this, Recetas.class);
@@ -51,6 +52,12 @@ ListView lista;
                 if (position == 4) { suma = suma +346; }
                 if (position == 5) { suma = suma +325; }
                 if (position == 6) { suma = suma +61; }
+                if (position == 7) { suma = suma +133; }
+                if (position == 8) { suma = suma +116; }
+                if (position == 9) { suma = suma +118; }
+                if (position == 10) { suma = suma +103; }
+                if (position == 11) { suma = suma +114; }
+                if (position == 11) { suma = suma +294; }
 
 
 

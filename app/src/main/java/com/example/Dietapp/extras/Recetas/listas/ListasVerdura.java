@@ -78,10 +78,10 @@ Log.i("tag","calorias inicio"+total);
                 if (position == 18) { suma = suma +18; }
                 if (position == 19) { suma = suma +34; }
                 if (position == 20) { suma = suma +22; }
-                if (position == 19) { suma = suma +25; }
-                if (position == 19) { suma = suma +92; }
-                if (position == 19) { suma = suma +35; }
-                if (position == 19) { suma = suma +64; }
+                if (position == 21) { suma = suma +25; }
+                if (position == 22) { suma = suma +92; }
+                if (position == 23) { suma = suma +35; }
+                if (position == 24) { suma = suma +64; }
 
 
 

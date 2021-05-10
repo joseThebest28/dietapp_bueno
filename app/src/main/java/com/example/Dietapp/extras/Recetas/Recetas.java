@@ -17,9 +17,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.Dietapp.PaginaPrincipal;
 import com.example.Dietapp.categorias.Categorias;
-import com.example.Dietapp.extras.Recetas.listas.ListasBuey;
 import com.example.Dietapp.extras.Recetas.listas.ListasCabra;
 import com.example.Dietapp.extras.Recetas.listas.ListasCasqueria;
 import com.example.Dietapp.extras.Recetas.listas.ListasCerdo;
@@ -84,7 +82,6 @@ public class Recetas extends AppCompatActivity {
         final Intent myIntent4 = new Intent(this, ListasPavo.class);
         final Intent myIntent5 = new Intent(this, ListasCordero.class);
         final Intent myIntent6 = new Intent(this, ListasTernera.class);
-        final Intent myIntent8 = new Intent(this, ListasBuey.class);
         final Intent myIntent9 = new Intent(this, ListasPato.class);
         final Intent myIntent10 = new Intent(this, ListasCabra.class);
         final Intent myIntent11 = new Intent(this, ListasCorderoCaRoja.class);
@@ -180,7 +177,7 @@ public class Recetas extends AppCompatActivity {
             }
         });
 
-        String[] valores8 = new String[]{"selecciona Carne Roja ", "ternera/Vaca",  "carne de buey", "pato", "carne de cabra", "carne de cordero"};
+        String[] valores8 = new String[]{"selecciona Carne Roja ", "ternera/Vaca", "pato", "carne de cabra", "carne de cordero"};
 
         spi8.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, valores8));
         spi8.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -190,8 +187,6 @@ public class Recetas extends AppCompatActivity {
                 String nombreCarneRo = (String) adapterView.getItemAtPosition(position);
                 if (nombreCarneRo.equals("ternera/Vaca"))
                     startActivity(myIntent6);
-                if (nombreCarneRo.equals("carne de buey"))
-                    startActivity(myIntent8);
                 if (nombreCarneRo.equals("pato"))
                     startActivity(myIntent9);
                 if (nombreCarneRo.equals("carne de cabra"))
