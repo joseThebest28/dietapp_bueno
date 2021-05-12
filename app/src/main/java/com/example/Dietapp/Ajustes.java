@@ -136,6 +136,7 @@ this.borrarDAtosDiario();
                         myEditor.putInt("valoragua",0);
                         myEditor.putFloat("valoragua2",0);
                         myEditor.putFloat("recetas",0);
+                        myEditor.putFloat("bebida",0);
                         myEditor.commit();
 
 

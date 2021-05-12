@@ -96,10 +96,11 @@
         android:layout_width="145dp"
         android:layout_height="48dp"
 
-        android:layout_marginTop="13dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="28dp"
         android:textColor="@color/hora"
-        app:layout_constraintEnd_toEndOf="@+id/recibirlistaReceta"
-        app:layout_constraintHorizontal_bias="0.563"
+        app:layout_constraintEnd_toEndOf="@+id/recibirlistaReceta2"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/recibirlistaReceta"
         app:layout_constraintTop_toBottomOf="@+id/recibirlistaReceta" />
 
@@ -143,12 +144,23 @@
         android:layout_width="140dp"
         android:layout_height="40dp"
 
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="36dp"
         android:textColor="@color/dietappPrincipal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintEnd_toEndOf="@+id/textVerdura"
+        app:layout_constraintHorizontal_bias="0.067"
         app:layout_constraintStart_toStartOf="@+id/textVerdura"
-        app:layout_constraintTop_toBottomOf="@+id/textFr" />
+        app:layout_constraintTop_toBottomOf="@+id/textVerdura" />
+
+    <TextView
+        android:id="@+id/recibirlistaBebidaS"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="32dp"
+        android:textColor="@color/dietappPrincipal"
+        app:layout_constraintEnd_toEndOf="@+id/recibirSalsa"
+        app:layout_constraintHorizontal_bias="0.821"
+        app:layout_constraintStart_toEndOf="@+id/recibirlistaReceta"
+        app:layout_constraintTop_toBottomOf="@+id/recibirSalsa" />
 
     <TextView
         android:id="@+id/textVerdura"

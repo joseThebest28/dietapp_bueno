@@ -50,7 +50,9 @@
     <string name="imagenexpli6">imagen explica 6</string>
     <string name="imagenfru">imagen fruta</string>
     <string name="indicafru">Indica cuantas piezas de fruta has comido.(se puede poner que has comido media pieza:0.5)</string>
+    <string name="textbebidas">Indica vasos de bebidaque has tomado.</string>
     <string name="indicafru2">Indica que fruta has comido</string>
+    <string name="indicabebidas2">Indica que bebida has tomado</string>
     <string name="indicapasta">Indica que pasta has comido</string>
     <string name="indicapasta2">Indica cuantos platos de pasta has comido</string>
     <string name="imagenpasta">imagen pasta</string>
@@ -175,5 +177,6 @@
     <string name="recetas">Recetas</string>
     <string name="minutosdepor">Minutos</string>
     <string name="horasdepor">Horas</string>
+    <string name="bebidas">Bebidas</string>
 
 </resources>

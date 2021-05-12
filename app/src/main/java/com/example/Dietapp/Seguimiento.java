@@ -15,15 +15,9 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class Seguimiento extends AppCompatActivity {
-    private TextView texC;
-    private TextView texP;
-    private TextView texD;
-    private TextView texFru;
-    private TextView aPasta;
-    private TextView salsa;
-    private TextView erdura;
-    private TextView lista;
-    private TextView total;
+    private TextView texC,texP,texD,texFru,aPasta,salsa,erdura,lista, bebidas,total ;
+
+
     private float suma;
     static float recuperamosCar;
     static float recuperamosFruta;
@@ -32,7 +26,7 @@ public class Seguimiento extends AppCompatActivity {
    static  float recuperamosPasta;
     static float recuperamosSalsa;
     static float recuperamosVerdur;
-    static float recuperarLista;
+    static float recuperarLista,recuperarBebida;
     TextView texcv;
     String strDate;
 
@@ -94,6 +88,11 @@ public class Seguimiento extends AppCompatActivity {
             lista = findViewById(R.id.recibirlistaReceta);
             lista.setText(" recetas: " + recuperarLista);
 
+            Bundle bebidas = this.getIntent().getExtras();
+            recuperarBebida = bebidas.getFloat("calorias bebidas");
+            lista = findViewById(R.id.recibirlistaBebidaS);
+            lista.setText(" recetas: " + recuperarBebida);
+
             //guaradr datos y mostrar el total
 
 
@@ -125,8 +124,9 @@ public class Seguimiento extends AppCompatActivity {
         float salsa = myPreferences.getFloat("salsa", 0);
         float verdura = myPreferences.getFloat("erdura", 0);
         float receta = myPreferences.getFloat("receta", 0);
+        float bebidas = myPreferences.getFloat("bebida", 0);
 
-            suma=  carne+fruta+pasta+pescado+salsa+verdura+receta-deporte;
+            suma=  carne+fruta+pasta+pescado+salsa+verdura+receta-deporte+bebidas;
 
 
 
