@@ -25,8 +25,6 @@
     <string name="indicarDeprorte">Indica que deporte has practicado</string>
     <string name="animo">Sabemos que ha sido un duro trabajo, pero lo mejor de esta vida cuesta.  ÁNIMO Y SIGUE ASÍ</string>
     <string name="timepodeporte">Indica aqui el tiempo en horas y minutos:</string>
-    <string name="horasdepor">Horas</string>
-    <string name="minutosdepor">Minutos</string>
     <string name="imagendepor">imagen</string>
     <string name="imagen2depor">imagen2</string>
     <string name="ayudadepor">El resultado es una aproximación, ya que no es exacto, depende de cada persona. </string>
@@ -175,5 +173,7 @@
     <string name="ejemoloBusqueda">Ej: buey</string>
     <string name="realizarBusqueda">Buscar</string>
     <string name="recetas">Recetas</string>
+    <string name="minutosdepor">Minutos</string>
+    <string name="horasdepor">Horas</string>
 
 </resources>

@@ -32,7 +32,7 @@ ListView lista;
         lista=findViewById(R.id.lista);
       valoresCordero= new String[]{ "selecciona pieza de cordero ",
                 "paletilla de cordero: 240kcal","medallones: 255kcal","tournedó: 43.47kcal","pincho moruno: 202kcal",
-                "brocheta: 134kcal","hamburguesa: 342.11kcal","churrasquitos: 250kcal","churrasco: 266kcal","filete de carrillón"};
+                "brocheta: 134kcal","hamburguesa: 342.11kcal","churrasquitos: 250kcal","churrasco: 266kcal","filete de carrillón: 250kcal"};
         ArrayAdapter<String> adaptador=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,valoresCordero);
         lista.setAdapter(adaptador);
         final Intent iD = new Intent(this, Recetas.class);
@@ -54,13 +54,7 @@ ListView lista;
                 if (position == 6) { suma = suma +342.11f; }
                 if (position == 7) { suma = suma +250; }
                 if (position == 8) { suma = suma +266; }
-
-                if (position == 9) { suma = suma +156; }
-                if (position == 10) { suma = suma +467; }
-                if (position == 11) { suma = suma +665; }
-                if (position == 12) { suma = suma +673; }
-                if (position == 13) { suma = suma +201; }
-
+                if (position == 9) { suma = suma +250; }
 
 
 

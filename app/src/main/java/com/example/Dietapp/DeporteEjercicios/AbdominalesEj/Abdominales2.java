@@ -28,11 +28,11 @@ public class Abdominales2 extends AppCompatActivity {
     public void completad(View view) {
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Abdominales2.this);
 
-        double num = myPreferences.getInt("depor", 0);
-       num=num+35;
+        double num = myPreferences.getFloat("depor", 0);
+        num=num+32;
 
         SharedPreferences.Editor myEditor = myPreferences.edit();
-        myEditor.putInt("depor", (int) num);
+        myEditor.putFloat("depor", (int) num);
         myEditor.commit();
         Intent i = new Intent(this, Abdominales3.class );
         startActivity(i);toast2.show();
@@ -41,11 +41,11 @@ public class Abdominales2 extends AppCompatActivity {
     public void mediocompletad(View view) {
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Abdominales2.this);
 
-        double num = myPreferences.getInt("depor", 0);
-        num=num+17;
+        double num = myPreferences.getFloat("depor", 0);
+        num=num+16;
 
         SharedPreferences.Editor myEditor = myPreferences.edit();
-        myEditor.putInt("depor", (int) num);
+        myEditor.putFloat("depor", (int) num);
         myEditor.commit();
         Intent i = new Intent(this, Abdominales3.class );
         startActivity(i);toast1.show();

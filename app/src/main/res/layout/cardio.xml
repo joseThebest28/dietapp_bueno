@@ -47,7 +47,7 @@
         app:layout_constraintEnd_toEndOf="@+id/minutos"
         app:layout_constraintStart_toStartOf="@+id/textView10"
         app:layout_constraintTop_toBottomOf="@+id/horas"
-        tools:context="com.example.Dietapp.categorias.Deporte" />
+        tools:context="com.example.Dietapp.DeporteEjercicios.Deporte" />
 
     <EditText
         android:id="@+id/minutos"

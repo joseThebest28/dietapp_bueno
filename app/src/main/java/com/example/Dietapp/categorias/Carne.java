@@ -130,10 +130,36 @@ public class Carne extends AppCompatActivity {
         sp3=(Spinner)findViewById(R.id.spiC3);
 
         ArrayList<String> elementos3=new ArrayList<>();
-        elementos3.add("Selecciona el ambutido que has comido");
-        elementos3.add("chorizo");
-        elementos3.add("morcilla");
-        elementos3.add("longaniza");
+        elementos3.add("Selecciona el embutido que has comido");
+        elementos3.add("andouille: 232kcal");
+        elementos3.add("bacon/panceta/tocino: 407kcal");
+        elementos3.add("bockwust: 301kcal");
+        elementos3.add("bratwurst: 297kcal");
+        elementos3.add("chorizo: 455kcal");
+        elementos3.add("corned beef: 153kcal");
+        elementos3.add("fuet:422kcal");
+        elementos3.add("jamón cocida: 133kcal");
+        elementos3.add("kielbasa: 309kcal");
+        elementos3.add("knackwurst: 307kcal");
+        elementos3.add("landjäger/salchicha: 352kcal");
+        elementos3.add("leberwurst: 326kcal");
+        elementos3.add("lomo embutido: 200kcal");
+        elementos3.add("lyoner: 247kcal");
+        elementos3.add("mettwurst: 310kcal");
+        elementos3.add("mortadela: 311kcal");
+        elementos3.add("pastrami: 133kcal");
+        elementos3.add( "prociutto: 195kcal");
+        elementos3.add( "salami/salame:336kcal");
+        elementos3.add( "salchicha/chorizo: 230kcal");
+        elementos3.add( "salchicha/chorizo picante: 259kcal");
+        elementos3.add("salchicha/chorizo ahumado: 301kcal");
+        elementos3.add("salchicha italiana/chorizo criollo: 149kcal");
+        elementos3.add("salchicha parrillera: 840kcal");
+        elementos3.add("frankfurt/salchicha de viena: 305kcal");
+        elementos3.add("salchichón: 247kcal");
+        elementos3.add("sobrasada: 598kcal");
+        elementos3.add("weisswurst/salchicha blanca: 313kcal");
+
 
         ArrayAdapter adp3=new ArrayAdapter(Carne.this, android.R.layout.simple_spinner_dropdown_item,elementos3);
         sp3.setAdapter(adp3);
@@ -150,21 +176,37 @@ public class Carne extends AppCompatActivity {
                 res3.trim();
                 if(!res3.isEmpty()) {
                     int num3 = Integer.parseInt(res3);
+                    if (position == 1) {  resultado3 = num3  +232;  toast3.show();}
+                    if (position == 2) { resultado3 = num3 +407;  toast3.show();}
+                    if (position == 3) {resultado3 = num3 +301;  toast3.show();}
+                    if (position == 4) { resultado3 = num3 +297;  toast3.show();}
+                    if (position == 5) { resultado3 = num3 +455;  toast3.show();}
+                    if (position == 6) { resultado3 = num3 +153;  toast3.show();}
+                    if (position == 7) { resultado3 = num3 +422;  toast3.show();}
+                    if (position == 8) { resultado3 = num3 +133;  toast3.show();}
+                    if (position == 9) { resultado3 = num3 +309;  toast3.show();}
+                    if (position == 10) { resultado3 = num3 +307;  toast3.show();}
+                    if (position == 11) { resultado3 = num3 +352;  toast3.show();}
+                    if (position == 12) { resultado3 = num3 +326;  toast3.show();}
+                    if (position == 13) { resultado3 = num3 +200;  toast3.show();}
+                    if (position == 14) { resultado3 = num3 +247;  toast3.show();}
+                    if (position == 15) { resultado3 = num3 +310;  toast3.show();}
+                    if (position == 16) { resultado3 = num3 +311;  toast3.show();}
+                    if (position == 17) { resultado3 = num3 +133;  toast3.show();}
+                    if (position == 18) { resultado3 = num3 +195;  toast3.show();}
+                    if (position == 19) { resultado3 = num3 +336;  toast3.show();}
+                    if (position == 20) { resultado3 = num3 +230;  toast3.show();}
+                    if (position == 21) { resultado3 = num3 +259;  toast3.show();}
+                    if (position == 22) { resultado3 = num3 +301;  toast3.show();}
+                    if (position == 23) { resultado3 = num3 +149;  toast3.show();}
+                    if (position == 24) { resultado3 = num3 +840;  toast3.show();}
+                    if (position == 25) { resultado3 = num3 +305;  toast3.show();}
+                    if (position == 26) { resultado3 = num3 +247;  toast3.show();}
+                    if (position == 27) { resultado3 = num3 +598;  toast3.show();}
+                    if (position == 28) { resultado3 = num3 +313;  toast3.show();}
 
-                    if (position == 1) {
-                        //chorizo
-                        resultado3 = num3 * 170;
-                        toast3.show();
-                    }
 
-                if(position==2) {
-                    //morcilla
-                    resultado3=num3*150;
-                    toast3.show();}
-                if(position==3){
-                    //longaniza
-                    resultado3=num3*130;
-                    toast3.show();}
+                
 
 
 
@@ -198,7 +240,7 @@ private float total;
         toastNada3.show();
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Carne.this);
         SharedPreferences.Editor myEditor = myPreferences.edit();
-        myEditor.putFloat("carne", total);
+        myEditor.putFloat("carne",total);
         myEditor.commit();
     }
 

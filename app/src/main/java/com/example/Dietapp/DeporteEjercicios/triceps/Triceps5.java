@@ -28,11 +28,11 @@ public class Triceps5 extends AppCompatActivity {
     public void completad(View view) {
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Triceps5.this);
 
-        double num = myPreferences.getInt("depor", 0);
-       num=num+35;
+        float num = myPreferences.getFloat("depor", 0);
+        num=num+21.8f;
 
         SharedPreferences.Editor myEditor = myPreferences.edit();
-        myEditor.putInt("depor", (int) num);
+        myEditor.putFloat("depor",  num);
         myEditor.commit();toast1.show();Intent i = new Intent(this, CategoDeporte.class );
         startActivity(i);
 
@@ -41,11 +41,11 @@ public class Triceps5 extends AppCompatActivity {
     public void mediocompletad(View view) {
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Triceps5.this);
 
-        double num = myPreferences.getInt("depor", 0);
-        num=num+17;
+        float num = myPreferences.getFloat("depor", 0);
+        num=num+10.9f;
 
         SharedPreferences.Editor myEditor = myPreferences.edit();
-        myEditor.putInt("depor", (int) num);
+        myEditor.putFloat("depor",  num);
         myEditor.commit();toast1.show();Intent i = new Intent(this, CategoDeporte.class );
         startActivity(i);
 

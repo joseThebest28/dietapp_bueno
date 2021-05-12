@@ -27,11 +27,11 @@ public class BIceps3 extends AppCompatActivity {
     public void completad(View view) {
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(BIceps3.this);
 
-        double num = myPreferences.getInt("depor", 0);
-       num=num+35;
+        double num = myPreferences.getFloat("depor", 0);
+       num=num+24;
 
         SharedPreferences.Editor myEditor = myPreferences.edit();
-        myEditor.putInt("depor", (int) num);
+        myEditor.putFloat("depor", (int) num);
         myEditor.commit();
         Intent i = new Intent(this, BIceps5.class );
         startActivity(i);toast2.show();
@@ -40,11 +40,11 @@ public class BIceps3 extends AppCompatActivity {
     public void mediocompletad(View view) {
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(BIceps3.this);
 
-        double num = myPreferences.getInt("depor", 0);
-        num=num+17;
+        double num = myPreferences.getFloat("depor", 0);
+        num=num+12;
 
         SharedPreferences.Editor myEditor = myPreferences.edit();
-        myEditor.putInt("depor", (int) num);
+        myEditor.putFloat("depor", (int) num);
         myEditor.commit();
         Intent i = new Intent(this, BIceps5.class );
         startActivity(i);toast1.show();

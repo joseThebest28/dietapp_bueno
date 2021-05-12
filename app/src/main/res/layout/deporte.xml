@@ -7,7 +7,7 @@
     android:background="@color/textoDeporte"
 
     android:hapticFeedbackEnabled="true"
-    tools:context="com.example.Dietapp.categorias.Deporte">
+    tools:context="com.example.Dietapp.DeporteEjercicios.Deporte">
 
     <TextView
         android:id="@+id/textView5"

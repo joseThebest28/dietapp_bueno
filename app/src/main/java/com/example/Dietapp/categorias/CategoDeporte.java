@@ -8,6 +8,7 @@ import android.view.View;
 import com.example.Dietapp.DeporteEjercicios.AbdominalesEj.ElegirRutinaAbs;
 import com.example.Dietapp.DeporteEjercicios.BicepsEj.ElegirBi;
 import com.example.Dietapp.DeporteEjercicios.Cardio;
+import com.example.Dietapp.DeporteEjercicios.Deporte;
 import com.example.Dietapp.DeporteEjercicios.EspaldaEj.ElegirRutinaEs;
 import com.example.Dietapp.DeporteEjercicios.Pecho.ElegirRutinaPe;
 import com.example.Dietapp.DeporteEjercicios.gluteos.ElegirRutinaGlu;

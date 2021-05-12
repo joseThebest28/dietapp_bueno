@@ -33,11 +33,11 @@ public class Pecho5 extends AppCompatActivity {
     public void completad(View view) {
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Pecho5.this);
 
-        double num = myPreferences.getInt("depor", 0);
-        num=num+35;
+        double num = myPreferences.getFloat("depor", 0);
+        num=num+24;
 
         SharedPreferences.Editor myEditor = myPreferences.edit();
-        myEditor.putInt("depor", (int) num);
+        myEditor.putFloat("depor", (int) num);
         myEditor.commit();toast1.show();Intent i = new Intent(this, CategoDeporte.class );
         startActivity(i);
 
@@ -46,11 +46,11 @@ public class Pecho5 extends AppCompatActivity {
     public void mediocompletad(View view) {
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Pecho5.this);
 
-        double num = myPreferences.getInt("depor", 0);
-        num=num+17;
+        double num = myPreferences.getFloat("depor", 0);
+        num=num+12;
 
         SharedPreferences.Editor myEditor = myPreferences.edit();
-        myEditor.putInt("depor", (int) num);toast1.show();
+        myEditor.putFloat("depor", (int) num);toast1.show();
         myEditor.commit();Intent i = new Intent(this, CategoDeporte.class );
         startActivity(i);
 

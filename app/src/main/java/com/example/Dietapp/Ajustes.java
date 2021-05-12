@@ -32,7 +32,7 @@ import static java.util.Calendar.MINUTE;
 import static java.util.Calendar.SECOND;
 import static java.util.Calendar.getInstance;
 
-public class Ajustes extends AppCompatActivity {
+public class Ajustes extends AppCompatActivity  {
     TextView texto,nombreED,apellidoED,apellido2ED,emailED,retos;
     ImageView imagen;
     Button boton,botonRetos,botonAgua, botonColor;
@@ -135,7 +135,7 @@ this.borrarDAtosDiario();
                         myEditor.putString("contra", "");
                         myEditor.putInt("valoragua",0);
                         myEditor.putFloat("valoragua2",0);
-
+                        myEditor.putFloat("recetas",0);
                         myEditor.commit();
 
 
@@ -191,6 +191,7 @@ this.borrarDAtosDiario();
             myEditorPA.putInt("erdura", 0);
             myEditorPA.putInt("valoragua",0);
             myEditorPA.putFloat("valoragua2",0);
+            myEditorPA.putFloat("recetas",0);
             myEditorPA.commit();
 //cambio el valor actual del reto, y lo pongo vacio, ya que el reto se debe cumplir una vez ald ia, por lo que a las once se pone vacio
             AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 10);

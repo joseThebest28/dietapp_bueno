@@ -1,28 +1,32 @@
-package com.example.Dietapp.categorias;
+package com.example.Dietapp.DeporteEjercicios;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.Dietapp.Seguimiento;
+import com.example.Dietapp.categorias.CategoDeporte;
 import com.example.myapplicationfinal.R;
 
 public class Deporte extends AppCompatActivity {
     private TextView total;
     float carne;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.deporte);
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Deporte.this);
+        carne =  myPreferences.getFloat("depor", 0);
 
-        carne = (float) myPreferences.getInt("depor", 0);
+
         total = findViewById(R.id.textR);
         total.setText("Total de calorias quemadas hoy"+carne);
 
@@ -47,7 +51,7 @@ public class Deporte extends AppCompatActivity {
 
        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Deporte.this);
        SharedPreferences.Editor myEditor = myPreferences.edit();
-       myEditor.putFloat("depor",carne);
+       myEditor.putFloat("depor",  carne);
        myEditor.commit();
     }
 }

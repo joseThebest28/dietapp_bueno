@@ -18,7 +18,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.Dietapp.categorias.Categorias;
-import com.example.Dietapp.extras.Recetas.listas.ListasCabra;
 import com.example.Dietapp.extras.Recetas.listas.ListasCasqueria;
 import com.example.Dietapp.extras.Recetas.listas.ListasCerdo;
 import com.example.Dietapp.extras.Recetas.listas.ListasConejo;
@@ -83,7 +82,7 @@ public class Recetas extends AppCompatActivity {
         final Intent myIntent5 = new Intent(this, ListasCordero.class);
         final Intent myIntent6 = new Intent(this, ListasTernera.class);
         final Intent myIntent9 = new Intent(this, ListasPato.class);
-        final Intent myIntent10 = new Intent(this, ListasCabra.class);
+
         final Intent myIntent11 = new Intent(this, ListasCorderoCaRoja.class);
         final Intent myIntent12 = new Intent(this, ListasCasqueria.class);
         final Intent myIntent13 = new Intent(this, ListasPescadosMar.class);
@@ -177,7 +176,7 @@ public class Recetas extends AppCompatActivity {
             }
         });
 
-        String[] valores8 = new String[]{"selecciona Carne Roja ", "ternera/Vaca", "pato", "carne de cabra", "carne de cordero"};
+        String[] valores8 = new String[]{"selecciona Carne Roja ", "ternera/Vaca", "pato", "carne de cordero"};
 
         spi8.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, valores8));
         spi8.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -189,8 +188,6 @@ public class Recetas extends AppCompatActivity {
                     startActivity(myIntent6);
                 if (nombreCarneRo.equals("pato"))
                     startActivity(myIntent9);
-                if (nombreCarneRo.equals("carne de cabra"))
-                    startActivity(myIntent10);
                 if (nombreCarneRo.equals("carne de cordero"))
                     startActivity(myIntent11);
 

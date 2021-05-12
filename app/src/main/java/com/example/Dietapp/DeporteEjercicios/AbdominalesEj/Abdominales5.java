@@ -32,11 +32,11 @@ private Toast toast1;
     public void completad(View view) {
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Abdominales5.this);
 
-        double num = myPreferences.getInt("depor", 0);
-       num=num+35;
+        double num = myPreferences.getFloat("depor", 0);
+       num=num+32;
 
         SharedPreferences.Editor myEditor = myPreferences.edit();
-        myEditor.putInt("depor", (int) num);
+        myEditor.putFloat("depor", (int) num);
         myEditor.commit(); toast1.show();
         Intent i = new Intent(this, CategoDeporte.class );
         startActivity(i);
@@ -46,11 +46,11 @@ private Toast toast1;
     public void mediocompletad(View view) {
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Abdominales5.this);
 
-        double num = myPreferences.getInt("depor", 0);
-        num=num+17;
+        double num = myPreferences.getFloat("depor", 0);
+        num=num+16;
 
         SharedPreferences.Editor myEditor = myPreferences.edit();
-        myEditor.putInt("depor", (int) num);
+        myEditor.putFloat("depor", (int) num);
         myEditor.commit(); toast1.show();
         Intent i = new Intent(this, CategoDeporte.class );
         startActivity(i);

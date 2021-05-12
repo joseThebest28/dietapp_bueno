@@ -27,11 +27,11 @@ public class Hombro extends AppCompatActivity {
     public void completad(View view) {
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Hombro.this);
 
-        double num = myPreferences.getInt("depor", 0);
-       num=num+35;
+        float num = myPreferences.getFloat("depor", 0);
+       num=num+14.92f;
 
         SharedPreferences.Editor myEditor = myPreferences.edit();
-        myEditor.putInt("depor", (int) num);
+        myEditor.putFloat("depor",  num);
         myEditor.commit();
         Intent i = new Intent(this, Hombro3.class );
         startActivity(i);toast2.show();
@@ -40,11 +40,11 @@ public class Hombro extends AppCompatActivity {
     public void mediocompletad(View view) {
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Hombro.this);
 
-        double num = myPreferences.getInt("depor", 0);
-        num=num+17;
+        float num = myPreferences.getFloat("depor", 0);
+        num=num+7.46f;
 
         SharedPreferences.Editor myEditor = myPreferences.edit();
-        myEditor.putInt("depor", (int) num);
+        myEditor.putFloat("depor",  num);
         myEditor.commit();
         Intent i = new Intent(this, Hombro3.class );
         startActivity(i);toast1.show();

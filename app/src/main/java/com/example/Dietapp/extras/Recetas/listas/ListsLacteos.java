@@ -13,7 +13,6 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.Dietapp.categorias.Deporte;
 import com.example.Dietapp.extras.Recetas.Recetas;
 import com.example.myapplicationfinal.R;
 
