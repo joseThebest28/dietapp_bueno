@@ -15,6 +15,8 @@ import android.widget.Toast;
 
 import com.example.Dietapp.PaginaPrincipal;
 import com.example.Dietapp.Seguimiento;
+import com.example.Dietapp.categorias.popup.PopupBebidas;
+import com.example.Dietapp.categorias.popup.PopupCarne;
 import com.example.myapplicationfinal.R;
 
 import java.util.ArrayList;
@@ -214,6 +216,10 @@ public class Bebidas extends AppCompatActivity {
         SharedPreferences.Editor myEditor = myPreferences.edit();
         myEditor.putFloat("bebida",  total);
         myEditor.commit();
+    }
+
+    public void ayudabbeidas(View view) {
+        startActivity(new Intent(Bebidas.this, PopupBebidas.class));
     }
 }
 

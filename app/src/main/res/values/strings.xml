@@ -109,7 +109,8 @@
         Calamar=175 Kcalorias
         Pulpo=69 Kcalorias
         Almeja=74 Kcalorias      </string>
-    <string name="textpopverdura1">  1 Ensalda completa lleva: - 3 hojas de lechuga
+    <string name="textpopverdura1">  1 Ensalda completa lleva :
+        -3_hojas_de_lechuga
         -10_aceitunas
         -media_cebolla_blanca
         -3_tomates </string>
@@ -257,7 +258,65 @@
     <string name="minutosdepor">Minutos</string>
     <string name="horasdepor">Horas</string>
     <string name="bebidas">Bebidas</string>
-    <string name="textpoppasta">texto para pastas</string>
+    <string name="textpoppasta">Numero kcal por cada 100gr
+        Canelones:______________________146kcal__
+        Capellini/Cabello_de_ángel:_______353kcal__
+        Cappelletti/Capeletinis:__________164kcal__
+        Conchas:______________________353kcal___
+        Dampfnudel/pasta_al_vapor:______274kcal__
+        Espagueti:_______________________370kcal__
+Espaguetis_integrales:___________351kcal__
+Farfalle/Pajaritas/Mariposas:____358kcal__
+Fettuccine/Fetuccinni:____________353kcal__
+Fideo_celofán/chino:_____________192kcal__
+Fideos_de_soja/soya:_____________216kcal__
+Fideos_shirataki:_________________18kcal__
+Fusilli:_______________________352kcal__
+Linguine:______________________357kcal__
+Láminas_de_lasaña:____________271kcal__
+Macaroni/Fideos/Macarrones:_370kcal__
+Masa_de_dumpling:_______________99kcal__
+Mostaccioli:______________________184kcal__
+Orecchiette:_____________________370kcal__
+Orzo:____________________________357kcal__
+Pasta_baja_en_carbohidratos:_____282kcal__
+Pasta_de_grano_entero:_________347kcal__
+Pasta_de_huevo:_______________384kcal__
+Penne:___________________________351kcal__
+Penne_Rigate:___________________370kcal__
+Pierogi:__________________________200kcal__
+Ravioles_de_verdura:______________84kcal__
+Ravioli_Ravioles:___________________77kcal__
+Ravioli_Ravioles_de_carne:________90kcal__
+Ravioli_Ravioles_de_pollo:_________88kcal__
+Ravioli_Ravioles_de_queso:______193kcal__
+Rigatoni:__________________________353kcal__
+Spirelli:_________________________367kcal__
+Spätzle:__________________________368kcal__
+Sémola_de_trigo_duro:________397kcal__
+Tallarines:_______________________370kcal__
+Tortellini:______________________291kcal__
+Tortellini_de_carne:______________302kcal__
+Tortellini_de_espinacas:__________314kcal__
+Tortellini_de_pollo:_______________301kcal__
+Tortellini_de_queso:____________291kcal__
+Tortellini_vegetal:________________289kcal__
+Vermicelli:______________________368kcal__
+Plato_de_boloñesa:________________359kcal__
+        Plato_de_Carbonara:__________359kcal__
+       Plato_de_arroz_con_frijoles:______151kcal__
+       Plato_de_spaghetis_con_queso:____361kcal__
+______________________________________________________
+        ______________________________________________
+
+
+
+
+
+
+
+
+    </string>
     <string name="textpopcarne2">Numero kcalorias cada 100 gramos_
         Pechuga_de_pollo: _____________________11kcal__
         Patas_de_pollo: ________________________43kcal__
@@ -291,6 +350,69 @@
         Salchichas_de_pavo: ___________________88kcal__
         1_Hamburguesas_de_pavo: _____________217kcal__
         Fiambre_de_pavo: ____________________61.2kcal__
+
+
+    </string>
+    <string name="textobebidas">Numero Kcal cada 100 ml
+        atole:___________________________________84kcal__
+        betido/malteada(en polvo):_____________329kcal__
+        betido/malteada de chocolate:_________125kcal__
+        betido/malteada de freasa:____________113kcal__
+        betido de vainilla: __________________149kcal__
+        bitter kas:____________________________32kcal__
+        cacaolat:_____________________________78kcal__
+        café:_______________________________1kcal__
+        cerveza_de_malta:__________________37kcal__
+        cerveza_sin_alcohol:_________________37kcal__
+        chocolate_caliente:___________________89kcal__
+        club mate:___________________________30kcal__
+        coca-cola:___________________________42kcal__
+        coca-cola_light:_____________________1kcal__
+        coca-cola_zero:_____________________0kcal__
+        cola:_______________________________42kcal__
+        cola-cao:____________________________80kcal__
+        evian:_______________________________0kcal__
+        fanta_de_limón:_____________________46kcal__
+        fanta_de_naranja:____________________38kcal__
+        frappé:______________________________141kcal__
+        gatorade:____________________________23kcal__
+        horchata:_____________________________54kcal__
+        karamatz:____________________________37kcal__
+        kas_limón:___________________________33kcal__
+        kas_naranja:__________________________34kcal__
+        kombucha:_____________________________13kcal__
+        lassi:_____________________________104kcal__
+        latte_machiato:____________________57kcal__
+        leche:_____________________________61kcal__
+        leche_chocolatada/leche_con_chocolate:_89kcal_
+        leche_de_almendras:____________________45kcal__
+        leche_de_soja:_______________________45kcal__
+       licuados_de_frutas:________________261kcal__
+       limonada:__________________________42kcal__
+       mate_cocido_con_leche:_______________41kcal__
+      milo:_________________________________409kcal__
+      mosto_sin_alcohol:___________________61kcal__
+      nesquik:______________________________79kcal__
+      nestea:________________________________36kcal__
+      néctar:________________________________53kcal__
+      pepsi:________________________________44kcal__
+      pepsi_light:__________________________0kcal__
+      pepsi_max:_____________________________0kcal__
+      ponche_de_huevo:______________________88kcal__
+      powerade:_____________________________16kcal__
+      slush:_________________________________50kcal__
+      smoothie:________________________________37kcal__
+       tang:_____________________________381kcal__
+       té:_________________________________1kcal__
+       té_chai:______________________________0kcal__
+       té_de_jengibre:______________________0kcal__
+       té_frio/helado:____________________27kcal__
+        tónica:___________________________34kcal__
+        volvic:___________________________0kcal__
+        _________________________________________
+        _________________________________________
+
+
 
 
     </string>

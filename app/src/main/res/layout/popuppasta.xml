@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -15,14 +16,23 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/info3"
         android:contentDescription="@string/imagenpoppasta"/>
-
+    <ScrollView
+        android:layout_width="339dp"
+        android:layout_height="251dp"
+        android:layout_marginTop="151dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView16"
+        app:layout_constraintVertical_bias="0.0">
     <TextView
         android:id="@+id/textView25"
-        android:layout_width="248dp"
-        android:layout_height="104dp"
+        android:layout_width="284dp"
+        android:layout_height="543dp"
         android:layout_marginTop="15dp"
         android:text="@string/textpoppasta"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView16" />
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>

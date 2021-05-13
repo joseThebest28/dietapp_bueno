@@ -58,6 +58,7 @@
         <activity android:name="com.example.Dietapp.Micalendarrrrio" />
         <activity android:name="com.example.Dietapp.categorias.popup.PopupCarne" />
         <activity android:name="com.example.Dietapp.categorias.popup.PopupCarne2" />
+        <activity android:name="com.example.Dietapp.categorias.popup.PopupBebidas" />
         <activity android:name="com.example.Dietapp.categorias.popup.Popupfruta" />
         <activity android:name="com.example.Dietapp.categorias.popup.PopupPescado" />
         <activity android:name="com.example.Dietapp.categorias.popup.PopupVerdurea" />
