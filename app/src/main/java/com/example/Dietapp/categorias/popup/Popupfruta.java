@@ -19,7 +19,7 @@ public class Popupfruta extends AppCompatActivity {
         int ancho= medidas.widthPixels;
         int alto=medidas.heightPixels;
 
-        getWindow().setLayout((int) (ancho*0.85), (int) (alto*0.55));
+        getWindow().setLayout((int) (ancho*0.85), (int) (alto*0.75));
 
 
     }

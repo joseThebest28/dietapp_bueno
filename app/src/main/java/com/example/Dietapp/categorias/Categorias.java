@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.example.Dietapp.Bebidas;
 import com.example.Dietapp.PaginaPrincipal;
 import com.example.Dietapp.extras.ElegirReceta;
 import com.example.myapplicationfinal.R;

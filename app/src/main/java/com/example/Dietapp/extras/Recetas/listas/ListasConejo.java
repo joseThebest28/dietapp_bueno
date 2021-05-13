@@ -57,7 +57,7 @@ ListView lista;
                 }
                 if (position == 1) { suma = suma +143; }
                 if (position == 2) { suma = suma +143; }
-                if (position == 3) { suma = suma +19; }
+                if (position == 3) { suma = suma +66; }
 
 
 

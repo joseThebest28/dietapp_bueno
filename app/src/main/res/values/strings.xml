@@ -50,7 +50,7 @@
     <string name="imagenexpli6">imagen explica 6</string>
     <string name="imagenfru">imagen fruta</string>
     <string name="indicafru">Indica cuantas piezas de fruta has comido.(se puede poner que has comido media pieza:0.5)</string>
-    <string name="textbebidas">Indica vasos de bebidaque has tomado.</string>
+    <string name="textbebidas">Indica vasos de bebida has tomado.</string>
     <string name="indicafru2">Indica que fruta has comido</string>
     <string name="indicabebidas2">Indica que bebida has tomado</string>
     <string name="indicapasta">Indica que pasta has comido</string>
@@ -73,15 +73,34 @@
     <string name="imagenverdur">imagen verdura </string>
     <string name="vertotal">ver total </string>
     <string name="calendario">calendario </string>
-    <string name="textpopcarne">Filete de ternera=150 calorias
-        Filete de caballo=120 calorias   Filete de buey=160 calorias
-        Filete de vaca=140 calorias      Filete de pollo=40 calorias
-        Filete de pavo=30 calorias   Filete de cerdo=60 calorias   1_Longaniza=130 calorias
-        1_Chorizo=170 calorias    1_Morcilla=150 calorias</string>
-    <string name="textpoppasta">1_Plato_de_arroz=150cal
-        1_Plato_de_Boloñesa=360cal
-        1_Plato_de_Carbonara=400cal
-        1_Plato_de_Arroz_con_Frijoles=250cal </string>
+    <string name="textpopcarne">andouille: _____________________232kcal__
+        bacon_panceta_tocino: ________407kcal__
+        bockwust: ____________________301kcal__
+        bratwurst: ____________________297kcal__
+        chorizo: ______________________455kcal__
+        corned beef: _________________153kcal__
+        fuet:__________________________422kcal__
+        jamón_cocida: ________________133kcal__
+        kielbasa: _____________________309kcal__
+        knackwurst:__________________307kcal__
+        landjäger/salchicha: __________352kcal__
+        leberwurst: ___________________326kcal__
+        lomo_embutido: ______________200kcal__
+        lyoner: _______________________247kcal__
+        mettwurst: ___________________310kcal__
+        mortadela: ___________________311kcal__
+        pastrami: ____________________133kcal__
+        prociutto: ____________________195kcal__
+        salami/salame:_______________336kcal__
+        salchicha/chorizo: ____________230kcal__
+        salchicha/chorizo_picante:______259kcal_
+        salchicha/chorizo ahumado:____301kcal_
+        salchicha_italiana/chorizo criollo: 149kcal
+        salchicha parrillera: ____________840kcal__
+        frankfurt/salchicha de viena: ___305kcal_
+        salchichón: __________________247kcal__
+        sobrasada: __________________598kcal__
+        weisswurst/salchicha blanca: __313kcal__ </string>
     <string name="textpoppescado">Cigala=85,4 Kcalorias
         Cangrejo=101 Kcalorias
         Bogavante=83 Kcalorias
@@ -163,7 +182,67 @@
     <string name="hombro">Hombro</string>
     <string name="imagenRecycle">Imagen Recycle</string>
     <string name="textview">Text View</string>
-    <string name="popupFru">1 Manzana=20cal    1Pera=16cal         1Paraguaya=30cal             1 Banana=25cal       1Fresa=11cal   1Melocotón=10cal</string>
+    <string name="popupFru">
+        Numero_kcalorias_por_cada_100_gramos_de_fruta:
+         Manzana:__________________________________52kcal__
+        Pera:______________________________________57kcal__
+        Paraguaya:________________________________49kcal__
+         Banana=___________________________________46kcal__
+        Fresa=_____________________________________32kcal__
+        Melocotón=_______________________________61kcal__
+    Aceitunas: _______________________________115kcal__
+        Aguacate/palta:__________________________160kcal__
+        Albaricoque/damasco: _____________________48kcal__
+        Ananás/piña: ______________________________48kcal__
+        Arandano: _________________________________71kcal__
+        Asaí: _____________________________________70kcal__
+        Caqui/persimón: _________________________127kcal__
+        Carambola/fruta_estrella:__________________31kcal__
+        Cereza/guinda: ___________________________58kcal__
+        Ciruela: ___________________________________46kcal__
+        Ciruela_verde:______________________________41kcal__
+        Celmentina: _______________________________47kcal__
+        Compota/pure_de_manzana: ______________68kcal__
+        Coco: ____________________________________354kcal__
+        Dátiles: _________________________________282kcal__
+        Granada: __________________________________83kcal__
+        Frambuesa: ______________________________52kcal__
+        Grosella: __________________________________56kcal__
+        Guayaba: __________________________________68kcal__
+        Higo: ______________________________________37kcal__
+        Kiwi: ______________________________________61kcal__
+        Lima: ______________________________________30kcal__
+        Limón: ____________________________________39kcal__
+        Macedonia: ________________________________50kcal__
+        Mandarina: ________________________________53kcal__
+        Mango: ____________________________________60kcal__
+        Maracuyá: _________________________________97kcal__
+        Melón: ____________________________________36kcal__
+        Melón_amarillo:________________________55kcal__
+        Melón_catalup:_____________________________34kcal__
+        melón_de_galia:__________________________26kcal__
+        Membrillo:_________________________________57kcal__
+        Mora/zarzamora: _________________________43kcal__
+        Naranja:___________________________________47kcal__
+        Naranja_roja(sanguina):__________50kcal__
+        Nectarina:_________________________________44kcal__
+        Nísperos:__________________________________47kcal__
+        Papaya/mamón:___________________________43kcal__
+        Pasas/pasa_de_uva:______________299kcal___
+        Philasis:___________________________________49kcal__
+        Plátano macho:_________________________122kcal__
+        Pomelo/toronja:_______________________42kcal__
+        Rambután:_________________________________82kcal__
+        Ruibarbo:_________________________________21kcal__
+        Sandia:___________________________________30kcal__
+        Tamarindo:_______________________________239kcal__
+        Uva:_______________________________________69kcal__
+        Yaca: _____________________________________95kcal__
+        ____________________________________________________
+        ____________________________________________________
+
+
+    </string>
     <string name="imagenPopfru">imagenPopfru</string>
     <string name="rutina1">Rutina 1</string>
     <string name="rutina3">"Rutina 2 "</string>
@@ -178,5 +257,42 @@
     <string name="minutosdepor">Minutos</string>
     <string name="horasdepor">Horas</string>
     <string name="bebidas">Bebidas</string>
+    <string name="textpoppasta">texto para pastas</string>
+    <string name="textpopcarne2">Numero kcalorias cada 100 gramos_
+        Pechuga_de_pollo: _____________________11kcal__
+        Patas_de_pollo: ________________________43kcal__
+        Conta_muslo_de_pollo:________________109kcal__
+        Alitas_de_pollo:_______________________217kcal__
+        Muslo_de_pollo: ______________________214kcal__
+       Solomillo_de_pollo: ___________________113kcal__
+        Paletilla_de_conejo:___________________143kcal__
+        Lomo_de_conejo: _____________________143kcal__
+        1_Costilla_de_conejo: __________________66kcal__
+        Solomillo_de_cerdo: __________________158kcal__
+        Cinta_de_lomo_de_cerdo: _____________136kcal__
+        Chuletas_de_lomo(de_palo)_de_cerdo:_27.1kcal__
+        Cadera/babilla_de_cerdo: ______________271kcal__
+        Paletilla_de_cerdo: ____________________169kcal__
+        Aguja_de_cerdo: ______________________151kcal__
+        Costillas_de_cerdo: ___________________292kcal__
+        Codillo_de_cerdo: _____________________171kcal__
+        Magro_de_cerdo: ______________________156kcal__
+        Panceta_de_cerdo: ____________________467kcal__
+        Tocino_de_cerdo: ______________________665kcal__
+        Papada_de_cerdo: _____________________673kcal__
+        Morro_de_cerdo: ______________________201kcal__
+        Pechuga_de_pavo: ___________________109.5kcal__
+        Lomo_de_pavo: ________________________215kcal__
+        Muslitos_de_pavo: ____________________114kcal__
+        Pierna_de_pavo: ______________________125kcal__
+        Cuartos_traseros_de_pavo: ________114kcal__
+        Alitas_de_pavo: ____________________229kcal__
+        Jamon_de_pavo: ____________________128.57kcal__
+        Salchichas_de_pavo: ___________________88kcal__
+        1_Hamburguesas_de_pavo: _____________217kcal__
+        Fiambre_de_pavo: ____________________61.2kcal__
+
+
+    </string>
 
 </resources>

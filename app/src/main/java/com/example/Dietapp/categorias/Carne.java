@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.example.Dietapp.PaginaPrincipal;
 import com.example.Dietapp.categorias.popup.PopupCarne;
 import com.example.Dietapp.Seguimiento;
+import com.example.Dietapp.categorias.popup.PopupCarne2;
 import com.example.myapplicationfinal.R;
 
 import java.util.ArrayList;
@@ -41,11 +42,11 @@ public class Carne extends AppCompatActivity {
         sp=(Spinner)findViewById(R.id.espi);
 
         ArrayList<String> elementos=new ArrayList<>();
-        elementos.add("Selecciona la carne que has comido");
-        elementos.add("Filete de ternera");
-        elementos.add("Filete de caballo");
-        elementos.add("Filete de buey");
-        elementos.add("Filete de vaca");
+        elementos.add("Selecciona la carne que has comido(nº kcal cada 100 gr)");
+        elementos.add("Filete de ternera: 150kcal");
+        elementos.add("Filete de caballo: 120kcal");
+        elementos.add("Filete de buey: 160kcal");
+        elementos.add("Filete de vaca: 140kcal");
 
         ArrayAdapter adp=new ArrayAdapter(Carne.this, android.R.layout.simple_spinner_dropdown_item,elementos);
         sp.setAdapter(adp);
@@ -88,10 +89,46 @@ public class Carne extends AppCompatActivity {
         sp2=(Spinner)findViewById(R.id.spiC2);
 
         ArrayList<String> elementos2=new ArrayList<>();
-        elementos2.add("Selecciona la carne que has comido");
-        elementos2.add("Filete de pollo");
-        elementos2.add("Filete de pavo");
-        elementos2.add("Lomo de cerdo");
+        elementos2.add("Selecciona la carne que has comido(nº kcal por cda 100 gramos)");
+        elementos2.add("pechuga de pollo: 11kcal");
+        elementos2.add("patas de pollo: 43kcal");
+        elementos2.add("conta muslo de pollo: 109kcal");
+        elementos2.add("alitas de pollo: 217kcal");
+        elementos2.add("muslo de pollo: 214kcal");
+        elementos2.add("solomillo de pollo: 113kcal");
+        elementos2.add("paletilla de conejo: 143kcal");
+        elementos2.add("lomo de conejo: 143kcal");
+        elementos2.add(" 1 costilla de conejo: 66kcal");
+        elementos2.add(" solomillo de cerdo: 158kcal");
+        elementos2.add(" cinta de lomo de cerdo: 136kcal");
+        elementos2.add(" chuletas de lomo(de palo) de cerdo : 27.1kcal");
+        elementos2.add(" cadera/babilla de cerdo: 271kcal");
+        elementos2.add(" paletilla de cerdo: 169kcal");
+        elementos2.add(" aguja de cerdo: 151kcal");
+        elementos2.add(" costillas de cerdo: 292kcal");
+        elementos2.add(" codillo de cerdo: 171kcal");
+        elementos2.add(" magro de cerdo: 156kcal");
+        elementos2.add(" panceta de cerdo: 467kcal");
+        elementos2.add(" tocino de cerdo: 665kcal");
+        elementos2.add("papada de cerdo: 673kcal");
+        elementos2.add("morro de cerdo: 201kcal");
+        elementos2.add("pechuga de pavo: 109.5kcal");
+        elementos2.add("lomo de pavo: 215kcal");
+        elementos2.add("muslitos de pavo: 114kcal");
+        elementos2.add("pierna de pavo: 125kcal");
+        elementos2.add("cuartos traseros de pavo: 114kcal");
+        elementos2.add(" alitas de pavo: 229kcal");
+        elementos2.add(" jamon de pavo:: 128.57kcal");
+        elementos2.add(" salchichas de pavo: 88kcal");
+        elementos2.add(" 1 hamburguesas de pavo: 217kcal");
+        elementos2.add(" fiambre de pavo: 61.2kcal");
+
+
+
+
+
+
+
 
         ArrayAdapter adp2=new ArrayAdapter(Carne.this, android.R.layout.simple_spinner_dropdown_item,elementos2);
         sp2.setAdapter(adp2);
@@ -110,15 +147,51 @@ public class Carne extends AppCompatActivity {
                 {int num2 = Integer.parseInt(res2);
 
                 if(position==1) {
-                    //filete de pollo
-                    resultado2=num2*40; toast2.show();}
+                    //pechuga de pollo
+                    resultado2=num2*11;toast2.show();
+                   }
                 if(position==2) {
-                    //fielete de pavo
-                    resultado2=num2*30;toast2.show();}
+                    //patas de pollo
+                    resultado2=num2*43;toast2.show();}
                 if(position==3){
-                    //fielete de cerdo
-                    resultado2=num2*60; toast2.show();}
+                    //contra muslo de pollo*
+                    resultado2=num2*109; toast2.show();}
+                    if(position==4){
+                        //alitas de pollo
+                        resultado2=num2*217; toast2.show();}
+                    if(position==5){
+                        //muslo de pollo
+                        resultado2=num2*214; toast2.show();}
+                    if(position==6){
+                        //solomillo de pollo
+                        resultado2=num2*113; toast2.show();}
 
+                    if (position == 7) {  resultado2=num2*143;  toast2.show();}//paletilla de conejo
+                    if (position == 8) {  resultado2=num2*143;  toast2.show();}//lomo de conejo
+                    if (position == 9) {  resultado2=num2*66;  toast2.show();}//costilla de conejo
+                    if (position == 10) {  resultado2=num2*158;  toast2.show();}//solomillo de cerdo
+                    if (position == 11) {  resultado2=num2*136;  toast2.show();}// cinta de lomo de cerdo
+                    if (position == 12) {  resultado2=num2*27.1f;  toast2.show();}//  chuletas de lomo(de palo) de cerdo
+                    if (position == 13) {  resultado2=num2*271;  toast2.show();}// cadera/babilla de cerdo
+                    if (position == 14) {  resultado2=num2*169;  toast2.show();}//  paletilla de cerdo
+                    if (position == 15) {  resultado2=num2*151;  toast2.show();}// aguja de cerdo
+                    if (position == 16) {  resultado2=num2*292;  toast2.show();}// costillas de cerdo
+                    if (position == 17) {  resultado2=num2*171;  toast2.show();}//  codillo de cerdo
+                    if (position == 18) {  resultado2=num2*156;  toast2.show();}//    magro de cerdo
+                    if (position == 19) {  resultado2=num2*467;  toast2.show();}//  panceta de cerdo
+                    if (position == 20) {  resultado2=num2*665;  toast2.show();}// tocino de cerdo
+                    if (position == 21) {  resultado2=num2*673;  toast2.show();}// papada de cerdo
+                    if (position == 22) {  resultado2=num2*201;  toast2.show();}// morro de cerdo
+                    if (position == 23) {  resultado2=num2*109.5f;  toast2.show();}//  pechuga de pavo
+                    if (position == 24) {  resultado2=num2*215;  toast2.show();}//   lomo de pavo
+                    if (position == 25) {  resultado2=num2*114;  toast2.show();}//  muslitos de pavo
+                    if (position == 26) {  resultado2=num2*125;  toast2.show();}//    pierna de pavo
+                    if (position == 27) {  resultado2=num2*114;  toast2.show();}//  cuartos traseros de pavo
+                    if (position == 28) {  resultado2=num2*229;  toast2.show();}//   alitas de pavo
+                    if (position == 29) {  resultado2=num2*128.57f;  toast2.show();}//   jamon de pavo
+                    if (position == 30) {  resultado2=num2*88;  toast2.show();}//    salchichas de pavo
+                    if (position == 31) {  resultado2=num2*217;  toast2.show();}//    1 hamburguesas de pavo
+                    if (position == 32) {  resultado2=num2*61.2f;  toast2.show();}//    fiambre de pavo
 
 
             }}
@@ -259,5 +332,9 @@ private float total;
     public void ayuda(View view) {
 
         startActivity(new Intent(Carne.this, PopupCarne.class));
+    }
+
+    public void ayuda2dfs(View view) {
+        startActivity(new Intent(Carne.this, PopupCarne2.class));
     }
 }

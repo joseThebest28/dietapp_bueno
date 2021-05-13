@@ -39,7 +39,7 @@ ListView lista;
               "melón: 36kcal","melón amarillo: 55kcal","melón catalup: 34kcal","melón de galia. 26kcal", "membrillo: 57kcal",
               "mora/zarzamora: 43kcal", "naranja: 47 kcal","naranja roja/sanguina: 50kcal", "nectarina: 44kcal","nísperos: 47kcal",
               "papaya/mamón: 43kcal","pasas/pasa de uva: 299kcal", "pera: 57kcal","philasis: 49kcal", "plátano macho: 122kcal",
-              "pomelo/toronja: 42kcal","rambután: 82kcal","ruibarbo: 21kcal", "sandia: 30kcal","tamarindo: 239kcal", "uva:69kcal","yaca: 95kcal"};
+              "pomelo/toronja: 42kcal","rambután: 82kcal","ruibarbo: 21kcal", "sandia: 30kcal","tamarindo: 239kcal", "uva:69kcal","yaca: 95kcal","Paraguayas: 49kcal","melocotones: 61kcal"};
         ArrayAdapter<String> adaptador=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,valoresFruta);
         lista.setAdapter(adaptador);
         final Intent iD = new Intent(this, Recetas.class);
@@ -107,6 +107,8 @@ ListView lista;
                 if (position == 51) { suma = suma +239; }
                 if (position == 52) { suma = suma +69; }
                 if (position == 53) { suma = suma +95; }
+                if (position == 54) { suma = suma +49; }
+                if (position == 55) { suma = suma +61; }
 
                 total=total+suma;
                 Log.i("tag","total"+total);

@@ -20,7 +20,7 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.Dietapp.Bebidas"></activity>
+        <activity android:name="com.example.Dietapp.categorias.Bebidas"></activity>
         <activity android:name="com.example.Dietapp.extras.Recetas.listas.ListasPollo" />
         <activity android:name="com.example.Dietapp.extras.ElegirReceta" />
         <activity android:name="com.example.Dietapp.extras.Recetas.listas.ListasConejo" />
@@ -57,6 +57,7 @@
         <activity android:name="com.example.Dietapp.DeporteEjercicios.Deporte" />
         <activity android:name="com.example.Dietapp.Micalendarrrrio" />
         <activity android:name="com.example.Dietapp.categorias.popup.PopupCarne" />
+        <activity android:name="com.example.Dietapp.categorias.popup.PopupCarne2" />
         <activity android:name="com.example.Dietapp.categorias.popup.Popupfruta" />
         <activity android:name="com.example.Dietapp.categorias.popup.PopupPescado" />
         <activity android:name="com.example.Dietapp.categorias.popup.PopupVerdurea" />

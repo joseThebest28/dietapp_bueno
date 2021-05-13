@@ -20,8 +20,8 @@
         app:srcCompat="@drawable/interrogation" />
 
     <ScrollView
-        android:layout_width="306dp"
-        android:layout_height="207dp"
+        android:layout_width="339dp"
+        android:layout_height="251dp"
         android:layout_marginTop="151dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,16 +29,16 @@
         app:layout_constraintTop_toTopOf="@+id/imageView13"
         app:layout_constraintVertical_bias="0.0">
 
-    <TextView
-        android:id="@+id/textView21"
-        android:layout_width="266dp"
-        android:layout_height="481dp"
-        android:text="@string/textpopcarne"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13"
-        app:layout_constraintVertical_bias="0.078" />
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="336dp"
+            android:layout_height="757dp"
+            android:text="@string/textpopcarne2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView13"
+            app:layout_constraintVertical_bias="0.078" />
     </ScrollView>
 </android.support.constraint.ConstraintLayout>

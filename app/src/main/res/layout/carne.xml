@@ -130,14 +130,15 @@
         android:id="@+id/button16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
         android:background="@drawable/boton_volver"
         android:onClick="volverMenu"
         android:text="@string/volverMenu"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/ayuda"
+        app:layout_constraintEnd_toEndOf="@+id/totalP"
         app:layout_constraintHorizontal_bias="0.962"
-        app:layout_constraintStart_toStartOf="@+id/ayuda"
-        app:layout_constraintTop_toTopOf="@+id/ayuda"
+        app:layout_constraintStart_toStartOf="@+id/totalP"
+        app:layout_constraintTop_toBottomOf="@+id/totalP"
         app:layout_constraintVertical_bias="0.535" />
 
     <Button
@@ -256,10 +257,10 @@
         app:layout_constraintTop_toBottomOf="@+id/textView35" />
 
     <TextView
-        android:id="@+id/ayuda"
+        android:id="@+id/ayuda6"
         android:layout_width="83dp"
         android:layout_height="18dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/boton_ayuda"
         android:onClick="ayuda"
         android:text="@string/ayuda"
@@ -267,8 +268,24 @@
         android:textAllCaps="true"
         android:textColor="@color/ayuda"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/totalP"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/button25"
-        app:layout_constraintTop_toBottomOf="@+id/totalP" />
+        app:layout_constraintEnd_toEndOf="@+id/textView35"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView35"
+        app:layout_constraintTop_toBottomOf="@+id/textView35" />
+
+    <TextView
+        android:id="@+id/ayuda"
+        android:layout_width="85dp"
+        android:layout_height="17dp"
+        android:background="@drawable/boton_ayuda"
+        android:onClick="ayuda2dfs"
+        android:text="@string/ayuda"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/ayuda"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textView27"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toStartOf="@+id/textView27"
+        app:layout_constraintTop_toBottomOf="@+id/textView27" />
 </android.support.constraint.ConstraintLayout>
