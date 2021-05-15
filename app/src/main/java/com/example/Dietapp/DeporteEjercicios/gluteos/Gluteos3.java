@@ -13,7 +13,7 @@ import com.example.Dietapp.categorias.CategoDeporte;
 import com.example.myapplicationfinal.R;
 
 public class Gluteos3 extends AppCompatActivity {
-    private Toast toast1;
+    private Toast toast1,toast2;
     ImageView imagen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +21,7 @@ public class Gluteos3 extends AppCompatActivity {
         setContentView(R.layout.abdominales5);
         imagen=findViewById(R.id.imageView27);
         toast1 = Toast.makeText(getApplicationContext(), "Eleccion  de medio ejercicio guardada con exito", Toast.LENGTH_SHORT);
+        toast2 = Toast.makeText(getApplicationContext(), "Eleccion  de ejercicio completo guardada con exito", Toast.LENGTH_SHORT);
 
         imagen.setImageDrawable(getResources().getDrawable(R.drawable.gluteos3));
 
@@ -34,9 +35,9 @@ public class Gluteos3 extends AppCompatActivity {
 
         SharedPreferences.Editor myEditor = myPreferences.edit();
         myEditor.putFloat("depor", (int) num);
-        myEditor.commit();toast1.show();Intent i = new Intent(this, CategoDeporte.class );
-        startActivity(i);
-
+        myEditor.commit();
+        Intent i = new Intent(this, CategoDeporte.class );
+        startActivity(i); toast2.show();
     }
 
     public void mediocompletad(View view) {

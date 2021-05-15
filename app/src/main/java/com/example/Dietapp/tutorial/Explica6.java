@@ -18,4 +18,5 @@ public class Explica6  extends AppCompatActivity {
     public void lanzar(View view) {
         Intent i = new Intent(this, Login.class );
         startActivity(i);
+        overridePendingTransition(R.anim.desplazar_derecha,R.anim.animacion_aumentar);
     }}

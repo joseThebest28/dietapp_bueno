@@ -53,10 +53,12 @@ public class PaginaInicio extends AppCompatActivity {
        // Intent i = new Intent(this, Login.class );
         Intent i = new Intent(this, Login.class );
         startActivity(i);
+        overridePendingTransition(R.anim.desplazar_derecha,R.anim.animacion_aumentar);
     }
     public void lanzartuto(View view) {
         Intent i2 = new Intent(this, Explica1.class );
         startActivity(i2);
+
     }
 
 

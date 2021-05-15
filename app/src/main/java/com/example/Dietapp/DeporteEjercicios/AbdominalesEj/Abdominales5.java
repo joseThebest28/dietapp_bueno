@@ -39,7 +39,7 @@ private Toast toast1;
         myEditor.putFloat("depor", (int) num);
         myEditor.commit(); toast1.show();
         Intent i = new Intent(this, CategoDeporte.class );
-        startActivity(i);
+        startActivity(i);overridePendingTransition(R.anim.animacion_aumentar,R.anim.animacion_disminuir);
 
     }
 

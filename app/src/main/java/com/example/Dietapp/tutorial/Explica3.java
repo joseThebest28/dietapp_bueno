@@ -17,4 +17,5 @@ public class Explica3 extends AppCompatActivity {
     public void lanzar(View view) {
         Intent i = new Intent(this, Explica4.class );
         startActivity(i);
+
     }}

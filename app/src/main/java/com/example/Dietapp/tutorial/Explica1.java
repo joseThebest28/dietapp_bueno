@@ -17,6 +17,7 @@ public class Explica1 extends AppCompatActivity {
     public void lanzar(View view) {
         Intent i = new Intent(this, Explica2.class );
         startActivity(i);
+
     }
 
 

@@ -1,5 +1,6 @@
 package com.example.Dietapp.login;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -104,6 +105,7 @@ public class Login extends AppCompatActivity {
 
                         Intent i = new Intent(this, Categorias.class);
                         startActivity(i);
+                        overridePendingTransition(R.anim.anim_desvanecer2,R.anim.anim_desvanecer);
 
                     } else {
                         Toast.makeText(this, "Usuario o contraseña incorrecto", Toast.LENGTH_SHORT).show();

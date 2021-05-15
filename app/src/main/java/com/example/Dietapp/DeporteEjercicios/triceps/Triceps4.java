@@ -34,8 +34,9 @@ public class Triceps4 extends AppCompatActivity {
         myEditor.putFloat("depor",  num);
         myEditor.commit();
         Intent i = new Intent(this, Triceps5.class );
-        startActivity(i);toast2.show();
+        startActivity(i); overridePendingTransition(R.anim.desplazar_derecha,R.anim.desplazar_derecha2);toast2.show();
     }
+
 
     public void mediocompletad(View view) {
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Triceps4.this);
@@ -47,7 +48,7 @@ public class Triceps4 extends AppCompatActivity {
         myEditor.putFloat("depor",  num);
         myEditor.commit();
         Intent i = new Intent(this, Triceps5.class );
-        startActivity(i);toast1.show();
+        startActivity(i); overridePendingTransition(R.anim.desplazar_izquierda,R.anim.desplazar_izquierda2);toast1.show();
     }
 
 

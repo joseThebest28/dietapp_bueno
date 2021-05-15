@@ -29,48 +29,48 @@ public class Categorias extends AppCompatActivity {
 
     public void irACarne(View view) {
         Intent i = new Intent(this, Carne.class );
-        startActivity(i);
+        startActivity(i); overridePendingTransition(R.anim.anim_categorias2,R.anim.anim_categorias);
     }
+
     public void irAFruta(View view) {
         Intent i = new Intent(this, Fruta.class );
-        startActivity(i);
+        startActivity(i); overridePendingTransition(R.anim.anim_categorias2,R.anim.anim_categorias);
     }
     public void irAPastas(View view) {
         Intent i = new Intent(this, Pastas.class );
-        startActivity(i);
+        startActivity(i); overridePendingTransition(R.anim.anim_categorias2,R.anim.anim_categorias);
     }
     public void irAPescado(View view) {
         Intent i = new Intent(this, Pescado.class );
-        startActivity(i);
+        startActivity(i); overridePendingTransition(R.anim.anim_categorias2,R.anim.anim_categorias);
     }
     public void irASalsas(View view) {
         Intent i = new Intent(this, Salsas.class );
-        startActivity(i);
+        startActivity(i); overridePendingTransition(R.anim.anim_categorias2,R.anim.anim_categorias);
     }
     public void irAVerduras(View view) {
         Intent i = new Intent(this, VerdurayLegumbres.class );
-        startActivity(i);
+        startActivity(i); overridePendingTransition(R.anim.anim_categorias2,R.anim.anim_categorias);
     }
 
     public void irDeporte(View view) {
         Intent i = new Intent(this, CategoDeporte.class );
-        startActivity(i);
+        startActivity(i); overridePendingTransition(R.anim.anim_categorias2,R.anim.anim_categorias);
     }
 
     public void iraRecetas(View view) {
         Intent i = new Intent(this, ElegirReceta.class );
-        startActivity(i);
-
+        startActivity(i); overridePendingTransition(R.anim.anim_categorias2,R.anim.anim_categorias);
     }
 
     public void irabebidas(View view) {
         Intent i = new Intent(this, Bebidas.class );
-        startActivity(i);
+        startActivity(i); overridePendingTransition(R.anim.anim_categorias2,R.anim.anim_categorias);
     }
 
     public void irAjustes(View view) {
         Intent ij= new Intent(this, Ajustes.class );
-        startActivity(ij);
+        startActivity(ij); overridePendingTransition(R.anim.anim_categorias2,R.anim.anim_categorias);
     }
 
     public void salir(View view) {
@@ -92,7 +92,7 @@ public class Categorias extends AppCompatActivity {
 
     public void lanzarSeguimiento(View view) {
         Intent iS = new Intent(this, Seguimiento.class );
-        startActivity(iS);
+        startActivity(iS); overridePendingTransition(R.anim.anim_categorias2,R.anim.anim_categorias);
     }
 
     public void irAyuda(View view) {
