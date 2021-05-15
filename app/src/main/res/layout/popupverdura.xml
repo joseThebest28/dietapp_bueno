@@ -6,47 +6,61 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView31"
-        android:layout_width="188dp"
-        android:layout_height="85dp"
-        android:layout_marginStart="1dp"
+    <ScrollView
+        android:id="@+id/scrollVedura1"
+        android:layout_width="266dp"
+        android:layout_height="105dp"
         android:layout_marginTop="48dp"
-        android:layout_marginEnd="64dp"
-        android:background="@color/activiFruta"
-        android:text="@string/textpopverdura1"
-        android:textAlignment="viewStart"
-        android:textColor="@color/ayuda"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView18"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/textView34"
-        android:layout_width="267dp"
-        android:layout_height="102dp"
-        android:layout_marginEnd="36dp"
-        android:background="@color/verdeExplica"
-        android:text="@string/textpopverdura2"
-        android:textColor="@color/ayuda"
-        app:layout_constraintBottom_toBottomOf="parent"
+        <TextView
+            android:id="@+id/textView31"
+            android:layout_width="274dp"
+            android:layout_height="484dp"
+
+            android:background="@color/activiFruta"
+            android:text="@string/textpopverdura1"
+            android:textAlignment="viewStart"
+            android:textColor="@color/ayuda" />
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/scrollVedura2"
+        android:layout_width="301dp"
+        android:layout_height="101dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView18"
-        app:layout_constraintTop_toBottomOf="@+id/textView31"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/scrollVedura1">
+
+        <TextView
+            android:id="@+id/textView34"
+            android:layout_width="304dp"
+            android:layout_height="565dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="@color/verdeExplica"
+            android:text="@string/textpopverdura2"
+            android:textColor="@color/ayuda"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+
+            app:layout_constraintEnd_toEndOf="parent" />
+    </ScrollView>
 
     <ImageView
         android:id="@+id/imageView18"
-        android:layout_width="131dp"
-        android:layout_height="201dp"
+        android:layout_width="99dp"
+        android:layout_height="175dp"
+        android:contentDescription="@string/imagenpopverdura"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.09"
-        app:srcCompat="@drawable/verdur"
-        android:contentDescription="@string/imagenpopverdura"/>
+        app:srcCompat="@drawable/verdur" />
 </android.support.constraint.ConstraintLayout>

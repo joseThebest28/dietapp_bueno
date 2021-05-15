@@ -101,25 +101,196 @@
         salchichón: __________________247kcal__
         sobrasada: __________________598kcal__
         weisswurst/salchicha blanca: __313kcal__ </string>
-    <string name="textpoppescado">Cigala=85,4 Kcalorias
-        Cangrejo=101 Kcalorias
-        Bogavante=83 Kcalorias
-        Percebes=6, 6 Kcalorias
-        Caracol=7,8 Kcalorias
-        Calamar=175 Kcalorias
-        Pulpo=69 Kcalorias
-        Almeja=74 Kcalorias      </string>
-    <string name="textpopverdura1">  1 Ensalda completa lleva :
-        -3_hojas_de_lechuga
-        -10_aceitunas
-        -media_cebolla_blanca
-        -3_tomates </string>
+
+
+
+
+
+
+
+
+    <string name="textpoppescado">
+         Pescado(nº kcalorias por cada 100gr):
+        ___________________________________
+        abadejo:__________________111kcal__
+         anchoa_de_banco:_________159kcal__
+         anguila:_________________236kcal__
+        arenque:__________________203kcal__
+         atun:____________________132kcal__
+        boquerón/anchoa:__________131kcal__
+       bacalao:___________________105kcal__
+        balistes:_________________93kcal__
+        boga:____________________149kcal__
+        brema:___________________135kcal__
+        bacaladilla/lirio/perlita:_84kcal_
+        besugo:___________________88kcal__
+        caballa/verdel:__________212kcal__
+        capellán:________________124kcal__
+        carpa:___________________162kcal__
+         caviar:_________________264kcal__
+        corvina:__________________81kcal__
+        cabracho:_________________91kcal__
+        congrio:_________________107kcal__
+          dorada:_________________77kcal__
+        dorado:___________________85kcal__
+       esglefino:_________________90kcal__
+        esturión:________________135kcal__
+        fletán/halibut:__________111kcal__
+        gallineta_nórdica:________94kcal__
+        lenguado:_________________86kcal__
+        lisa:____________________150kcal__
+        lubina/ródalo:___________124kcal__
+        lucio:___________________113kcal__
+        lucioperca:_______________84kcal__
+        maruca:__________________128kcal__
+        merluza:_________________71kcal__
+        mero/cherna:____________118kcal__
+        palitos_de_pescado:_____290kcal__
+        palometa/japuta:________187kcal__
+        panga:___________________67kcal__
+        pargo_rojo:______________87kcal__
+        pejerrey:_______________106kcal__
+        pescadilla:_____________116kcal__
+        peto:___________________109kcal__
+        pez_espada_ó_emperador:_172kcal_
+        platija:________________86kcal__
+        rape:___________________97kcal__
+        rodaballo:_____________122kcal__
+        sabalote:______________190kcal__
+        salmón:________________206kcal__
+        sardina:_______________208kcal__
+        solla:__________________91kcal__
+        surubí:________________110kcal__
+        sábalo:________________252kcal__
+        tiburón:_______________130kcal__
+        trucha:________________190kcal___
+        gallo:__________________81kcal__
+        jurel/chicharro:________117kcal__
+        liba/eglefino/merlán:___84kcal__
+        raya:____________________97kcal__
+         salmón:________________206kcal__
+        salmonete:______________109kcal__
+         sushi:_________________150kcal__
+        zapatilla:_______________77kcal__
+
+    </string>
+<string name="popuppescado2">
+     Marisco(nº kcalorias por cada 100gr):
+    ____________________________________
+    almeja:____________________148kcal__
+    almeja_fina/chirla:_______76.6kcal__
+    berberecho:_________________76kcal__
+    bígaro:_____________________94kcal__
+    boca:_______________________86kcal__
+    bogavante:__________________90kcal__
+    buey_de_mar:_______________130kcal__
+    busano:_____________________79kcal__
+    calamar:___________________175kcal__
+    camarón:____________________82kcal__
+    cangrejo_de_mar:___________124kcal__
+    cangrejo_de_rio:____________82kcal__
+    cañailla:___________________91kcal__
+    caracol:____________________80kcal__
+    centollo:__________________127kcal__
+    cigalas:____________________69kcal__
+    coquina:____________________75kcal__
+    gambas:_____________________75kcal__
+    langosta:___________________89kcal__
+    langostino:_________________75kcal__
+    langostinos_tigre:__________90kcal__
+      lapa:______________________86kcal__
+    mejillón:___________________172kcal__
+    navaja:_____________________92.5kcal__
+    nécora:______________________125kal__
+    ostra:_______________________41kcal__
+    pecho:______________________86kcal__
+    percebe:_____________________66kcal__
+    pota:_______________________120kcal__
+    pulpo:______________________164kcal__
+    sepia:______________________75.3kcal__
+    vieira:_____________________111kcal__
+
+
+</string>
+
+
+
+
+
+
+
+
+
+
+
+
+    <string name="textpopverdura1">
+        Verduras(nº kcalorias por cada 100gr):
+        _____________________________________________________
+        Ensalada_Completa:_234kcal(1_Ensalda completa_lleva=
+        -3_hojas_de_lechuga-10 aceitunas-media_cebolla_blanca-3_tomates
+        lechuga:_______________________15kcal__
+        patatas:_______________________94kcal__
+        acelga:________________________19kcal__
+        ajo:_1_diente=________________4.5kcal__
+        alcachofa:____________________47kcal__
+        apio:_________________________16kcal__
+        berenjena:____________________25kcal__
+        brecol:_______________________34kcal__
+        cebolla:______________________40kcal__
+        cebolleta:____________________34kcal__
+        col china:____________________16kcal__
+        coliflor:_____________________25kcal__
+        escarola:_____________________17kcal__
+        espinaca:_____________________22kcal__
+        judias verdes/ejote:__________31kcal__
+        ñame:________________________118kcal__
+        colinabo/rutaba:______________38kcal__
+        tomate:______________________18kcal__
+        zanahoria:___________________34kcal__
+        Champiñon:___________________22kcal__
+        Niscalos:____________________25kcal__
+        Seta_de_cardo:________________92kcal__
+        Pleurotus/girgolas:__________35kcal__
+        Trufas:______________________64kcal__
+        ________________________________________
+
+    </string>
+
     <string name="textpopverdura2">
-        1_Plato_de_ensalda_completa=361cal
-        1_Zanahoria=32cal
-        1_Plato_de_lentejas(solo lentejas)=84cal
-        1_Plato_de_Judias(solo judias)=160cal
-        1_plato_de_guisantes=63cal</string>
+        Legumbres(nº_kcal_por_cada_100gr):
+        _____________________________________________
+        alubias/porotos/habas:____________337kcal__
+        alubias/habas_rojas:______________337kcal__
+        bisalto/tirabeque/chicharos_dulces:__42kcal__
+        brotes_de_bambú:__________________27kcal__
+        cacahuetes/mani:_________________567kcal__
+        castañas:_________________________210kcal__
+        dal:______________________________230kcal__
+        frijoles_con_chile:___________________97kcal__
+        frijoles_de_soja:__________________147kcal__
+        garvanzos:_________________________364kcal__
+        guisantes(arvejas_ó_chicharos):__42kcal_
+        soja_verde/judía_mungo:_________12kcal__
+        alubias/judias/porotos_blancos:_____336kcal__
+        judias/frijoles_negros:_____________341kcal__
+        judias/frijoles_pintos:_____________347kcal__
+        porotos/frijoles/judias_rojos:______124kcal__
+        judias_verdes/chauchas/ejotes:______31kcal__
+        lenteja_marrón:_____________________353kcal__
+        lenteja_verde:______________________257kcal__
+        lentejas_amarillas:_________________304kcal__
+        lenteja_roja:_______________________329kcal__
+        arroz_blanco:_______________________366kcal__
+        miso:_______________________________199kcal__
+        moyashi/germinado_de_frijol:________30kcal__
+        nueces_de_pecán:_________________691kcal__
+        nueces_de_soja:_____________________235kcal__
+        tofu_extra_firme:___________________91kcal__
+        tofu_firme:_________________________70kcal__
+        tofu_frito:_________________________271kcal__
+
+    </string>
     <string name="salsas1">Indica cuantos chorros de salsa has echado </string>
     <string name="salsas2">Indica que salsa has comido </string>
     <string name="salsas3">1_chorro_de_ketchup=200cal
@@ -413,6 +584,57 @@ ______________________________________________________
         _________________________________________
 
 
+
+
+    </string>
+    <string name="textopopupsalsa">
+
+        Selecciona salsa(nº kcal por cucharada)
+        ____________________________________________
+        aderezo_francés:_________________6kcal__
+        aderezo_griego:_______________46.7kcal__
+        aderezo_italiano:_____________29.3kcal__
+        aderezo_ranchero:_______________51kcal__
+        aliño_miel_y_mostaza:_______46.4kcal_
+        aliño_ensalada:_______________44.9kcal__
+        aliño_de_yogur:________________4.5kcal__
+        alioli:_______________________62.3kcal__
+         ajvar:________________________1.8kcal__
+        guacamole:____________________15.7kcal__
+        harissa:_______________________5.2kcal__
+        Huancaina:_____________________36kcal__
+        ketchup:_______________________10kcal__
+        mostaza:________________________6kcal__
+        mayonesa:____________________69.2kcal__
+        mayonesa_ajo:________________58.3kcal__
+        pasta_tomate:_________________8.2kcal__
+        pesto:_______________________45.8kcal__
+        salsa_arrabiata:______________3.6kcal__
+          salsa_agridulce:___________17.9kcal__
+        salsa_argentina_ó_criolla:___33.1kcal_
+        salsa_barbacoa:_______________15kcal__
+        salsa_bearnesa:______________41.4kcal__
+        salsa_bechamel:______________22.5kcal__
+        salsa_boloñesa:_____________10.6kcal___
+        salsa_brava:________________11.6kcal__
+        salsa_cazadora:_____________4.5kcal__
+        salsa_césar:_________________42.9kcal__
+        salsa_cocktail:_____________32.7kcal__
+        salsa_chile:_____________11.2kcal__
+        salsa_curry:________________2.6kcal__
+        salsa_de_naranja:__________17.9kcal__
+        salsa_de_soja:_____________6.7kcal__
+        salsa_de_yogur:___________17.1kcal__
+      salsa_holandesa:____________53.5kcal__
+        salsa_inglesa:_____________7.8kcal__
+        salsa_roja:_______________4.1kcal__
+        salsa_rosa:_______________8.1kcal__
+        salsa_remoulade:_________63.5kcal__
+        salsa teriyaki:__________8.9kcal__
+        salsa_pimienta:__________4.7kcal__
+        salsa_verde:_____________4.1kcal__
+        tabasco:_________________7kcal__
+        vinagre_balsamico:_________29kcal_
 
 
     </string>

@@ -42,7 +42,7 @@ ListView lista;
          "salsa brava: 11.6kcal","salsa cazadora: 4.5kcal","salsa cocktail: 32.7kcal","salsa de chile: 11.2kcal",
          "salsa de curry: 2.6kcal","salsa de naranja: 17.9kcal","salsa de soja: 6.7kcal","salsa de yogur: 17.1kcal",
          "salsa holandesa: 53.5kcal","salsa inglesa: 7.8kcal","salsa remoulade: 63.5kcal","salsa roja: 4.1kcal",
-         "salsa rosa: 8.1kcal","salsa teriyaki: 8.9kcal","salsa verde: 4.1kcal","tabasco: 7kcal",
+         "salsa rosa: 8.1kcal","salsa teriyaki: 8.9kcal","salsa verde: 4.1kcal","tabasco: 7kcal"
          };
 
         ArrayAdapter<String> adaptador=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,valoresSalsa);

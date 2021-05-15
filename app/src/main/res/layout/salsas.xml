@@ -7,6 +7,23 @@
     android:background="@color/bCSalsa"
     tools:context="com.example.Dietapp.categorias.Salsas">
 
+    <TextView
+        android:id="@+id/ayuda8"
+        android:layout_width="83dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="284dp"
+        android:background="@drawable/boton_ayuda"
+        android:onClick="ayudaver"
+        android:text="@string/ayuda"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/ayuda"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/verTOtalSalsa"
+        app:layout_constraintTop_toBottomOf="@+id/verTOtalSalsa" />
+
     <EditText
         android:id="@+id/meterNSAlsa"
         android:layout_width="77dp"

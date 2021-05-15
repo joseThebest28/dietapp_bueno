@@ -51,7 +51,7 @@ int colorDefecto;
         emailED = findViewById(R.id.textView38);
         retos = findViewById(R.id.textView395);
 
-        imagen=findViewById(R.id.imageView29);
+
 
         boton=findViewById(R.id.button43);
 
@@ -86,11 +86,12 @@ int colorDefecto;
         retos.setText(agua);
 
 
-
-
-
 this.borrarDAtosDiario();
 
+
+
+
+        imagen=findViewById(R.id.imageView29);
 
     }
 
