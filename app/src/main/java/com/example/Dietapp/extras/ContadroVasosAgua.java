@@ -15,7 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.Dietapp.Ajustes;
-import com.example.Dietapp.PaginaPrincipal;
+import com.example.Dietapp.Categorias;
 import com.example.Dietapp.login.AdminSQLiteOpenHelper;
 import com.example.myapplicationfinal.R;
 
@@ -153,7 +153,7 @@ bd.close();
     }
 
     public void volverMenu(View view) {
-        Intent ifds = new Intent(this, PaginaPrincipal.class);
+        Intent ifds = new Intent(this, Categorias.class);
         startActivity(ifds);
         SharedPreferences myPreferencesVG = PreferenceManager.getDefaultSharedPreferences(ContadroVasosAgua.this);
         SharedPreferences.Editor myEditorVG = myPreferencesVG.edit();

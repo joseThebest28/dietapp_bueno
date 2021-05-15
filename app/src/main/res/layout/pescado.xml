@@ -87,13 +87,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="148dp"
         android:layout_marginTop="63dp"
-        android:layout_marginEnd="144dp"
         android:background="@drawable/boton_guardar"
         android:onClick="enviar"
         android:text="@string/guardar"
         android:textColor="@color/guuardar"
-        app:layout_constraintEnd_toEndOf="@+id/button17"
-        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button26" />
 
@@ -164,21 +161,6 @@
         android:text="@string/volverMenu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button23" />
-
-    <Button
-        android:id="@+id/button17"
-        android:layout_width="127dp"
-        android:layout_height="78dp"
-        android:layout_marginTop="46dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/boton_volver"
-        android:onClick="volverCategorias"
-        android:text="@string/volverCatego"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button23" />
 

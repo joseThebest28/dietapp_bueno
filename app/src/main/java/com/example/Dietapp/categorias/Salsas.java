@@ -13,10 +13,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.Dietapp.PaginaPrincipal;
+import com.example.Dietapp.Categorias;
 import com.example.Dietapp.Seguimiento;
 import com.example.Dietapp.categorias.popup.PopupSalsas;
-import com.example.Dietapp.categorias.popup.PopupVerdurea;
 import com.example.myapplicationfinal.R;
 
 import java.util.ArrayList;
@@ -177,13 +176,10 @@ public class Salsas extends AppCompatActivity {
             }
         });
     }
-        public void volverCategorias(View view) {
-        Intent i = new Intent(this, Categorias.class );
-        startActivity(i);
-    }
+
 
     public void volverMenu(View view) {
-        Intent i = new Intent(this, PaginaPrincipal.class );
+        Intent i = new Intent(this, Categorias.class );
         startActivity(i);
     }
 

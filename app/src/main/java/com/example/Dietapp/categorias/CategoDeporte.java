@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.example.Dietapp.Categorias;
 import com.example.Dietapp.DeporteEjercicios.AbdominalesEj.ElegirRutinaAbs;
 import com.example.Dietapp.DeporteEjercicios.BicepsEj.ElegirBi;
 import com.example.Dietapp.DeporteEjercicios.Cardio;

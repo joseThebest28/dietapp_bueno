@@ -8,15 +8,13 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.Dietapp.PaginaPrincipal;
+import com.example.Dietapp.Categorias;
 import com.example.myapplicationfinal.R;
 
 public class Login extends AppCompatActivity {
@@ -104,7 +102,7 @@ public class Login extends AppCompatActivity {
 
                         myEditor.commit();
 
-                        Intent i = new Intent(this, PaginaPrincipal.class);
+                        Intent i = new Intent(this, Categorias.class);
                         startActivity(i);
 
                     } else {

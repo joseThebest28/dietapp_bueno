@@ -5,7 +5,58 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/categorias"
-    tools:context="com.example.Dietapp.categorias.Categorias">
+    tools:context="com.example.Dietapp.Categorias">
+
+    <ImageView
+        android:id="@+id/imageView23"
+        android:layout_width="69dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/imagenajustes"
+        android:onClick="irAjustes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.992"
+        app:layout_constraintStart_toEndOf="@+id/textDietap"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ajustes" />
+
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="57dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="28dp"
+        android:contentDescription="@string/imageninicio"
+        android:onClick="salir"
+        app:layout_constraintEnd_toStartOf="@+id/imageView23"
+        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintStart_toEndOf="@+id/textDietap"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/salida" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="94dp"
+        android:layout_height="83dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/boton_seguimiento"
+        android:onClick="lanzarSeguimiento"
+        android:text="@string/seguimiento"
+        app:layout_constraintEnd_toEndOf="@+id/bReeftas"
+        app:layout_constraintHorizontal_bias="0.441"
+        app:layout_constraintStart_toStartOf="@+id/bReeftas"
+        app:layout_constraintTop_toBottomOf="@+id/bReeftas" />
+
+    <Button
+        android:id="@+id/button36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:onClick="irAyuda"
+        android:text="@string/ayuda"
+        app:layout_constraintEnd_toStartOf="@+id/imageView23"
+        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintStart_toEndOf="@+id/imageView19"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button14"
@@ -22,9 +73,9 @@
 
     <Button
         android:id="@+id/button30"
-        android:layout_width="403dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="180dp"
+        android:layout_width="158dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="184dp"
         android:background="@color/fondoLogs"
         android:onClick="irDeporte"
         android:text="@string/deporte"
@@ -37,12 +88,12 @@
         android:id="@+id/button15"
         android:layout_width="196dp"
         android:layout_height="50dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="48dp"
         android:background="@color/bCVerdura"
         android:onClick="irAVerduras"
         android:text="@string/verduras"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.106"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button12" />
 
@@ -50,12 +101,12 @@
         android:id="@+id/bReeftas"
         android:layout_width="196dp"
         android:layout_height="50dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="36dp"
         android:background="@color/bCVerdura"
         android:onClick="iraRecetas"
         android:text="@string/recetas"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.013"
+        app:layout_constraintHorizontal_bias="0.167"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button15" />
 
@@ -89,56 +140,41 @@
         android:id="@+id/textDietap"
         android:layout_width="207sp"
         android:layout_height="79sp"
-        android:layout_marginTop="4sp"
+        android:layout_marginTop="16dp"
         android:background="@color/ayuda"
         android:fontFamily="@font/abril_fatface"
         android:text="@string/dietapp"
         android:textColor="@color/guuardar"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintHorizontal_bias="0.014"
+        app:layout_constraintHorizontal_bias="0.019"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button9"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:backgroundTint="@color/hora"
-        android:onClick="volverMenu"
-        android:text="@string/volverMenu"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button30"
-        app:layout_constraintVertical_bias="0.379" />
-
-    <Button
         android:id="@+id/button10"
         android:layout_width="138dp"
         android:layout_height="65dp"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="92dp"
         android:background="@color/bCPesacdo"
         android:onClick="irAPescado"
         android:text="@string/pescados"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textDietap" />
+        app:layout_constraintEnd_toEndOf="@+id/imageView23"
+        app:layout_constraintHorizontal_bias="0.971"
+        app:layout_constraintStart_toStartOf="@+id/imageView23"
+        app:layout_constraintTop_toBottomOf="@+id/imageView23" />
 
     <Button
         android:id="@+id/button11"
         android:layout_width="193dp"
         android:layout_height="57dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="80dp"
         android:background="@color/bCCarne"
         android:onClick="irACarne"
         android:text="@string/carnes"
-        app:layout_constraintEnd_toStartOf="@+id/button10"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="@+id/textDietap"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textDietap"
         app:layout_constraintStart_toStartOf="@+id/textDietap"
         app:layout_constraintTop_toBottomOf="@+id/textDietap" />
@@ -147,12 +183,12 @@
         android:id="@+id/button12"
         android:layout_width="203dp"
         android:layout_height="56dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="92dp"
         android:background="@color/bCFruta"
         android:onClick="irAFruta"
         android:text="@string/fruta"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.076"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/button11" />
 </android.support.constraint.ConstraintLayout>

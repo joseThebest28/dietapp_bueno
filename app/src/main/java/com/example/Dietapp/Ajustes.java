@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.content.ContextCompat;
@@ -16,6 +17,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.Dietapp.extras.ContadroVasosAgua;
 import com.example.Dietapp.extras.Pagina_reto;
@@ -94,6 +96,7 @@ this.borrarDAtosDiario();
         imagen=findViewById(R.id.imageView29);
 
     }
+
 
 
 

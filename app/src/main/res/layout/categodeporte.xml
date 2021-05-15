@@ -126,7 +126,7 @@
         android:layout_marginTop="60dp"
         android:background="@drawable/boton_volver"
         android:onClick="volverMenu"
-        android:text="@string/volverCatego"
+        android:text="@string/volverMenu"
         app:layout_constraintBottom_toBottomOf="@+id/button40"
         app:layout_constraintStart_toEndOf="@+id/pecho"
         app:layout_constraintTop_toTopOf="@+id/button40"

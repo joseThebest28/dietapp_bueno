@@ -79,29 +79,14 @@
         android:id="@+id/button16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="54dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="36dp"
         android:background="@drawable/boton_volver"
         android:onClick="volverMenu"
         android:text="@string/volverMenu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.941"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.426" />
-
-    <Button
-        android:id="@+id/button17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:background="@drawable/boton_volver"
-        android:onClick="volverCategorias"
-        android:text="@string/volverCatego"
-        app:layout_constraintEnd_toEndOf="@+id/button16"
-        app:layout_constraintHorizontal_bias="0.066"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button21" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView13"

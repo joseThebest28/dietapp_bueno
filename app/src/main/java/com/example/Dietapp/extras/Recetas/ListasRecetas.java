@@ -16,14 +16,11 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.Dietapp.PaginaPrincipal;
+import com.example.Dietapp.Categorias;
 import com.example.Dietapp.Seguimiento;
-import com.example.Dietapp.categorias.Carne;
-import com.example.Dietapp.extras.Recetas.Recetas;
 import com.example.Dietapp.login.AdminSQLiteOpenHelper;
 import com.example.myapplicationfinal.R;
 
-import java.sql.Array;
 import java.util.ArrayList;
 
 public class ListasRecetas extends AppCompatActivity {
@@ -45,7 +42,7 @@ public class ListasRecetas extends AppCompatActivity {
         hint.setHint("Ej:Receta1");
 
 
-        final Intent i = new Intent(this, PaginaPrincipal.class);
+        final Intent i = new Intent(this, Categorias.class);
 
         ArrayAdapter<String> adaptador = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item,valoresRecetas);
         lista.setAdapter(adaptador);

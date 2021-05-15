@@ -17,7 +17,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.Dietapp.categorias.Categorias;
+import com.example.Dietapp.Categorias;
 import com.example.Dietapp.extras.Recetas.listas.ListasCasqueria;
 import com.example.Dietapp.extras.Recetas.listas.ListasCerdo;
 import com.example.Dietapp.extras.Recetas.listas.ListasConejo;

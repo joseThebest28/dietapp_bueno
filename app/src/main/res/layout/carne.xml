@@ -141,21 +141,6 @@
         app:layout_constraintTop_toBottomOf="@+id/totalP"
         app:layout_constraintVertical_bias="0.535" />
 
-    <Button
-        android:id="@+id/button17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:background="@drawable/boton_volver"
-        android:onClick="volverCategorias"
-        android:text="@string/volverCatego"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button20"
-        app:layout_constraintHorizontal_bias="0.335"
-        app:layout_constraintStart_toStartOf="@+id/button20"
-        app:layout_constraintTop_toBottomOf="@+id/button20"
-        app:layout_constraintVertical_bias="0.544" />
-
     <TextView
         android:id="@+id/textView13"
         android:layout_width="273dp"

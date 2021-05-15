@@ -102,19 +102,6 @@
         app:layout_constraintTop_toTopOf="@+id/verTOtalSalsa" />
 
     <Button
-        android:id="@+id/button17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:background="@drawable/boton_volver"
-        android:onClick="volverCategorias"
-        android:text="@string/volverCatego"
-        app:layout_constraintEnd_toEndOf="@+id/button16"
-        app:layout_constraintHorizontal_bias="0.07"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button19" />
-
-    <Button
         android:id="@+id/button16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

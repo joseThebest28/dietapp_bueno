@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.Dietapp.categorias.Categorias;
 import com.example.myapplicationfinal.R;
 
 import java.text.SimpleDateFormat;
@@ -103,14 +102,11 @@ public class Seguimiento extends AppCompatActivity {
 
     }
     public void volverMenu(View view) {
-        Intent i2 = new Intent(this,PaginaPrincipal.class );
+        Intent i2 = new Intent(this,Categorias.class );
         startActivity(i2);
     }
 
-    public void volverCategorias(View view) {
-        Intent i = new Intent(this, Categorias.class );
-        startActivity(i);
-    }
+
 
 
     public void recuperar(View view) {

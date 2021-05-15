@@ -103,12 +103,6 @@
         weisswurst/salchicha blanca: __313kcal__ </string>
 
 
-
-
-
-
-
-
     <string name="textpoppescado">
          Pescado(nº kcalorias por cada 100gr):
         ___________________________________
@@ -174,7 +168,7 @@
         zapatilla:_______________77kcal__
 
     </string>
-<string name="popuppescado2">
+    <string name="popuppescado2">
      Marisco(nº kcalorias por cada 100gr):
     ____________________________________
     almeja:____________________148kcal__
@@ -212,16 +206,6 @@
 
 
 </string>
-
-
-
-
-
-
-
-
-
-
 
 
     <string name="textpopverdura1">
@@ -315,7 +299,7 @@
     <string name="imagenAbdo3">imagenAbdo3</string>
     <string name="imagenAbdo4">imagenAbdo4</string>
     <string name="imagenAbdo5">imagenAbdo5</string>
-    <string name="hintRecuperaConta">Introduce aqui tu Email </string>
+    <string name="hintRecuperaConta">Introduce aqui tu Email  </string>
     <string name="btSoliConta">Recupar contraseña </string>
     <string name="bmodificarContra">Cambiar contraseña </string>
     <string name="hintUser"> Usuario </string>

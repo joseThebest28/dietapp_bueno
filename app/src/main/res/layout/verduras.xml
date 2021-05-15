@@ -113,19 +113,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/button24" />
 
-    <Button
-        android:id="@+id/button17"
-        android:layout_width="119dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="80dp"
-        android:background="@drawable/boton_volver"
-        android:onClick="volverCategorias"
-        android:text="@string/volverCatego"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.843"
-        app:layout_constraintStart_toEndOf="@+id/button16"
-        app:layout_constraintTop_toTopOf="@+id/ayuda5" />
-
     <TextView
         android:id="@+id/textView13"
         android:layout_width="271dp"
