@@ -3,12 +3,24 @@ package com.example.Dietapp;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.media.MediaScannerConnection;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.preference.PreferenceManager;
+import android.provider.MediaStore;
+import android.provider.Settings;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -25,28 +37,38 @@ import com.example.Dietapp.login.AdminSQLiteOpenHelper;
 import com.example.Dietapp.login.Login;
 import com.example.myapplicationfinal.R;
 
+import java.io.File;
 import java.util.Calendar;
 
 import yuku.ambilwarna.AmbilWarnaDialog;
 
+import static android.Manifest.permission.CAMERA;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 import static java.util.Calendar.HOUR_OF_DAY;
 import static java.util.Calendar.MINUTE;
 import static java.util.Calendar.SECOND;
 import static java.util.Calendar.getInstance;
 
-public class Ajustes extends AppCompatActivity  {
-    TextView texto,nombreED,apellidoED,apellido2ED,emailED,retos;
+public class Ajustes extends AppCompatActivity {
+    TextView texto, nombreED, apellidoED, apellido2ED, emailED, retos;
     ImageView imagen;
-    Button boton,botonRetos,botonAgua, botonColor;
+    Button botonImagen, botonRetos, botonAgua, botonColor;
     ScrollView xml;
-int colorDefecto;
+    int colorDefecto;
+
+    private final String CARPETA_RAIZ="misImagenesPrueba/";
+    private final String RUTA_IMAGEN=CARPETA_RAIZ+"misFotos";
+
+    final int COD_SELECCIONA=10;
+    final int COD_FOTO=20;
+    String path;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajustes);
 
-         texto = findViewById(R.id.textView23);
+        texto = findViewById(R.id.textView23);
         nombreED = findViewById(R.id.textView24);
         apellidoED = findViewById(R.id.textView39);
         apellido2ED = findViewById(R.id.textView40);
@@ -55,24 +77,21 @@ int colorDefecto;
 
 
 
-        boton=findViewById(R.id.button43);
 
-        botonRetos=findViewById(R.id.bRetos);
+        botonRetos = findViewById(R.id.bRetos);
         botonRetos.setVisibility(View.INVISIBLE);
 
-        botonAgua=findViewById(R.id.bcontadorAgua);
+        botonAgua = findViewById(R.id.bcontadorAgua);
         botonAgua.setVisibility(View.INVISIBLE);
 
-        xml=findViewById(R.id.layoutAjustes);
-        colorDefecto= ContextCompat.getColor(com.example.Dietapp.Ajustes.this,R.color.colorPrimary);
-        botonColor=findViewById(R.id.bcolor);
+        xml = findViewById(R.id.layoutAjustes);
+        colorDefecto = ContextCompat.getColor(com.example.Dietapp.Ajustes.this, R.color.colorPrimary);
+        botonColor = findViewById(R.id.bcolor);
         botonColor.setVisibility(View.INVISIBLE);
 
 
-
-
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Ajustes.this);
-         String nombreUser = myPreferences.getString("nombreUser", "");
+        String nombreUser = myPreferences.getString("nombreUser", "");
         String nombre = myPreferences.getString("nombre", "");
         String apellido = myPreferences.getString("apellido", "");
         String apellido2 = myPreferences.getString("apellido2", "");
@@ -80,29 +99,25 @@ int colorDefecto;
         String agua = myPreferences.getString("agua", "");
 
 
-        texto.setText("Nombre usuario-----> "+nombreUser);
-        nombreED.setText("Nombre ---------------->  "+nombre);
-        apellidoED.setText("Apellido ---------------->  "+apellido);
-        apellido2ED.setText("Apellido2 -------------->  "+apellido2);
-        emailED.setText("Email -------------------->  "+emal);
+        texto.setText("Nombre usuario-----> " + nombreUser);
+        nombreED.setText("Nombre ---------------->  " + nombre);
+        apellidoED.setText("Apellido ---------------->  " + apellido);
+        apellido2ED.setText("Apellido2 -------------->  " + apellido2);
+        emailED.setText("Email -------------------->  " + emal);
         retos.setText(agua);
 
 
-this.borrarDAtosDiario();
+        this.borrarDAtosDiario();
 
 
-
-
-        imagen=findViewById(R.id.imageView29);
-
+        imagen = findViewById(R.id.imageView29);
+        botonImagen = findViewById(R.id.button43);
+        if(validaPermisos()){
+            botonImagen.setEnabled(true);
+        }else{
+            botonImagen.setEnabled(false);
+        }
     }
-
-
-
-
-
-
-
 
 
     public void verMAs(View view) {
@@ -137,10 +152,10 @@ this.borrarDAtosDiario();
                         myEditor.putString("apellido2", "");
                         myEditor.putString("email", "");
                         myEditor.putString("contra", "");
-                        myEditor.putInt("valoragua",0);
-                        myEditor.putFloat("valoragua2",0);
-                        myEditor.putFloat("recetas",0);
-                        myEditor.putFloat("bebida",0);
+                        myEditor.putInt("valoragua", 0);
+                        myEditor.putFloat("valoragua2", 0);
+                        myEditor.putFloat("recetas", 0);
+                        myEditor.putFloat("bebida", 0);
                         myEditor.commit();
 
 
@@ -160,7 +175,6 @@ this.borrarDAtosDiario();
         alert11.show();
 
 
-
     }
 
     public void iraContadorAgua(View view) {
@@ -168,21 +182,19 @@ this.borrarDAtosDiario();
         startActivity(ifds);
     }
 
-    public void borrarDAtosDiario()
-    {
+    public void borrarDAtosDiario() {
         //si son las 23 borrar todos los datos introducidos por el usuario, ya que han sido los datos del dia anterior.
 
         //obtener la hora actual
         Calendar calendario = getInstance();
         int hora, minutos, segundos;
-        hora =calendario.get(HOUR_OF_DAY);
+        hora = calendario.get(HOUR_OF_DAY);
         minutos = calendario.get(MINUTE);
         segundos = calendario.get(SECOND);
 
 
         //comparar los minutos segundo y horas a las 23  se reseten los datos
-        while((hora==23 && minutos==00&&segundos==00))
-        {
+        while ((hora == 23 && minutos == 00 && segundos == 00)) {
             //borrar registrocunado llegadas las doce de la noche
 
             SharedPreferences myPreferencesPA = PreferenceManager.getDefaultSharedPreferences(Ajustes.this);
@@ -194,9 +206,9 @@ this.borrarDAtosDiario();
             myEditorPA.putInt("pescado", 0);
             myEditorPA.putInt("salsa", 0);
             myEditorPA.putInt("erdura", 0);
-            myEditorPA.putInt("valoragua",0);
-            myEditorPA.putFloat("valoragua2",0);
-            myEditorPA.putFloat("recetas",0);
+            myEditorPA.putInt("valoragua", 0);
+            myEditorPA.putFloat("valoragua2", 0);
+            myEditorPA.putFloat("recetas", 0);
             myEditorPA.commit();
 //cambio el valor actual del reto, y lo pongo vacio, ya que el reto se debe cumplir una vez ald ia, por lo que a las once se pone vacio
             AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 10);
@@ -206,16 +218,14 @@ this.borrarDAtosDiario();
             bd.close();
         }
 
-        Log.i("taf", ""+hora);
-        Log.i("taf", ""+minutos);
+        Log.i("taf", "" + hora);
+        Log.i("taf", "" + minutos);
 
     }
 
 
-
-
     public void abrirColorPicker(View view) {
-        AmbilWarnaDialog coloPicker= new AmbilWarnaDialog(this, colorDefecto, new AmbilWarnaDialog.OnAmbilWarnaListener() {
+        AmbilWarnaDialog coloPicker = new AmbilWarnaDialog(this, colorDefecto, new AmbilWarnaDialog.OnAmbilWarnaListener() {
             @Override
             public void onCancel(AmbilWarnaDialog dialog) {
 
@@ -223,9 +233,143 @@ this.borrarDAtosDiario();
 
             @Override
             public void onOk(AmbilWarnaDialog dialog, int color) {
-                colorDefecto=color;
+                colorDefecto = color;
                 xml.setBackgroundColor(colorDefecto);
             }
-        });coloPicker.show();
+        });
+        coloPicker.show();
     }
-}
+
+    private boolean validaPermisos() {
+
+        if(Build.VERSION.SDK_INT<Build.VERSION_CODES.M){
+            return true;
+        }
+
+        if((checkSelfPermission(CAMERA)== PackageManager.PERMISSION_GRANTED)&&
+                (checkSelfPermission(WRITE_EXTERNAL_STORAGE)==PackageManager.PERMISSION_GRANTED)){
+            return true;
+        }
+
+        if((shouldShowRequestPermissionRationale(CAMERA)) ||
+                (shouldShowRequestPermissionRationale(WRITE_EXTERNAL_STORAGE))){
+            cargarDialogoRecomendacion();
+        }else{
+            requestPermissions(new String[]{WRITE_EXTERNAL_STORAGE,CAMERA},100);
+        }
+
+        return false;
+    }
+    private void cargarDialogoRecomendacion() {
+        AlertDialog.Builder dialogo=new AlertDialog.Builder(Ajustes.this);
+        dialogo.setTitle("Permisos Desactivados");
+        dialogo.setMessage("Debe aceptar los permisos para el correcto funcionamiento de la App");
+
+        dialogo.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                requestPermissions(new String[]{WRITE_EXTERNAL_STORAGE,CAMERA},100);
+            }
+        });
+        dialogo.show();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if(requestCode==100){
+            if(grantResults.length==2 && grantResults[0]==PackageManager.PERMISSION_GRANTED
+                    && grantResults[1]==PackageManager.PERMISSION_GRANTED){
+                botonImagen.setEnabled(true);
+            }else{
+                solicitarPermisosManual();
+            }
+        }
+
+    }
+
+    private void solicitarPermisosManual() {
+        final CharSequence[] opciones={"si","no"};
+        final AlertDialog.Builder alertOpciones=new AlertDialog.Builder(Ajustes.this);
+        alertOpciones.setTitle("¿Desea configurar los permisos de forma manual?");
+        alertOpciones.setItems(opciones, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                if (opciones[i].equals("si")){
+                    Intent intent=new Intent();
+                    intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                    Uri uri=Uri.fromParts("package",getPackageName(),null);
+                    intent.setData(uri);
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(getApplicationContext(),"Los permisos no fueron aceptados",Toast.LENGTH_SHORT).show();
+                    dialogInterface.dismiss();
+                }
+            }
+        });
+        alertOpciones.show();
+    }
+
+
+
+    public void onclick(View view) {
+        cargarImagen();
+    }
+
+    private void cargarImagen() {
+
+        final CharSequence[] opciones={"Cargar Imagen","Cancelar"};
+        final AlertDialog.Builder alertOpciones=new AlertDialog.Builder(Ajustes.this);
+        alertOpciones.setTitle("Seleccione una Opción");
+        alertOpciones.setItems(opciones, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                    if (opciones[i].equals("Cargar Imagen")){
+                        Intent intent=new Intent(Intent.ACTION_GET_CONTENT, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                        intent.setType("image/");
+                        startActivityForResult(intent.createChooser(intent,"Seleccione la Aplicación"),COD_SELECCIONA);
+                    }else{
+                        dialogInterface.dismiss();
+
+                }
+            }
+        });
+        alertOpciones.show();
+
+    }
+
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode==RESULT_OK){
+
+            switch (requestCode){
+                case COD_SELECCIONA:
+                    Uri miPath=data.getData();
+                    imagen.setImageURI(miPath);
+                    break;
+
+                case COD_FOTO:
+                    MediaScannerConnection.scanFile(this, new String[]{path}, null,
+                            new MediaScannerConnection.OnScanCompletedListener() {
+                                @Override
+                                public void onScanCompleted(String path, Uri uri) {
+                                    Log.i("Ruta de almacenamiento","Path: "+path);
+                                }
+                            });
+
+                    Bitmap bitmap= BitmapFactory.decodeFile(path);
+                    imagen.setImageBitmap(bitmap);
+
+                    break;
+            }
+
+
+        }
+    }
+    }

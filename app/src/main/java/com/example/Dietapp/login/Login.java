@@ -130,7 +130,7 @@ public class Login extends AppCompatActivity {
                     if (!contraT.isEmpty()) {
                         condicion = true;
                     } else {
-                        Toast.makeText(getApplicationContext(), "NO SE HA INTRODUCIDO EL APELLIDO ", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "NO SE HA INTRODUCIDO LA CONTRASEÑA", Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     Toast.makeText(getApplicationContext(), "NO SE HA INTRODUCIDO EL NOMBRE ", Toast.LENGTH_SHORT).show();
