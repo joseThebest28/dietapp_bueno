@@ -14,7 +14,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
     //creamos la tabla
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table usuarios(login text primary key, nombre text, apellido text, apellido2 text, contra text, email text, retoagua text)");
+        db.execSQL("create table usuarios(login text primary key, nombre text, apellido text, apellido2 text, contra text, email text unique, retoagua text)");
         db.execSQL("create table recetas(nombreReceta text primary key, calorias numeric)");
     }
 
@@ -24,6 +24,6 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
         db.execSQL("drop table if exists usuarios");
         db.execSQL("drop table if exists recetas");
         db.execSQL("create table recetas(nombreReceta text primary key, calorias numeric)");
-        db.execSQL("create table usuarios(login text primary key, nombre text, apellido text, apellido2 text, contra text, email text, retoagua text)");
+        db.execSQL("create table usuarios(login text primary key, nombre text, apellido text, apellido2 text, contra text, email text unique, retoagua text)");
     }
 }

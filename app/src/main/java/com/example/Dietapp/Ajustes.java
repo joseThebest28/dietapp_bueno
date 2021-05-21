@@ -1,4 +1,4 @@
-package com.example.Dietapp;
+ package com.example.Dietapp;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -211,7 +211,7 @@ public class Ajustes extends AppCompatActivity {
             myEditorPA.putFloat("recetas", 0);
             myEditorPA.commit();
 //cambio el valor actual del reto, y lo pongo vacio, ya que el reto se debe cumplir una vez ald ia, por lo que a las once se pone vacio
-            AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 10);
+            AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 12);
             SQLiteDatabase bd = admin.getWritableDatabase();
             String sql = "UPDATE usuarios SET retoagua=''";
             bd.execSQL(sql);
@@ -320,20 +320,22 @@ public class Ajustes extends AppCompatActivity {
 
     private void cargarImagen() {
 
-        final CharSequence[] opciones={"Cargar Imagen","Cancelar"};
+        final CharSequence[] opciones={"Tomar Foto","Cargar Imagen","Cancelar"};
         final AlertDialog.Builder alertOpciones=new AlertDialog.Builder(Ajustes.this);
         alertOpciones.setTitle("Seleccione una Opción");
         alertOpciones.setItems(opciones, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-
+                if (opciones[i].equals("Tomar Foto")){
+                    Toast.makeText(getApplicationContext(), "OPCIÓN SELECCIONADA EN DESARROLLO, SENTIMOS LAS MOLESTIAS ", Toast.LENGTH_SHORT).show();
+                }else{
                     if (opciones[i].equals("Cargar Imagen")){
                         Intent intent=new Intent(Intent.ACTION_GET_CONTENT, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                         intent.setType("image/");
                         startActivityForResult(intent.createChooser(intent,"Seleccione la Aplicación"),COD_SELECCIONA);
                     }else{
                         dialogInterface.dismiss();
-
+                    }
                 }
             }
         });
@@ -348,13 +350,13 @@ public class Ajustes extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode==RESULT_OK){
 
-            switch (requestCode){
-                case COD_SELECCIONA:
+           // switch (requestCode){
+             //   case COD_SELECCIONA:
                     Uri miPath=data.getData();
                     imagen.setImageURI(miPath);
-                    break;
+               //     break;
 
-                case COD_FOTO:
+                /*case COD_FOTO:
                     MediaScannerConnection.scanFile(this, new String[]{path}, null,
                             new MediaScannerConnection.OnScanCompletedListener() {
                                 @Override
@@ -367,9 +369,15 @@ public class Ajustes extends AppCompatActivity {
                     imagen.setImageBitmap(bitmap);
 
                     break;
-            }
+            }*/
 
 
         }
     }
+
+    public void volverMenu(View view) {
+        Intent ifds = new Intent(this, Categorias.class);
+        startActivity(ifds);
+
     }
+}

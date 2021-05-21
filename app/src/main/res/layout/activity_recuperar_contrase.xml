@@ -22,11 +22,26 @@
         android:id="@+id/editNombreUser"
         android:layout_width="319dp"
         android:layout_height="63dp"
-        android:layout_marginTop="232dp"
+        android:layout_marginTop="252dp"
         android:background="@color/ayuda"
         android:hint="@string/hintRecuperaConta"
         android:textColor="@color/textoEdit"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/textView30"
+        app:layout_constraintHorizontal_bias="0.386"
+        app:layout_constraintStart_toStartOf="@+id/textView30"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="378dp"
+        android:layout_height="182dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/textorecuperacontraseña"
+        android:textColor="@color/dietappPrincipal"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

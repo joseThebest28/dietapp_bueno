@@ -1,5 +1,6 @@
 package com.example.Dietapp.login;
 
+import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -42,7 +43,9 @@ public class CrearUsers extends AppCompatActivity {
     }
 
     public void alta(View v) {
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 11);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 12
+
+        );
         SQLiteDatabase bd = admin.getWritableDatabase();
 
         nombreLoginT = String.valueOf(nombreLogin.getText());
@@ -100,6 +103,7 @@ public class CrearUsers extends AppCompatActivity {
         boolean resultad6 = false;
         boolean resultad7 = false;
         boolean resultad8 = false;
+        boolean resultad9 = false;
         try {
             if (nombreLoginT.length() > 5) {
 
@@ -157,8 +161,30 @@ public class CrearUsers extends AppCompatActivity {
                 resultad8=true;
 
             }
+            AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,
+                    "registro_user", null, 12);
+            SQLiteDatabase bd = admin.getWritableDatabase(); //Create and/or open a database that will be used for reading and writing.
 
-            if (resultad1 && resultad2 && resultad3 && resultad4 && resultad5 && resultad6 && resultad7 && resultad8) {
+            Cursor curso = bd.rawQuery("select *  from usuarios ", null);
+            curso.moveToFirst();
+            while (!curso.isAfterLast()) {
+                String compararEmail = curso.getString(5);
+                String compararus = curso.getString(0);
+                String compararC = curso.getString(4);
+                Log.i("tag", compararEmail);
+                Log.i("tag", compararus);
+                if (compararEmail.equals(emailT)) {
+                    Toast.makeText(this, "Email en uso", Toast.LENGTH_SHORT).show();
+                    Log.i("tag", "dentro if");
+
+                }else{
+                   resultad9=true;
+                }
+                curso.moveToNext();
+            }
+            bd.close();
+
+            if (resultad1 && resultad2 && resultad3 && resultad4 && resultad5 && resultad6 && resultad7 && resultad8 &&resultad9) {
 
                 condicion = true;
             }
@@ -177,7 +203,7 @@ public class CrearUsers extends AppCompatActivity {
 
 
 
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 11);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 12);
         SQLiteDatabase bd = admin.getWritableDatabase(); //Create and/or open a database that will be used for reading and writing.
 
         Cursor curso = bd.rawQuery("select *  from usuarios ", null);

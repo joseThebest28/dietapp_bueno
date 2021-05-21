@@ -17,6 +17,7 @@ import com.example.Dietapp.categorias.Pescado;
 import com.example.Dietapp.categorias.Salsas;
 import com.example.Dietapp.categorias.VerdurayLegumbres;
 import com.example.Dietapp.extras.ElegirReceta;
+import com.example.Dietapp.extras.Valorar;
 import com.example.myapplicationfinal.R;
 
 public class Categorias extends AppCompatActivity {
@@ -100,5 +101,10 @@ public class Categorias extends AppCompatActivity {
         Uri ur= Uri.parse(url);
         Intent intent=new Intent(Intent.ACTION_VIEW, ur);
         startActivity(intent);
+    }
+
+    public void iravalorar(View view) {
+        Intent iS = new Intent(this, Valorar.class );
+        startActivity(iS); overridePendingTransition(R.anim.anim_categorias2,R.anim.anim_categorias);
     }
 }

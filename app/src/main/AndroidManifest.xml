@@ -21,6 +21,7 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name="com.example.Dietapp.extras.Valorar"></activity>
         <activity android:name="com.example.Dietapp.login.Login" />
         <activity android:name="com.example.Dietapp.categorias.Bebidas" />
         <activity android:name="com.example.Dietapp.extras.Recetas.listas.ListasPollo" />
@@ -125,7 +126,6 @@
         <activity android:name="com.example.Dietapp.DeporteEjercicios.gluteos.Gluteos4" />
         <activity android:name="com.example.Dietapp.DeporteEjercicios.gluteos.Gluteos5" />
         <activity android:name="com.example.Dietapp.login.CrearUsers" />
-
         <activity android:name="com.example.Dietapp.Ajustes" />
         <activity android:name="com.example.Dietapp.extras.ContadroVasosAgua" />
         <activity android:name="com.example.Dietapp.extras.Pagina_reto" />

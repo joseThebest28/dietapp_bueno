@@ -1,6 +1,7 @@
 package com.example.Dietapp.login;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -12,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.Dietapp.Categorias;
@@ -35,6 +37,7 @@ public class RecuperarContrase extends AppCompatActivity {
     private String nombreUserContaiT;
     private Intent iD;
     Session sesion;
+    ProgressDialog pro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,78 +51,86 @@ public class RecuperarContrase extends AppCompatActivity {
     }
 
     public void lnazarRecuCOn(View view) {
-        try {
+        this.antesenviarcorreo();
+       this.compararTexto();
 
-            nombreUserContaiT = String.valueOf(nombreUserContai.getText());
+    }
+private void compararTexto(){
+    try {
 
-
-            AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,
-                    "registro_user", null, 11);
-            SQLiteDatabase bd = admin.getWritableDatabase(); //Create and/or open a database that will be used for reading and writing.
-
-            Cursor curso = bd.rawQuery("select *  from usuarios ", null);
-boolean dentro= Boolean.parseBoolean(null);
-            curso.moveToFirst();
-            while (!curso.isAfterLast()) {
-                String compararEmail = curso.getString(5);
-                String compararus = curso.getString(0);
-                String compararC = curso.getString(4);
-                Log.i("tag", compararEmail);
-                Log.i("tag", compararus);
-                if (compararEmail.equals(nombreUserContaiT) ) {
-                    Toast.makeText(this, "Email correcto", Toast.LENGTH_SHORT).show();
-                    Log.i("tag", "dentro if");
-dentro=true;
-                    this.enviarCorre(nombreUserContaiT,compararC,compararus);
+        nombreUserContaiT = String.valueOf(nombreUserContai.getText());
 
 
-                    Toast.makeText(this, "Se ha enviado correctamente un email con su contraseña", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(this, Login.class);
-                    startActivity(i);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,
+                "registro_user", null, 12);
+        SQLiteDatabase bd = admin.getWritableDatabase(); //Create and/or open a database that will be used for reading and writing.
+
+        Cursor curso = bd.rawQuery("select *  from usuarios ", null);
+        curso.moveToFirst();
+        while (!curso.isAfterLast()) {
+            String compararEmail = curso.getString(5);
+            String compararus = curso.getString(0);
+            String compararC = curso.getString(4);
+            Log.i("tag", compararEmail);
+            Log.i("tag", compararus);
+            if (compararEmail.equals(nombreUserContaiT)) {
+
+                Toast.makeText(this, "Email correcto", Toast.LENGTH_SHORT).show();
+                Log.i("tag", "dentro if");
 
 
-
-
-                }
-
-
-                curso.moveToNext();
+                this.enviarCorre(nombreUserContaiT, compararC, compararus);
+                this.despuesEnviocorreo();
+            }else{
 
             }
-            if(dentro)
-                Toast.makeText(this, "Email correcto", Toast.LENGTH_SHORT).show();
-            else
-                Toast.makeText(this, "Email incorrecto", Toast.LENGTH_SHORT).show();
-            bd.close();
-
-        } catch (Exception e) {
-
+            curso.moveToNext();
         }
+        bd.close();
+
+    } catch (Exception e) {
+
     }
 
-    private void enviarCorre(final String email,  String textoEnviar,String nombreUser) {
-        StrictMode.ThreadPolicy policy=new StrictMode.ThreadPolicy.Builder().permitAll().build();
+}
+    private void antesenviarcorreo() {
+        pro = ProgressDialog.show(this, "enviando mensaje", "por favor espere", false, false);
+    }
+
+    private void despuesEnviocorreo() {
+
+        Toast.makeText(this, "Se ha enviado correctamente el email con su contraseña", Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(this, Login.class);
+        startActivity(i);
+
+    }
+
+
+
+
+    private void enviarCorre(final String email, String textoEnviar, String nombreUser) {
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
         //textoEnvias=String.valueOf(editTextMessage.getText());
-        Properties props=new Properties();
+        Properties props = new Properties();
         props.put("mail.smtp.host", "smtp.googlemail.com");
         props.put("mail.smtp.socketFactory.port", "465");
         props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.port", "465");
-        try{
+        try {
             sesion = Session.getDefaultInstance(props, new Authenticator() {
                 @Override
                 protected PasswordAuthentication getPasswordAuthentication() {
-                    return  new PasswordAuthentication("dietappapp@gmail.com","A28aaaaaaaaaa");
+                    return new PasswordAuthentication("dietappapp@gmail.com", "A28aaaaaaaaaa");
                 }
             });
             Message message = new MimeMessage(sesion);
             message.setFrom(new InternetAddress(email));
             message.setSubject("contraseña dietapp");
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
-            message.setContent("Buenos dias estimado " +nombreUser+"."+ " <br/>su contraseña de Dietapp es: "+textoEnviar, "text/html; charset=utf-8");
+            message.setContent("Buenos dias estimado " + nombreUser + "." + " <br/>su contraseña de Dietapp es: " + textoEnviar, "text/html; charset=utf-8");
             Transport.send(message);
 
 
@@ -131,9 +142,4 @@ dentro=true;
     }
 
 
-
-
-
-
-
-    }
+}

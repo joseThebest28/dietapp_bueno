@@ -47,7 +47,7 @@ public class ListasRecetas extends AppCompatActivity {
         ArrayAdapter<String> adaptador = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item,valoresRecetas);
         lista.setAdapter(adaptador);
 
-         admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 11);
+         admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 12);
 
 
        final Intent intent = new Intent(this, Seguimiento.class);
@@ -87,7 +87,7 @@ public class ListasRecetas extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        AdminSQLiteOpenHelper admin2 = new AdminSQLiteOpenHelper(this, "registro_user", null, 11);
+        AdminSQLiteOpenHelper admin2 = new AdminSQLiteOpenHelper(this, "registro_user", null, 12);
         SQLiteDatabase bd = admin2.getWritableDatabase(); //Create and/or open a database that will be used for reading and writing.
         String sql = "select * from recetas";
         Cursor curso = bd.rawQuery(sql, null);

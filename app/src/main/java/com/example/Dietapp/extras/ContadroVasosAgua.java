@@ -127,7 +127,7 @@ public class ContadroVasosAgua extends AppCompatActivity {
         SharedPreferences myPreferencesPA = PreferenceManager.getDefaultSharedPreferences(ContadroVasosAgua.this);
         String nombreUser = myPreferencesPA.getString("nombreUser", "");
 
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 11);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 12);
         SQLiteDatabase bd = admin.getWritableDatabase();
 
         String sql = "UPDATE usuarios SET retoagua='Se ha completado el objetivo de hoy de  agua' where login='"+nombreUser+"'";

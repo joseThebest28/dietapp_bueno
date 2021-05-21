@@ -65,7 +65,7 @@ public class Login extends AppCompatActivity {
             contraT = String.valueOf(contra.getText());
             if (condiciones()) {
                 AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,
-                        "registro_user", null, 11);
+                        "registro_user", null, 12);
                 SQLiteDatabase bd = admin.getWritableDatabase(); //Create and/or open a database that will be used for reading and writing.
 
                 Cursor curso = bd.rawQuery("select *  from usuarios ", null);
@@ -107,11 +107,14 @@ public class Login extends AppCompatActivity {
                         startActivity(i);
                         overridePendingTransition(R.anim.anim_desvanecer2,R.anim.anim_desvanecer);
 
-                    } else {
-                        Toast.makeText(this, "Usuario o contraseña incorrecto", Toast.LENGTH_SHORT).show();
                     }
                     curso.moveToNext();
+                    if(curso.isAfterLast())
+                    if (compararU.equals(loginT) && compararC.equals(contraT)) {
+                        Toast.makeText(this, "Usuario o contraseña incorrecto", Toast.LENGTH_SHORT).show();
+                    }
                 }
+
                 bd.close();
 
             }
