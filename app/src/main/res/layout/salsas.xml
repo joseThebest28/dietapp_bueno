@@ -31,6 +31,7 @@
         android:layout_marginTop="3dp"
         android:layout_marginBottom="32dp"
         android:background="@color/ayuda"
+        android:importantForAutofill="no"
         android:inputType="phone"
         android:maxLength="2"
         android:textColor="@color/textoEdit"
@@ -40,7 +41,6 @@
         app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        android:importantForAutofill="no"
         tools:ignore="LabelFor" />
 
     <TextView
@@ -143,11 +143,11 @@
         android:id="@+id/imageView4"
         android:layout_width="163dp"
         android:layout_height="127dp"
+        android:contentDescription="@string/imagensalsa"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.963"
         app:layout_constraintStart_toStartOf="@+id/textView13"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fcsa"
-        android:contentDescription="@string/imagensalsa"/>
+        app:srcCompat="@drawable/fcsa" />
 
 </android.support.constraint.ConstraintLayout>

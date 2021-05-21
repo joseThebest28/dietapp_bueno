@@ -76,17 +76,15 @@
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <TextView
-        android:id="@+id/textD"
+        android:id="@+id/textdeporte"
         android:layout_width="145dp"
         android:layout_height="48dp"
-
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="40dp"
         android:textColor="@color/hora"
-        app:layout_constraintEnd_toEndOf="@+id/recibirlistaReceta2"
+        app:layout_constraintEnd_toEndOf="@+id/recibirlistaReceta"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/recibirlistaReceta"
-        app:layout_constraintTop_toBottomOf="@+id/recibirlistaReceta" />
+        app:layout_constraintStart_toEndOf="@+id/recibirlistaReceta"
+        app:layout_constraintTop_toBottomOf="@+id/recibirlistaBebidaS" />
 
     <TextView
         android:id="@+id/textFr"
@@ -167,7 +165,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textD"
+        app:layout_constraintTop_toBottomOf="@+id/textdeporte"
         app:layout_constraintVertical_bias="0.786" />
 
     <Button
