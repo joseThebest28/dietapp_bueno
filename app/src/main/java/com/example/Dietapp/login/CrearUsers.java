@@ -1,6 +1,5 @@
 package com.example.Dietapp.login;
 
-import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -43,45 +42,50 @@ public class CrearUsers extends AppCompatActivity {
     }
 
     public void alta(View v) {
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 12
-
-        );
-        SQLiteDatabase bd = admin.getWritableDatabase();
-
-        nombreLoginT = String.valueOf(nombreLogin.getText());
-        nombreT = nombre.getText().toString();
-        apellidoT = String.valueOf(apellido1.getText());
-        apellido2T = apellido2.getText().toString();
-        contraseT = contraseña.getText().toString();
-        contraseT2 = contraseña2.getText().toString();
-        emailT = email.getText().toString();
 
 
-        if (condiciones()) {
-            ContentValues registro = new ContentValues();  //es una clase para guardar datos
-            registro.put("login", nombreLoginT);
-            registro.put("nombre", nombreT);
-            registro.put("apellido", apellidoT);
-            registro.put("apellido2", apellido2T);
-            registro.put("contra", contraseT);
-            registro.put("email", emailT);
-            registro.put("retoagua", "");
 
-            bd.insert("usuarios", null, registro);
-            bd.close();
-            nombre.setText("");
-            apellido1.setText("");
-            apellido2.setText("");
-            nombreLogin.setText("");
-            contraseña.setText("");
-            contraseña2.setText("");
-            email.setText("");
+            nombreLoginT = String.valueOf(nombreLogin.getText());
+            nombreT = nombre.getText().toString();
+            apellidoT = String.valueOf(apellido1.getText());
+            apellido2T = apellido2.getText().toString();
+            contraseT = contraseña.getText().toString();
+            contraseT2 = contraseña2.getText().toString();
+            emailT = email.getText().toString();
+
+        try {
+            if (condiciones()) {
+                AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 12);
+                SQLiteDatabase bd = admin.getWritableDatabase();
+                ContentValues registro = new ContentValues();  //es una clase para guardar datos
+                registro.put("login", nombreLoginT);
+                registro.put("nombre", nombreT);
+                registro.put("apellido", apellidoT);
+                registro.put("apellido2", apellido2T);
+                registro.put("contra", contraseT);
+                registro.put("email", emailT);
+                registro.put("retoagua", "");
+                registro.put("img", "");
+
+                bd.insert("usuarios", null, registro);
+                bd.close();
+                nombre.setText("");
+                apellido1.setText("");
+                apellido2.setText("");
+                nombreLogin.setText("");
+                contraseña.setText("");
+                contraseña2.setText("");
+                email.setText("");
 
 
-            Toast.makeText(this, "SE HA CREADO EL USUARIO CORRECTAMENTE",
+                Toast.makeText(this, "SE HA CREADO EL USUARIO CORRECTAMENTE",
+                        Toast.LENGTH_SHORT).show();
+                Intent ifds = new Intent(this, Login.class);
+                startActivity(ifds);
+            }
+        }catch (Exception e){
+            Toast.makeText(this, "HAY CAMPOS VACIOS, POR FAVOR, RELLENELOS CORRECTAMENTE",
                     Toast.LENGTH_SHORT).show();
-            Intent ifds = new Intent(this, Login.class);
-            startActivity(ifds);
         }
     }
 
@@ -156,38 +160,23 @@ public class CrearUsers extends AppCompatActivity {
             } else {
                 Toast.makeText(getApplicationContext(), "NO SE HA INTRODUCIDO EL NOMBRE ", Toast.LENGTH_SHORT).show();
             }
-            if(comprobarNombreuser()==false)
+            if(!comprobarNombreuser(nombreLoginT))
             {
                 resultad8=true;
 
             }
-            AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,
-                    "registro_user", null, 12);
-            SQLiteDatabase bd = admin.getWritableDatabase(); //Create and/or open a database that will be used for reading and writing.
+            if(!comprobarNombreEmail(emailT))
+            {
+                resultad9=true;
 
-            Cursor curso = bd.rawQuery("select *  from usuarios ", null);
-            curso.moveToFirst();
-            while (!curso.isAfterLast()) {
-                String compararEmail = curso.getString(5);
-                String compararus = curso.getString(0);
-                String compararC = curso.getString(4);
-                Log.i("tag", compararEmail);
-                Log.i("tag", compararus);
-                if (compararEmail.equals(emailT)) {
-                    Toast.makeText(this, "Email en uso", Toast.LENGTH_SHORT).show();
-                    Log.i("tag", "dentro if");
-
-                }else{
-                   resultad9=true;
-                }
-                curso.moveToNext();
             }
-            bd.close();
 
-            if (resultad1 && resultad2 && resultad3 && resultad4 && resultad5 && resultad6 && resultad7 && resultad8 &&resultad9) {
+            if (resultad1 && resultad2 && resultad3 && resultad4 && resultad5 && resultad6 && resultad7 && resultad8 && resultad9){
 
                 condicion = true;
             }
+
+
         } catch (Exception e) {
             Toast.makeText(getApplicationContext(), "SE HA PRODUCIDO UN ERROR, REINICIA LA APLICACION ", Toast.LENGTH_SHORT).show();
 
@@ -196,7 +185,7 @@ public class CrearUsers extends AppCompatActivity {
 
         return condicion;
     }
-    public boolean comprobarNombreuser()
+    public boolean comprobarNombreuser(String nombre)
     {
         boolean coincide=false;
 
@@ -213,10 +202,10 @@ public class CrearUsers extends AppCompatActivity {
             String compararU=curso.getString(0);
 
             Log.i("tag",""+compararU);
-            Log.i("tag",""+nombreLoginT);
+            Log.i("tag",""+nombre);
 
-
-            if(compararU.equals(nombreLoginT) )
+if(!nombre.isEmpty())
+            if(compararU.equals(nombre) )
             {
                 Log.i("tag","dentro if");
 
@@ -238,6 +227,47 @@ public class CrearUsers extends AppCompatActivity {
 
         return coincide;
     }
+    public boolean comprobarNombreEmail(String nombree)
+    {
+        boolean coincide2=false;
 
+
+
+
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 12);
+        SQLiteDatabase bd = admin.getWritableDatabase(); //Create and/or open a database that will be used for reading and writing.
+
+        Cursor curso = bd.rawQuery("select *  from usuarios ", null);
+
+        curso.moveToFirst();
+        while (curso.isAfterLast() == false) {
+            String compararE=curso.getString(5);
+
+            Log.i("tag",""+compararE);
+            Log.i("tag",""+nombree);
+
+            if(!nombree.isEmpty())
+            if(compararE.equals(nombree) )
+            {
+                Log.i("tag","dentro if");
+
+
+                Toast.makeText(this, "EL EMAIL INTRODUCIDO ESTA EN USO", Toast.LENGTH_SHORT).show();
+                coincide2=true;
+
+            }
+            else{
+
+
+            }curso.moveToNext();
+
+        }
+        bd.close();
+
+
+
+
+        return coincide2;
+    }
 
 }

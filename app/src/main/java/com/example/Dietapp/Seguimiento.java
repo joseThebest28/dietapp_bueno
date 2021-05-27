@@ -54,7 +54,7 @@ public class Seguimiento extends AppCompatActivity {
 
             Bundle datosD = this.getIntent().getExtras();
             recuperamosDepor = datosD.getFloat("calorias deporte");
-            texD = findViewById(R.id.textD);
+            texD = findViewById(R.id.textdeporte);
             texD.setText(" deporte: " + recuperamosDepor);
 
             Bundle Frutas = this.getIntent().getExtras();

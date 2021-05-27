@@ -360,7 +360,7 @@ public class Recetas extends AppCompatActivity {
                 this.verTotal(view);
                 float meter_calorias = caloriasListaTotal;
                 //metemos datos en base de datos
-                AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 11);
+                AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 12);
                 SQLiteDatabase bd = admin.getWritableDatabase();
                 ContentValues registro = new ContentValues();  //es una clase para guardar datos
                 registro.put("nombreReceta", nombreRecetaT);

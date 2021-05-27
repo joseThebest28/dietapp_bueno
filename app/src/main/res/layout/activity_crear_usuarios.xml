@@ -13,7 +13,18 @@
         android:orientation="vertical"
         android:paddingTop="30dp"
         android:gravity="center">
-    <EditText
+
+        <TextView
+            android:id="@+id/textView52"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+
+            android:text="@string/bCrearUser"
+            android:textColor="@color/dietappPrincipal"
+            android:textSize="30sp" />
+
+        <EditText
         android:id="@+id/editNombre"
         android:layout_width="247dp"
         android:layout_height="55dp"
@@ -131,5 +142,6 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@+id/editContra2"
         app:layout_constraintTop_toBottomOf="@+id/editContra2" />
+
     </LinearLayout>
 </ScrollView>

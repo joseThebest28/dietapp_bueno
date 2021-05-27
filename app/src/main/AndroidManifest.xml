@@ -21,7 +21,7 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.Dietapp.extras.Valorar"></activity>
+        <activity android:name="com.example.Dietapp.extras.Valorar" />
         <activity android:name="com.example.Dietapp.login.Login" />
         <activity android:name="com.example.Dietapp.categorias.Bebidas" />
         <activity android:name="com.example.Dietapp.extras.Recetas.listas.ListasPollo" />
@@ -72,6 +72,10 @@
         <activity android:name="com.example.Dietapp.tutorial.Explica4" />
         <activity android:name="com.example.Dietapp.tutorial.Explica5" />
         <activity android:name="com.example.Dietapp.tutorial.Explica6" />
+        <activity android:name="com.example.Dietapp.tutorial.Explica7" />
+        <activity android:name="com.example.Dietapp.tutorial.Explica8" />
+        <activity android:name="com.example.Dietapp.tutorial.Explica9" />
+        <activity android:name="com.example.Dietapp.tutorial.Explica10" />
         <activity android:name="com.example.Dietapp.extras.Recetas.Recetas" />
         <activity android:name="com.example.Dietapp.Seguimiento" />
         <activity android:name="com.example.Dietapp.categorias.Carne" />

@@ -1,6 +1,5 @@
 package com.example.Dietapp.login;
 
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -79,6 +78,7 @@ public class Login extends AppCompatActivity {
                     String compararC = curso.getString(4);
                     String emailSQ = curso.getString(5);
                     String retoAgua = curso.getString(6);
+                    String imagen = curso.getString(7);
 
 
                     Log.i("tag", "agua"+retoAgua);
@@ -99,22 +99,19 @@ public class Login extends AppCompatActivity {
                         myEditor.putString("email", emailSQ);
                         myEditor.putString("contra", compararC);
                         myEditor.putString("agua", retoAgua);
+                        myEditor.putString("magen", imagen);
 
 
                         myEditor.commit();
 
                         Intent i = new Intent(this, Categorias.class);
                         startActivity(i);
-                        overridePendingTransition(R.anim.anim_desvanecer2,R.anim.anim_desvanecer);
 
-                    }
-                    curso.moveToNext();
-                    if(curso.isAfterLast())
-                    if (compararU.equals(loginT) && compararC.equals(contraT)) {
+                    } else {
                         Toast.makeText(this, "Usuario o contraseña incorrecto", Toast.LENGTH_SHORT).show();
                     }
+                    curso.moveToNext();
                 }
-
                 bd.close();
 
             }
@@ -133,7 +130,7 @@ public class Login extends AppCompatActivity {
                     if (!contraT.isEmpty()) {
                         condicion = true;
                     } else {
-                        Toast.makeText(getApplicationContext(), "NO SE HA INTRODUCIDO LA CONTRASEÑA", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "NO SE HA INTRODUCIDO EL APELLIDO ", Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     Toast.makeText(getApplicationContext(), "NO SE HA INTRODUCIDO EL NOMBRE ", Toast.LENGTH_SHORT).show();

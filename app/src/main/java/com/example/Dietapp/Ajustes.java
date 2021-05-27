@@ -68,6 +68,8 @@ public class Ajustes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajustes);
 
+
+
         texto = findViewById(R.id.textView23);
         nombreED = findViewById(R.id.textView24);
         apellidoED = findViewById(R.id.textView39);
@@ -111,6 +113,23 @@ public class Ajustes extends AppCompatActivity {
 
 
         imagen = findViewById(R.id.imageView29);
+
+
+        String imagenU= myPreferences.getString("magen", "");
+        Log.i("tag","images:"+imagenU);
+
+        if(!imagenU.equals("")) {
+    imagen.setImageURI(Uri.parse(imagenU));
+}
+     imagen.getResources();
+
+
+
+
+
+
+
+
         botonImagen = findViewById(R.id.button43);
         if(validaPermisos()){
             botonImagen.setEnabled(true);
@@ -156,6 +175,8 @@ public class Ajustes extends AppCompatActivity {
                         myEditor.putFloat("valoragua2", 0);
                         myEditor.putFloat("recetas", 0);
                         myEditor.putFloat("bebida", 0);
+                        myEditor.putString("magen", "");
+                        myEditor.apply();
                         myEditor.commit();
 
 
@@ -209,12 +230,16 @@ public class Ajustes extends AppCompatActivity {
             myEditorPA.putInt("valoragua", 0);
             myEditorPA.putFloat("valoragua2", 0);
             myEditorPA.putFloat("recetas", 0);
+            myEditorPA.putString("magen", "");
+            myEditorPA.apply();
             myEditorPA.commit();
 //cambio el valor actual del reto, y lo pongo vacio, ya que el reto se debe cumplir una vez ald ia, por lo que a las once se pone vacio
             AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 12);
             SQLiteDatabase bd = admin.getWritableDatabase();
             String sql = "UPDATE usuarios SET retoagua=''";
             bd.execSQL(sql);
+            String sql2 = "UPDATE usuarios SET img=''";
+            bd.execSQL(sql2);
             bd.close();
         }
 
@@ -354,6 +379,9 @@ public class Ajustes extends AppCompatActivity {
              //   case COD_SELECCIONA:
                     Uri miPath=data.getData();
                     imagen.setImageURI(miPath);
+                    this.guardarimagne(miPath);
+
+            Log.i("tag","valor"+String.valueOf(miPath));
                //     break;
 
                 /*case COD_FOTO:
@@ -373,6 +401,23 @@ public class Ajustes extends AppCompatActivity {
 
 
         }
+    }
+
+    private void guardarimagne(Uri ur) {
+        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Ajustes.this);
+        SharedPreferences.Editor editor = myPreferences.edit();
+        editor.putString("magen", String.valueOf(ur));
+        editor.apply();
+        editor.commit();
+
+        String nombreUser = myPreferences.getString("nombreUser", "");
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 12);
+        SQLiteDatabase bd = admin.getWritableDatabase();
+
+        String sql = "UPDATE usuarios SET img='"+ String.valueOf(ur)+"'  where login='"+nombreUser+"'";
+        bd.execSQL(sql);
+
+        Log.i("tag",String.valueOf(ur));
     }
 
     public void volverMenu(View view) {
