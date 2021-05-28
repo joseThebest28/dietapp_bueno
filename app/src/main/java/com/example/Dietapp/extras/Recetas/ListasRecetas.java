@@ -18,6 +18,8 @@ import android.widget.Toast;
 
 import com.example.Dietapp.Categorias;
 import com.example.Dietapp.Seguimiento;
+import com.example.Dietapp.categorias.Carne;
+import com.example.Dietapp.categorias.Salsas;
 import com.example.Dietapp.login.AdminSQLiteOpenHelper;
 import com.example.myapplicationfinal.R;
 
@@ -32,7 +34,7 @@ public class ListasRecetas extends AppCompatActivity {
     ArrayList<String> valoresRecetas2 = new ArrayList<>();
     String calorias;
     String nombre;
-    AdminSQLiteOpenHelper admin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,13 +43,13 @@ public class ListasRecetas extends AppCompatActivity {
         hint = findViewById(R.id.editListas);
         hint.setHint("Ej:Receta1");
 
-
+        final AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 17);
         final Intent i = new Intent(this, Categorias.class);
 
         ArrayAdapter<String> adaptador = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item,valoresRecetas);
         lista.setAdapter(adaptador);
 
-         admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 12);
+
 
 
        final Intent intent = new Intent(this, Seguimiento.class);
@@ -75,20 +77,30 @@ public class ListasRecetas extends AppCompatActivity {
 
                 toastNada3.show();
                 SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(ListasRecetas.this);
+
+
+
                 SharedPreferences.Editor myEditor = myPreferences.edit();
                 myEditor.putFloat("receta", numeroGuardar);
                 myEditor.commit();
+
+
+
+
+
+
 
         }});
 
 
     }
 
+
     @Override
     protected void onStart() {
         super.onStart();
-        AdminSQLiteOpenHelper admin2 = new AdminSQLiteOpenHelper(this, "registro_user", null, 12);
-        SQLiteDatabase bd = admin2.getWritableDatabase(); //Create and/or open a database that will be used for reading and writing.
+        AdminSQLiteOpenHelper admin2 = new AdminSQLiteOpenHelper(this, "registro_user", null, 17);
+        SQLiteDatabase bd = admin2.getWritableDatabase();
         String sql = "select * from recetas";
         Cursor curso = bd.rawQuery(sql, null);
 
@@ -106,4 +118,5 @@ public class ListasRecetas extends AppCompatActivity {
 
         bd.close();
     }
+
 }

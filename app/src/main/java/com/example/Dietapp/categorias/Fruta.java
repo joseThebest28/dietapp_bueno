@@ -2,9 +2,11 @@ package com.example.Dietapp.categorias;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,6 +18,7 @@ import android.widget.Toast;
 import com.example.Dietapp.Categorias;
 import com.example.Dietapp.categorias.popup.Popupfruta;
 import com.example.Dietapp.Seguimiento;
+import com.example.Dietapp.login.AdminSQLiteOpenHelper;
 import com.example.myapplicationfinal.R;
 
 import java.util.ArrayList;
@@ -31,7 +34,11 @@ public class Fruta extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fruta);
+        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Fruta.this);
+        float num = myPreferences.getFloat("fru", 0);
+        Log.i("tag","valor de carne en carne "+num);
 
+        total=total+num;
         sp=(Spinner)findViewById(R.id.espiner3);
 
         ArrayList<String> elementos=new ArrayList<>();
@@ -230,8 +237,23 @@ public class Fruta extends AppCompatActivity {
         SharedPreferences.Editor myEditor = myPreferences.edit();
         myEditor.putFloat("fru", (int) total);
         myEditor.commit();
+        this.guardarenbaseDAtos();
     }
 
+    public void guardarenbaseDAtos() {
+        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Fruta.this);
+
+        String nombreGur=myPreferences.getString("nombreUser", "");
+        Log.i("tag","valor de carne en guardar"+total);
+
+
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 17);
+        SQLiteDatabase bd = admin.getWritableDatabase();
+
+        String sql = "UPDATE comida SET fruta='"+total+"' where  login='"+nombreGur+"'";
+        bd.execSQL(sql);
+        bd.close();
+    }
 
     public void ayudafru(View view) {
         startActivity(new Intent(Fruta.this, Popupfruta.class));

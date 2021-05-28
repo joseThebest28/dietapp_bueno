@@ -2,30 +2,27 @@ package com.example.Dietapp;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.Dietapp.categorias.Carne;
+import com.example.Dietapp.login.AdminSQLiteOpenHelper;
 import com.example.myapplicationfinal.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class Seguimiento extends AppCompatActivity {
-    private TextView texC,texP,texD,texFru,aPasta,salsa,erdura,lista, bebidas,total ;
+    private TextView texC,texP,texD,texFru,aPasta,salsaT,erdura,lista, bebidasT,total ;
 
 
     private float suma;
-    static float recuperamosCar;
-    static float recuperamosFruta;
-   static  float recuperamosPez;
-    static float recuperamosDepor;
-   static  float recuperamosPasta;
-    static float recuperamosSalsa;
-    static float recuperamosVerdur;
-    static float recuperarLista,recuperarBebida;
+    float carne, fruta,  deporte, pasta, pescado, salsa, verdura ,  receta,  bebidas,sum   ;
     TextView texcv;
     String strDate;
 
@@ -33,99 +30,94 @@ public class Seguimiento extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.seguimiento);
-
+this.guardarCloriasBAsededats();
         Calendar c = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
        strDate = sdf.format(c.getTime());
         texcv=findViewById(R.id.textView20);
 
         texcv.setText(strDate);
-        try {
-            Bundle datos = this.getIntent().getExtras();
-            recuperamosCar = datos.getFloat("calorias carne");
+        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Seguimiento.this);
+
+        sum = myPreferences.getFloat("totalacalendario", 0);
+        suma=suma+sum;
+
             texC = findViewById(R.id.textCarne);
-            texC.setText("calorias carne: " + recuperamosCar);
+             carne = myPreferences.getFloat("carne", 0);
+            this.meterCaloriasCategoria(texC,"Carne",carne);
 
 
-            Bundle datosP = this.getIntent().getExtras();
-            recuperamosPez = datosP.getFloat("calorias pescado");
             texP = findViewById(R.id.textPez);
-            texP.setText("calorias pescado: " + recuperamosPez);
+         pescado = myPreferences.getFloat("pescado", 0);
+        this.meterCaloriasCategoria(texP,"Pescado",pescado);
 
-            Bundle datosD = this.getIntent().getExtras();
-            recuperamosDepor = datosD.getFloat("calorias deporte");
             texD = findViewById(R.id.textdeporte);
-            texD.setText(" deporte: " + recuperamosDepor);
+         deporte = myPreferences.getFloat("depor",0);
+        this.meterCaloriasCategoria(texD,"Deporte",deporte);
 
-            Bundle Frutas = this.getIntent().getExtras();
-            recuperamosFruta = Frutas.getFloat("calorias fruta");
             texFru = findViewById(R.id.textFr);
-            texFru.setText(" fruta: " + recuperamosFruta);
+         fruta = myPreferences.getFloat("fru", 0);
+        this.meterCaloriasCategoria(texFru,"Fruta",fruta);
 
 
-            Bundle Pastas = this.getIntent().getExtras();
-            recuperamosPasta = Pastas.getFloat("pasta");
             aPasta = findViewById(R.id.textoparapastas);
-            aPasta.setText(" pasta: " + recuperamosPasta);
+         pasta = myPreferences.getFloat("pasta", 0);
+        this.meterCaloriasCategoria(aPasta,"Pasta",pasta);
 
 
 
-
-            Bundle Salsas = this.getIntent().getExtras();
-            recuperamosSalsa = Salsas.getFloat("salsa");
-            salsa = findViewById(R.id.recibirSalsa);
-            salsa.setText(" salsa: " + recuperamosSalsa);
+            salsaT = findViewById(R.id.recibirSalsa);
+         salsa = myPreferences.getFloat("salsa", 0);
+        this.meterCaloriasCategoria(salsaT,"Salsa",salsa);
 
 
-            Bundle Erdura = this.getIntent().getExtras();
-            recuperamosVerdur = Erdura.getFloat("erdura");
             erdura = findViewById(R.id.textVerdura);
-            erdura.setText(" verdura: " + recuperamosVerdur);
+         verdura = myPreferences.getFloat("erdura", 0);
+        this.meterCaloriasCategoria(erdura,"Verdura y Legumbres",verdura);
 
-            Bundle Lista = this.getIntent().getExtras();
-            recuperarLista = Lista.getFloat("calorias listaReceta");
             lista = findViewById(R.id.recibirlistaReceta);
-            lista.setText(" recetas: " + recuperarLista);
+         receta = myPreferences.getFloat("receta", 0);
+        this.meterCaloriasCategoria(lista,"Recetas",receta);
 
-            Bundle bebidas = this.getIntent().getExtras();
-            recuperarBebida = bebidas.getFloat("calorias bebidas");
-            lista = findViewById(R.id.recibirlistaBebidaS);
-            lista.setText(" recetas: " + recuperarBebida);
+            bebidasT = findViewById(R.id.recibirlistaBebidaS);
+         bebidas = myPreferences.getFloat("bebida", 0);
+        this.meterCaloriasCategoria(bebidasT,"Bebidas",bebidas);
 
-            //guaradr datos y mostrar el total
-
-
-
-
-
-        }catch(Exception e){e.getMessage();}
 
     }
+
+    private void guardarCloriasBAsededats() {
+
+            SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Seguimiento.this);
+
+            String nombreGur=myPreferences.getString("nombreUser", "");
+           float num=myPreferences.getFloat("depor", 0);
+        float num2=myPreferences.getFloat("receta", 0);
+
+            AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 17);
+            SQLiteDatabase bd = admin.getWritableDatabase();
+
+            String sql = "UPDATE comida SET deporte='"+num+"', recetas='"+num2+"' where  login='"+nombreGur+"'";
+            Log.i("tag","valor gaurdar"+ num);
+            bd.execSQL(sql);
+            bd.close();
+
+    }
+
     public void volverMenu(View view) {
         Intent i2 = new Intent(this,Categorias.class );
         startActivity(i2);
     }
-
+public void meterCaloriasCategoria(TextView texto,String nombre_categoria, float numero)
+{
+    texto.setText("Calorias de "+nombre_categoria + ": " + numero);
+}
 
 
 
     public void recuperar(View view) {
-        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Seguimiento.this);
 
-        float carne = myPreferences.getFloat("carne", 0);
-        float fruta = myPreferences.getFloat("fru", 0);
-        float deporte = myPreferences.getFloat("depor",0);
-        float pasta = myPreferences.getFloat("pasta", 0);
-        float pescado = myPreferences.getFloat("pescado", 0);
-        float salsa = myPreferences.getFloat("salsa", 0);
-        float verdura = myPreferences.getFloat("erdura", 0);
-        float receta = myPreferences.getFloat("receta", 0);
-        float bebidas = myPreferences.getFloat("bebida", 0);
-
-            suma=  carne+fruta+pasta+pescado+salsa+verdura+receta-deporte+bebidas;
-
-
-
+        suma=  carne+fruta+pasta+pescado+salsa+verdura+receta-deporte+bebidas;
         total = findViewById(R.id.totalcaloriasHoy);
 
         String texto1 = "Hoy has obtenido Kcalorias.";
@@ -139,6 +131,8 @@ public class Seguimiento extends AppCompatActivity {
         texcv.setText(strDate);
 
     }
+
+
 
     public void enviarDatosCalendario(View view) {
         Intent i = new Intent(this, Micalendarrrrio.class );

@@ -3,6 +3,7 @@ package com.example.Dietapp;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -49,6 +50,12 @@ public class PaginaInicio extends AppCompatActivity {
 
 
     }
+
+
+
+
+
+
     public void lanzarapp(View view) {
        // Intent i = new Intent(this, Login.class );
         Intent i = new Intent(this, Login.class );
@@ -60,6 +67,8 @@ public class PaginaInicio extends AppCompatActivity {
         startActivity(i2);
 
     }
+
+
 
 
 }

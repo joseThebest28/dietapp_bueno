@@ -28,7 +28,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-//prueba
+
         login = findViewById(R.id.textView125);
         contra = findViewById(R.id.textView15);
         chack=findViewById(R.id.checkBox);
@@ -58,35 +58,41 @@ public class Login extends AppCompatActivity {
         });
     }
 
+
+
     public void lanzarinicio(View view) {
         try {
             loginT = String.valueOf(login.getText());
             contraT = String.valueOf(contra.getText());
+            String compararU = "";
+            String compararC="";
+            boolean dentro=false;
             if (condiciones()) {
                 AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,
-                        "registro_user", null, 12);
+                        "registro_user", null, 17);
                 SQLiteDatabase bd = admin.getWritableDatabase(); //Create and/or open a database that will be used for reading and writing.
 
                 Cursor curso = bd.rawQuery("select *  from usuarios ", null);
 
                 curso.moveToFirst();
                 while (curso.isAfterLast() == false) {
-                    String compararU = curso.getString(0);
+                    compararU = curso.getString(0);
                     String nombraSQ = curso.getString(1);
                     String apeSQ = curso.getString(2);
                     String ape2SQ = curso.getString(3);
-                    String compararC = curso.getString(4);
+                    compararC = curso.getString(4);
                     String emailSQ = curso.getString(5);
                     String retoAgua = curso.getString(6);
                     String imagen = curso.getString(7);
 
 
-                    Log.i("tag", "agua"+retoAgua);
+                    Log.i("tag", "agua" + retoAgua);
 
+                    curso.moveToNext();
 
-                    if (compararU.equals(loginT) && compararC.equals(contraT)) {
+                    if (this.comprobarCampos(compararU, compararC)) {
                         Log.i("tag", "dentro if");
-
+                        this.recuperarDatos(compararU);
 
                         Toast.makeText(this, "Bienvenido " + loginT, Toast.LENGTH_SHORT).show();
                         //guardar datos login
@@ -106,34 +112,61 @@ public class Login extends AppCompatActivity {
 
                         Intent i = new Intent(this, Categorias.class);
                         startActivity(i);
-
-                    } else {
-                        Toast.makeText(this, "Usuario o contraseña incorrecto", Toast.LENGTH_SHORT).show();
+dentro=true;
                     }
-                    curso.moveToNext();
+
                 }
+
                 bd.close();
 
             }
+            if(!dentro){
+
+                    Toast.makeText(getApplicationContext(), "Usuario contraseña incorrectos ", Toast.LENGTH_SHORT).show();
+                }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+public boolean comprobarCampos(String nom, String contraseña)
+{
+    boolean correcto= false;
 
+
+    if (nom.equals(loginT) && contraseña.equals(contraT))
+        {
+            correcto=true;
+        }
+
+
+
+
+
+
+
+
+    return correcto;
+}
         public boolean condiciones () {
-            boolean condicion = false;
-
-
+            boolean inicio = false;
+            boolean c1 = false;
+            boolean c2 = false;
             try {
 
                 if (!loginT.isEmpty()) {
-                    if (!contraT.isEmpty()) {
-                        condicion = true;
-                    } else {
-                        Toast.makeText(getApplicationContext(), "NO SE HA INTRODUCIDO EL APELLIDO ", Toast.LENGTH_SHORT).show();
-                    }
+                    c2=true;
                 } else {
                     Toast.makeText(getApplicationContext(), "NO SE HA INTRODUCIDO EL NOMBRE ", Toast.LENGTH_SHORT).show();
+                }
+                if (!contraT.isEmpty()) {
+                    c1 = true;
+                } else {
+                    Toast.makeText(getApplicationContext(), "NO SE HA INTRODUCIDO LA CONTRASEÑA ", Toast.LENGTH_SHORT).show();
+                }
+                if(c1 &&c2)
+                {
+                    inicio=true;
                 }
 
 
@@ -143,7 +176,7 @@ public class Login extends AppCompatActivity {
             }
 
 
-            return condicion;
+            return inicio;
         }
 
 
@@ -159,6 +192,60 @@ public class Login extends AppCompatActivity {
         startActivity(iD);
     }
 
+    private void recuperarDatos(String nombreUsrio) {
+        float carne=0,  total=0,pescado=0,  bebidas=0, fruta=0,  deporte=0,  pastas=0,  salsas=0, verdura=0;
+            SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Login.this);
 
+            AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,
+                    "registro_user", null, 17);
+            SQLiteDatabase bd = admin.getWritableDatabase(); //Create and/or open a database that will be used for reading and writing.
+
+            Cursor curso = bd.rawQuery("select *  from comida where login='"+nombreUsrio+"' ", null);
+
+            curso.moveToFirst();
+            while (curso.isAfterLast() == false) {
+                carne = curso.getFloat(1);
+                total = curso.getFloat(0);
+                pescado = curso.getFloat(2);
+                bebidas = curso.getFloat(3);
+                fruta = curso.getFloat(4);
+                deporte = curso.getFloat(5);
+                pastas = curso.getFloat(6);
+                salsas = curso.getFloat(7);
+                verdura = curso.getFloat(8);
+
+
+
+
+                Log.i("tag", "agua" + carne);
+                curso.moveToNext();
+
+            }
+
+
+                SharedPreferences.Editor myEditor = myPreferences.edit();
+                myEditor.putFloat("carne", carne);
+        myEditor.putFloat("totalacalendario", total);
+        myEditor.putFloat("pescado", pescado);
+        myEditor.putFloat("depor", deporte);
+        myEditor.putFloat("fru", fruta);
+        myEditor.putFloat("pasta", pastas);
+        myEditor.putFloat("salsa", salsas);
+        myEditor.putFloat("erdura", verdura);
+        myEditor.putFloat("bebida", bebidas);
+
+
+
+                Log.i("tag","valor de carne 2  "+carne);
+
+
+
+                myEditor.commit();
+
+
+
+            bd.close();
+
+    }
 
 }

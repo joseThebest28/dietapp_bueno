@@ -57,29 +57,30 @@
         android:id="@+id/textCarne"
         android:layout_width="154dp"
         android:layout_height="38dp"
-        android:layout_marginStart="36dp"
         android:layout_marginTop="100dp"
+        android:text="@string/textoseguiCarne"
         android:textColor="@color/dietappPrincipal"
         app:layout_constraintEnd_toStartOf="@+id/textPez"
-        app:layout_constraintHorizontal_bias="0.239"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView11"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <TextView
         android:id="@+id/textPez"
-        android:layout_width="151dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="40dp"
+        android:layout_width="173dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/textoseguiPez"
         android:textColor="@color/dietappPrincipal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <TextView
         android:id="@+id/textdeporte"
-        android:layout_width="145dp"
-        android:layout_height="48dp"
+        android:layout_width="301dp"
+        android:layout_height="45dp"
         android:layout_marginTop="40dp"
+        android:text="@string/textoseguiDepor"
         android:textColor="@color/hora"
         app:layout_constraintEnd_toEndOf="@+id/recibirlistaReceta"
         app:layout_constraintHorizontal_bias="0.0"
@@ -88,45 +89,49 @@
 
     <TextView
         android:id="@+id/textFr"
-        android:layout_width="158dp"
-        android:layout_height="57dp"
+        android:layout_width="168dp"
+        android:layout_height="34dp"
         android:layout_marginTop="60dp"
+        android:text="@string/textoseguifruta"
         android:textColor="@color/dietappPrincipal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textoparapastas"
+        app:layout_constraintEnd_toEndOf="@+id/textPez"
+        app:layout_constraintHorizontal_bias="0.711"
+        app:layout_constraintStart_toStartOf="@+id/textPez"
         app:layout_constraintTop_toTopOf="@+id/textPez" />
 
     <TextView
         android:id="@+id/textoparapastas"
-        android:layout_width="145dp"
-        android:layout_height="37dp"
+        android:layout_width="159dp"
+        android:layout_height="31dp"
         android:layout_marginTop="167dp"
         android:layout_marginBottom="14dp"
+        android:text="@string/textoseguiPasta"
         android:textColor="@color/dietappPrincipal"
         app:layout_constraintBottom_toTopOf="@+id/recibirSalsa"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.156"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textCarne"
+        app:layout_constraintHorizontal_bias="0.871"
+        app:layout_constraintStart_toStartOf="@+id/textCarne"
         app:layout_constraintTop_toTopOf="@+id/textView12"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.727" />
 
     <TextView
         android:id="@+id/recibirSalsa"
-        android:layout_width="140dp"
-        android:layout_height="40dp"
-
-        android:layout_marginTop="11dp"
+        android:layout_width="153dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/textoseguiSalsa"
         android:textColor="@color/dietappPrincipal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toEndOf="@+id/textVerdura"
         app:layout_constraintTop_toBottomOf="@+id/textFr" />
 
     <TextView
         android:id="@+id/recibirlistaReceta"
-        android:layout_width="140dp"
-        android:layout_height="40dp"
-
+        android:layout_width="161dp"
+        android:layout_height="31dp"
         android:layout_marginTop="36dp"
+        android:text="@string/textoseguiReceta"
         android:textColor="@color/dietappPrincipal"
         app:layout_constraintEnd_toEndOf="@+id/textVerdura"
         app:layout_constraintHorizontal_bias="0.067"
@@ -135,24 +140,26 @@
 
     <TextView
         android:id="@+id/recibirlistaBebidaS"
-        android:layout_width="140dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="158dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/textoseguiBeber"
         android:textColor="@color/dietappPrincipal"
         app:layout_constraintEnd_toEndOf="@+id/recibirSalsa"
-        app:layout_constraintHorizontal_bias="0.821"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/recibirlistaReceta"
         app:layout_constraintTop_toBottomOf="@+id/recibirSalsa" />
 
     <TextView
         android:id="@+id/textVerdura"
-        android:layout_width="156dp"
-        android:layout_height="38dp"
+        android:layout_width="166dp"
+        android:layout_height="36dp"
         android:layout_marginTop="16dp"
+        android:text="@string/textoseguiVerde"
         android:textColor="@color/dietappPrincipal"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textoparapastas"
         app:layout_constraintHorizontal_bias="0.133"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textoparapastas"
         app:layout_constraintTop_toBottomOf="@+id/textoparapastas" />
 
     <TextView

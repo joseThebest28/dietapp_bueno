@@ -30,7 +30,6 @@ public class Abdominales extends AppCompatActivity {
 
     public void completad(View view) {
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Abdominales.this);
-
         double num = myPreferences.getFloat("depor", 0);
         num=num+32;
 

@@ -55,7 +55,7 @@ public class CrearUsers extends AppCompatActivity {
 
         try {
             if (condiciones()) {
-                AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 12);
+                AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 17);
                 SQLiteDatabase bd = admin.getWritableDatabase();
                 ContentValues registro = new ContentValues();  //es una clase para guardar datos
                 registro.put("login", nombreLoginT);
@@ -66,8 +66,22 @@ public class CrearUsers extends AppCompatActivity {
                 registro.put("email", emailT);
                 registro.put("retoagua", "");
                 registro.put("img", "");
-
                 bd.insert("usuarios", null, registro);
+
+                ContentValues registro2 = new ContentValues();
+                registro2.put("login", nombreLoginT);
+                registro2.put("total", "0.0");
+                registro2.put("carne", "0.0");
+                registro2.put("pescado", "0.0");
+                registro2.put("bebidas", "0.0");
+                registro2.put("fruta", "0.0");
+                registro2.put("deporte", "0.0");
+                registro2.put("pastas", "0.0");
+                registro2.put("salsas", "0.0");
+                registro2.put("verdura", "0.0");
+                registro2.put("recetas", "0.0");
+
+                bd.insert("comida", null, registro2);
                 bd.close();
                 nombre.setText("");
                 apellido1.setText("");
@@ -192,7 +206,7 @@ public class CrearUsers extends AppCompatActivity {
 
 
 
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 12);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 17);
         SQLiteDatabase bd = admin.getWritableDatabase(); //Create and/or open a database that will be used for reading and writing.
 
         Cursor curso = bd.rawQuery("select *  from usuarios ", null);
@@ -234,7 +248,7 @@ if(!nombre.isEmpty())
 
 
 
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 12);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 17);
         SQLiteDatabase bd = admin.getWritableDatabase(); //Create and/or open a database that will be used for reading and writing.
 
         Cursor curso = bd.rawQuery("select *  from usuarios ", null);

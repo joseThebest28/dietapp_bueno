@@ -630,5 +630,14 @@ ______________________________________________________
     <string name="seleccion">indica tu nivel de satisfaccion con la aplicación</string>
     <string name="enviar">Enviar</string>
     <string name="hintEjemplo">Ej: me ha gustado mucho</string>
+    <string name="textoseguiCarne">Total calorias Carne: 0.0</string>
+    <string name="textoseguiPez">Total calorias Pescado: 0.0</string>
+    <string name="textoseguiDepor">Total calorias quemadas en deporte: 0.0</string>
+    <string name="textoseguifruta">Total calorias Fruta: 0.0</string>
+    <string name="textoseguiPasta">Total calorias Pasta: 0.0</string>
+    <string name="textoseguiVerde">Total calorias Verdura: 0.0</string>
+    <string name="textoseguiSalsa">Total calorias Salsa: 0.0</string>
+    <string name="textoseguiReceta">Total calorias Receta: 0.0</string>
+    <string name="textoseguiBeber">Total calorias Bebida: 0.0</string>
 
 </resources>

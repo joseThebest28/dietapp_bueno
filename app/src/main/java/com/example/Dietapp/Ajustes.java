@@ -1,5 +1,6 @@
  package com.example.Dietapp;
 
+import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -31,6 +32,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.Dietapp.categorias.Carne;
 import com.example.Dietapp.extras.ContadroVasosAgua;
 import com.example.Dietapp.extras.Pagina_reto;
 import com.example.Dietapp.login.AdminSQLiteOpenHelper;
@@ -56,13 +58,14 @@ public class Ajustes extends AppCompatActivity {
     ScrollView xml;
     int colorDefecto;
 
+
     private final String CARPETA_RAIZ="misImagenesPrueba/";
     private final String RUTA_IMAGEN=CARPETA_RAIZ+"misFotos";
 
     final int COD_SELECCIONA=10;
     final int COD_FOTO=20;
     String path;
-
+    String nombreUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,7 +96,7 @@ public class Ajustes extends AppCompatActivity {
 
 
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Ajustes.this);
-        String nombreUser = myPreferences.getString("nombreUser", "");
+         nombreUser = myPreferences.getString("nombreUser", "");
         String nombre = myPreferences.getString("nombre", "");
         String apellido = myPreferences.getString("apellido", "");
         String apellido2 = myPreferences.getString("apellido2", "");
@@ -150,8 +153,10 @@ public class Ajustes extends AppCompatActivity {
         Intent ifds = new Intent(this, Pagina_reto.class);
         startActivity(ifds);
     }
+    AdminSQLiteOpenHelper admin;
 
     public void cerrarSesio(View view) {
+         admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 17);
         final Intent ifds = new Intent(this, Login.class);
         AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
         builder1.setMessage("¿Estas seguro de cerrar sesión?");
@@ -162,8 +167,6 @@ public class Ajustes extends AppCompatActivity {
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Ajustes.this);
-
-
                         SharedPreferences.Editor myEditor = myPreferences.edit();
                         myEditor.putString("nombreUser", "");
                         myEditor.putString("nombre", "");
@@ -176,12 +179,29 @@ public class Ajustes extends AppCompatActivity {
                         myEditor.putFloat("recetas", 0);
                         myEditor.putFloat("bebida", 0);
                         myEditor.putString("magen", "");
+                        myEditor.putFloat("carne", 0);
+                        myEditor.putFloat("pescado", 0);
+                        myEditor.putFloat("depor", 0);
+                        myEditor.putFloat("fru", 0);
+                        myEditor.putFloat("pasta", 0);
+                        myEditor.putFloat("salsa", 0);
+                        myEditor.putFloat("erdura", 0);
+                        myEditor.putFloat("receta", 0);
+                        myEditor.putFloat("bebida", 0);
+
                         myEditor.apply();
                         myEditor.commit();
 
 
+
+
+
                         startActivity(ifds);
                     }
+
+
+
+
                 });
 
         builder1.setNegativeButton(
@@ -198,9 +218,11 @@ public class Ajustes extends AppCompatActivity {
 
     }
 
+
     public void iraContadorAgua(View view) {
         Intent ifds = new Intent(this, ContadroVasosAgua.class);
         startActivity(ifds);
+
     }
 
     public void borrarDAtosDiario() {
@@ -220,26 +242,30 @@ public class Ajustes extends AppCompatActivity {
 
             SharedPreferences myPreferencesPA = PreferenceManager.getDefaultSharedPreferences(Ajustes.this);
             SharedPreferences.Editor myEditorPA = myPreferencesPA.edit();
-            myEditorPA.putInt("pasta", 0);
-            myEditorPA.putInt("carne", 0);
-            myEditorPA.putInt("fru", 0);
-            myEditorPA.putInt("depor", 0);
-            myEditorPA.putInt("pescado", 0);
-            myEditorPA.putInt("salsa", 0);
-            myEditorPA.putInt("erdura", 0);
-            myEditorPA.putInt("valoragua", 0);
+            myEditorPA.putFloat("pasta", 0);
+            myEditorPA.putFloat("carne", 0);
+            myEditorPA.putFloat("fru", 0);
+            myEditorPA.putFloat("depor", 0);
+            myEditorPA.putFloat("pescado", 0);
+            myEditorPA.putFloat("salsa", 0);
+            myEditorPA.putFloat("salsa", 0);
+            myEditorPA.putFloat("erdura", 0);
+            myEditorPA.putFloat("valoragua", 0);
             myEditorPA.putFloat("valoragua2", 0);
             myEditorPA.putFloat("recetas", 0);
             myEditorPA.putString("magen", "");
             myEditorPA.apply();
             myEditorPA.commit();
 //cambio el valor actual del reto, y lo pongo vacio, ya que el reto se debe cumplir una vez ald ia, por lo que a las once se pone vacio
-            AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 12);
+            AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 17);
             SQLiteDatabase bd = admin.getWritableDatabase();
             String sql = "UPDATE usuarios SET retoagua=''";
             bd.execSQL(sql);
             String sql2 = "UPDATE usuarios SET img=''";
             bd.execSQL(sql2);
+
+            String sql3= "UPDATE comida SET total='0.0', carne ='0.0', pescado ='0.0', bebidas ='0.0', fruta ='0.0', deporte ='0.0', pastas ='0.0', salsas ='0.0',verdura ='0.0',recetas='0.0' where login='"+nombreUser+"' ";
+            bd.execSQL(sql3);
             bd.close();
         }
 
@@ -411,7 +437,7 @@ public class Ajustes extends AppCompatActivity {
         editor.commit();
 
         String nombreUser = myPreferences.getString("nombreUser", "");
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 12);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 17);
         SQLiteDatabase bd = admin.getWritableDatabase();
 
         String sql = "UPDATE usuarios SET img='"+ String.valueOf(ur)+"'  where login='"+nombreUser+"'";

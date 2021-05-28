@@ -66,7 +66,7 @@ float numeroRatinIntroducido;
 
 
 
-    private void enviarCorre(final float numeroRating, String textoEnviar, String nombreUser) {
+    private void enviarCorre(final float numeroRating, String textoEnviar, String nombreUsr) {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
@@ -86,9 +86,9 @@ float numeroRatinIntroducido;
             });
             Message message = new MimeMessage(sesion);
             message.setFrom(new InternetAddress("dietappapp@gmail.com"));
-            message.setSubject("contraseña dietapp");
+            message.setSubject("comentario usaurio dietapp");
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("dietappapp@gmail.com"));
-            message.setContent("hola", "text/html; charset=utf-8");
+            message.setContent("El usuario:  "+nombreUsr+ " ha dado una calificación de: "+ numeroRating + " y ha dejado el siguiente comentario: " + textoEnviar, "text/html; charset=utf-8");
             Transport.send(message);
 
 

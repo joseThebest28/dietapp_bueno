@@ -2,6 +2,7 @@ package com.example.Dietapp.categorias;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -15,9 +16,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.Dietapp.Categorias;
+import com.example.Dietapp.DeporteEjercicios.AbdominalesEj.Abdominales;
 import com.example.Dietapp.categorias.popup.PopupCarne;
 import com.example.Dietapp.Seguimiento;
 import com.example.Dietapp.categorias.popup.PopupCarne2;
+import com.example.Dietapp.login.AdminSQLiteOpenHelper;
 import com.example.myapplicationfinal.R;
 
 import java.util.ArrayList;
@@ -38,6 +41,12 @@ public class Carne extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.carne);
+
+        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Carne.this);
+        float num = myPreferences.getFloat("carne", 0);
+        Log.i("tag","valor de carne en carne "+num);
+
+        total=total+num;
 
         sp=(Spinner)findViewById(R.id.espi);
 
@@ -301,17 +310,21 @@ public class Carne extends AppCompatActivity {
 private float total;
 
     public void enviar(View view) {
+
         Intent intent = new Intent(this, Seguimiento.class);
-        intent.putExtra("calorias carne", total);
+        //intent.putExtra("calorias carne", total);
 
         startActivity(intent);
         Toast toastNada3 = Toast.makeText(getApplicationContext(), "Se han guardado los datos de carne correctamente", Toast.LENGTH_SHORT);
 
         toastNada3.show();
+
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Carne.this);
         SharedPreferences.Editor myEditor = myPreferences.edit();
         myEditor.putFloat("carne",total);
+        this.guardarenbaseDAtos(total);
         myEditor.commit();
+
     }
 
     public void ver(View view) {
@@ -324,6 +337,21 @@ private float total;
 
             toastNada3.show();
         }
+    }
+    public void guardarenbaseDAtos(float numerooo) {
+        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Carne.this);
+
+        String nombreGur=myPreferences.getString("nombreUser", "");
+        float num = myPreferences.getFloat("carne", 0);
+
+
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 17);
+        SQLiteDatabase bd = admin.getWritableDatabase();
+
+        String sql = "UPDATE comida SET carne='"+numerooo+"' where  login='"+nombreGur+"'";
+        Log.i("tag","valor gaurdar"+ numerooo);
+        bd.execSQL(sql);
+        bd.close();
     }
 
     public void ayuda(View view) {

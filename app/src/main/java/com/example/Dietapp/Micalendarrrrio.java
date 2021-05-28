@@ -2,6 +2,7 @@ package com.example.Dietapp;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.provider.CalendarContract;
@@ -11,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.Dietapp.login.AdminSQLiteOpenHelper;
 import com.example.myapplicationfinal.R;
 
 import java.text.SimpleDateFormat;
@@ -21,7 +23,7 @@ public class Micalendarrrrio extends AppCompatActivity {
     TextView textDAtosTotal;
     TextView texHora;
     EditText textComentario;
-    String eventoCalendario, textoObjetivo;
+    String eventoCalendario, textoObjetivo, nombreUser;
 
 
     @Override
@@ -33,6 +35,7 @@ public class Micalendarrrrio extends AppCompatActivity {
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Micalendarrrrio.this);
         totalacalendario = myPreferences.getFloat("totalacalendario", 0);
         textoObjetivo = myPreferences.getString("agua", "");
+        nombreUser = myPreferences.getString("nombreUser", "");
         textDAtosTotal = findViewById(R.id.textDAtosTotal);
         textDAtosTotal.setText("total de Kcalorias consumidas hoy: " + totalacalendario + "");
 
@@ -85,8 +88,17 @@ public class Micalendarrrrio extends AppCompatActivity {
             myEditorPA.putFloat("valoragua",0);
             myEditorPA.putFloat("valoragua2",0);
             myEditorPA.putFloat("receta",0);
+            myEditorPA.putFloat("totalacalendario",0);
+
+
 
             myEditorPA.commit();
+
+            //borrar datos de base de datos al guardarlos
+            AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 15);
+            SQLiteDatabase bd = admin.getWritableDatabase();
+            String sql= "UPDATE comida SET total='0.0', carne ='0.0', pescado ='0.0', bebidas ='0.0', fruta ='0.0', deporte ='0.0', pastas ='0.0', salsas ='0.0',verdura ='0.0' where login='"+nombreUser+"' ";
+            bd.execSQL(sql);
 
         } else {
             Toast.makeText(Micalendarrrrio.this, "no hay datos disponibles para guardar", Toast.LENGTH_SHORT).show();
