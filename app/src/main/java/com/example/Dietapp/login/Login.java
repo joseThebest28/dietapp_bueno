@@ -193,7 +193,7 @@ public boolean comprobarCampos(String nom, String contraseña)
     }
 
     private void recuperarDatos(String nombreUsrio) {
-        float carne=0,  total=0,pescado=0,  bebidas=0, fruta=0,  deporte=0,  pastas=0,  salsas=0, verdura=0;
+        float carne=0,  total=0,pescado=0,  bebidas=0, fruta=0,  deporte=0,  pastas=0,  salsas=0, verdura=0, recetas=0;
             SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Login.this);
 
             AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,
@@ -213,6 +213,7 @@ public boolean comprobarCampos(String nom, String contraseña)
                 pastas = curso.getFloat(6);
                 salsas = curso.getFloat(7);
                 verdura = curso.getFloat(8);
+                recetas = curso.getFloat(10);
 
 
 
@@ -233,6 +234,7 @@ public boolean comprobarCampos(String nom, String contraseña)
         myEditor.putFloat("salsa", salsas);
         myEditor.putFloat("erdura", verdura);
         myEditor.putFloat("bebida", bebidas);
+        myEditor.putFloat("receta", recetas);
 
 
 

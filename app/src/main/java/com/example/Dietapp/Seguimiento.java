@@ -92,13 +92,13 @@ this.guardarCloriasBAsededats();
 
             String nombreGur=myPreferences.getString("nombreUser", "");
            float num=myPreferences.getFloat("depor", 0);
-        float num2=myPreferences.getFloat("receta", 0);
+
 
             AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 17);
             SQLiteDatabase bd = admin.getWritableDatabase();
 
-            String sql = "UPDATE comida SET deporte='"+num+"', recetas='"+num2+"' where  login='"+nombreGur+"'";
-            Log.i("tag","valor gaurdar"+ num);
+            String sql = "UPDATE comida SET deporte='"+num+"' where  login='"+nombreGur+"'";
+
             bd.execSQL(sql);
             bd.close();
 

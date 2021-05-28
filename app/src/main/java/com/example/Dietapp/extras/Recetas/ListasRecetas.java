@@ -85,6 +85,18 @@ public class ListasRecetas extends AppCompatActivity {
                 myEditor.commit();
 
 
+                String nombreGur=myPreferences.getString("nombreUser", "");
+
+                float num2=myPreferences.getFloat("receta", 0);
+
+
+                SQLiteDatabase bd = admin.getWritableDatabase();
+
+                String sql = "UPDATE comida SET recetas='"+num2+"' where  login='"+nombreGur+"'";
+                Log.i("tag","valor gaurdar"+ num2);
+                bd.execSQL(sql);
+                bd.close();
+
 
 
 
