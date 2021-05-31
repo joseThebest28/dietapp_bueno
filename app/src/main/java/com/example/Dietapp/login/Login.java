@@ -1,11 +1,19 @@
 package com.example.Dietapp.login;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.BitmapDrawable;
+import android.media.AudioFormat;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.preference.PreferenceManager;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -17,7 +25,12 @@ import android.widget.Toast;
 import com.example.Dietapp.Categorias;
 import com.example.myapplicationfinal.R;
 
+import java.nio.channels.Channel;
+
+import static android.media.AudioFormat.*;
+
 public class Login extends AppCompatActivity {
+
     private Toast toast1;
     private EditText login, contra;
     private String loginT, contraT;
@@ -129,7 +142,13 @@ dentro=true;
             e.printStackTrace();
         }
     }
-public boolean comprobarCampos(String nom, String contraseña)
+
+
+
+
+
+
+    public boolean comprobarCampos(String nom, String contraseña)
 {
     boolean correcto= false;
 

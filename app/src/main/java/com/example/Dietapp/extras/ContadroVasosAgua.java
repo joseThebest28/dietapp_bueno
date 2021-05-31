@@ -23,7 +23,8 @@ public class ContadroVasosAgua extends AppCompatActivity {
     TextView textoMostrar, textoMostrarvasos;
     ImageView imagenmas, imagenMwnos,imagenLLegada;
     float recuento =0.0f;
-    int vasos;
+    int vasos=0;
+
 
     String nombreUser;
     @Override
@@ -31,7 +32,7 @@ public class ContadroVasosAgua extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contadro_vasos_agua);
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(ContadroVasosAgua.this);
-        String agua = myPreferences.getString("agua", "");
+
 
         imagenLLegada = findViewById(R.id.imageView32);
         imagenLLegada.setVisibility(View.INVISIBLE);
@@ -43,16 +44,17 @@ public class ContadroVasosAgua extends AppCompatActivity {
 
         textoMostrarvasos = findViewById(R.id.textView50);
 
-        SharedPreferences myPreferencesV = PreferenceManager.getDefaultSharedPreferences(ContadroVasosAgua.this);
-        int vasosGuardados=myPreferencesV.getInt("valoragua",0);
-        float recuentoM=myPreferencesV.getFloat("valoragua2",0);
+
+        int vasosGuardados=myPreferences.getInt("valoragua",0);
+        float recuentoM=myPreferences.getFloat("valoragua2",0);
 
         if(vasosGuardados!=0){
             vasos=vasosGuardados;
             recuento=recuentoM;}
-        else {
-            vasos=0;
+        else{
+
         }
+
 
 
         Log.i("valor", String.valueOf(recuento));
@@ -72,6 +74,14 @@ public class ContadroVasosAgua extends AppCompatActivity {
 
                     recuento = (float) (recuento + 0.25);
                     vasos = vasos + 1;
+                SharedPreferences myPreferen = PreferenceManager.getDefaultSharedPreferences(ContadroVasosAgua.this);
+                SharedPreferences.Editor myEdit = myPreferen.edit();
+                myEdit.putInt("valoragua",vasos);
+                myEdit.putFloat("valoragua2",recuento);
+                myEdit.apply();
+                Log.i("tag","valor agua guardar "+vasos);
+                Log.i("tag","valor agua guardar "+recuento);
+
                     textoMostrar.setText("Total de agua= " + recuento + "" + "litros");
                     textoMostrarvasos.setText("Total de vasos= " + vasos);
 
@@ -121,13 +131,14 @@ public class ContadroVasosAgua extends AppCompatActivity {
 
 
         });
+        Log.i("tag","valor agua guardar error"+vasos);
     }
 
     private void retocompletado() {
         SharedPreferences myPreferencesPA = PreferenceManager.getDefaultSharedPreferences(ContadroVasosAgua.this);
         String nombreUser = myPreferencesPA.getString("nombreUser", "");
 
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 16);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 17);
         SQLiteDatabase bd = admin.getWritableDatabase();
 
         String sql = "UPDATE usuarios SET retoagua='Se ha completado el objetivo de hoy de  agua' where login='"+nombreUser+"'";
@@ -141,25 +152,13 @@ bd.close();
 
         Intent ifds = new Intent(this, Ajustes.class);
         startActivity(ifds);
-        SharedPreferences myPreferencesVG = PreferenceManager.getDefaultSharedPreferences(ContadroVasosAgua.this);
-        SharedPreferences.Editor myEditorVG = myPreferencesVG.edit();
-        myEditorVG.putInt("valoragua",vasos);
-        myEditorVG.putFloat("valoragua2", recuento); SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(ContadroVasosAgua.this);
 
-
-
-
-        myEditorVG.apply();
     }
 
     public void volverMenu(View view) {
         Intent ifds = new Intent(this, Categorias.class);
         startActivity(ifds);
-        SharedPreferences myPreferencesVG = PreferenceManager.getDefaultSharedPreferences(ContadroVasosAgua.this);
-        SharedPreferences.Editor myEditorVG = myPreferencesVG.edit();
-        myEditorVG.putInt("valoragua",vasos);
-        myEditorVG.putFloat("valoragua2",recuento);
-        myEditorVG.apply();
+
     }
 
 

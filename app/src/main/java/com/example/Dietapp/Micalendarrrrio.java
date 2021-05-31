@@ -41,13 +41,13 @@ public class Micalendarrrrio extends AppCompatActivity {
 
 
         textComentario = findViewById(R.id.textComentario);
-        textComentario.setText(textoObjetivo);
+       // textComentario.setText(textoObjetivo);
         SharedPreferences myPreferencesPA = PreferenceManager.getDefaultSharedPreferences(Micalendarrrrio.this);
 
-        int vasosGuardados=myPreferencesPA.getInt("valoragua",0);
+
         float recuentomilitros=myPreferencesPA.getFloat("valoragua2",0);
 
-        textComentario.setText("NOTA1: has conseguido  "+vasosGuardados+"vasos de agua"+recuentomilitros+"litros de agua"+".  NOTA 2: ");
+        textComentario.setText("NOTA1: "+ textoObjetivo + " con "+ recuentomilitros+ " litros de agua" + ".  NOTA 2: ");
 
 
         Calendar c = Calendar.getInstance();
@@ -88,6 +88,7 @@ public class Micalendarrrrio extends AppCompatActivity {
             myEditorPA.putFloat("valoragua",0);
             myEditorPA.putFloat("valoragua2",0);
             myEditorPA.putFloat("receta",0);
+            myEditorPA.putFloat("bebidas",0);
             myEditorPA.putFloat("totalacalendario",0);
 
 
@@ -95,11 +96,12 @@ public class Micalendarrrrio extends AppCompatActivity {
             myEditorPA.commit();
 
             //borrar datos de base de datos al guardarlos
-            AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 15);
+            AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 17);
             SQLiteDatabase bd = admin.getWritableDatabase();
-            String sql= "UPDATE comida SET total='0.0', carne ='0.0', pescado ='0.0', bebidas ='0.0', fruta ='0.0', deporte ='0.0', pastas ='0.0', salsas ='0.0',verdura ='0.0' where login='"+nombreUser+"' ";
+            String sql= "UPDATE comida SET total='0.0', carne ='0.0', pescado ='0.0',recetas='0.0', bebidas ='0.0', fruta ='0.0', deporte ='0.0', pastas ='0.0', salsas ='0.0',verdura ='0.0' where login='"+nombreUser+"' ";
             bd.execSQL(sql);
-
+            String sql2 = "UPDATE usuarios SET retoagua='' where login='"+nombreUser+"'";
+            bd.execSQL(sql2);
         } else {
             Toast.makeText(Micalendarrrrio.this, "no hay datos disponibles para guardar", Toast.LENGTH_SHORT).show();
         }
