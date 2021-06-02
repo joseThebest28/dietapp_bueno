@@ -5,10 +5,11 @@ public class Ficha {
     private String nombre;
     private String descripcion;
 
-    public Ficha(){
+    public Ficha() {
 
     }
-    public Ficha(int imagen, String nombre, String descripcionReto){
+
+    public Ficha(int imagen, String nombre, String descripcionReto) {
         this.imagen = imagen;
         this.nombre = nombre;
         this.descripcion = descripcionReto;
@@ -26,10 +27,16 @@ public class Ficha {
         return descripcion;
     }
 
-    public void setImagen(int imagen) { this.imagen = imagen; }
+    public void setImagen(int imagen) {
+        this.imagen = imagen;
+    }
 
-    public void setNombre(String nombre) { this.nombre = nombre; }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-    public void setReto(String descripcionReto) { this.descripcion = descripcionReto; }
+    public void setReto(String descripcionReto) {
+        this.descripcion = descripcionReto;
+    }
 }
 

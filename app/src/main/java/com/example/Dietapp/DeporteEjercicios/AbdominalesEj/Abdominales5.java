@@ -13,7 +13,7 @@ import com.example.Dietapp.categorias.CategoDeporte;
 import com.example.myapplicationfinal.R;
 
 public class Abdominales5 extends AppCompatActivity {
-private Toast toast1;
+    private Toast toast1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +21,7 @@ private Toast toast1;
         setContentView(R.layout.abdominales5);
 
 
-
-       toast1 =
+        toast1 =
                 Toast.makeText(getApplicationContext(),
                         "Eleccion guardada con exito", Toast.LENGTH_SHORT);
 
@@ -33,13 +32,15 @@ private Toast toast1;
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Abdominales5.this);
 
         double num = myPreferences.getFloat("depor", 0);
-       num=num+32;
+        num = num + 32;
 
         SharedPreferences.Editor myEditor = myPreferences.edit();
         myEditor.putFloat("depor", (int) num);
-        myEditor.commit(); toast1.show();
-        Intent i = new Intent(this, CategoDeporte.class );
-        startActivity(i);overridePendingTransition(R.anim.animacion_aumentar,R.anim.animacion_disminuir);
+        myEditor.commit();
+        toast1.show();
+        Intent i = new Intent(this, CategoDeporte.class);
+        startActivity(i);
+        overridePendingTransition(R.anim.animacion_aumentar, R.anim.animacion_disminuir);
 
     }
 
@@ -47,16 +48,16 @@ private Toast toast1;
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Abdominales5.this);
 
         double num = myPreferences.getFloat("depor", 0);
-        num=num+16;
+        num = num + 16;
 
         SharedPreferences.Editor myEditor = myPreferences.edit();
         myEditor.putFloat("depor", (int) num);
-        myEditor.commit(); toast1.show();
-        Intent i = new Intent(this, CategoDeporte.class );
+        myEditor.commit();
+        toast1.show();
+        Intent i = new Intent(this, CategoDeporte.class);
         startActivity(i);
 
     }
-
 
 
 }

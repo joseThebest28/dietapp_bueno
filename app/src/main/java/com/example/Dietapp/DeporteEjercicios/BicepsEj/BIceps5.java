@@ -15,11 +15,12 @@ import com.example.myapplicationfinal.R;
 public class BIceps5 extends AppCompatActivity {
     private Toast toast1;
     ImageView imagen;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.abdominales5);
-        imagen=findViewById(R.id.imageView27);
+        imagen = findViewById(R.id.imageView27);
         toast1 = Toast.makeText(getApplicationContext(), "Eleccion  de medio ejercicio guardada con exito", Toast.LENGTH_SHORT);
 
         imagen.setImageDrawable(getResources().getDrawable(R.drawable.biceps5));
@@ -30,11 +31,13 @@ public class BIceps5 extends AppCompatActivity {
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(BIceps5.this);
 
         double num = myPreferences.getFloat("depor", 0);
-       num=num+24;
+        num = num + 24;
 
         SharedPreferences.Editor myEditor = myPreferences.edit();
         myEditor.putFloat("depor", (int) num);
-        myEditor.commit();toast1.show();Intent i = new Intent(this, CategoDeporte.class );
+        myEditor.commit();
+        toast1.show();
+        Intent i = new Intent(this, CategoDeporte.class);
         startActivity(i);
 
     }
@@ -43,15 +46,16 @@ public class BIceps5 extends AppCompatActivity {
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(BIceps5.this);
 
         double num = myPreferences.getFloat("depor", 0);
-        num=num+12;
+        num = num + 12;
 
         SharedPreferences.Editor myEditor = myPreferences.edit();
         myEditor.putFloat("depor", (int) num);
-        myEditor.commit();toast1.show();Intent i = new Intent(this, CategoDeporte.class );
+        myEditor.commit();
+        toast1.show();
+        Intent i = new Intent(this, CategoDeporte.class);
         startActivity(i);
 
     }
-
 
 
 }

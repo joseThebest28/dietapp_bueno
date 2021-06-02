@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -12,14 +13,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.Dietapp.Categorias;
 import com.example.Dietapp.Seguimiento;
-import com.example.Dietapp.categorias.Carne;
-import com.example.Dietapp.categorias.Salsas;
+
 import com.example.Dietapp.login.AdminSQLiteOpenHelper;
 import com.example.myapplicationfinal.R;
 
@@ -28,12 +29,13 @@ import java.util.ArrayList;
 public class ListasRecetas extends AppCompatActivity {
     ListView lista;
     EditText hint;
-  float amount=0;
-  float numeroGuardar=0;
-    ArrayList<String> valoresRecetas = new ArrayList<>();
-    ArrayList<String> valoresRecetas2 = new ArrayList<>();
+    float amount = 0;
+    float numeroGuardar = 0;
+    ArrayList<String> arrayvaloresRecetas = new ArrayList<>();
+
     String calorias;
     String nombre;
+    Button boton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,18 +43,17 @@ public class ListasRecetas extends AppCompatActivity {
         setContentView(R.layout.activity_listas_recetas);
         lista = findViewById(R.id.lista);
         hint = findViewById(R.id.editListas);
-        hint.setHint("Ej:Receta1");
-
+        hint.setVisibility(View.INVISIBLE);
+        boton = findViewById(R.id.button45);
+        boton.setVisibility(View.INVISIBLE);
         final AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 17);
         final Intent i = new Intent(this, Categorias.class);
 
-        ArrayAdapter<String> adaptador = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item,valoresRecetas);
+        ArrayAdapter<String> adaptador = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, arrayvaloresRecetas);
         lista.setAdapter(adaptador);
 
 
-
-
-       final Intent intent = new Intent(this, Seguimiento.class);
+        final Intent intent = new Intent(this, Seguimiento.class);
 
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -62,13 +63,13 @@ public class ListasRecetas extends AppCompatActivity {
 
                 String[] parts = nombreV.split(":");
                 String part2 = parts[1]; // me quedo con el numeor apra guardarlo y sumarlo al total
-                String numero=String.valueOf(part2);
+                String numero = String.valueOf(part2);
 
 
-                amount=Float.parseFloat(numero);
-                Log.i("tag","numeroBien"+amount);
+                amount = Float.parseFloat(numero);
+                Log.i("tag", "numeroBien" + amount);
 
-                numeroGuardar=numeroGuardar+amount;
+                numeroGuardar = numeroGuardar + amount;
 
                 intent.putExtra("calorias listaReceta", numeroGuardar);
 
@@ -79,30 +80,26 @@ public class ListasRecetas extends AppCompatActivity {
                 SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(ListasRecetas.this);
 
 
-
                 SharedPreferences.Editor myEditor = myPreferences.edit();
                 myEditor.putFloat("receta", numeroGuardar);
                 myEditor.commit();
 
 
-                String nombreGur=myPreferences.getString("nombreUser", "");
+                String nombreGur = myPreferences.getString("nombreUser", "");
 
-                float num2=myPreferences.getFloat("receta", 0);
+                float num2 = myPreferences.getFloat("receta", 0);
 
 
                 SQLiteDatabase bd = admin.getWritableDatabase();
 
-                String sql = "UPDATE comida SET recetas='"+num2+"' where  login='"+nombreGur+"'";
-                Log.i("tag","valor gaurdar"+ num2);
+                String sql = "UPDATE comida SET recetas='" + num2 + "' where  login='" + nombreGur + "'";
+                Log.i("tag", "valor gaurdar" + num2);
                 bd.execSQL(sql);
                 bd.close();
 
 
-
-
-
-
-        }});
+            }
+        });
 
 
     }
@@ -120,11 +117,11 @@ public class ListasRecetas extends AppCompatActivity {
 
         while (curso.isAfterLast() == false) {
 
-             nombre = curso.getString(0);
-             calorias = curso.getString(1);
+            nombre = curso.getString(0);
+            calorias = curso.getString(1);
 
             curso.moveToNext();
-            valoresRecetas.add(nombre + ": " + calorias);
+            arrayvaloresRecetas.add(nombre + ": " + calorias);
         }
 
 

@@ -51,14 +51,14 @@
         android:id="@+id/button22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="152dp"
         android:background="@drawable/boton_guardar"
         android:onClick="guadarDatosPasta"
         android:text="@string/guardar"
         android:textColor="@color/guuardar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.096"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintStart_toStartOf="@+id/ttoatalPasta"
         app:layout_constraintTop_toTopOf="@+id/ttoatalPasta" />
 
     <EditText
@@ -86,9 +86,10 @@
         android:text="@string/volverMenu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/ayuda3"
-        app:layout_constraintHorizontal_bias="0.784"
+        app:layout_constraintHorizontal_bias="0.827"
         app:layout_constraintStart_toEndOf="@+id/button22"
-        app:layout_constraintTop_toBottomOf="@+id/ayuda3" />
+        app:layout_constraintTop_toBottomOf="@+id/ayuda3"
+        app:layout_constraintVertical_bias="0.238" />
 
     <TextView
         android:id="@+id/textView13"
@@ -113,19 +114,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/pasta2"
         android:contentDescription="@string/imagenpasta2"/>
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="140dp"
-        android:layout_height="101dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button16"
-        app:layout_constraintHorizontal_bias="0.222"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button22"
-        app:layout_constraintVertical_bias="0.475"
-        app:srcCompat="@drawable/pasta2"
-        android:contentDescription="@string/imagenpasta"/>
 
     <Spinner
         android:id="@+id/spiPasta"

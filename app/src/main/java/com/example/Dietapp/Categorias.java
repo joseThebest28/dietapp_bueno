@@ -43,18 +43,13 @@ import static android.app.PendingIntent.*;
 public class Categorias extends AppCompatActivity {
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.categorias);
 
 
-
     }
-
-
-
 
 
     public void irACarne(View view) {
@@ -152,8 +147,6 @@ public class Categorias extends AppCompatActivity {
         startActivity(iS);
         overridePendingTransition(R.anim.anim_categorias2, R.anim.anim_categorias);
     }
-
-
 
 
 }

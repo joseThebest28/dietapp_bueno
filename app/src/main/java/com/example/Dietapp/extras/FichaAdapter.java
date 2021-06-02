@@ -18,8 +18,7 @@ public class FichaAdapter extends RecyclerView.Adapter<FichaAdapter.FichaViewHol
     private ArrayList<Ficha> listaFichas;
 
 
-
-    public class FichaViewHolder extends RecyclerView.ViewHolder{
+    public class FichaViewHolder extends RecyclerView.ViewHolder {
 
         public ImageView imagen;
         public TextView nombre, reto;
@@ -48,7 +47,7 @@ public class FichaAdapter extends RecyclerView.Adapter<FichaAdapter.FichaViewHol
     public void onBindViewHolder(@NonNull FichaViewHolder holder, int position) {
         holder.imagen.setImageResource(listaFichas.get(position).getImagen());
         holder.nombre.setText(listaFichas.get(position).getNombre());
-        holder.reto.setText(""+String.valueOf(listaFichas.get(position).getReto()));
+        holder.reto.setText("" + String.valueOf(listaFichas.get(position).getReto()));
     }
 
     @Override
@@ -56,7 +55,7 @@ public class FichaAdapter extends RecyclerView.Adapter<FichaAdapter.FichaViewHol
         return listaFichas.size();
     }
 
-    public interface  RecyclerViewOnItemClickListener {
+    public interface RecyclerViewOnItemClickListener {
 
         void onClick(View v, int position);
     }

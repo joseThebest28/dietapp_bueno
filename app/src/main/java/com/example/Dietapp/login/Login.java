@@ -44,13 +44,12 @@ public class Login extends AppCompatActivity {
 
         login = findViewById(R.id.textView125);
         contra = findViewById(R.id.textView15);
-        chack=findViewById(R.id.checkBox);
+        chack = findViewById(R.id.checkBox);
         chack.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked)
-                {
+                if (isChecked) {
                     chack.setTextColor(0xff00ff00);
                     chack.append(" Seleccionado");
                     SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Login.this);
@@ -59,9 +58,7 @@ public class Login extends AppCompatActivity {
                     String contr = myPreferences.getString("contra", "");
                     login.setText(nombreLo);
                     contra.setText(contr);
-                }
-                else
-                {
+                } else {
                     chack.setText("Recordar Contraseña");
                     chack.setTextColor(0xffffffff);
                     login.setText("");
@@ -72,14 +69,13 @@ public class Login extends AppCompatActivity {
     }
 
 
-
     public void lanzarinicio(View view) {
         try {
             loginT = String.valueOf(login.getText());
             contraT = String.valueOf(contra.getText());
             String compararU = "";
-            String compararC="";
-            boolean dentro=false;
+            String compararC = "";
+            boolean dentro = false;
             if (condiciones()) {
                 AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,
                         "registro_user", null, 17);
@@ -125,7 +121,7 @@ public class Login extends AppCompatActivity {
 
                         Intent i = new Intent(this, Categorias.class);
                         startActivity(i);
-dentro=true;
+                        dentro = true;
                     }
 
                 }
@@ -133,10 +129,10 @@ dentro=true;
                 bd.close();
 
             }
-            if(!dentro){
+            if (!dentro) {
 
-                    Toast.makeText(getApplicationContext(), "Usuario contraseña incorrectos ", Toast.LENGTH_SHORT).show();
-                }
+                Toast.makeText(getApplicationContext(), "Usuario contraseña incorrectos ", Toast.LENGTH_SHORT).show();
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -144,61 +140,47 @@ dentro=true;
     }
 
 
+    public boolean comprobarCampos(String nom, String contraseña) {
+        boolean correcto = false;
 
 
-
-
-    public boolean comprobarCampos(String nom, String contraseña)
-{
-    boolean correcto= false;
-
-
-    if (nom.equals(loginT) && contraseña.equals(contraT))
-        {
-            correcto=true;
+        if (nom.equals(loginT) && contraseña.equals(contraT)) {
+            correcto = true;
         }
 
 
+        return correcto;
+    }
 
+    public boolean condiciones() {
+        boolean inicio = false;
+        boolean c1 = false;
+        boolean c2 = false;
+        try {
 
-
-
-
-
-    return correcto;
-}
-        public boolean condiciones () {
-            boolean inicio = false;
-            boolean c1 = false;
-            boolean c2 = false;
-            try {
-
-                if (!loginT.isEmpty()) {
-                    c2=true;
-                } else {
-                    Toast.makeText(getApplicationContext(), "NO SE HA INTRODUCIDO EL NOMBRE ", Toast.LENGTH_SHORT).show();
-                }
-                if (!contraT.isEmpty()) {
-                    c1 = true;
-                } else {
-                    Toast.makeText(getApplicationContext(), "NO SE HA INTRODUCIDO LA CONTRASEÑA ", Toast.LENGTH_SHORT).show();
-                }
-                if(c1 &&c2)
-                {
-                    inicio=true;
-                }
-
-
-            } catch (Exception e) {
-                Toast.makeText(getApplicationContext(), "SE HA PRODUCIDO UN ERROR, REINICIA LA APLICACION ", Toast.LENGTH_SHORT).show();
-
+            if (!loginT.isEmpty()) {
+                c2 = true;
+            } else {
+                Toast.makeText(getApplicationContext(), "NO SE HA INTRODUCIDO EL NOMBRE ", Toast.LENGTH_SHORT).show();
+            }
+            if (!contraT.isEmpty()) {
+                c1 = true;
+            } else {
+                Toast.makeText(getApplicationContext(), "NO SE HA INTRODUCIDO LA CONTRASEÑA ", Toast.LENGTH_SHORT).show();
+            }
+            if (c1 && c2) {
+                inicio = true;
             }
 
 
-            return inicio;
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "SE HA PRODUCIDO UN ERROR, REINICIA LA APLICACION ", Toast.LENGTH_SHORT).show();
+
         }
 
 
+        return inicio;
+    }
 
 
     public void lanzarCrearUser(View view) {
@@ -212,39 +194,37 @@ dentro=true;
     }
 
     private void recuperarDatos(String nombreUsrio) {
-        float carne=0,  total=0,pescado=0,  bebidas=0, fruta=0,  deporte=0,  pastas=0,  salsas=0, verdura=0, recetas=0;
-            SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Login.this);
+        float carne = 0, total = 0, pescado = 0, bebidas = 0, fruta = 0, deporte = 0, pastas = 0, salsas = 0, verdura = 0, recetas = 0;
+        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Login.this);
 
-            AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,
-                    "registro_user", null, 17);
-            SQLiteDatabase bd = admin.getWritableDatabase(); //Create and/or open a database that will be used for reading and writing.
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,
+                "registro_user", null, 17);
+        SQLiteDatabase bd = admin.getWritableDatabase(); //Create and/or open a database that will be used for reading and writing.
 
-            Cursor curso = bd.rawQuery("select *  from comida where login='"+nombreUsrio+"' ", null);
+        Cursor curso = bd.rawQuery("select *  from comida where login='" + nombreUsrio + "' ", null);
 
-            curso.moveToFirst();
-            while (curso.isAfterLast() == false) {
-                carne = curso.getFloat(1);
-                total = curso.getFloat(0);
-                pescado = curso.getFloat(2);
-                bebidas = curso.getFloat(3);
-                fruta = curso.getFloat(4);
-                deporte = curso.getFloat(5);
-                pastas = curso.getFloat(6);
-                salsas = curso.getFloat(7);
-                verdura = curso.getFloat(8);
-                recetas = curso.getFloat(10);
-
-
+        curso.moveToFirst();
+        while (curso.isAfterLast() == false) {
+            carne = curso.getFloat(1);
+            total = curso.getFloat(0);
+            pescado = curso.getFloat(2);
+            bebidas = curso.getFloat(3);
+            fruta = curso.getFloat(4);
+            deporte = curso.getFloat(5);
+            pastas = curso.getFloat(6);
+            salsas = curso.getFloat(7);
+            verdura = curso.getFloat(8);
+            recetas = curso.getFloat(10);
 
 
-                Log.i("tag", "agua" + carne);
-                curso.moveToNext();
+            Log.i("tag", "agua" + carne);
+            curso.moveToNext();
 
-            }
+        }
 
 
-                SharedPreferences.Editor myEditor = myPreferences.edit();
-                myEditor.putFloat("carne", carne);
+        SharedPreferences.Editor myEditor = myPreferences.edit();
+        myEditor.putFloat("carne", carne);
         myEditor.putFloat("totalacalendario", total);
         myEditor.putFloat("pescado", pescado);
         myEditor.putFloat("depor", deporte);
@@ -256,16 +236,13 @@ dentro=true;
         myEditor.putFloat("receta", recetas);
 
 
-
-                Log.i("tag","valor de carne 2  "+carne);
-
+        Log.i("tag", "valor de carne 2  " + carne);
 
 
-                myEditor.commit();
+        myEditor.commit();
 
 
-
-            bd.close();
+        bd.close();
 
     }
 

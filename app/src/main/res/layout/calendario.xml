@@ -60,7 +60,6 @@
         android:inputType="textMultiLine"
         android:text=""
         android:textColor="@color/textoEdit"
-        android:textSize="10sp"
         tools:ignore="LabelFor" />
 
     <TextView

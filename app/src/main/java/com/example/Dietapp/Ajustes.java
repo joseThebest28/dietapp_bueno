@@ -1,4 +1,4 @@
- package com.example.Dietapp;
+package com.example.Dietapp;
 
 import android.content.ContentValues;
 import android.content.DialogInterface;
@@ -59,18 +59,18 @@ public class Ajustes extends AppCompatActivity {
     int colorDefecto;
 
 
-    private final String CARPETA_RAIZ="misImagenesPrueba/";
-    private final String RUTA_IMAGEN=CARPETA_RAIZ+"misFotos";
+    private final String CARPETA_RAIZ = "misImagenesPrueba/";
+    private final String RUTA_IMAGEN = CARPETA_RAIZ + "misFotos";
 
-    final int COD_SELECCIONA=10;
-    final int COD_FOTO=20;
+    final int COD_SELECCIONA = 10;
+    final int COD_FOTO = 20;
     String path;
     String nombreUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajustes);
-
 
 
         texto = findViewById(R.id.textView23);
@@ -79,8 +79,6 @@ public class Ajustes extends AppCompatActivity {
         apellido2ED = findViewById(R.id.textView40);
         emailED = findViewById(R.id.textView38);
         retos = findViewById(R.id.textView395);
-
-
 
 
         botonRetos = findViewById(R.id.bRetos);
@@ -96,7 +94,7 @@ public class Ajustes extends AppCompatActivity {
 
 
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Ajustes.this);
-         nombreUser = myPreferences.getString("nombreUser", "");
+        nombreUser = myPreferences.getString("nombreUser", "");
         String nombre = myPreferences.getString("nombre", "");
         String apellido = myPreferences.getString("apellido", "");
         String apellido2 = myPreferences.getString("apellido2", "");
@@ -118,25 +116,19 @@ public class Ajustes extends AppCompatActivity {
         imagen = findViewById(R.id.imageView29);
 
 
-        String imagenU= myPreferences.getString("magen", "");
-        Log.i("tag","images:"+imagenU);
+        String imagenU = myPreferences.getString("magen", "");
+        Log.i("tag", "images:" + imagenU);
 
-        if(!imagenU.equals("")) {
-    imagen.setImageURI(Uri.parse(imagenU));
-}
-     imagen.getResources();
-
-
-
-
-
-
+        if (!imagenU.equals("")) {
+            imagen.setImageURI(Uri.parse(imagenU));
+        }
+        imagen.getResources();
 
 
         botonImagen = findViewById(R.id.button43);
-        if(validaPermisos()){
+        if (validaPermisos()) {
             botonImagen.setEnabled(true);
-        }else{
+        } else {
             botonImagen.setEnabled(false);
         }
     }
@@ -153,10 +145,11 @@ public class Ajustes extends AppCompatActivity {
         Intent ifds = new Intent(this, Pagina_reto.class);
         startActivity(ifds);
     }
+
     AdminSQLiteOpenHelper admin;
 
     public void cerrarSesio(View view) {
-         admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 17);
+        admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 17);
         final Intent ifds = new Intent(this, Login.class);
         AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
         builder1.setMessage("¿Estas seguro de cerrar sesión?");
@@ -193,13 +186,8 @@ public class Ajustes extends AppCompatActivity {
                         myEditor.commit();
 
 
-
-
-
                         startActivity(ifds);
                     }
-
-
 
 
                 });
@@ -264,7 +252,7 @@ public class Ajustes extends AppCompatActivity {
             String sql2 = "UPDATE usuarios SET img=''";
             bd.execSQL(sql2);
 
-            String sql3= "UPDATE comida SET total='0.0', carne ='0.0', pescado ='0.0', bebidas ='0.0', fruta ='0.0', deporte ='0.0', pastas ='0.0', salsas ='0.0',verdura ='0.0',recetas='0.0' where login='"+nombreUser+"' ";
+            String sql3 = "UPDATE comida SET total='0.0', carne ='0.0', pescado ='0.0', bebidas ='0.0', fruta ='0.0', deporte ='0.0', pastas ='0.0', salsas ='0.0',verdura ='0.0',recetas='0.0' where login='" + nombreUser + "' ";
             bd.execSQL(sql3);
             bd.close();
         }
@@ -293,26 +281,27 @@ public class Ajustes extends AppCompatActivity {
 
     private boolean validaPermisos() {
 
-        if(Build.VERSION.SDK_INT<Build.VERSION_CODES.M){
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             return true;
         }
 
-        if((checkSelfPermission(CAMERA)== PackageManager.PERMISSION_GRANTED)&&
-                (checkSelfPermission(WRITE_EXTERNAL_STORAGE)==PackageManager.PERMISSION_GRANTED)){
+        if ((checkSelfPermission(CAMERA) == PackageManager.PERMISSION_GRANTED) &&
+                (checkSelfPermission(WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED)) {
             return true;
         }
 
-        if((shouldShowRequestPermissionRationale(CAMERA)) ||
-                (shouldShowRequestPermissionRationale(WRITE_EXTERNAL_STORAGE))){
+        if ((shouldShowRequestPermissionRationale(CAMERA)) ||
+                (shouldShowRequestPermissionRationale(WRITE_EXTERNAL_STORAGE))) {
             cargarDialogoRecomendacion();
-        }else{
-            requestPermissions(new String[]{WRITE_EXTERNAL_STORAGE,CAMERA},100);
+        } else {
+            requestPermissions(new String[]{WRITE_EXTERNAL_STORAGE, CAMERA}, 100);
         }
 
         return false;
     }
+
     private void cargarDialogoRecomendacion() {
-        AlertDialog.Builder dialogo=new AlertDialog.Builder(Ajustes.this);
+        AlertDialog.Builder dialogo = new AlertDialog.Builder(Ajustes.this);
         dialogo.setTitle("Permisos Desactivados");
         dialogo.setMessage("Debe aceptar los permisos para el correcto funcionamiento de la App");
 
@@ -320,7 +309,7 @@ public class Ajustes extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                requestPermissions(new String[]{WRITE_EXTERNAL_STORAGE,CAMERA},100);
+                requestPermissions(new String[]{WRITE_EXTERNAL_STORAGE, CAMERA}, 100);
             }
         });
         dialogo.show();
@@ -330,11 +319,11 @@ public class Ajustes extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-        if(requestCode==100){
-            if(grantResults.length==2 && grantResults[0]==PackageManager.PERMISSION_GRANTED
-                    && grantResults[1]==PackageManager.PERMISSION_GRANTED){
+        if (requestCode == 100) {
+            if (grantResults.length == 2 && grantResults[0] == PackageManager.PERMISSION_GRANTED
+                    && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
                 botonImagen.setEnabled(true);
-            }else{
+            } else {
                 solicitarPermisosManual();
             }
         }
@@ -342,20 +331,20 @@ public class Ajustes extends AppCompatActivity {
     }
 
     private void solicitarPermisosManual() {
-        final CharSequence[] opciones={"si","no"};
-        final AlertDialog.Builder alertOpciones=new AlertDialog.Builder(Ajustes.this);
+        final CharSequence[] opciones = {"si", "no"};
+        final AlertDialog.Builder alertOpciones = new AlertDialog.Builder(Ajustes.this);
         alertOpciones.setTitle("¿Desea configurar los permisos de forma manual?");
         alertOpciones.setItems(opciones, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                if (opciones[i].equals("si")){
-                    Intent intent=new Intent();
+                if (opciones[i].equals("si")) {
+                    Intent intent = new Intent();
                     intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-                    Uri uri=Uri.fromParts("package",getPackageName(),null);
+                    Uri uri = Uri.fromParts("package", getPackageName(), null);
                     intent.setData(uri);
                     startActivity(intent);
-                }else{
-                    Toast.makeText(getApplicationContext(),"Los permisos no fueron aceptados",Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Los permisos no fueron aceptados", Toast.LENGTH_SHORT).show();
                     dialogInterface.dismiss();
                 }
             }
@@ -364,27 +353,26 @@ public class Ajustes extends AppCompatActivity {
     }
 
 
-
     public void onclick(View view) {
         cargarImagen();
     }
 
     private void cargarImagen() {
 
-        final CharSequence[] opciones={"Tomar Foto","Cargar Imagen","Cancelar"};
-        final AlertDialog.Builder alertOpciones=new AlertDialog.Builder(Ajustes.this);
+        final CharSequence[] opciones = {"Tomar Foto", "Cargar Imagen", "Cancelar"};
+        final AlertDialog.Builder alertOpciones = new AlertDialog.Builder(Ajustes.this);
         alertOpciones.setTitle("Seleccione una Opción");
         alertOpciones.setItems(opciones, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                if (opciones[i].equals("Tomar Foto")){
+                if (opciones[i].equals("Tomar Foto")) {
                     Toast.makeText(getApplicationContext(), "OPCIÓN SELECCIONADA EN DESARROLLO, SENTIMOS LAS MOLESTIAS ", Toast.LENGTH_SHORT).show();
-                }else{
-                    if (opciones[i].equals("Cargar Imagen")){
-                        Intent intent=new Intent(Intent.ACTION_GET_CONTENT, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                } else {
+                    if (opciones[i].equals("Cargar Imagen")) {
+                        Intent intent = new Intent(Intent.ACTION_GET_CONTENT, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                         intent.setType("image/");
-                        startActivityForResult(intent.createChooser(intent,"Seleccione la Aplicación"),COD_SELECCIONA);
-                    }else{
+                        startActivityForResult(intent.createChooser(intent, "Seleccione la Aplicación"), COD_SELECCIONA);
+                    } else {
                         dialogInterface.dismiss();
                     }
                 }
@@ -395,20 +383,19 @@ public class Ajustes extends AppCompatActivity {
     }
 
 
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode==RESULT_OK){
+        if (resultCode == RESULT_OK) {
 
-           // switch (requestCode){
-             //   case COD_SELECCIONA:
-                    Uri miPath=data.getData();
-                    imagen.setImageURI(miPath);
-                    this.guardarimagne(miPath);
+            // switch (requestCode){
+            //   case COD_SELECCIONA:
+            Uri miPath = data.getData();
+            imagen.setImageURI(miPath);
+            this.guardarimagne(miPath);
 
-            Log.i("tag","valor"+String.valueOf(miPath));
-               //     break;
+            Log.i("tag", "valor" + String.valueOf(miPath));
+            //     break;
 
                 /*case COD_FOTO:
                     MediaScannerConnection.scanFile(this, new String[]{path}, null,
@@ -440,10 +427,10 @@ public class Ajustes extends AppCompatActivity {
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 17);
         SQLiteDatabase bd = admin.getWritableDatabase();
 
-        String sql = "UPDATE usuarios SET img='"+ String.valueOf(ur)+"'  where login='"+nombreUser+"'";
+        String sql = "UPDATE usuarios SET img='" + String.valueOf(ur) + "'  where login='" + nombreUser + "'";
         bd.execSQL(sql);
 
-        Log.i("tag",String.valueOf(ur));
+        Log.i("tag", String.valueOf(ur));
     }
 
     public void volverMenu(View view) {

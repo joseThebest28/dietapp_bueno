@@ -13,13 +13,13 @@ public class PopupPescado extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.popuppescado);
-        DisplayMetrics medidas=new DisplayMetrics();
+        DisplayMetrics medidas = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(medidas);
 
-        int ancho= medidas.widthPixels;
-        int alto=medidas.heightPixels;
+        int ancho = medidas.widthPixels;
+        int alto = medidas.heightPixels;
 
-        getWindow().setLayout((int) (ancho*0.9), (int) (alto*0.6));
+        getWindow().setLayout((int) (ancho * 0.9), (int) (alto * 0.6));
 
 
     }

@@ -624,6 +624,7 @@ ______________________________________________________
 
     </string>
     <string name="textorecuperacontraseña">Atencion<br> <br>Esta opción implica el uso de internet.<br><br>  En caso de no disponer de internet, no funcionara.</br></br></br></br> </string>
+    <string name="textorecuperacontraseña2">Esta opción implica el uso de internet.  En caso de no disponer de internet, no funcionara. </string>
     <string name="VALORAR">Danos tu opinión</string>
     <string name="valorar">Danos tu opinión</string>
     <string name="mejoras">Escribe a continuación tu opinión</string>
@@ -639,5 +640,7 @@ ______________________________________________________
     <string name="textoseguiSalsa">Total calorias Salsa: 0.0</string>
     <string name="textoseguiReceta">Total calorias Receta: 0.0</string>
     <string name="textoseguiBeber">Total calorias Bebida: 0.0</string>
+    <string name="textoRecetas">Listado de Recetas</string>
+    <string name="textoimagen">imagern</string>
 
 </resources>

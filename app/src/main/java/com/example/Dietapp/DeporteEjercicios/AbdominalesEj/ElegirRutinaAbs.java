@@ -19,9 +19,13 @@ public class ElegirRutinaAbs extends AppCompatActivity {
 
     }
 
-    public void rutina1(View view) {Intent i1 = new Intent(this,Abdominales.class);startActivity(i1);
+    public void rutina1(View view) {
+        Intent i1 = new Intent(this, Abdominales.class);
+        startActivity(i1);
     }
 
-    public void rutina2(View view) {Intent i2 = new Intent(this,Abdominales4.class); startActivity(i2);
+    public void rutina2(View view) {
+        Intent i2 = new Intent(this, Abdominales4.class);
+        startActivity(i2);
     }
 }

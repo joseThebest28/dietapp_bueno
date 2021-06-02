@@ -13,12 +13,14 @@ import com.example.Dietapp.categorias.CategoDeporte;
 import com.example.myapplicationfinal.R;
 
 public class Triceps5 extends AppCompatActivity {
-    ImageView imagen;   private Toast toast1;
+    ImageView imagen;
+    private Toast toast1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.abdominales5);
-        imagen=findViewById(R.id.imageView27);
+        imagen = findViewById(R.id.imageView27);
         toast1 = Toast.makeText(getApplicationContext(), "Eleccion  de medio ejercicio guardada con exito", Toast.LENGTH_SHORT);
 
         imagen.setImageDrawable(getResources().getDrawable(R.drawable.triceps5));
@@ -29,11 +31,13 @@ public class Triceps5 extends AppCompatActivity {
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Triceps5.this);
 
         float num = myPreferences.getFloat("depor", 0);
-        num=num+21.8f;
+        num = num + 21.8f;
 
         SharedPreferences.Editor myEditor = myPreferences.edit();
-        myEditor.putFloat("depor",  num);
-        myEditor.commit();toast1.show();Intent i = new Intent(this, CategoDeporte.class );
+        myEditor.putFloat("depor", num);
+        myEditor.commit();
+        toast1.show();
+        Intent i = new Intent(this, CategoDeporte.class);
         startActivity(i);
 
     }
@@ -42,11 +46,13 @@ public class Triceps5 extends AppCompatActivity {
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Triceps5.this);
 
         float num = myPreferences.getFloat("depor", 0);
-        num=num+10.9f;
+        num = num + 10.9f;
 
         SharedPreferences.Editor myEditor = myPreferences.edit();
-        myEditor.putFloat("depor",  num);
-        myEditor.commit();toast1.show();Intent i = new Intent(this, CategoDeporte.class );
+        myEditor.putFloat("depor", num);
+        myEditor.commit();
+        toast1.show();
+        Intent i = new Intent(this, CategoDeporte.class);
         startActivity(i);
 
     }

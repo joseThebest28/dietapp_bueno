@@ -30,29 +30,31 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class Valorar extends AppCompatActivity {
-RatingBar rating;
-EditText texto;
-float numeroRatinIntroducido;
-    private String textoEdit,nombreUSer;
+    RatingBar rating;
+    EditText texto;
+    float numeroRatinIntroducido;
+    private String textoEdit, nombreUSer;
     private Intent iD;
     Session sesion;
     ProgressDialog pro;
-    boolean mensaje=false;
+    boolean mensaje = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_valorar);
-        rating=findViewById(R.id.ratingBar);
-        texto=findViewById(R.id.editTextValorar);
+        rating = findViewById(R.id.ratingBar);
+        texto = findViewById(R.id.editTextValorar);
         SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(Valorar.this);
 
         nombreUSer = myPreferences.getString("nombreUser", "");
 
 
     }
+
     private void antesenviarcorreo() {
         pro = ProgressDialog.show(this, "enviando comentario", "por favor espere", false, false);
-        mensaje=true;
+        mensaje = true;
     }
 
     private void despuesEnviocorreo() {
@@ -62,8 +64,6 @@ float numeroRatinIntroducido;
         startActivity(i);
 
     }
-
-
 
 
     private void enviarCorre(final float numeroRating, String textoEnviar, String nombreUsr) {
@@ -88,7 +88,7 @@ float numeroRatinIntroducido;
             message.setFrom(new InternetAddress("dietappapp@gmail.com"));
             message.setSubject("comentario usaurio dietapp");
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("dietappapp@gmail.com"));
-            message.setContent("El usuario:  "+nombreUsr+ " ha dado una calificación de: "+ numeroRating + " y ha dejado el siguiente comentario: " + textoEnviar, "text/html; charset=utf-8");
+            message.setContent("El usuario:  " + nombreUsr + " ha dado una calificación de: " + numeroRating + " y ha dejado el siguiente comentario: " + textoEnviar, "text/html; charset=utf-8");
             Transport.send(message);
 
 
@@ -100,12 +100,12 @@ float numeroRatinIntroducido;
     }
 
     public void enviarCOmentario(View view) {
-        textoEdit=String.valueOf(texto.getText());
-        numeroRatinIntroducido=rating.getRating();
+        textoEdit = String.valueOf(texto.getText());
+        numeroRatinIntroducido = rating.getRating();
         this.antesenviarcorreo();
-        if(mensaje=true)
-        this.enviarCorre(numeroRatinIntroducido,textoEdit,nombreUSer);
+        if (mensaje = true)
+            this.enviarCorre(numeroRatinIntroducido, textoEdit, nombreUSer);
         this.despuesEnviocorreo();
     }
-   
+
 }

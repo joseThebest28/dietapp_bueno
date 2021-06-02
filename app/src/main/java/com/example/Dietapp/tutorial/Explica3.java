@@ -10,15 +10,18 @@ import com.example.myapplicationfinal.R;
 
 public class Explica3 extends AppCompatActivity {
     ImageView imagen;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.explica1);
-        imagen=findViewById(R.id.imageView);
+        imagen = findViewById(R.id.imageView);
         imagen.setImageDrawable(getResources().getDrawable(R.drawable.explica2));
     }
+
     public void lanzar(View view) {
-        Intent i = new Intent(this, Explica4.class );
+        Intent i = new Intent(this, Explica4.class);
         startActivity(i);
 
-    }}
+    }
+}

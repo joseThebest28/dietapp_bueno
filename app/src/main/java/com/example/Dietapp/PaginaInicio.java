@@ -31,8 +31,8 @@ import static java.util.Calendar.*;
 
 
 public class PaginaInicio extends AppCompatActivity {
-    private final static String Channer_id= "notificacion";
-    private static final int idUnico=51623;
+    private final static String Channer_id = "notificacion";
+    private static final int idUnico = 51623;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +55,6 @@ public class PaginaInicio extends AppCompatActivity {
         b2.startAnimation(animacion);
 
 
-
-
     }
     /*private void notificarApp() {
         NotificationCompat.Builder notificacio = new NotificationCompat.Builder(getApplicationContext(), Channer_id);
@@ -77,21 +75,18 @@ public class PaginaInicio extends AppCompatActivity {
 */
 
 
-
-
     public void lanzarapp(View view) {
-       // Intent i = new Intent(this, Login.class );
-        Intent i = new Intent(this, Login.class );
+        // Intent i = new Intent(this, Login.class );
+        Intent i = new Intent(this, Login.class);
         startActivity(i);
-        overridePendingTransition(R.anim.desplazar_derecha,R.anim.animacion_aumentar);
+        overridePendingTransition(R.anim.desplazar_derecha, R.anim.animacion_aumentar);
     }
+
     public void lanzartuto(View view) {
-        Intent i2 = new Intent(this, Explica1.class );
+        Intent i2 = new Intent(this, Explica1.class);
         startActivity(i2);
 
     }
-
-
 
 
 }

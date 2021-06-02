@@ -9,17 +9,20 @@ import android.widget.ImageView;
 import com.example.Dietapp.login.Login;
 import com.example.myapplicationfinal.R;
 
-public class Explica6  extends AppCompatActivity {
+public class Explica6 extends AppCompatActivity {
     ImageView imagen;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.explica1);
-        imagen=findViewById(R.id.imageView);
+        imagen = findViewById(R.id.imageView);
         imagen.setImageDrawable(getResources().getDrawable(R.drawable.calendario));
     }
+
     public void lanzar(View view) {
-        Intent i = new Intent(this, Login.class );
+        Intent i = new Intent(this, Login.class);
         startActivity(i);
-        overridePendingTransition(R.anim.desplazar_derecha,R.anim.animacion_aumentar);
-    }}
+        overridePendingTransition(R.anim.desplazar_derecha, R.anim.animacion_aumentar);
+    }
+}

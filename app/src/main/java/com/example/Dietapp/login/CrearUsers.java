@@ -17,8 +17,8 @@ import com.example.Dietapp.login.AdminSQLiteOpenHelper;
 import com.example.myapplicationfinal.R;
 
 public class CrearUsers extends AppCompatActivity {
-    private EditText nombre, apellido1, apellido2, nombreLogin, contraseña, contraseña2,email;
-    private String nombreT, apellidoT, apellido2T, nombreLoginT, contraseT, contraseT2,emailT;
+    private EditText nombre, apellido1, apellido2, nombreLogin, contraseña, contraseña2, email;
+    private String nombreT, apellidoT, apellido2T, nombreLoginT, contraseT, contraseT2, emailT;
     private static SQLiteDatabase db;
     AdminSQLiteOpenHelper dbHelper;
     Button boton;
@@ -38,20 +38,18 @@ public class CrearUsers extends AppCompatActivity {
         email = findViewById(R.id.email);
 
 
-
     }
 
     public void alta(View v) {
 
 
-
-            nombreLoginT = String.valueOf(nombreLogin.getText());
-            nombreT = nombre.getText().toString();
-            apellidoT = String.valueOf(apellido1.getText());
-            apellido2T = apellido2.getText().toString();
-            contraseT = contraseña.getText().toString();
-            contraseT2 = contraseña2.getText().toString();
-            emailT = email.getText().toString();
+        nombreLoginT = String.valueOf(nombreLogin.getText());
+        nombreT = nombre.getText().toString();
+        apellidoT = String.valueOf(apellido1.getText());
+        apellido2T = apellido2.getText().toString();
+        contraseT = contraseña.getText().toString();
+        contraseT2 = contraseña2.getText().toString();
+        emailT = email.getText().toString();
 
         try {
             if (condiciones()) {
@@ -97,12 +95,11 @@ public class CrearUsers extends AppCompatActivity {
                 Intent ifds = new Intent(this, Login.class);
                 startActivity(ifds);
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             Toast.makeText(this, "HAY CAMPOS VACIOS, POR FAVOR, RELLENELOS CORRECTAMENTE",
                     Toast.LENGTH_SHORT).show();
         }
     }
-
 
 
     public boolean condiciones() {
@@ -174,18 +171,16 @@ public class CrearUsers extends AppCompatActivity {
             } else {
                 Toast.makeText(getApplicationContext(), "NO SE HA INTRODUCIDO EL NOMBRE ", Toast.LENGTH_SHORT).show();
             }
-            if(!comprobarNombreuser(nombreLoginT))
-            {
-                resultad8=true;
+            if (!comprobarNombreuser(nombreLoginT)) {
+                resultad8 = true;
 
             }
-            if(!comprobarNombreEmail(emailT))
-            {
-                resultad9=true;
+            if (!comprobarNombreEmail(emailT)) {
+                resultad9 = true;
 
             }
 
-            if (resultad1 && resultad2 && resultad3 && resultad4 && resultad5 && resultad6 && resultad7 && resultad8 && resultad9){
+            if (resultad1 && resultad2 && resultad3 && resultad4 && resultad5 && resultad6 && resultad7 && resultad8 && resultad9) {
 
                 condicion = true;
             }
@@ -199,11 +194,9 @@ public class CrearUsers extends AppCompatActivity {
 
         return condicion;
     }
-    public boolean comprobarNombreuser(String nombre)
-    {
-        boolean coincide=false;
 
-
+    public boolean comprobarNombreuser(String nombre) {
+        boolean coincide = false;
 
 
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 17);
@@ -213,39 +206,34 @@ public class CrearUsers extends AppCompatActivity {
 
         curso.moveToFirst();
         while (curso.isAfterLast() == false) {
-            String compararU=curso.getString(0);
+            String compararU = curso.getString(0);
 
-            Log.i("tag",""+compararU);
-            Log.i("tag",""+nombre);
+            Log.i("tag", "" + compararU);
+            Log.i("tag", "" + nombre);
 
-if(!nombre.isEmpty())
-            if(compararU.equals(nombre) )
-            {
-                Log.i("tag","dentro if");
-
-
-                Toast.makeText(this, "EL NOMBRE DE USUARIO INTRODUCIDO ESTA EN USO", Toast.LENGTH_SHORT).show();
-                coincide=true;
-
-            }
-            else{
+            if (!nombre.isEmpty())
+                if (compararU.equals(nombre)) {
+                    Log.i("tag", "dentro if");
 
 
-            }curso.moveToNext();
+                    Toast.makeText(this, "EL NOMBRE DE USUARIO INTRODUCIDO ESTA EN USO", Toast.LENGTH_SHORT).show();
+                    coincide = true;
+
+                } else {
+
+
+                }
+            curso.moveToNext();
 
         }
         bd.close();
-
-
 
 
         return coincide;
     }
-    public boolean comprobarNombreEmail(String nombree)
-    {
-        boolean coincide2=false;
 
-
+    public boolean comprobarNombreEmail(String nombree) {
+        boolean coincide2 = false;
 
 
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 17);
@@ -255,30 +243,27 @@ if(!nombre.isEmpty())
 
         curso.moveToFirst();
         while (curso.isAfterLast() == false) {
-            String compararE=curso.getString(5);
+            String compararE = curso.getString(5);
 
-            Log.i("tag",""+compararE);
-            Log.i("tag",""+nombree);
+            Log.i("tag", "" + compararE);
+            Log.i("tag", "" + nombree);
 
-            if(!nombree.isEmpty())
-            if(compararE.equals(nombree) )
-            {
-                Log.i("tag","dentro if");
-
-
-                Toast.makeText(this, "EL EMAIL INTRODUCIDO ESTA EN USO", Toast.LENGTH_SHORT).show();
-                coincide2=true;
-
-            }
-            else{
+            if (!nombree.isEmpty())
+                if (compararE.equals(nombree)) {
+                    Log.i("tag", "dentro if");
 
 
-            }curso.moveToNext();
+                    Toast.makeText(this, "EL EMAIL INTRODUCIDO ESTA EN USO", Toast.LENGTH_SHORT).show();
+                    coincide2 = true;
+
+                } else {
+
+
+                }
+            curso.moveToNext();
 
         }
         bd.close();
-
-
 
 
         return coincide2;

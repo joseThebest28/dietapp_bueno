@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/colorHigt">
 
+    <TextView
+        android:id="@+id/textView52"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
 
+        android:text="@string/textoRecetas"
+        android:textColor="@color/dietappPrincipal"
+        android:textSize="30sp" />
     <EditText
         android:id="@+id/editListas"
         android:layout_width="203dp"
@@ -18,15 +25,16 @@
 
     <Button
         android:id="@+id/button45"
+        android:background="@drawable/boton_opina"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="76dp"
         android:text="@string/realizarBusqueda"
-        android:onClick="realizarBusqueda" />
+         />
 
 
     <ListView
-        android:id="@+id/lista"
+        android:id="@+id/lista" 
         android:layout_width="wrap_content"
         android:layout_height="666dp" />
 

@@ -12,13 +12,14 @@
         android:id="@+id/button20"
         android:layout_width="149dp"
         android:layout_height="38dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="44dp"
         android:background="@drawable/boton_guardar"
         android:onClick="enviar"
         android:text="@string/guardar2"
         android:textColor="@color/guuardar"
+        app:layout_constraintBottom_toBottomOf="@+id/button16"
         app:layout_constraintEnd_toEndOf="@+id/button25"
-        app:layout_constraintHorizontal_bias="0.225"
+        app:layout_constraintHorizontal_bias="0.288"
         app:layout_constraintStart_toStartOf="@+id/button25"
         app:layout_constraintTop_toBottomOf="@+id/button25" />
 
@@ -136,10 +137,10 @@
         android:text="@string/volverMenu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/totalP"
-        app:layout_constraintHorizontal_bias="0.962"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/totalP"
         app:layout_constraintTop_toBottomOf="@+id/totalP"
-        app:layout_constraintVertical_bias="0.535" />
+        app:layout_constraintVertical_bias="0.222" />
 
     <TextView
         android:id="@+id/textView13"

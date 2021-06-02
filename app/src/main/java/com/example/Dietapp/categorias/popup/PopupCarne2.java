@@ -14,14 +14,14 @@ public class PopupCarne2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.popupcarne2);
-        DisplayMetrics medidas=new DisplayMetrics();
+        DisplayMetrics medidas = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(medidas);
 
-        int ancho= medidas.widthPixels;
-        int alto=medidas.heightPixels;
+        int ancho = medidas.widthPixels;
+        int alto = medidas.heightPixels;
 
-        getWindow().setLayout((int) (ancho*0.95), (int) (alto*0.65));
+        getWindow().setLayout((int) (ancho * 0.95), (int) (alto * 0.65));
 
 
-}
+    }
 }

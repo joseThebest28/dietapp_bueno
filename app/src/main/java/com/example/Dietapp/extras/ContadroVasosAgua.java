@@ -21,12 +21,13 @@ import com.example.myapplicationfinal.R;
 
 public class ContadroVasosAgua extends AppCompatActivity {
     TextView textoMostrar, textoMostrarvasos;
-    ImageView imagenmas, imagenMwnos,imagenLLegada;
-    float recuento =0.0f;
-    int vasos=0;
+    ImageView imagenmas, imagenMwnos, imagenLLegada;
+    float recuento = 0.0f;
+    int vasos = 0;
 
 
     String nombreUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,16 +46,15 @@ public class ContadroVasosAgua extends AppCompatActivity {
         textoMostrarvasos = findViewById(R.id.textView50);
 
 
-        int vasosGuardados=myPreferences.getInt("valoragua",0);
-        float recuentoM=myPreferences.getFloat("valoragua2",0);
+        int vasosGuardados = myPreferences.getInt("valoragua", 0);
+        float recuentoM = myPreferences.getFloat("valoragua2", 0);
 
-        if(vasosGuardados!=0){
-            vasos=vasosGuardados;
-            recuento=recuentoM;}
-        else{
+        if (vasosGuardados != 0) {
+            vasos = vasosGuardados;
+            recuento = recuentoM;
+        } else {
 
         }
-
 
 
         Log.i("valor", String.valueOf(recuento));
@@ -62,7 +62,7 @@ public class ContadroVasosAgua extends AppCompatActivity {
 
         textoMostrarvasos.setText("Total de vasos= " + vasos);
 
-        textoMostrar.setText("Total de agua= " + recuento+ "" + "litros");
+        textoMostrar.setText("Total de agua= " + recuento + "" + "litros");
 
 
         imagenmas = findViewById(R.id.imageView30);
@@ -72,24 +72,24 @@ public class ContadroVasosAgua extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                    recuento = (float) (recuento + 0.25);
-                    vasos = vasos + 1;
+                recuento = (float) (recuento + 0.25);
+                vasos = vasos + 1;
                 SharedPreferences myPreferen = PreferenceManager.getDefaultSharedPreferences(ContadroVasosAgua.this);
                 SharedPreferences.Editor myEdit = myPreferen.edit();
-                myEdit.putInt("valoragua",vasos);
-                myEdit.putFloat("valoragua2",recuento);
+                myEdit.putInt("valoragua", vasos);
+                myEdit.putFloat("valoragua2", recuento);
                 myEdit.apply();
-                Log.i("tag","valor agua guardar "+vasos);
-                Log.i("tag","valor agua guardar "+recuento);
+                Log.i("tag", "valor agua guardar " + vasos);
+                Log.i("tag", "valor agua guardar " + recuento);
 
-                    textoMostrar.setText("Total de agua= " + recuento + "" + "litros");
-                    textoMostrarvasos.setText("Total de vasos= " + vasos);
+                textoMostrar.setText("Total de agua= " + recuento + "" + "litros");
+                textoMostrarvasos.setText("Total de vasos= " + vasos);
 
 
                 if (vasos == 8) {
                     SharedPreferences myPreferencesVG = PreferenceManager.getDefaultSharedPreferences(ContadroVasosAgua.this);
                     SharedPreferences.Editor myEditorVG = myPreferencesVG.edit();
-                    myEditorVG.putString("agua","se ha completado el reto de agua");
+                    myEditorVG.putString("agua", "se ha completado el reto de agua");
 
 
                     myEditorVG.apply();
@@ -115,23 +115,23 @@ public class ContadroVasosAgua extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (recuento <= 0 && vasos<=0) {
+                if (recuento <= 0 && vasos <= 0) {
                     Toast.makeText(getApplicationContext(), "no puedes haber tomado menos de 0 vasos de agua", Toast.LENGTH_SHORT).show();
                 } else {
 
 
-                            recuento = (float) (recuento - 0.25);
-                            vasos = vasos - 1;
-                            textoMostrar.setText("Total de agua= " + recuento + "" + "litros");
-                            textoMostrarvasos.setText("Total de vasos= " + vasos);
+                    recuento = (float) (recuento - 0.25);
+                    vasos = vasos - 1;
+                    textoMostrar.setText("Total de agua= " + recuento + "" + "litros");
+                    textoMostrarvasos.setText("Total de vasos= " + vasos);
 
 
-                    }}
-
+                }
+            }
 
 
         });
-        Log.i("tag","valor agua guardar error"+vasos);
+        Log.i("tag", "valor agua guardar error" + vasos);
     }
 
     private void retocompletado() {
@@ -141,10 +141,10 @@ public class ContadroVasosAgua extends AppCompatActivity {
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "registro_user", null, 17);
         SQLiteDatabase bd = admin.getWritableDatabase();
 
-        String sql = "UPDATE usuarios SET retoagua='Se ha completado el objetivo de hoy de  agua' where login='"+nombreUser+"'";
-bd.execSQL(sql);
-bd.close();
-        Log.i("tag", "user"+nombreUser);
+        String sql = "UPDATE usuarios SET retoagua='Se ha completado el objetivo de hoy de  agua' where login='" + nombreUser + "'";
+        bd.execSQL(sql);
+        bd.close();
+        Log.i("tag", "user" + nombreUser);
     }
 
 
@@ -160,7 +160,6 @@ bd.close();
         startActivity(ifds);
 
     }
-
 
 
 }

@@ -48,12 +48,12 @@
         android:onClick="guaradr"
         android:text="@string/guardar"
         android:textColor="@color/guuardar"
-        app:layout_constraintBottom_toTopOf="@+id/button16"
+        app:layout_constraintBottom_toBottomOf="@+id/button16"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintStart_toStartOf="@+id/textVerF"
         app:layout_constraintTop_toTopOf="@+id/textVerF"
-        app:layout_constraintVertical_bias="0.428" />
+        app:layout_constraintVertical_bias="0.834" />
 
     <EditText
         android:id="@+id/numero"
@@ -79,16 +79,16 @@
         android:id="@+id/button16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="54dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginTop="44dp"
         android:background="@drawable/boton_volver"
         android:onClick="volverMenu"
         android:text="@string/volverMenu"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.941"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.426" />
+        app:layout_constraintEnd_toEndOf="@+id/ayuda2"
+        app:layout_constraintHorizontal_bias="0.833"
+        app:layout_constraintStart_toEndOf="@+id/button21"
+        app:layout_constraintTop_toBottomOf="@+id/ayuda2"
+        app:layout_constraintVertical_bias="0.182" />
 
     <TextView
         android:id="@+id/textView13"

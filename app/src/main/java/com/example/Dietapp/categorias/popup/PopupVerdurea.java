@@ -13,13 +13,13 @@ public class PopupVerdurea extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.popupverdura);
-        DisplayMetrics medidas=new DisplayMetrics();
+        DisplayMetrics medidas = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(medidas);
 
-        int ancho= medidas.widthPixels;
-        int alto=medidas.heightPixels;
+        int ancho = medidas.widthPixels;
+        int alto = medidas.heightPixels;
 
-        getWindow().setLayout((int) (ancho*3.1), (int) (alto*0.5));
+        getWindow().setLayout((int) (ancho * 3.1), (int) (alto * 0.5));
 
 
     }

@@ -44,7 +44,7 @@ import com.example.Dietapp.login.AdminSQLiteOpenHelper;
 import com.example.myapplicationfinal.R;
 
 public class Recetas extends AppCompatActivity {
-    Spinner spi, spi3, spi4, spi5, spi6, spi7, spi8, spi9, spi10,spi11;
+    Spinner spi, spi3, spi4, spi5, spi6, spi7, spi8, spi9, spi10, spi11;
     TextView textovertotal;
     float caloriasListaTotal;
     EditText nombreReceta;
@@ -90,14 +90,14 @@ public class Recetas extends AppCompatActivity {
         final Intent myIntent15 = new Intent(this, ListasPezRio.class);
         final Intent myIntent16 = new Intent(this, ListasPescadosOtro.class);
         final Intent myIntent17 = new Intent(this, ListasPescadosMarisco.class);
-        final Intent myIntent18= new Intent(this, ListasVerdura.class);
-        final Intent myIntent19= new Intent(this, ListasFruta.class);
-        final Intent myIntent20= new Intent(this, ListsSalsas.class);
-        final Intent myIntent21= new Intent(this, ListasOtroCarne.class);
-        final Intent myIntent22= new Intent(this, ListasLegumbres.class);
-        final Intent myIntent23= new Intent(this, ListsCereals.class);
-        final Intent myIntent24= new Intent(this, ListsLacteos.class);
-        final Intent myIntent25= new Intent(this, ListasEmbutidos.class);
+        final Intent myIntent18 = new Intent(this, ListasVerdura.class);
+        final Intent myIntent19 = new Intent(this, ListasFruta.class);
+        final Intent myIntent20 = new Intent(this, ListsSalsas.class);
+        final Intent myIntent21 = new Intent(this, ListasOtroCarne.class);
+        final Intent myIntent22 = new Intent(this, ListasLegumbres.class);
+        final Intent myIntent23 = new Intent(this, ListsCereals.class);
+        final Intent myIntent24 = new Intent(this, ListsLacteos.class);
+        final Intent myIntent25 = new Intent(this, ListasEmbutidos.class);
 
 
         volverPaginaElegir = new Intent(this, Recetas.class);
@@ -111,7 +111,7 @@ public class Recetas extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
 
-                if (position!=0)
+                if (position != 0)
                     startActivity(myIntent18);
 
             }
@@ -131,7 +131,7 @@ public class Recetas extends AppCompatActivity {
 
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                if (position!=0)
+                if (position != 0)
                     startActivity(myIntent19);
 
 
@@ -270,7 +270,7 @@ public class Recetas extends AppCompatActivity {
         });
 
 
-        String[] valores7 = new String[]{"selecciona Otros", "otros","cereales","lacteos","embutidos"};
+        String[] valores7 = new String[]{"selecciona Otros", "otros", "cereales", "lacteos", "embutidos"};
 
         spi7.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, valores7));
         spi7.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -286,7 +286,6 @@ public class Recetas extends AppCompatActivity {
                     startActivity(myIntent24);
                 if (nombreOtros.equals("embutidos"))
                     startActivity(myIntent25);
-
 
 
                 spi7.setSelection(0);//para que la volver a la pagina vuelva a mponerse la posición inicial
@@ -352,11 +351,9 @@ public class Recetas extends AppCompatActivity {
     public void crerReceta(View view) {
         try {
             nombreRecetaT = String.valueOf(nombreReceta.getText());
-            if(nombreRecetaT.equals(""))
-            {
+            if (nombreRecetaT.equals("")) {
                 Toast.makeText(getApplicationContext(), "Debes introducir nombre de receta", Toast.LENGTH_SHORT).show();
-            }
-            else{
+            } else {
                 this.verTotal(view);
                 float meter_calorias = caloriasListaTotal;
                 //metemos datos en base de datos
@@ -372,10 +369,7 @@ public class Recetas extends AppCompatActivity {
                 startActivity(i);
             }
 
-        }
-        catch(Exception e)
-
-        {
+        } catch (Exception e) {
 
         }
 

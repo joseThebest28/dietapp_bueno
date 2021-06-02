@@ -13,13 +13,13 @@ public class PopunPasta extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.popuppasta);
-        DisplayMetrics medidas=new DisplayMetrics();
+        DisplayMetrics medidas = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(medidas);
 
-        int ancho= medidas.widthPixels;
-        int alto=medidas.heightPixels;
+        int ancho = medidas.widthPixels;
+        int alto = medidas.heightPixels;
 
-        getWindow().setLayout((int) (ancho*0.85), (int) (alto*0.65));
+        getWindow().setLayout((int) (ancho * 0.85), (int) (alto * 0.65));
 
 
     }
