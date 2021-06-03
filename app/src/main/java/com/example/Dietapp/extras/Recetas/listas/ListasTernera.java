@@ -24,13 +24,16 @@ ListView lista;
     String textoEditT;
     static float suma;
     static  float total;
-    String[] valoresTernera;
+    String[] valoresTernera;Intent volverPaginaElegir;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listas_recetas);
-        lista=findViewById(R.id.lista);
-        textoEdit=findViewById(R.id.editListas);
+        lista = findViewById(R.id.lista);
+        textoEdit = findViewById(R.id.editListas);
+        volverPaginaElegir = new Intent(this, Recetas.class);
+        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(ListasTernera.this);
+        total = myPreferences.getFloat("caloriasLista", 0);
          valoresTernera= new String[]{ "selecciona pieza de ternera(nº cal cada 100gr)",
                 "filete de ternera con hueso: 189kcal","fielte de ternera: 133kcal","solomillo de ternera: 182kcal","filete de tapilla: 117kcal",
                 "rosbif: 187kcal","redondo: 107kcal","rabillo: 131kcal","sebo de ternera: 902kcal","pierna: 211kcal","lomo: 117kcal",
@@ -86,14 +89,13 @@ ListView lista;
 
     }
     public void realizarBusqueda(View view) {
-        ArrayList<String> listaBusca=new ArrayList<>();
-        textoEditT=String.valueOf(textoEdit.getText());
-        for(int i=0;i<valoresTernera.length;i++)
-            if(valoresTernera[i].contains(textoEditT))
-            {
+        ArrayList<String> listaBusca = new ArrayList<>();
+        textoEditT = String.valueOf(textoEdit.getText());
+        for (int i = 0; i < valoresTernera.length; i++)
+            if (valoresTernera[i].contains(textoEditT)) {
                 listaBusca.add(valoresTernera[i]);
             }
-        ArrayAdapter<String> adaptador2=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,listaBusca);
+        ArrayAdapter<String> adaptador2 = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, listaBusca);
         lista.setAdapter(adaptador2);
     }
 }

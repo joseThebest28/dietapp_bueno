@@ -321,7 +321,7 @@ public class Recetas extends AppCompatActivity {
 
         String[] valoresLegumbres = new String[]{"selecciona Legumbres", "ir a lista legumbres"};
 
-        spi11.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, valoresConservas));
+        spi11.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, valoresLegumbres));
         spi11.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @Override

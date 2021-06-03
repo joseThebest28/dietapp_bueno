@@ -24,13 +24,17 @@ public class ListsLacteos extends AppCompatActivity {
     String textoEditT;
     static float suma;
     static  float total;
-    String[] valoresLacteos;
+    String[] valoresLacteos;Intent volverPaginaElegir;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listas_recetas);
-        lista=findViewById(R.id.lista);
-        String[] valoresLacteos= new String[]{ "selecciona tipo lacteo(nº kcal por cada 100gr)",
+        lista = findViewById(R.id.lista);
+        textoEdit = findViewById(R.id.editListas);
+        volverPaginaElegir = new Intent(this, Recetas.class);
+        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(ListsLacteos.this);
+        total = myPreferences.getFloat("caloriasLista", 0);
+        valoresLacteos= new String[]{ "selecciona tipo lacteo(nº kcal por cada 100gr)",
                 "arroz con leche: 118kcal","chocolate caliente: 89kcal","crema chantillí: 266kcal","crema para café: 195kcal","crème fraîche: 393kcal",
         "cuajada: 98kcal","horcahta: 85kcal","kéfir:55kcal","lassi: 75kcal","leche condensada: 321kcal:","leche de almendra: 17kcal","leche de arroz: 49kcal","leche de cabra: 69kcal","leche de coco: 230kcal","" +
                 "leche de soja: 45kcal","leche desnatada: 35kcal","leche en polvo: 496kcal","leche entera: 61kcal","leche evaporada: 321kcal","leche merengada: 81kcal","leche preparada: 110kcal",
@@ -101,14 +105,13 @@ public class ListsLacteos extends AppCompatActivity {
 
     }
     public void realizarBusqueda(View view) {
-        ArrayList<String> listaBusca=new ArrayList<>();
-        textoEditT=String.valueOf(textoEdit.getText());
-        for(int i=0;i<valoresLacteos.length;i++)
-            if(valoresLacteos[i].contains(textoEditT))
-            {
+        ArrayList<String> listaBusca = new ArrayList<>();
+        textoEditT = String.valueOf(textoEdit.getText());
+        for (int i = 0; i < valoresLacteos.length; i++)
+            if (valoresLacteos[i].contains(textoEditT)) {
                 listaBusca.add(valoresLacteos[i]);
             }
-        ArrayAdapter<String> adaptador2=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,listaBusca);
+        ArrayAdapter<String> adaptador2 = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, listaBusca);
         lista.setAdapter(adaptador2);
     }
 }

@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -24,14 +25,21 @@ ListView lista;
     String textoEditT;
     static float suma;
     static  float total;
-    String[] valoresPa;
+    String[] valoresPa;Intent volverPaginaElegir;
+    Button boton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listas_recetas);
-        lista=findViewById(R.id.lista);
-
-        String[] valoresPa= new String[]{ "selecciona pieza de pato",
+        lista = findViewById(R.id.lista);
+        textoEdit = findViewById(R.id.editListas);
+        volverPaginaElegir = new Intent(this, Recetas.class);
+        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(ListasPato.this);
+        total = myPreferences.getFloat("caloriasLista", 0);
+        textoEdit.setVisibility(View.INVISIBLE);
+        boton=findViewById(R.id.button45);
+        boton.setVisibility(View.INVISIBLE);
+        valoresPa= new String[]{ "selecciona pieza de pato",
                 "pechuga de pato: 202kcal","piernas de pato: 277kcal","chuletas de pato: 132kcal","pato a la naranja: 377.5kcal","cuello de pato: 84kcal",
              "magret: 190kcal","pato pekinés: 265kcal" };
 
@@ -76,14 +84,13 @@ ListView lista;
 
     }
     public void realizarBusqueda(View view) {
-        ArrayList<String> listaBusca=new ArrayList<>();
-        textoEditT=String.valueOf(textoEdit.getText());
-        for(int i=0;i<valoresPa.length;i++)
-            if(valoresPa[i].contains(textoEditT))
-            {
+        ArrayList<String> listaBusca = new ArrayList<>();
+        textoEditT = String.valueOf(textoEdit.getText());
+        for (int i = 0; i < valoresPa.length; i++)
+            if (valoresPa[i].contains(textoEditT)) {
                 listaBusca.add(valoresPa[i]);
             }
-        ArrayAdapter<String> adaptador2=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,listaBusca);
+        ArrayAdapter<String> adaptador2 = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, listaBusca);
         lista.setAdapter(adaptador2);
     }
 }

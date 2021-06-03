@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -24,13 +25,18 @@ ListView lista;
     String textoEditT;
     static float suma;
     static  float total;
-    String[] valoresPescadoOt;
+    String[] valoresPescadoOt;Intent volverPaginaElegir;    Button boton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listas_recetas);
-        lista=findViewById(R.id.lista);
-        String[] valoresPescadoOt= new String[]{ "selecciona Embutidos", "grasa de pato:783kcal", "morcilla de arroz:256kcal", "morcilla de sangre:379kcal", "longaniza: 346kcal"
+        lista = findViewById(R.id.lista);
+        textoEdit = findViewById(R.id.editListas);
+        volverPaginaElegir = new Intent(this, Recetas.class);
+
+        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(ListasOtroCarne.this);
+        total = myPreferences.getFloat("caloriasLista", 0);
+         valoresPescadoOt= new String[]{ "selecciona Embutidos", "grasa de pato:783kcal", "morcilla de arroz:256kcal", "morcilla de sangre:379kcal", "longaniza: 346kcal"
                 , "pate de pato: 325lcal", "pate de higado:61kcal","carne de caballo: 133kcal", "codornices: 116kcal","ciervo: 118kcal",
         "carne de corzo: 103kcal","jabalí: 114kcal","paloma: 294kcal"};
         ArrayAdapter<String> adaptador=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,valoresPescadoOt);
@@ -57,7 +63,7 @@ ListView lista;
                 if (position == 9) { suma = suma +118; }
                 if (position == 10) { suma = suma +103; }
                 if (position == 11) { suma = suma +114; }
-                if (position == 11) { suma = suma +294; }
+                if (position == 12) { suma = suma +294; }
 
 
 
@@ -76,14 +82,13 @@ ListView lista;
 
     }
     public void realizarBusqueda(View view) {
-        ArrayList<String> listaBusca=new ArrayList<>();
-        textoEditT=String.valueOf(textoEdit.getText());
-        for(int i=0;i<valoresPescadoOt.length;i++)
-            if(valoresPescadoOt[i].contains(textoEditT))
-            {
+        ArrayList<String> listaBusca = new ArrayList<>();
+        textoEditT = String.valueOf(textoEdit.getText());
+        for (int i = 0; i < valoresPescadoOt.length; i++)
+            if (valoresPescadoOt[i].contains(textoEditT)) {
                 listaBusca.add(valoresPescadoOt[i]);
             }
-        ArrayAdapter<String> adaptador2=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,listaBusca);
+        ArrayAdapter<String> adaptador2 = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, listaBusca);
         lista.setAdapter(adaptador2);
     }
 }

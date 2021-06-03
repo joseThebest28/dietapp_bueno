@@ -30,6 +30,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="76dp"
         android:text="@string/realizarBusqueda"
+        android:onClick="realizarBusqueda"
+
          />
 
 

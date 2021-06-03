@@ -24,13 +24,17 @@ ListView lista;
     String textoEditT;
     static float suma;
     static  float total;
-    String[] valoresPescadoMarisco;
+    String[] valoresPescadoMarisco;Intent volverPaginaElegir;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listas_recetas);
-        lista=findViewById(R.id.lista);
-        String[] valoresPescadoMarisco= new String[]{ "selecciona tipo de marisco",
+        lista = findViewById(R.id.lista);
+        textoEdit = findViewById(R.id.editListas);
+        volverPaginaElegir = new Intent(this, Recetas.class);
+        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(ListasPescadosMarisco.this);
+        total = myPreferences.getFloat("caloriasLista", 0);
+       valoresPescadoMarisco= new String[]{ "selecciona tipo de marisco",
                 "almeja: 148kcal", "bogavante: 90kcal", "cañailla: 91kcal",
                 "langostinos tigre: 90kcal", "boca: 86kcal","cigalas: 69kcal","gambas: 75kcal","langosta: 89kcal",
                 "langostino: 75kcal", "cangrejo de rio: 82kcal ", "cangrejo de mar: 124kcal", "buey de mar: 130kcal", " centollo: 127kcal",

@@ -24,12 +24,16 @@ ListView lista;
     String textoEditT;
     static float suma;
     static  float total;
-    String[] valoresCordero;
+    String[] valoresCordero;Intent volverPaginaElegir;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listas_recetas);
-        lista=findViewById(R.id.lista);
+        lista = findViewById(R.id.lista);
+        textoEdit = findViewById(R.id.editListas);
+        volverPaginaElegir = new Intent(this, Recetas.class);
+        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(ListasCorderoCaRoja.this);
+        total = myPreferences.getFloat("caloriasLista", 0);
       valoresCordero= new String[]{ "selecciona pieza de cordero ",
                 "paletilla de cordero: 240kcal","medallones: 255kcal","tournedó: 43.47kcal","pincho moruno: 202kcal",
                 "brocheta: 134kcal","hamburguesa: 342.11kcal","churrasquitos: 250kcal","churrasco: 266kcal","filete de carrillón: 250kcal"};
@@ -73,14 +77,13 @@ ListView lista;
 
     }
     public void realizarBusqueda(View view) {
-        ArrayList<String> listaBusca=new ArrayList<>();
-        textoEditT=String.valueOf(textoEdit.getText());
-        for(int i=0;i<valoresCordero.length;i++)
-            if(valoresCordero[i].contains(textoEditT))
-            {
+        ArrayList<String> listaBusca = new ArrayList<>();
+        textoEditT = String.valueOf(textoEdit.getText());
+        for (int i = 0; i < valoresCordero.length; i++)
+            if (valoresCordero[i].contains(textoEditT)) {
                 listaBusca.add(valoresCordero[i]);
             }
-        ArrayAdapter<String> adaptador2=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,listaBusca);
+        ArrayAdapter<String> adaptador2 = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, listaBusca);
         lista.setAdapter(adaptador2);
     }
 }

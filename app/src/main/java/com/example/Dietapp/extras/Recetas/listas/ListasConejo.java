@@ -31,7 +31,12 @@ ListView lista;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listas_recetas);
-        lista=findViewById(R.id.lista);
+        lista = findViewById(R.id.lista);
+        textoEdit = findViewById(R.id.editListas);
+        volverPaginaElegir = new Intent(this, Recetas.class);
+        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(ListasConejo.this);
+        total = myPreferences.getFloat("caloriasLista", 0);
+
         textoEdit.setVisibility(View.INVISIBLE);
         boton=findViewById(R.id.button45);
         boton.setVisibility(View.INVISIBLE);
@@ -79,14 +84,6 @@ ListView lista;
 
     }
     public void realizarBusqueda(View view) {
-        ArrayList<String> listaBusca=new ArrayList<>();
-        textoEditT=String.valueOf(textoEdit.getText());
-        for(int i=0;i<valoresConejo.length;i++)
-            if(valoresConejo[i].contains(textoEditT))
-            {
-                listaBusca.add(valoresConejo[i]);
-            }
-        ArrayAdapter<String> adaptador2=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,listaBusca);
-        lista.setAdapter(adaptador2);
+
     }
 }

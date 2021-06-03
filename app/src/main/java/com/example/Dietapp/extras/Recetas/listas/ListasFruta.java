@@ -24,12 +24,16 @@ ListView lista;
     String textoEditT;
     static float suma;
     static  float total;
-    String[] valoresFruta;
+    String[] valoresFruta;Intent volverPaginaElegir;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listas_recetas);
-        lista=findViewById(R.id.lista);
+        lista = findViewById(R.id.lista);
+        textoEdit = findViewById(R.id.editListas);
+        volverPaginaElegir = new Intent(this, Recetas.class);
+        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(ListasFruta.this);
+        total = myPreferences.getFloat("caloriasLista", 0);
       valoresFruta= new String[]{ "selecciona fruta(nº kcal cada 100 gramos)", "aceitunas: 115kcal",
                 "aguacate/palta: 160kcal", "albaricoque/damasco: 48kcal", "ananás/piña: 48kcal", "arandano: 71kcal", "asaí: 70kcal",
               "banana/platano: 46kcal", "caqui/persimón: 127kcal","carambola/fruta estrella: 31kcal","cereza/guinda: 58kcal", "ciruela: 46kcal"
@@ -124,14 +128,13 @@ ListView lista;
 
     }
     public void realizarBusqueda(View view) {
-        ArrayList<String> listaBusca=new ArrayList<>();
-        textoEditT=String.valueOf(textoEdit.getText());
-        for(int i=0;i<valoresFruta.length;i++)
-            if(valoresFruta[i].contains(textoEditT))
-            {
+        ArrayList<String> listaBusca = new ArrayList<>();
+        textoEditT = String.valueOf(textoEdit.getText());
+        for (int i = 0; i < valoresFruta.length; i++)
+            if (valoresFruta[i].contains(textoEditT)) {
                 listaBusca.add(valoresFruta[i]);
             }
-        ArrayAdapter<String> adaptador2=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,listaBusca);
+        ArrayAdapter<String> adaptador2 = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, listaBusca);
         lista.setAdapter(adaptador2);
     }
 }

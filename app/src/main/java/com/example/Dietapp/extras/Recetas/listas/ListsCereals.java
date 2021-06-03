@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -21,16 +22,28 @@ import java.util.ArrayList;
 public class ListsCereals extends AppCompatActivity {
     ListView lista;
     EditText textoEdit;
-    String textoEditT;
+    String textoEditT="";
     static float suma;
     static  float total;
     String[] valoresCereales;
+    Intent volverPaginaElegir;
+  ;  ArrayList<String> listaBusca;
+    ArrayAdapter<String> adaptador2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listas_recetas);
+        textoEdit=findViewById(R.id.editListas);
+        lista = findViewById(R.id.lista);
+        textoEdit = findViewById(R.id.editListas);
+        volverPaginaElegir = new Intent(this, Recetas.class);
+        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(ListsCereals.this);
+        total = myPreferences.getFloat("caloriasLista", 0);
+        adaptador2 =new ArrayAdapter<String>(this,R.layout.support_simple_spinner_dropdown_item,listaBusca);
+
+
         lista=findViewById(R.id.lista);
-        String[] valoresCereales= new String[]{ "selecciona tipo cereal(nº kcal cada 100 gr)","de trigo y chocolate: 385kcal",
+       valoresCereales= new String[]{ "selecciona tipo cereal(nº kcal cada 100 gr)","de trigo y chocolate: 385kcal",
         "de arroz y chocolate: 388kcal","de arroz y miel: 385kcal","de arroz, trigo y fruta: 356kcal",
         "de miel y maiz: 394kcal","de maiz y trigo: 381kcal","de maiz, trigo y avena: 416kcal",
         "de trigo azucarado: 385kcal", "barrita de chocolate: 397kcal","barrita de cereales con fruta: 395kcal",
@@ -85,12 +98,6 @@ public class ListsCereals extends AppCompatActivity {
                 if (position == 31) { suma = suma +567; }
                 if (position == 32) { suma = suma +350; }
 
-
-
-
-
-
-
                 total=total+suma;
                 Log.i("tag","total"+total);
                 Log.i("tag","suma"+suma);
@@ -103,16 +110,18 @@ public class ListsCereals extends AppCompatActivity {
                 startActivity(iD);
             }});
 
+
     }
+
+
     public void realizarBusqueda(View view) {
-        ArrayList<String> listaBusca=new ArrayList<>();
-        textoEditT=String.valueOf(textoEdit.getText());
-        for(int i=0;i<valoresCereales.length;i++)
-            if(valoresCereales[i].contains(textoEditT))
-            {
+        ArrayList<String> listaBusca = new ArrayList<>();
+        textoEditT = String.valueOf(textoEdit.getText());
+        for (int i = 0; i < valoresCereales.length; i++)
+            if (valoresCereales[i].contains(textoEditT)) {
                 listaBusca.add(valoresCereales[i]);
             }
-        ArrayAdapter<String> adaptador2=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,listaBusca);
+        ArrayAdapter<String> adaptador2 = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, listaBusca);
         lista.setAdapter(adaptador2);
     }
 }

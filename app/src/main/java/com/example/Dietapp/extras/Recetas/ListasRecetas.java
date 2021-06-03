@@ -128,4 +128,6 @@ public class ListasRecetas extends AppCompatActivity {
         bd.close();
     }
 
+    public void realizarBusqueda(View view) {
+    }
 }

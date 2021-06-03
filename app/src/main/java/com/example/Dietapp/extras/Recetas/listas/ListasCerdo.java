@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -24,12 +25,17 @@ ListView lista;
     String textoEditT;
     static float suma;
     static  float total;
-    String[] valoresCerdo;
+    String[] valoresCerdo;    Intent volverPaginaElegir;
+    Button boton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listas_recetas);
-        lista=findViewById(R.id.lista);
+        lista = findViewById(R.id.lista);
+        textoEdit = findViewById(R.id.editListas);
+        volverPaginaElegir = new Intent(this, Recetas.class);
+        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(ListasCerdo.this);
+        total = myPreferences.getFloat("caloriasLista", 0);
         valoresCerdo= new String[]{ "selecciona pieza de carne de cerdo(nº calorias cada 100gr)",
                 "solomillo: 158kcal","cinta de lomo: 136kcal",
                 "chuletas de lomo(de palo) : 27.1kcal","cadera/babilla: 271kcal","paletilla: 169kcal",
@@ -79,14 +85,13 @@ ListView lista;
 
     }
     public void realizarBusqueda(View view) {
-        ArrayList<String> listaBusca=new ArrayList<>();
-        textoEditT=String.valueOf(textoEdit.getText());
-        for(int i=0;i<valoresCerdo.length;i++)
-            if(valoresCerdo[i].contains(textoEditT))
-            {
+        ArrayList<String> listaBusca = new ArrayList<>();
+        textoEditT = String.valueOf(textoEdit.getText());
+        for (int i = 0; i < valoresCerdo.length; i++)
+            if (valoresCerdo[i].contains(textoEditT)) {
                 listaBusca.add(valoresCerdo[i]);
             }
-        ArrayAdapter<String> adaptador2=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,listaBusca);
+        ArrayAdapter<String> adaptador2 = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, listaBusca);
         lista.setAdapter(adaptador2);
     }
 }

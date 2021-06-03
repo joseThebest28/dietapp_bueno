@@ -48,13 +48,9 @@ public class ContadroVasosAgua extends AppCompatActivity {
 
         int vasosGuardados = myPreferences.getInt("valoragua", 0);
         float recuentoM = myPreferences.getFloat("valoragua2", 0);
+        vasos=vasosGuardados;
+        recuento=recuentoM;
 
-        if (vasosGuardados != 0) {
-            vasos = vasosGuardados;
-            recuento = recuentoM;
-        } else {
-
-        }
 
 
         Log.i("valor", String.valueOf(recuento));

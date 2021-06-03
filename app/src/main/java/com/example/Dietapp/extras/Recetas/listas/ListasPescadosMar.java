@@ -24,13 +24,17 @@ ListView lista;
     String textoEditT;
     static float suma;
     static  float total;
-    String[] valoresPescadoKM;
+    String[] valoresPescadoKM;Intent volverPaginaElegir;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listas_recetas);
-        lista=findViewById(R.id.lista);
-        String[] valoresPescadoKM= new String[]{ "selecciona tipo de pescado de mar ",
+        lista = findViewById(R.id.lista);
+        textoEdit = findViewById(R.id.editListas);
+        volverPaginaElegir = new Intent(this, Recetas.class);
+        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(ListasPescadosMar.this);
+        total = myPreferences.getFloat("caloriasLista", 0);
+         valoresPescadoKM= new String[]{ "selecciona tipo de pescado de mar ",
                 "abadejo: 111kcal","boquerón/anchoa: 131kcal","anchoa de banco: 159kcal","anguila:236kcal"
                 ,"arenque: 203kcal","atun: 132kcal","bacalao: 105kcal","balistes:93kcal",
                 "boga: 149kcal","brema: 135kcal","bacaladilla/lirio/perlita: 84kcal",
@@ -130,14 +134,13 @@ ListView lista;
 
     }
     public void realizarBusqueda(View view) {
-        ArrayList<String> listaBusca=new ArrayList<>();
-        textoEditT=String.valueOf(textoEdit.getText());
-        for(int i=0;i<valoresPescadoKM.length;i++)
-            if(valoresPescadoKM[i].contains(textoEditT))
-            {
+        ArrayList<String> listaBusca = new ArrayList<>();
+        textoEditT = String.valueOf(textoEdit.getText());
+        for (int i = 0; i < valoresPescadoKM.length; i++)
+            if (valoresPescadoKM[i].contains(textoEditT)) {
                 listaBusca.add(valoresPescadoKM[i]);
             }
-        ArrayAdapter<String> adaptador2=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,listaBusca);
+        ArrayAdapter<String> adaptador2 = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, listaBusca);
         lista.setAdapter(adaptador2);
     }
 }

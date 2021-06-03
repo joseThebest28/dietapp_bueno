@@ -33,7 +33,6 @@ public class RecuperarContrase extends AppCompatActivity {
 
     private EditText nombreUserContai;
     private String nombreUserContaiT;
-    private Intent iD;
     Session sesion;
 
     @Override
@@ -44,7 +43,7 @@ public class RecuperarContrase extends AppCompatActivity {
 
         nombreUserContai = findViewById(R.id.editNombreUser);
 
-        iD = new Intent(this, Login.class);
+
     }
 
     public void lnazarRecuCOn(View view) {
@@ -100,25 +99,25 @@ public class RecuperarContrase extends AppCompatActivity {
         StrictMode.setThreadPolicy(policy);
 
         //textoEnvias=String.valueOf(editTextMessage.getText());
-        Properties props = new Properties();
-        props.put("mail.smtp.host", "smtp.googlemail.com");
-        props.put("mail.smtp.socketFactory.port", "465");
-        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.port", "465");
+        Properties pro = new Properties();
+        pro.put("mail.smtp.host", "smtp.googlemail.com");
+        pro.put("mail.smtp.socketFactory.port", "465");
+        pro.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        pro.put("mail.smtp.auth", "true");
+        pro.put("mail.smtp.port", "465");
         try {
-            sesion = Session.getDefaultInstance(props, new Authenticator() {
+            sesion = Session.getDefaultInstance(pro, new Authenticator() {
                 @Override
                 protected PasswordAuthentication getPasswordAuthentication() {
                     return new PasswordAuthentication("dietappapp@gmail.com", "A28aaaaaaaaaa");
                 }
             });
-            Message message = new MimeMessage(sesion);
-            message.setFrom(new InternetAddress(email));
-            message.setSubject("contraseña dietapp");
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
-            message.setContent("Buenos dias estimado " + nombreUser + "." + " <br/>su contraseña de Dietapp es: " + textoEnviar, "text/html; charset=utf-8");
-            Transport.send(message);
+            Message ms = new MimeMessage(sesion);
+            ms.setFrom(new InternetAddress(email));
+            ms.setSubject("contraseña dietapp");
+            ms.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
+            ms.setContent("Buenos dias estimado " + nombreUser + "." + " <br/>su contraseña de Dietapp es: " + textoEnviar, "text/html; charset=utf-8");
+            Transport.send(ms);
 
 
         } catch (AddressException e) {

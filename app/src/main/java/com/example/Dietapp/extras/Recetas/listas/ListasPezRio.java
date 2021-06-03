@@ -24,14 +24,18 @@ ListView lista;
     String textoEditT;
     static float suma;
     static  float total;
-    String[] valoresPezRio;
+    String[] valoresPezRio;Intent volverPaginaElegir;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listas_recetas);
-        lista=findViewById(R.id.lista);
+        lista = findViewById(R.id.lista);
+        textoEdit = findViewById(R.id.editListas);
+        volverPaginaElegir = new Intent(this, Recetas.class);
+        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(ListasPezRio.this);
+        total = myPreferences.getFloat("caloriasLista", 0);
 
-        String[] valoresPezRio= new String[]{ "selecciona tipo de pescado de rio",
+         valoresPezRio= new String[]{ "selecciona tipo de pescado de rio",
                 "Anguila/angula: 281 kcal","carpa: 114kcal","perca: 90kcal","lamprea: 218kcal"};
 
         ArrayAdapter<String> adaptador=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,valoresPezRio);
@@ -72,14 +76,13 @@ ListView lista;
 
     }
     public void realizarBusqueda(View view) {
-        ArrayList<String> listaBusca=new ArrayList<>();
-        textoEditT=String.valueOf(textoEdit.getText());
-        for(int i=0;i<valoresPezRio.length;i++)
-            if(valoresPezRio[i].contains(textoEditT))
-            {
+        ArrayList<String> listaBusca = new ArrayList<>();
+        textoEditT = String.valueOf(textoEdit.getText());
+        for (int i = 0; i < valoresPezRio.length; i++)
+            if (valoresPezRio[i].contains(textoEditT)) {
                 listaBusca.add(valoresPezRio[i]);
             }
-        ArrayAdapter<String> adaptador2=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,listaBusca);
+        ArrayAdapter<String> adaptador2 = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, listaBusca);
         lista.setAdapter(adaptador2);
     }
 }

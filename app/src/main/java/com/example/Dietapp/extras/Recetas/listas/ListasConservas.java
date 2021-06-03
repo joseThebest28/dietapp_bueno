@@ -27,13 +27,17 @@ ListView lista;
     String textoEditT;
     static float suma;
     static  float total;
-    String[] valoresConservas;
+    String[] valoresConservas; Intent volverPaginaElegir;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listas_recetas);
-        lista=findViewById(R.id.lista);
-        String[] valoresConservas= new String[]{ "selecciona tipo conservas","atún en aceite: 286kcal",
+        lista = findViewById(R.id.lista);
+        textoEdit = findViewById(R.id.editListas);
+        volverPaginaElegir = new Intent(this, Recetas.class);
+        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(ListasConservas.this);
+        total = myPreferences.getFloat("caloriasLista", 0);
+        valoresConservas= new String[]{ "selecciona tipo conservas","atún en aceite: 286kcal",
                 "jureles en aceite: 285kcal","caballa en aceite: 286kcal","sardinas en aceite: 210kcal","calamares en aceite: 184kcal","pulpo en aceite: 174kcal","anchoas en aceite: 135kcal"};
         ArrayAdapter<String> adaptador=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,valoresConservas);
         lista.setAdapter(adaptador);
@@ -73,14 +77,13 @@ ListView lista;
 
     }
     public void realizarBusqueda(View view) {
-        ArrayList<String> listaBusca=new ArrayList<>();
-        textoEditT=String.valueOf(textoEdit.getText());
-        for(int i=0;i<valoresConservas.length;i++)
-            if(valoresConservas[i].contains(textoEditT))
-            {
+        ArrayList<String> listaBusca = new ArrayList<>();
+        textoEditT = String.valueOf(textoEdit.getText());
+        for (int i = 0; i < valoresConservas.length; i++)
+            if (valoresConservas[i].contains(textoEditT)) {
                 listaBusca.add(valoresConservas[i]);
             }
-        ArrayAdapter<String> adaptador2=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,listaBusca);
+        ArrayAdapter<String> adaptador2 = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, listaBusca);
         lista.setAdapter(adaptador2);
     }
 }
