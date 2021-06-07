@@ -244,8 +244,8 @@
 
     <TextView
         android:id="@+id/ayuda6"
-        android:layout_width="83dp"
-        android:layout_height="18dp"
+        android:layout_width="81dp"
+        android:layout_height="26dp"
         android:layout_marginTop="12dp"
         android:background="@drawable/boton_ayuda"
         android:onClick="ayuda"
@@ -261,8 +261,8 @@
 
     <TextView
         android:id="@+id/ayuda"
-        android:layout_width="85dp"
-        android:layout_height="17dp"
+        android:layout_width="81dp"
+        android:layout_height="26dp"
         android:background="@drawable/boton_ayuda"
         android:onClick="ayuda2dfs"
         android:text="@string/ayuda"

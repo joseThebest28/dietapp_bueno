@@ -54,9 +54,12 @@
         android:text="@string/textorecuperacontraseña2"
         android:textColor="@color/bCSalsa"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/button17"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/button17"
-        app:layout_constraintTop_toBottomOf="@+id/button17" />
+        app:layout_constraintTop_toBottomOf="@+id/button17"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView44"

@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/ayuda4"
-        android:layout_width="83dp"
-        android:layout_height="18dp"
+        android:layout_width="81dp"
+        android:layout_height="26dp"
         android:layout_marginStart="55dp"
         android:layout_marginTop="28dp"
         android:background="@drawable/boton_ayuda"
