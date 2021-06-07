@@ -32,7 +32,7 @@
         android:layout_marginBottom="32dp"
         android:background="@color/ayuda"
         android:importantForAutofill="no"
-        android:inputType="phone"
+        android:inputType="number"
         android:maxLength="2"
         android:textColor="@color/textoEdit"
         android:textColorHighlight="@color/colorHigt"

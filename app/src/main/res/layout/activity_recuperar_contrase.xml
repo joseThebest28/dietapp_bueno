@@ -9,9 +9,10 @@
 
     <Button
         android:id="@+id/btSoliciConta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="194dp"
+        android:layout_height="49dp"
         android:layout_marginTop="152dp"
+        android:background="@drawable/bg_boton_inicio"
         android:onClick="lnazarRecuCOn"
         android:text="@string/btSoliConta"
         app:layout_constraintEnd_toEndOf="@+id/editNombreUser"
@@ -30,7 +31,8 @@
         app:layout_constraintEnd_toEndOf="@+id/textView30"
         app:layout_constraintHorizontal_bias="0.386"
         app:layout_constraintStart_toStartOf="@+id/textView30"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="" />
 
     <TextView
         android:id="@+id/textView30"

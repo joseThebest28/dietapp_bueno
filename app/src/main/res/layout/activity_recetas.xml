@@ -138,8 +138,9 @@
 
         <Button
             android:id="@+id/btoatal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="107dp"
+            android:layout_height="72dp"
+            android:background="@drawable/bg_boton_inicio"
             android:layout_marginTop="84dp"
             android:text="@string/vertotal"
             android:textColor="@color/guuardar"

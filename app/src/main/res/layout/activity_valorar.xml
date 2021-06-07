@@ -20,11 +20,12 @@
 
     <Button
         android:id="@+id/button17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="97dp"
+        android:layout_height="50dp"
         android:layout_marginTop="60dp"
-        android:text="@string/enviar"
+        android:background="@drawable/bg_boton_inicio"
         android:onClick="enviarCOmentario"
+        android:text="@string/enviar"
         app:layout_constraintEnd_toEndOf="@+id/ratingBar"
         app:layout_constraintHorizontal_bias="0.572"
         app:layout_constraintStart_toStartOf="@+id/ratingBar"

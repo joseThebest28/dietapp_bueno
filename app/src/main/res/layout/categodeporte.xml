@@ -12,6 +12,7 @@
         android:id="@+id/cardio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/bg_boton_inicio"
         android:layout_marginTop="40dp"
         android:onClick="irCardio"
         android:text="@string/cardio"
@@ -22,6 +23,7 @@
 
     <Button
         android:id="@+id/Abdominales"
+        android:background="@drawable/bg_boton_inicio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
@@ -36,6 +38,7 @@
         android:id="@+id/total"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/bg_boton_inicio"
         android:layout_marginTop="76dp"
         android:onClick="irEspalda"
         android:text="@string/espalda"
@@ -48,6 +51,7 @@
         android:id="@+id/pecho"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/bg_boton_inicio"
         android:layout_marginTop="56dp"
         android:onClick="irPierna"
         android:text="@string/pierna"
@@ -60,6 +64,7 @@
         android:id="@+id/pecho3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/bg_boton_inicio"
         android:layout_marginTop="44dp"
         android:text="@string/gluteos"
         android:onClick="irGluteos"
@@ -71,6 +76,7 @@
     <Button
         android:id="@+id/Pecho"
         android:layout_width="wrap_content"
+        android:background="@drawable/bg_boton_inicio"
         android:layout_height="wrap_content"
         android:layout_marginEnd="72dp"
         android:onClick="irPecho"
@@ -83,6 +89,7 @@
     <Button
         android:id="@+id/total2"
         android:layout_width="wrap_content"
+        android:background="@drawable/bg_boton_inicio"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="160dp"
@@ -96,6 +103,7 @@
     <Button
         android:id="@+id/total3"
         android:layout_width="wrap_content"
+        android:background="@drawable/bg_boton_inicio"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:onClick="irTriceps"
@@ -108,6 +116,7 @@
     <Button
         android:id="@+id/total4"
         android:layout_width="wrap_content"
+        android:background="@drawable/bg_boton_inicio"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="64dp"
@@ -136,6 +145,7 @@
         android:id="@+id/button40"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/bg_boton_inicio"
         android:layout_marginTop="52dp"
         android:layout_marginEnd="60dp"
         android:onClick="lanzarActiDepor"
